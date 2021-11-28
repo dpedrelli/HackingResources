@@ -4,8 +4,11 @@
     "\\CTFs",
     "\\CTFs\\TryHackMe",
     "\\CTFs\\TryHackMe\\Learn",
-    "\\CTFs\\TryHackMe\\Learn\\Metasploit"
+    "\\CTFs\\TryHackMe\\Learn\\Metasploit",
+    "\\CTFs\\TryHackMe\\Learn\\Metasploit\\MetasploitExploitation",
+    "\\CTFs\\TryHackMe\\Learn\\Metasploit\\MetasploitIntroduction",
+    "\\CTFs\\TryHackMe\\Learn\\Metasploit\\MetasploitMeterpreter"
   ],
-  "SelectedNode": "\\CTFs\\TryHackMe\\Learn\\Metasploit\\MetasploitIntroduction",
+  "SelectedNode": "\\CTFs\\TryHackMe\\Learn\\Metasploit\\MetasploitMeterpreter\\README.md",
   "PreviewInSolutionExplorer": false
 }
