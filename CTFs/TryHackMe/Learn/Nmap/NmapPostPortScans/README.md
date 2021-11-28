@@ -42,7 +42,7 @@ The console output below shows a simple Nmap stealth SYN scan with the ```-sV```
 
 pentester@TryHackMe$ sudo nmap -sV MACHINE_IP
 
-Starting Nmap 7.60 ( https://nmap.org ) at 2021-09-10 05:03 BST
+Starting Nmap 7.60 (https://nmap.org) at 2021-09-10 05:03 BST
 Nmap scan report for MACHINE_IP
 Host is up (0.0040s latency).
 Not shown: 995 closed ports
@@ -82,7 +82,7 @@ Nmap can detect the Operating System (OS) based on its behaviour and any telltal
 
 pentester@TryHackMe$ sudo nmap -sS -O MACHINE_IP
 
-Starting Nmap 7.60 ( https://nmap.org ) at 2021-09-10 05:04 BST
+Starting Nmap 7.60 (https://nmap.org) at 2021-09-10 05:04 BST
 Nmap scan report for MACHINE_IP
 Host is up (0.00099s latency).
 Not shown: 994 closed ports
@@ -118,7 +118,7 @@ In the following example, we executed ```nmap -sS --traceroute MACHINE_IP``` on 
 
 pentester@TryHackMe$ sudo nmap -sS --traceroute MACHINE_IP
 
-Starting Nmap 7.60 ( https://nmap.org ) at 2021-09-10 05:05 BST
+Starting Nmap 7.60 (https://nmap.org) at 2021-09-10 05:05 BST
 Nmap scan report for MACHINE_IP
 Host is up (0.0015s latency).
 Not shown: 994 closed ports
@@ -249,7 +249,7 @@ We use Nmap to run a SYN scan against ```MACHINE_IP``` and execute the default s
 
 pentester@TryHackMe$ sudo nmap -sS -sC MACHINE_IP
 
-Starting Nmap 7.60 ( https://nmap.org ) at 2021-09-10 05:08 BST
+Starting Nmap 7.60 (https://nmap.org) at 2021-09-10 05:08 BST
 Nmap scan report for ip-10-10-161-170.eu-west-1.compute.internal (10.10.161.170)
 Host is up (0.0011s latency).
 Not shown: 994 closed ports
@@ -293,7 +293,7 @@ Let’s consider a benign script, ```http-date```, which we guess would retrieve t
 
 pentester@TryHackMe$ sudo nmap -sS -n --script "http-date" MACHINE_IP
 
-Starting Nmap 7.60 ( https://nmap.org ) at 2021-09-10 08:04 BST
+Starting Nmap 7.60 (https://nmap.org) at 2021-09-10 08:04 BST
 Nmap scan report for MACHINE_IP
 Host is up (0.0011s latency).
 Not shown: 994 closed ports

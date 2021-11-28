@@ -62,7 +62,7 @@ Below is an example of a null scan against a Linux server. The null scan we carr
 
 pentester@TryHackMe$ sudo nmap -sN MACHINE_IP
 
-Starting Nmap 7.60 ( https://nmap.org ) at 2021-08-30 10:30 BST
+Starting Nmap 7.60 (https://nmap.org) at 2021-08-30 10:30 BST
 Nmap scan report for MACHINE_IP
 Host is up (0.00066s latency).
 Not shown: 994 closed ports
@@ -96,7 +96,7 @@ Below is an example of a FIN scan against a Linux server. The result is quite si
 
 pentester@TryHackMe$ sudo nmap -sF MACHINE_IP
 
-Starting Nmap 7.60 ( https://nmap.org ) at 2021-08-30 10:32 BST
+Starting Nmap 7.60 (https://nmap.org) at 2021-08-30 10:32 BST
 Nmap scan report for MACHINE_IP
 Host is up (0.0018s latency).
 Not shown: 994 closed ports
@@ -128,7 +128,7 @@ The console output below shows an example of a Xmas scan against a Linux server.
 
 pentester@TryHackMe$ sudo nmap -sX MACHINE_IP
 
-Starting Nmap 7.60 ( https://nmap.org ) at 2021-08-30 10:34 BST
+Starting Nmap 7.60 (https://nmap.org) at 2021-08-30 10:34 BST
 Nmap scan report for MACHINE_IP
 Host is up (0.00087s latency).
 Not shown: 994 closed ports
@@ -185,7 +185,7 @@ The console output below is an example of a TCP Maimon scan against a Linux serv
 
 pentester@TryHackMe$ sudo nmap -sM 10.10.252.27
 
-Starting Nmap 7.60 ( https://nmap.org ) at 2021-08-30 10:36 BST
+Starting Nmap 7.60 (https://nmap.org) at 2021-08-30 10:36 BST
 Nmap scan report for ip-10-10-252-27.eu-west-1.compute.internal (10.10.252.27)
 Host is up (0.00095s latency).
 All 1000 scanned ports on ip-10-10-252-27.eu-west-1.compute.internal (10.10.252.27) are closed
@@ -216,7 +216,7 @@ In the following example, we scanned the target VM before installing a firewall 
 
 pentester@TryHackMe$ sudo nmap -sA MACHINE_IP
 
-Starting Nmap 7.60 ( https://nmap.org ) at 2021-08-30 10:37 BST
+Starting Nmap 7.60 (https://nmap.org) at 2021-08-30 10:37 BST
 Nmap scan report for MACHINE_IP
 Host is up (0.0013s latency).
 All 1000 scanned ports on MACHINE_IP are unfiltered
@@ -234,7 +234,7 @@ After setting up the target VM ```MACHINE_IP``` with a firewall, we repeated the
 
 pentester@TryHackMe$ sudo nmap -sA MACHINE_IP
 
-Starting Nmap 7.60 ( https://nmap.org ) at 2021-09-07 11:34 BST
+Starting Nmap 7.60 (https://nmap.org) at 2021-09-07 11:34 BST
 Nmap scan report for MACHINE_IP
 Host is up (0.00046s latency).
 Not shown: 997 filtered ports
@@ -259,7 +259,7 @@ Similarly, launching a TCP window scan against a Linux system with no firewall w
 
 pentester@TryHackMe$ sudo nmap -sW MACHINE_IP
 
-Starting Nmap 7.60 ( https://nmap.org ) at 2021-08-30 10:38 BST
+Starting Nmap 7.60 (https://nmap.org) at 2021-08-30 10:38 BST
 Nmap scan report for MACHINE_IP
 Host is up (0.0011s latency).
 All 1000 scanned ports on ip-10-10-252-27.eu-west-1.compute.internal (10.10.252.27) are closed
@@ -275,7 +275,7 @@ However, as you would expect, if we repeat our TCP window scan against a server 
 
 pentester@TryHackMe$ sudo nmap -sW MACHINE_IP
 
-Starting Nmap 7.60 ( https://nmap.org ) at 2021-09-07 11:39 BST
+Starting Nmap 7.60 (https://nmap.org) at 2021-09-07 11:39 BST
 Nmap scan report for MACHINE_IP
 Host is up (0.00040s latency).
 Not shown: 997 filtered ports
@@ -426,7 +426,7 @@ You might consider adding ```--reason``` if you want Nmap to provide more detail
 
 pentester@TryHackMe$ sudo nmap -sS 10.10.252.27
 
-Starting Nmap 7.60 ( https://nmap.org ) at 2021-08-30 10:39 BST
+Starting Nmap 7.60 (https://nmap.org) at 2021-08-30 10:39 BST
 Nmap scan report for ip-10-10-252-27.eu-west-1.compute.internal (10.10.252.27)
 Host is up (0.0020s latency).
 Not shown: 994 closed ports
@@ -447,7 +447,7 @@ Nmap done: 1 IP address (1 host up) scanned in 1.60 seconds
 
 pentester@TryHackMe$ sudo nmap -sS --reason 10.10.252.27
 
-Starting Nmap 7.60 ( https://nmap.org ) at 2021-08-30 10:40 BST
+Starting Nmap 7.60 (https://nmap.org) at 2021-08-30 10:40 BST
 Nmap scan report for ip-10-10-252-27.eu-west-1.compute.internal (10.10.252.27)
 Host is up, received arp-response (0.0020s latency).
 Not shown: 994 closed ports
@@ -473,7 +473,7 @@ For more detailed output, you can consider using ```-v``` for verbose output or 
 
 pentester@TryHackMe$ sudo nmap -sS -vv 10.10.252.27
 
-Starting Nmap 7.60 ( https://nmap.org ) at 2021-08-30 10:41 BST
+Starting Nmap 7.60 (https://nmap.org) at 2021-08-30 10:41 BST
 Initiating ARP Ping Scan at 10:41
 Scanning 10.10.252.27 [1 port]
 Completed ARP Ping Scan at 10:41, 0.22s elapsed (1 total hosts)

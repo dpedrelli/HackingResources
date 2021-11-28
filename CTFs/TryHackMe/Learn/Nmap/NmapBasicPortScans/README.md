@@ -112,7 +112,7 @@ To illustrate the ```-sT``` ( TCP connect scan), the following command example r
 
 pentester@TryHackMe$ nmap -sT MACHINE_IP
 
-Starting Nmap 7.60 ( https://nmap.org ) at 2021-08-30 09:53 BST
+Starting Nmap 7.60 (https://nmap.org) at 2021-08-30 09:53 BST
 Nmap scan report for MACHINE_IP
 Host is up (0.0024s latency).
 Not shown: 995 closed ports
@@ -161,7 +161,7 @@ TCP SYN scan is the default scan mode when running Nmap as a privileged user, ru
 
 pentester@TryHackMe$ sudo nmap -sS MACHINE_IP
 
-Starting Nmap 7.60 ( https://nmap.org ) at 2021-08-30 09:53 BST
+Starting Nmap 7.60 (https://nmap.org) at 2021-08-30 09:53 BST
 Nmap scan report for MACHINE_IP
 Host is up (0.0073s latency).
 Not shown: 994 closed ports
@@ -210,7 +210,7 @@ Launching a UDP scan against this Linux server proved valuable, and indeed, we l
 
 pentester@TryHackMe$ sudo nmap -sU MACHINE_IP
 
-Starting Nmap 7.60 ( https://nmap.org ) at 2021-08-30 09:54 BST
+Starting Nmap 7.60 (https://nmap.org) at 2021-08-30 09:54 BST
 Nmap scan report for MACHINE_IP
 Host is up (0.00061s latency).
 Not shown: 998 closed ports

@@ -182,7 +182,7 @@ ARP scan is possible only if you are on the same subnet as the target systems. O
            
 pentester@TryHackMe$ sudo nmap -PR -sn 10.10.210.6/24
 
-Starting Nmap 7.60 ( https://nmap.org ) at 2021-09-02 07:12 BST
+Starting Nmap 7.60 (https://nmap.org) at 2021-09-02 07:12 BST
 Nmap scan report for ip-10-10-210-75.eu-west-1.compute.internal (10.10.210.75)
 Host is up (0.00013s latency).
 MAC Address: 02:83:75:3A:F2:89 (Unknown)
@@ -259,7 +259,7 @@ Pentester Terminal
            
 pentester@TryHackMe$ sudo nmap -PE -sn 10.10.68.220/24
 
-Starting Nmap 7.60 ( https://nmap.org ) at 2021-09-02 10:16 BST
+Starting Nmap 7.60 (https://nmap.org) at 2021-09-02 10:16 BST
 Nmap scan report for ip-10-10-68-50.eu-west-1.compute.internal (10.10.68.50)
 Host is up (0.00017s latency).
 MAC Address: 02:95:36:71:5B:87 (Unknown)
@@ -297,7 +297,7 @@ Pentester Terminal
            
 pentester@TryHackMe$ sudo nmap -PE -sn 10.10.68.220/24
 
-Starting Nmap 7.92 ( https://nmap.org ) at 2021-09-02 12:16 EEST
+Starting Nmap 7.92 (https://nmap.org) at 2021-09-02 12:16 EEST
 Nmap scan report for 10.10.68.50
 Host is up (0.12s latency).
 Nmap scan report for 10.10.68.52
@@ -333,7 +333,7 @@ In the following example, we run ```nmap -PP -sn MACHINE_IP/24``` to discover th
            
 pentester@TryHackMe$ sudo nmap -PP -sn 10.10.68.220/24
 
-Starting Nmap 7.92 ( https://nmap.org ) at 2021-09-02 12:06 EEST
+Starting Nmap 7.92 (https://nmap.org) at 2021-09-02 12:06 EEST
 Nmap scan report for 10.10.68.50
 Host is up (0.13s latency).
 Nmap scan report for 10.10.68.52
@@ -369,7 +369,7 @@ In an attempt to discover live hosts using ICMP address mask queries, we run the
            
 pentester@TryHackMe$ sudo nmap -PM -sn 10.10.68.220/24
 
-Starting Nmap 7.92 ( https://nmap.org ) at 2021-09-02 12:13 EEST
+Starting Nmap 7.92 (https://nmap.org) at 2021-09-02 12:13 EEST
 Nmap done: 256 IP addresses (0 hosts up) scanned in 52.17 seconds
 ```
 
@@ -412,7 +412,7 @@ We will run ```nmap -PS -sn MACHINE_IP/24``` to scan the target VM subnet. As we
 
            
 pentester@TryHackMe$ sudo nmap -PS -sn 10.10.68.220/24
-Starting Nmap 7.92 ( https://nmap.org ) at 2021-09-02 13:45 EEST
+Starting Nmap 7.92 (https://nmap.org) at 2021-09-02 13:45 EEST
 Nmap scan report for 10.10.68.52
 Host is up (0.10s latency).
 Nmap scan report for 10.10.68.121
@@ -480,7 +480,7 @@ The syntax to specify the ports is similar to that of TCP SYN ping and TCP ACK p
 
            
 pentester@TryHackMe$ sudo nmap -PU -sn 10.10.68.220/24
-Starting Nmap 7.92 ( https://nmap.org ) at 2021-09-02 13:45 EEST
+Starting Nmap 7.92 (https://nmap.org) at 2021-09-02 13:45 EEST
 Nmap scan report for 10.10.68.52
 Host is up (0.10s latency).
 Nmap scan report for 10.10.68.121
