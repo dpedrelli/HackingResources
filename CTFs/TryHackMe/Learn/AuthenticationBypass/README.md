@@ -27,7 +27,7 @@ user@tryhackme$ ffuf -w /usr/share/wordlists/SecLists/Usernames/Names/names.txt 
 
 In the above example, the ```-w``` argument selects the file's location on the computer that contains the list of usernames that we're going to check exists. The ```-X``` argument specifies the request method, this will be a GET request by default, but it is a POST request in our example. The ```-d``` argument specifies the data that we are going to send. In our example, we have the fields username, email, password and cpassword. We've set the value of the username to FUZZ . In the ffuf tool, the FUZZ keyword signifies where the contents from our wordlist will be inserted in the request. The ```-H``` argument is used for adding additional headers to the request. In this instance, we're setting the ```Content-Type``` to the webserver knows we are sending form data. The ```-u``` argument specifies the URL we are making the request to, and finally, the ```-mr``` argument is the text on the page we are looking for to validate we've found a valid username.
 
-The ffuf tool and wordlist come pre-installed on the AttackBox or can be installed locally by downloading it from https://github.com/ffuf/ffuf .
+The ffuf tool and wordlist come pre-installed on the AttackBox or can be installed locally by downloading it from https://github.com/ffuf/ffuf.
 
 Save the results from this command into a file called valid_usernames.txt which we can use in a later task and then answer the questions below.
 
@@ -100,7 +100,7 @@ Because the above PHP code example uses three equals signs (===), it's looking f
 
 ##### Logic Flaw Practical
 
-We're going to examine the Reset Password function of the Acme IT Support website ( http://10.10.163.208/customers/reset ). We see a form asking for the email address associated with the account on which we wish to perform the password reset. If an invalid email is entered, you'll receive the error message " Account not found from supplied email address ".
+We're going to examine the Reset Password function of the Acme IT Support website (http://10.10.163.208/customers/reset). We see a form asking for the email address associated with the account on which we wish to perform the password reset. If an invalid email is entered, you'll receive the error message " Account not found from supplied email address ".
 
 For demonstration purposes, we'll use the email address robert@acmeitsupport.thm which is accepted. We're then presented with the next stage of the form, which asks for the username associated with this login email address. If we enter robert as the username and press the Check Username button, you'll be presented with a confirmation message that a password reset email will be sent to robert@acmeitsupport.thm.
 
