@@ -113,4 +113,5 @@ What is the second subdomain discovered?
 
 ## Additional Resources
 [Certificate Search](https://crt.sh/)
+
 [Google Certificate Transparency Search](https://transparencyreport.google.com/https/certificates)
