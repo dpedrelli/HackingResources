@@ -4,10 +4,11 @@
     "\\CTFs",
     "\\CTFs\\TryHackMe",
     "\\CTFs\\TryHackMe\\Learn",
-    "\\CTFs\\TryHackMe\\Learn\\SSRFqi",
-    "\\CTFs\\TryHackMe\\Learn\\SSRFqi\\images",
-    "\\CTFs\\TryHackMe\\Learn\\WalkingAnApplication\\images"
+    "\\CTFs\\TryHackMe\\Learn\\BurpSuite\\BurpSuiteExtender",
+    "\\CTFs\\TryHackMe\\Learn\\BurpSuite\\BurpSuiteExtender\\images",
+    "\\CTFs\\TryHackMe\\Learn\\BurpSuite\\BurpSuiteIntruder\\images",
+    "\\CTFs\\TryHackMe\\Learn\\BurpSuite\\BurpSuiteOtherModules\\images",
+    "\\CTFs\\TryHackMe\\Learn\\LinuxPrivEsc(linprivesc)"
   ],
-  "SelectedNode": "\\CTFs\\TryHackMe\\Learn\\SSRFqi\\README.md",
   "PreviewInSolutionExplorer": false
 }
