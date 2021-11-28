@@ -4,11 +4,8 @@
     "\\CTFs",
     "\\CTFs\\TryHackMe",
     "\\CTFs\\TryHackMe\\Learn",
-    "\\CTFs\\TryHackMe\\Learn\\BurpSuite\\BurpSuiteExtender",
-    "\\CTFs\\TryHackMe\\Learn\\BurpSuite\\BurpSuiteExtender\\images",
-    "\\CTFs\\TryHackMe\\Learn\\BurpSuite\\BurpSuiteIntruder\\images",
-    "\\CTFs\\TryHackMe\\Learn\\BurpSuite\\BurpSuiteOtherModules\\images",
-    "\\CTFs\\TryHackMe\\Learn\\LinuxPrivEsc(linprivesc)"
+    "\\CTFs\\TryHackMe\\Learn\\Metasploit"
   ],
+  "SelectedNode": "\\CTFs\\TryHackMe\\Learn\\Metasploit\\MetasploitIntroduction",
   "PreviewInSolutionExplorer": false
 }
