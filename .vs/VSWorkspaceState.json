@@ -3,8 +3,11 @@
     "",
     "\\CTFs",
     "\\CTFs\\TryHackMe",
-    "\\CTFs\\TryHackMe\\PentestingFundamentals"
+    "\\CTFs\\TryHackMe\\Learn",
+    "\\CTFs\\TryHackMe\\Learn\\SSRFqi",
+    "\\CTFs\\TryHackMe\\Learn\\SSRFqi\\images",
+    "\\CTFs\\TryHackMe\\Learn\\WalkingAnApplication\\images"
   ],
-  "SelectedNode": "\\CTFs\\TryHackMe\\PentestingFundamentals\\README.md",
+  "SelectedNode": "\\CTFs\\TryHackMe\\Learn\\SSRFqi\\README.md",
   "PreviewInSolutionExplorer": false
 }
