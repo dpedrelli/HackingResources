@@ -1,4 +1,4 @@
-# Try Hack Me - IDOR
+# Try Hack Me - [IDOR](https://tryhackme.com/jr/idor)
 ##### Learn how to find and exploit IDOR vulnerabilities in a web application giving you access to data that you shouldn't have.
 
 ## Task 1 - What is an IDOR?

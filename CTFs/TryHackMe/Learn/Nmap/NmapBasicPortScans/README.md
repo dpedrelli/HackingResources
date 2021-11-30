@@ -1,4 +1,4 @@
-# Try Hack Me - Nmap Basic Port Scans
+# Try Hack Me - [Nmap Basic Port Scans](https://tryhackme.com/jr/nmap02)
 ##### Learn in-depth how nmap TCP connect scan, TCP SYN port scan, and UDP port scan work.
 
 ## Task 1 - Introduction 

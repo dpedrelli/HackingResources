@@ -1,4 +1,4 @@
-# Try Hack Me - Burp Suite: Other Modules
+# Try Hack Me - [Burp Suite: Other Modules](https://tryhackme.com/jr/burpsuiteom)
 ##### Take a dive into some of Burp Suite's lesser known modules
 
 ## Task 1 - Introduction Outline

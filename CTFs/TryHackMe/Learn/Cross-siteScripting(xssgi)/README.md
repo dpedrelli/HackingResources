@@ -1,4 +1,4 @@
-# Try Hack Me - Cross-site Scripting
+# Try Hack Me - [Cross-site Scripting](https://tryhackme.com/jr/xssgi)
 ##### Learn how to detect and exploit XSS vulnerabilities, giving you control of other visitor's browsers.
 
 ## Task 1 - Room Brief

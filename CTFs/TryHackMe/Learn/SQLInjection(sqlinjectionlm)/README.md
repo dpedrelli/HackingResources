@@ -1,4 +1,4 @@
-# Try Hack Me - SQL Injection
+# Try Hack Me - [SQL Injection](https://tryhackme.com/jr/sqlinjectionlm)
 ##### Learn how to detect and exploit SQL Injection vulnerabilities
 
 ## Task 1 - Brief

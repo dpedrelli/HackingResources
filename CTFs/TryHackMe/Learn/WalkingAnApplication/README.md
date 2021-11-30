@@ -1,4 +1,4 @@
-# Try Hack Me - Walking An Application
+# Try Hack Me - [Walking An Application](https://tryhackme.com/jr/walkinganapplication)
 ##### Manually review a web application for security issues using only your browsers developer tools. Hacking with just your browser, no tools or scripts.
 
 ## Task 1 - Walking An Application

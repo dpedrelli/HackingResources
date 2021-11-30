@@ -1,4 +1,4 @@
-# Try Hack Me - Burp Suite: The Basics
+# Try Hack Me - [Burp Suite: The Basics](https://tryhackme.com/jr/burpsuitebasics)
 ##### An introduction to using Burp Suite for Web Application pentesting
 
 ## Task 1 - Introduction Outline

@@ -1,4 +1,4 @@
-# Try Hack Me - Nmap Advanced Port Scans
+# Try Hack Me - [Nmap Advanced Port Scans](https://tryhackme.com/jr/nmap03)
 ##### Learn advanced techniques such as null, FIN, Xmas, and idle (zombie) scans, spoofing, in addition to FW and IDS evasion.
 
 ## Task 1 - Introduction 

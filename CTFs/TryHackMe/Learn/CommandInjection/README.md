@@ -1,4 +1,4 @@
-# Try Hack Me - Command Injection
+# Try Hack Me - [Command Injection](https://tryhackme.com/jr/oscommandinjection)
 ##### Learn about a vulnerability allowing you to execute commands through a vulnerable app, and its remediations.
 
 ## Task 1 - Introduction (What is Command Injection?)

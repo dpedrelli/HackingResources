@@ -1,4 +1,4 @@
-# Try Hack Me - Net Sec Challenge
+# Try Hack Me - [Net Sec Challenge](https://tryhackme.com/jr/netsecchallenge)
 ##### Practice the skills you have learned in the Network Security module.
 
 ## Task 1 - Introduction 
