@@ -1,4 +1,4 @@
-# Try Hack Me - Linux PrivEsc
+# Try Hack Me - [Linux PrivEsc](https://tryhackme.com/room/linprivesc)
 ##### Learn the fundamentals of Linux privilege escalation. From enumeration to exploitation, get hands-on with over 8 different privilege escalation techniques.
 
 ## Task 1 - Introduction 
