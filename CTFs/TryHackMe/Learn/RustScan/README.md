@@ -1,4 +1,4 @@
-﻿# Try Hack Me - RustScan
+﻿# Try Hack Me - [RustScan](https://tryhackme.com/room/rustscan)
 ##### Learn how to use RustScan.
 
 ## Task 1 - About RustScan. 
