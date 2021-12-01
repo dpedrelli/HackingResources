@@ -356,7 +356,8 @@ Using this tool in scanning can save a lot of time! Make sure to use it in your 
 
 ## Task 8 - RustScan Quiz 
 
-    A short quiz on the more useful switches that we can use with RustScan. All you'll need for this is the help menu for RustScan. Include all parts of the switch unless otherwise specified, this includes - . For example, we would specify the -z switch via rustscan -z
+A short quiz on the more useful switches that we can use with RustScan. All you'll need for this is the help menu for RustScan. Include all parts of the switch unless otherwise specified, this includes ```-```. For example, we would specify the ```-z``` switch via ```rustscan -z```
+
 ```
 First, how do you access the help menu?
 > -h
