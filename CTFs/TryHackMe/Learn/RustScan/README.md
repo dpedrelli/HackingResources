@@ -21,7 +21,7 @@ Deploy the machine!
 
 The installation procedure of RustScan is very easy.
 
-Note: If you use Mac OS , Arch, Docker, Nix OS or any other operating system than Debian more install instructions can be found on the repository.
+Note: If you use Mac OS, Arch, Docker, Nix OS or any other operating system than Debian more install instructions can be found on the repository.
 
 https://github.com/RustScan/RustScan/wiki/Installation-Guide
 ```
@@ -327,6 +327,43 @@ If you want to scan ports in a random order (which will help with not setting of
 ```bash
 ➜ rustscan -a 127.0.0.1 --range 1-1000 --scan-order "Random" 
 53,631
+```
+
+```bash
+rustscan -a 10.10.20.112 --range 1-65535 --scan-order "Random"
+
+PORT   STATE SERVICE REASON
+22/tcp open  ssh     syn-ack
+80/tcp open  http    syn-ack
+
+
+rustscan -a 10.10.20.112 -p 22,80 -- -sC -A
+
+PORT   STATE SERVICE REASON  VERSION
+22/tcp open  ssh     syn-ack OpenSSH 6.6.1p1 Ubuntu 2ubuntu2.10 (Ubuntu Linux; protocol 2.0)
+| ssh-hostkey: 
+|   1024 85:e1:4d:4d:94:f4:24:a8:a4:b8:8e:b8:4d:5e:63:0c (DSA)
+| ssh-dss AAAAB3NzaC1kc3MAAACBAJgy7m8OL2gOHiz0STynawpp5kHN8q9ObtBGwDcqOvYbMghRQVn++V0BJlt8BA1AXY/2Z09n8z+JzEQ6BQveflOsEzLwdUSEfAbPfSw1dH6974tSSn8ReujfnLa0jFAgfZsl6ekH/t7qIVMqfudL0QXZaaBtHzm3tO26AargR2HzAAAAFQDhqADWLbgE1oOZV9PXAHeig3UVGwAAAIAu+OcYsAlF4dH0C3kj5B1dfGqx6/YTNHofqimyfPoGJKTOxh6OqxrlcO5hZUhcEyy3RrLTQRdmNpYUUYiMZc/vY4R1Irz+TjDcke8XuNqaCLKOlYj7eG1iVOZ/qCcllVyZQWfw7UAvcdS7u1PFegZdMytRtuU6KlaY05xmhUj6nAAAAIBd3kCUe98Ad6LF3A794O96y3kHwhb5BNjzOqkd5AGaLLJeyXHSz3vHkQ+h2SK+RcAi3CkKgxQqrqGE/zYAHu0Su3BuIMxX4aj7E8GFhRBFxP4k6OyfHe8YgXSP8viqzNaafNy/szjoLW7ZXXaOXfd2DP5N1Z8+TDzQBBg7H9CvGw==
+|   2048 80:c1:55:64:61:fb:31:6a:7a:b7:5e:86:e4:a7:62:95 (RSA)
+| ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC4/dWtS+kMBAQ2JIaEEvOqGUxiXrOd+/S2Y7CL6gfp1MjlVWMiOS3RvK7sQ5fOXtd2AKfybF1qHFnwMH8PtH8t9ECuYWmCSCQS+gjuQokAeTX0T4kxKFvROFNYzRoEkVaBI8SjsqOaP4xf2biRqTpvB6vEJoD2KBxfAJQwahGRh5Z+sgumyKOD0zpQmtn8YAjUNYNeP+ai4FYanOH/U1VMtbtsPKdSQayiXC4ptzWDQ+ZZPJ0HXJPbbCTDaZs6WdlWy0DLNzc7ucWz2XtaOmv5I5ygmtVek/jA7RZserV9KkvOPT7FFz1FTLkyIfC+/arctT/1sHkhTiJ/oiRPRB77
+|   256 7a:df:3d:f8:86:1d:34:5e:86:88:5c:37:b0:6f:35:02 (ECDSA)
+| ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBIQGibCnvmxmMpu7d+KrzDe2HrOx9W7ySwGPnhcvLDMfZfsZBqC2VnebEjRZp6d5KoGmIcy1tdxnI2br7G5ZDFY=
+|   256 82:f3:d3:b6:c4:c8:f6:30:61:53:43:31:d8:7e:8a:01 (ED25519)
+|_ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPQSGcIoQcZE+0ypCQIy6YCIkuf4rzBkzfptupXHlTeL
+80/tcp open  http    syn-ack Apache httpd 2.4.7 ((Ubuntu))
+| http-cookie-flags: 
+|   /: 
+|     PHPSESSID: 
+|_      httponly flag not set
+|_http-favicon: Unknown favicon MD5: 69C728902A3F1DF75CF9EAC73BD55556
+| http-methods: 
+|_  Supported Methods: GET HEAD POST OPTIONS
+| http-robots.txt: 1 disallowed entry 
+|_/
+|_http-server-header: Apache/2.4.7 (Ubuntu)
+| http-title: Login :: Damn Vulnerable Web Application (DVWA) v1.10 *Develop...
+|_Requested resource was login.php
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
 ```
 
 ```
