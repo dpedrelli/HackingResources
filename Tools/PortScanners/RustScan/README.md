@@ -21,3 +21,8 @@ alias rustscan='sudo docker run -it --rm --name rustscan rustscan/rustscan:<vers
 ```bash
 rustscan -a <IP Address> --range 1-65535 --scan-order "Random"
 ```
+
+##### Scan All Ports and Pass to Nmap with Nmap Arguments
+```bash
+rustscan -a <IP Address> --range 1-65535 --scan-order "Random" -- -sC -A
+```
