@@ -1,4 +1,4 @@
-﻿# Try Hack Me - [File Inclusion](https://tryhackme.com/jr/fileinc)
+﻿# Try Hack Me - [File Inclusion](https://tryhackme.com/room/fileinc)
 ##### This room introduces file inclusion vulnerabilities, including Local File Inclusion (LFI), Remote File Inclusion (RFI), and directory traversal.
 
 ## Task 1 - Introduction

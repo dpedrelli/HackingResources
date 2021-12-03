@@ -1,4 +1,4 @@
-# Try Hack Me - [SSRF](https://tryhackme.com/jr/ssrfqi)
+# Try Hack Me - [SSRF](https://tryhackme.com/room/ssrfqi)
 ##### Learn how to exploit Server-Side Request Forgery (SSRF) vulnerabilities, allowing you to access internal server resources.
 
 ## Task 1 - What is an SSRF?

@@ -1,4 +1,4 @@
-# Try Hack Me - [Content Discovery](https://tryhackme.com/jr/contentdiscovery)
+# Try Hack Me - [Content Discovery](https://tryhackme.com/room/contentdiscovery)
 ##### Learn the various ways of discovering hidden or private content on a webserver that could lead to new vulnerabilities.
 
 ## Task 1 - What Is Content Discovery?

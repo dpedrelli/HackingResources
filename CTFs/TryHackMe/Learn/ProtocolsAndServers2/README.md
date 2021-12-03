@@ -1,4 +1,4 @@
-# Try Hack Me - [Protocols and Servers 2](https://tryhackme.com/jr/protocolsandservers2)
+# Try Hack Me - [Protocols and Servers 2](https://tryhackme.com/room/protocolsandservers2)
 ##### Learn about attacks against passwords and cleartext traffic; explore options for mitigation via SSH and SSL/TLS.
 
 ## Task 1 - Introduction 

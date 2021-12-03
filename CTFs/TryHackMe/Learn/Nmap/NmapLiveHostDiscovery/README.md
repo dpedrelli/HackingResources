@@ -1,4 +1,4 @@
-﻿# Try Hack Me - [Nmap Live Host Discovery](https://tryhackme.com/jr/nmap01)
+﻿# Try Hack Me - [Nmap Live Host Discovery](https://tryhackme.com/room/nmap01)
 ##### Learn how to use Nmap to discover live hosts using ARP scan, ICMP scan, and TCP/UDP ping scan.
 
 ## Task 1 - Introduction 

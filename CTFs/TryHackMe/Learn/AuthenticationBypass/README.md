@@ -1,4 +1,4 @@
-# Try Hack Me - [Authentication Bypass](https://tryhackme.com/jr/authenticationbypass)
+# Try Hack Me - [Authentication Bypass](https://tryhackme.com/room/authenticationbypass)
 ##### Learn how to defeat logins and other authentication mechanisms to allow you access to unpermitted areas.
 
 ## Task 1 - Brief

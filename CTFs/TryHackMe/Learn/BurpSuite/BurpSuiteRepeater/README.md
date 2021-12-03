@@ -1,4 +1,4 @@
-# Try Hack Me - [Burp Suite: Repeater](https://tryhackme.com/jr/burpsuiterepeater)
+# Try Hack Me - [Burp Suite: Repeater](https://tryhackme.com/room/burpsuiterepeater)
 ##### Learn how to use Repeater to duplicate requests in Burp Suite
 
 ## Task 1 - Introduction Outline

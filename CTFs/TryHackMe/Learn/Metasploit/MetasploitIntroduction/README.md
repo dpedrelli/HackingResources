@@ -1,4 +1,4 @@
-# Try Hack Me - [Metasploit: Introduction](https://tryhackme.com/jr/metasploitintro)
+# Try Hack Me - [Metasploit: Introduction](https://tryhackme.com/room/metasploitintro)
 ##### An introduction to the main components of the Metasploit Framework. 
 
 ## Task 1 - Introduction to Metasploit 

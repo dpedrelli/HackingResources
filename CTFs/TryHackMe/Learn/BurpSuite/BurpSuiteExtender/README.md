@@ -1,4 +1,4 @@
-# Try Hack Me - [Burp Suite: Extender](https://tryhackme.com/jr/burpsuiteextender)
+# Try Hack Me - [Burp Suite: Extender](https://tryhackme.com/room/burpsuiteextender)
 ##### Learn how to use Extender to broaden the functionality of Burp Suite
 
 ## Task 1 - Introduction Outline

@@ -1,4 +1,4 @@
-# Try Hack Me - [Passive Reconnaissance](https://tryhackme.com/jr/passiverecon)
+# Try Hack Me - [Passive Reconnaissance](https://tryhackme.com/room/passiverecon)
 ##### Learn about the essential tools for passive reconnaissance, such as whois, nslookup, and dig.
 
 ## Task 1 - Introduction 

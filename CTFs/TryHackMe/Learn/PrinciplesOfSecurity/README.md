@@ -1,4 +1,4 @@
-# Try Hack Me - [Principles of Security](https://tryhackme.com/jr/principlesofsecurity)
+# Try Hack Me - [Principles of Security](https://tryhackme.com/room/principlesofsecurity)
 ##### Learn the principles of information security that secures data and protects systems from abuse
 
 ## Task 1 - Introduction

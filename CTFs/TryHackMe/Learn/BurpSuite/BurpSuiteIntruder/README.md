@@ -1,4 +1,4 @@
-# Try Hack Me - [Burp Suite: Intruder](https://tryhackme.com/jr/burpsuiteintruder)
+# Try Hack Me - [Burp Suite: Intruder](https://tryhackme.com/room/burpsuiteintruder)
 ##### Learn how to use Intruder to automate requests in Burp Suite
 
 ## Task 1 - Introduction Room Outline 
