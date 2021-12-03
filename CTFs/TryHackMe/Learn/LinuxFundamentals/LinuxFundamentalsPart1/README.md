@@ -1,6 +1,8 @@
-# Try Hack Me - Linux Fundamentals Part 1
+# Try Hack Me - [Linux Fundamentals Part 1](https://tryhackme.com/room/linuxfundamentalspart1)
 ##### Embark on the journey of learning 
 the fundamentals of Linux.  Learn to run some of the first essential commands on an interactive terminal.
+
+![](https://www.youtube.com/watch?v=kPylihJRG70)
 
 ## Task 1 - Introduction 
 
