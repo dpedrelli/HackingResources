@@ -43,7 +43,7 @@ fierce -dns domain.com -wordlist /usr/share/wordlists/SecLists/Discovery/DNS/fie
 ```bash
 host domain.com
 ```
-##### Nmap
+##### [Nmap](../PortScanners/Nmap/README.md)
 ```bash
 # Bruteforce DNS
 nmap -p 53 dns-brute domain.com
