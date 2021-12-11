@@ -15,6 +15,7 @@ sudo docker run -it --rm --name rustscan rustscan/rustscan:<version> <rustscan a
 ##### Set Alias
 ```bash
 alias rustscan='sudo docker run -it --rm --name rustscan rustscan/rustscan:<version>'
+alias rustscan='sudo docker run -it --rm --name rustscan rustscan/rustscan:2.0.1'
 ```
 
 ##### Scan All Ports
