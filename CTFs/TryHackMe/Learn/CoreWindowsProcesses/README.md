@@ -15,9 +15,9 @@ But guess what? Even with these new tools, it is still not 100% effective.  Atta
 
 If you want to access the virtual machine via [Remote Desktop](https://www.cyberark.com/resources/threat-research-blog/explain-like-i-m-5-remote-desktop-protocol-rdp), use the credentials below.
 
-Machine IP : MACHINE_IP
-User : administrator
-Password : letmein123!
+* **Machine IP**: MACHINE_IP
+* **User**: administrator
+* **Password**: letmein123!
 
 Accept the Certificate when prompted, and you should be logged into the remote system now.
 
