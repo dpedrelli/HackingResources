@@ -5,6 +5,11 @@
 nmap -p 53 dns-brute domain.com
 ```
 
+##### Do Not Perform Port Scan
+```bash
+nmap -sn
+```
+
 ##### TCP / Three-Way Handshake Scan (Default)
 ```bash
 nmap -sT
@@ -68,7 +73,27 @@ nmap -sS --mtu <Size in bytes 8, 16, 24, 32...> --send-eth
 ```bash
 # Check zombie prospect for incremental IP ID
 nmap -O -v -n <Zombie IP>
+# Use NSE to check for candidate
+nmap --script ipidseq <Zombie IP> -p 135
+
 nmap -Pn -v -sI <Zombie IP>:<Port> <Target IP> -p<ports>
+```
+
+### NSE
+##### Find Scripts
+```bash
+# Find all scripts that start with SMB and are in the category discovery.
+nmap --script-help "smb*" and discovery
+```
+
+##### Update NSE Scripts
+```bash
+nmap --script-updatedb
+```
+
+##### Execute All Scripts In Category
+```bash
+nmap --script auth <Target IP>
 ```
 
 ##### [Reference Guide](https://nmap.org/book/man.html)
