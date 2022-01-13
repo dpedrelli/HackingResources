@@ -79,6 +79,62 @@ nmap --script ipidseq <Zombie IP> -p 135
 nmap -Pn -v -sI <Zombie IP>:<Port> <Target IP> -p<ports>
 ```
 
+##### Specify Source Port
+```bash
+nmap --source-port 53
+nmap -g 53
+```
+
+##### Disable ARP Ping
+```bash
+nmap --disable-arp-ping
+```
+
+##### Fragment Packet
+```bash
+# Default packet is 24 bytes
+
+# 8 bytes
+nmap -f
+
+# 16 bytes
+nmap -f -f
+```
+
+##### Use Decoys
+```bash
+nmap -D <IP 1>,<IP 2>,ME,<IP 3>...
+
+# Random Decoys
+nmap -D RND:10
+```
+
+##### Specify Size of Datagram (Help to Avoid Port Scan Detection)
+```bash
+nmap --data-length <size>
+
+# Add an extra 10 bytes
+nmap --data-length 10
+```
+
+##### Spoof MAC
+```bash
+# Specify Vendor
+nmap --spoof-mac apple
+
+# Random MAC
+nmap --spoof-mac 0
+
+# Specify MAC
+nmap --spoof-mac <MAC Address>
+```
+
+##### Randomize Host
+```bash
+# hosts.txt contains list of IP addresses.
+nmap -iL hosts.txt --randomize-hosts
+```
+
 ### NSE
 ##### Find Scripts
 ```bash
