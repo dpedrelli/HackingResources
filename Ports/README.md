@@ -17,6 +17,7 @@
 |    445 | TCP, UDP       | [NetBIOS / SMB (Samba)](../Services/NetBIOS_SMB_Samba/README.md) |
 |   1723 | TCP, UDP       | PPTP |
 |   2049 | TCP, UDP, SCTP | [NFS](../Services/NFS/README.md) |
+|   3306 | TCP, UDP       | [MySQL](../Services/MySQL/README.md) |
 |   3389 | TCP, UDP       | [RDP](../Services/RDP/README.md) |
 |  32771 | TCP, UDP       | [rpcbind / Portmapper](../Services/rpcbind_PortMapper/README.md) |
 
