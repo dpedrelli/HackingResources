@@ -15,6 +15,7 @@
 |    143 | TCP, UDP       | IMAP |
 |    443 | TCP, UDP, SCTP | [HTTPS](../Services/HTTP_HTTPS/README.md) |
 |    445 | TCP, UDP       | [NetBIOS / SMB (Samba)](../Services/NetBIOS_SMB_Samba/README.md) |
+|   1433 | TCP            | [MS SQL Server](../Services/MSSQL/README.md) |
 |   1723 | TCP, UDP       | PPTP |
 |   2049 | TCP, UDP, SCTP | [NFS](../Services/NFS/README.md) |
 |   3306 | TCP, UDP       | [MySQL](../Services/MySQL/README.md) |
