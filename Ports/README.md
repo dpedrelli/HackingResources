@@ -15,6 +15,7 @@
 |    [143](https://www.speedguide.net/port.php?port=143) | TCP, UDP       | IMAP |
 |    [443](https://www.speedguide.net/port.php?port=443) | TCP, UDP, SCTP | [HTTPS](../Services/HTTP_HTTPS/README.md) |
 |    [445](https://www.speedguide.net/port.php?port=445) | TCP, UDP       | [NetBIOS / SMB (Samba)](../Services/NetBIOS_SMB_Samba/README.md) |
+|   [1099](https://www.speedguide.net/port.php?port=1099) | TCP, UDP       | [JAVA RMI Registry](../Services/JAVA_RMI_Registry/README.md) |
 |   [1433](https://www.speedguide.net/port.php?port=1433) | TCP            | [MS SQL Server](../Services/MSSQL/README.md) |
 |   [1723](https://www.speedguide.net/port.php?port=1723) | TCP, UDP       | PPTP |
 |   [2049](https://www.speedguide.net/port.php?port=2049) | TCP, UDP, SCTP | [NFS](../Services/NFS/README.md) |
