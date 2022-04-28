@@ -22,6 +22,7 @@
 |   [3306](https://www.speedguide.net/port.php?port=3306) | TCP, UDP       | [MySQL](../Services/MySQL/README.md) |
 |   [3389](https://www.speedguide.net/port.php?port=3389) | TCP, UDP       | [RDP](../Services/RDP/README.md) |
 |   [8180](https://www.speedguide.net/port.php?port=8180) | TCP            | [Apache Tomcat](../Services/Apache_Tomcat/README.md) |
+|   [8787](https://www.speedguide.net/port.php?port=8787) | TCP, UDP       | [Ruby DRb RMI](../Services/Ruby_DRb_RMI/README.md) |
 |  [32771](https://www.speedguide.net/port.php?port=32771) | TCP, UDP       | [rpcbind / Portmapper](../Services/rpcbind_PortMapper/README.md) |
 
 [SpeedGuide.net](https://www.speedguide.net/port.php)
