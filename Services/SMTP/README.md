@@ -34,3 +34,10 @@ help
 
 ##### With smtp-user-enum (users)
 [Examples](https://pentestmonkey.net/tools/user-enumeration/smtp-user-enum)
+
+# References
+[VRFY and EXPN verbs](https://cr.yp.to/smtp/vrfy.html)
+
+[MAIL, RCPT, and DATA verbs](https://cr.yp.to/smtp/mail.html)
+
+[smtp-user-enum](https://pentestmonkey.net/tools/user-enumeration/smtp-user-enum)
