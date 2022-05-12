@@ -44,3 +44,29 @@ smbclient \\\\<IP Address>\\<Share Name>
 mkdir -p /mnt/<Share Name>
 mount -t cifs \\\\<IP Address>\\<Share Name> /mnt/<Share Name>
 ```
+
+# Linux with Windows Active Directory Trust
+##### Pass-The-Hash
+```bash
+# Assuming root access on Linux
+tdbdump /var/lib/samba/private/secrets.tdb
+
+# Assuming target hash trust with Active Directory, decode UTF-8 encoded "data" to get NTLM hashes
+
+# Use pth-smbclient, from pth-toolkit, to pass-the-hash.
+```
+
+# References
+[pth-toolkit](https://github.com/byt3bl33d3r/pth-toolkit)
+
+[passing-the-hash](https://code.google.com/archive/p/passing-the-hash/)
+
+[Samba](https://en.wikipedia.org/wiki/Samba_(software))
+
+[Server Message Block (SMB) / CIFS](https://en.wikipedia.org/wiki/Server_Message_Block)
+
+[statistically-likely-usernames](https://github.com/insidetrust/statistically-likely-usernames)
+
+[enum4linux](https://github.com/CiscoCXSecurity/enum4linux)
+
+[smbmap](https://github.com/ShawnDEvans/smbmap)
