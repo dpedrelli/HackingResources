@@ -26,8 +26,10 @@ arp -en
 
 ##### Connections
 ```bash
+# Active TCP/UDP connections and listening TCP/UDP ports.
 netstat -auntp
 
+# Active connections, processes, users, and bytes.
 ss -twurp
 ```
 
