@@ -1,5 +1,5 @@
 # Enumerate
-##### With nmap
+##### With nmap scripts
 ```bash
 nmap --script nfs-showmount, nfs-ls, nfs-statfs <IP Address>
 ```
@@ -19,3 +19,14 @@ mount -t nfs <NFS IP Address>:/<Share Name> /mnt/<Share Name> -o nolock
 ```bash
 mount
 ```
+
+# View Configured Exports
+```bash
+/etc/exports
+```
+
+# References
+[Network File System (NFS)](https://en.wikipedia.org/wiki/Network_File_System)
+
+[Sun RPC](https://en.wikipedia.org/wiki/Sun_RPC)
+
