@@ -1,4 +1,4 @@
-# Local Enumeration
+# System Information
 ##### Hostname
 ```bash
 hostname
@@ -259,7 +259,7 @@ chmod +x linpeas_linux_amd64
 ./linpeas_linux_amd64
 ```
 
-# References
+### References
 [LinEnum](https://github.com/rebootuser/LinEnum)
 
 [LinuxPrivChecker](https://github.com/sleventyeleven/linuxprivchecker)
@@ -275,3 +275,50 @@ chmod +x linpeas_linux_amd64
 [Unix-PrivEsc](https://github.com/FuzzySecurity/Unix-PrivEsc)
 
 [PEASS (LinPEAS / WinPEAS)](https://github.com/carlospolop/PEASS-ng)
+
+# Network Information
+##### List all interfaces
+```bash
+ifconfig -a
+```
+
+##### List network routes
+```bash
+route -n
+```
+
+##### Number of hops
+```bash
+tracert -n <IP Address>
+```
+
+##### DNS Information
+```bash
+cat /etc/resolv.conf
+```
+
+##### ARP Cache
+```bash
+arp -en
+```
+
+##### Connections
+```bash
+# Active TCP/UDP connections and listening TCP/UDP ports.
+netstat -auntp
+
+# Active connections, processes, users, and bytes.
+ss -twurp
+```
+
+##### Check for Open, Outgoing Ports
+```bash
+nmap -sT -p<ports> portquiz.net
+# Avoid IDS and rate limiting on Portquiz.net
+nmap -sT -p<ports> -T<lownumber> portquiz.net
+```
+
+### References
+[netstat without netstat](https://staaldraad.github.io/2017/12/20/netstat-without-netstat/)
+
+[portquiz.net](http://portquiz.net/)
