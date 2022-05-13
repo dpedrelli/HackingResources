@@ -154,12 +154,16 @@ find / -perm -2000 -type f 2>/dev/null
 ```
 
 ### Cron Jobs
-##### Cron Jobs
+##### List Cron Jobs
 ```bash
-# List all
-cat /etc/crontab && ls -als /etc/cron*
-
-# World-writeable
+cat /etc/crontab
+```
+##### List Cron Jobs
+```bash
+ls -als /etc/cron*
+```
+##### World-writeable Cron Jobs
+```bash
 find /etc/cron* -type f -perm -o+w -exec ls -l {} \;
 ```
 
