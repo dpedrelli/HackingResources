@@ -216,6 +216,17 @@ find /* -name *.*history* -print 2>/dev/null
 cat /var/log/apache/access.log | grep -E "^user|^pass"
 ```
 
+### Restricted Shells
+##### Test for Restricted Shell with Redirect
+```bash
+id > id.txt
+```
+##### Check Environment Variables for Restricted Shell
+```bash
+echo $PATH
+echo $SHELL
+```
+
 ### 3rd Party Tools
 ##### LinEnum
 ```bash
@@ -307,6 +318,8 @@ chmod +x linpeas_linux_amd64
 [Sudo](https://en.wikipedia.org/wiki/Sudo)
 
 [dockerevil](https://github.com/pyperanger/dockerevil)
+
+[chroot (Restricted Shell)](https://en.wikipedia.org/wiki/Chroot)
 
 # Network Information
 ##### List all interfaces
