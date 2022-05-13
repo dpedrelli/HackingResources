@@ -70,3 +70,14 @@ tdbdump /var/lib/samba/private/secrets.tdb
 [enum4linux](https://github.com/CiscoCXSecurity/enum4linux)
 
 [smbmap](https://github.com/ShawnDEvans/smbmap)
+
+[smb-os-discovery](https://nmap.org/nsedoc/scripts/smb-os-discovery.html)
+
+# CVEs
+[CVE-2017-7494](https://cve.circl.lu/cve/CVE-2017-7494)
+
+[username map script](https://www.rapid7.com/db/modules/exploit/multi/samba/usermap_script/)
+[CVE-2007-2447: Remote Command Injection Vulnerability](https://www.samba.org/samba/security/CVE-2007-2447.html)
+
+[Symlink Directory Traversal](https://www.samba.org/samba/news/symlink_attack.html)
+[Symlink Directory Traversal](https://www.rapid7.com/db/modules/auxiliary/admin/smb/samba_symlink_traversal/)
