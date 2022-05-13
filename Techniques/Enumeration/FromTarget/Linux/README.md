@@ -228,11 +228,11 @@ echo $SHELL
 ```
 
 ### 3rd Party Tools
-##### LinEnum
+##### [LinEnum](https://github.com/rebootuser/LinEnum)
 ```bash
 ./LinEnum.sh -s -r report -e /tmp/ -t
 ```
-##### LinuxPrivChecker
+##### [LinuxPrivChecker](https://github.com/sleventyeleven/linuxprivchecker)
 ```bash
 # Running on Legacy Python 2.6/2.7 System
 wget https://raw.githubusercontent.com/sleventyeleven/linuxprivchecker/master/linuxprivchecker.py
@@ -245,13 +245,13 @@ linuxprivchecker -w -o linuxprivchecker.log
 python3 -m linuxprivchecker -w -o linuxprivchecker.log
 ```
 
-##### Unix-privesc-check
+##### [Unix-Privesc-Check](https://pentestmonkey.net/tools/unix-privesc-check)
 ```bash
 wget "https://pentestmonkey.net/tools/unix-privesc-check/unix-privesc-check-1.4.tar.gz"
 ./unix-privesc-check > output.txt
 ```
 
-##### mimipenguin
+##### [MimiPenguin](https://github.com/huntergregal/mimipenguin)
 ```bash
 git clone https://github.com/huntergregal/mimipenguin.git
 cd mimipenguin
@@ -259,12 +259,12 @@ chmod +x mimipenguin.sh
 ./mimipenguin.sh
 ```
 
-##### UNIX-PrivEsc
+##### [UNIX-PrivEsc](https://github.com/FuzzySecurity/Unix-PrivEsc)
 ```bash
 https://github.com/FuzzySecurity/Unix-PrivEsc
 ```
 
-##### LinPEAS
+##### [LinPEAS](https://github.com/carlospolop/PEASS-ng)
 ```bash
 # From github
 curl -L https://github.com/carlospolop/PEASS-ng/releases/latest/download/linpeas.sh | sh
@@ -291,6 +291,11 @@ chmod +x linpeas_linux_amd64
 ./linpeas_linux_amd64
 ```
 
+##### [Linux Exploit Suggester](https://github.com/InteliSecureLabs/Linux_Exploit_Suggester)
+```bash
+perl Linux_Exploit_Suggester.pl -k <Kernel Version>
+```
+
 ### References
 [LinEnum](https://github.com/rebootuser/LinEnum)
 
@@ -308,7 +313,10 @@ chmod +x linpeas_linux_amd64
 
 [PEASS (LinPEAS / WinPEAS)](https://github.com/carlospolop/PEASS-ng)
 
+[Linux Exploit Suggester](https://github.com/InteliSecureLabs/Linux_Exploit_Suggester)
+
 [SUID](https://en.wikipedia.org/wiki/Setuid)
+
 [EUID](https://en.wikipedia.org/wiki/User_identifier#Effective_user_ID)
 
 [A description of RPATH $ORIGIN LD_LIBRARY_PATH and portable linux binaries](https://enchildfone.wordpress.com/2010/03/23/a-description-of-rpath-origin-ld_library_path-and-portable-linux-binaries/)
