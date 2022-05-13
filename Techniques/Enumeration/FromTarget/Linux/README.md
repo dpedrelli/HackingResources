@@ -1,4 +1,8 @@
 # System Information
+
+##### Metasploit's enum_configs
+##### Metasploit's enum_system
+
 ##### Hostname
 ```bash
 hostname
@@ -126,7 +130,7 @@ service <service name> start/stop
 ```
 
 ### SUDO
-##### Check sudo abilities
+##### Check Sudo Permissions
 ```bash
 # All
 sudo -l
@@ -136,20 +140,46 @@ sudo -l | grep vim
 sudo -l | grep nmap
 sudo -l | grep vi
 ```
-
-##### Check sudoers readability
+##### Check Sudoers Readability
 ```bash
 cat /etc/sudoers
 ```
+##### Common Sudo Binaries to Establish root Shells
+```bash
+less (!sh)
+more (!sh)
+VIM/VIM (:!sh)
+nmap (--interactive + !sh)
+ftp (!sh)
+gdb (!sh)
+python
+Perl
+lrb
+lua
+```
+##### Common Sudo Binaries to Execute Commands
+```bash
+man -P "id" man
+man -P "cat /etc/shadow" man
+```
+##### Docker
+[dockerevil](https://github.com/pyperanger/dockerevil)
 
 ### SUID / GUID
-##### SUID / GUID
+##### Check if Binary is SUID/GUID
 ```bash
-# Find SUID files
+ls -als <Binary Name>
+```
+##### Find SUID Binaries
+```bash
 find / -perm -4000 -type f 2>/dev/null
-# Find SUID files owned by root
+```
+##### Find SUID Binaries Owned by root
+```bash
 find / -uid 0 -perm -4000 -type f 2>/dev/null
-# Find GUID files
+```
+##### Find GUID Binaries
+```bash
 find / -perm -2000 -type f 2>/dev/null
 ```
 
@@ -184,20 +214,27 @@ ps -u $USER
 ps aux | awk '{print $11}' | xargs -r ls -la 2>/dev/null | awk '!x[$0]++'
 ```
 
-### Configuration Files
-##### Config files in /etc
+### Configuration & Clear Text Files
+##### Find all Config files in /etc
 ```bash
-# Find all
 ls -al /etc/*.conf
-
-# Find all that contain the string "pass"
-grep pass* /etc/*.conf
+```
+##### Recursively, find all that contain the string "pass"
+```bash
+grep -r pass* /etc/*.conf 2>/dev/null
 ```
 ##### Check access to configuration files
 ```bash
 find /etc/init.d/ ! -uid 0 -type f 2>/dev/null | xargs ls -la
 ```
-
+##### Find dotfiles with history in name
+```bash
+find /* -name *.*history* -print 2>/dev/null
+```
+##### Check Apache log for user and pass
+```bash
+cat /var/log/apache/access.log | grep -E "^user|^pass"
+```
 
 ### 3rd Party Tools
 ##### LinEnum
@@ -280,6 +317,17 @@ chmod +x linpeas_linux_amd64
 
 [PEASS (LinPEAS / WinPEAS)](https://github.com/carlospolop/PEASS-ng)
 
+[SUID](https://en.wikipedia.org/wiki/Setuid)
+[EUID](https://en.wikipedia.org/wiki/User_identifier#Effective_user_ID)
+
+[A description of RPATH $ORIGIN LD_LIBRARY_PATH and portable linux binaries](https://enchildfone.wordpress.com/2010/03/23/a-description-of-rpath-origin-ld_library_path-and-portable-linux-binaries/)
+
+[The GNU C library dynamic linker expands $ORIGIN in setuid library search path](https://seclists.org/fulldisclosure/2010/Oct/257)
+
+[Sudo](https://en.wikipedia.org/wiki/Sudo)
+
+[dockerevil](https://github.com/pyperanger/dockerevil)
+
 # Network Information
 ##### List all interfaces
 ```bash
@@ -322,7 +370,15 @@ nmap -sT -p<ports> portquiz.net
 nmap -sT -p<ports> -T<lownumber> portquiz.net
 ```
 
+### Configuration & Clear Text Files
+##### Dump clear text, pre-shared, wireless keys, from Network Manager
+```bash
+cat /etc/NetworkManager/system-connections/* | grep -E "^id|^psk"
+```
+
 ### References
 [netstat without netstat](https://staaldraad.github.io/2017/12/20/netstat-without-netstat/)
 
 [portquiz.net](http://portquiz.net/)
+
+[Command execution with a MySQL UDF](https://bernardodamele.blogspot.com/2009/01/command-execution-with-mysql-udf.html)
