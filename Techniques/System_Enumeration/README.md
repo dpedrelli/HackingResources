@@ -1,17 +1,37 @@
 # Local Enumeration
+##### Hostname
+```bash
+hostname
+```
+
 ##### Current User
 ```bash
+# ID
 id
+
+# /etc/passwd Information
+grep $USER /etc/passwd
+
+# $PATH variable
+echo $PATH
+
+# Permissions
+find / -user $USER
+```
+
+##### Check User Permissions
+```bash
+find / -user <username>
+```
+
+##### Check for access to WWW pages
+```bash
+touch /var/www/file
 ```
 
 ##### Kernel Version
 ```bash
 uname -a
-```
-
-##### Current User Information
-```bash
-grep $USER /etc/passwd
 ```
 
 ##### Most Recent Logins
@@ -27,6 +47,7 @@ w
 ##### Last Logged-on Users
 ```bash
 last
+last -a
 ```
 
 ##### All Users with UID & GID Information
@@ -72,6 +93,7 @@ cat /root/.bash_history
 
 # For all other users
 find /home/* -name *.*history* -print 2>/dev/null
+find /* -name *.*history* -print 2>/dev/null
 ```
 
 ##### Operating System
@@ -85,9 +107,9 @@ cat /etc/*-release
 ls -als /root/
 ```
 
-##### Check current $PATH variable
+##### Check access to other users' home directoroes
 ```bash
-echo $PATH
+ls -als /home/*
 ```
 
 ##### Cron Jobs
@@ -102,7 +124,7 @@ find /etc/cron* -type f -perm -o+w -exec ls -l {} \;
 ##### Processes
 ```bash
 # All running
-ps auxwww
+ps auxw
 
 # Running as root
 ps -u root
@@ -157,6 +179,16 @@ sendmail -d0.1
 ##### List process binaries/paths & permissions
 ```bash
 ps aux | awk '{print $11}' | xargs -r ls -la 2>/dev/null | awk '!x[$0]++'
+```
+
+##### Check access to configuration files
+```bash
+find /etc/init.d/ ! -uid 0 -type f 2>/dev/null | xargs ls -la
+```
+
+##### Start/Stop Service
+```bash
+service <service name> start/stop
 ```
 
 # 3rd Party Tools
