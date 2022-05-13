@@ -1,23 +1,13 @@
 # Steps
 
 ### Information Gathering
-##### Search Engines
-###### [Google](https://www.google.com)
-###### [Yandex](https://yandex.com/)
-##### Social Media
-###### [LinkedIn](https://www.linkedin.com)
+###### [Passive](../Tools/PassiveRecon/README.md)
+###### [Active](../Tools/ActiveRecon/README.md)
 
-### Scanning
-##### Wireshark
-##### Nmap
-##### Ping
-##### Hping
-
-### Enumeration
 ### Exploitation
 
-### Post Exploitation
-##### Privilege Escalation
+### [Post Exploitation](PostExploitation/README.md)
+##### [Linux](PostExploitation/Linux/README.md)
 ##### Enumeration
 ###### [Linux](Enumeration./FromTarget/Linux/README.md)
 ###### [Windows](Enumeration./FromTarget/Windows/README.md)

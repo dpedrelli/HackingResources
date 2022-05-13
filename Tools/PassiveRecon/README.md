@@ -1,8 +1,13 @@
 # Search Engine
+##### [Bing](https://www.bing.com)
+##### [Freespoke](https://freespoke.com/)
 ##### [Google](https://www.google.com/)
 ##### [Shodan.io](https://www.shodan.io/)
+###### [Yandex](https://yandex.com/)
 
 # Social Networks
+##### [Facebook](https://www.facebook.com)
+##### [LinkedIn](https://www.linkedin.com)
 ##### [theHarvester](https://pypi.org/project/theHarvester/)
 theHarvester is used to gather open source intelligence (OSINT) on a company or domain.
 It supports Google Dorks and Shodan.
@@ -43,7 +48,7 @@ fierce -dns domain.com -wordlist /usr/share/wordlists/SecLists/Discovery/DNS/fie
 ```bash
 host domain.com
 ```
-##### [Nmap](../PortScanners/Nmap/README.md)
+##### [Nmap](../IPandPortScanners/Nmap/README.md)
 ```bash
 # Bruteforce DNS
 nmap -p 53 dns-brute domain.com
