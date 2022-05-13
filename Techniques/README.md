@@ -20,4 +20,5 @@
 ##### Privilege Escalation
 ##### Enumeration
 ###### [Linux](Enumeration./FromTarget/Linux/README.md)
+###### [Windows](Enumeration./FromTarget/Windows/README.md)
 ##### Lateral Movement
