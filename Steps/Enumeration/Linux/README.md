@@ -153,6 +153,14 @@ ls -als <Binary Name>
 ##### Find SUID Binaries
 ```bash
 find / -perm -4000 -type f 2>/dev/null
+find / -perm -u=s -type f 2>/dev/null
+
+# find - Initiates the "find" command
+# / - Searches the whole file system
+# -perm - searches for files with specific permissions
+# -u=s - Any of the permission bits mode are set for the file. Symbolic modes are accepted in this form
+# -type f - Only search for files
+# 2>/dev/null - Suppresses errors 
 ```
 ##### Find SUID Binaries Owned by root
 ```bash
@@ -162,6 +170,12 @@ find / -uid 0 -perm -4000 -type f 2>/dev/null
 ```bash
 find / -perm -2000 -type f 2>/dev/null
 ```
+##### Find SUID & SGID Binaries
+```bash
+find / -type f -a \( -perm -u+s -o -perm -g+s \) -exec ls -l {} \; 2> /dev/null
+```
+#### SUID/GUID References
+[How to Find Files With setuid Permissions](https://docs.oracle.com/cd/E19683-01/816-4883/6mb2joatb/index.html)
 
 ### Cron Jobs
 ##### List Cron Jobs

