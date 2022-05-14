@@ -296,6 +296,8 @@ chmod +x linpeas_linux_amd64
 perl Linux_Exploit_Suggester.pl -k <Kernel Version>
 ```
 
+##### [linux-smart-enumeration](https://github.com/diego-treitos/linux-smart-enumeration)
+
 ### References
 [LinEnum](https://github.com/rebootuser/LinEnum)
 

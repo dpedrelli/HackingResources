@@ -182,3 +182,5 @@ cat /docker/output.txt
 [Linux Exploit Suggester](https://github.com/InteliSecureLabs/Linux_Exploit_Suggester)
 
 [Basic Linux Privilege Escalation](https://blog.g0tmi1k.com/2011/08/basic-linux-privilege-escalation/)
+
+[linux-smart-enumeration](https://github.com/diego-treitos/linux-smart-enumeration)
