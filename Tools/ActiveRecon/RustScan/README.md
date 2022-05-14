@@ -32,3 +32,8 @@ rustscan -a <IP Address> --range 1-65535 --scan-order "Random" -b 200 -t 2000
 ```bash
 rustscan -a <IP Address> --range 1-65535 --scan-order "Random" -- -sC -A
 ```
+
+##### Specify Batch Size
+```bash
+rustscan -b 500 <IP Address> # -b is batch size
+```
