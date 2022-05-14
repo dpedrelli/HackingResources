@@ -28,13 +28,7 @@ cat /proc/swaps
 strings /dev/sda5 | grep "password="
 strings /dev/sda5 | grep "&password="
 ```
-##### Using [Swap Digger](https://github.com/sevagas/swap_digger)
-```bash
-git clone https://github.com/sevagas/swap_digger.git
-cd swap_digger
-chmod +x swap_digger.sh
-sudo ./swap_digger.sh -vx
-```
+##### [Using Swap Digger](../../Tools/Credentials/SwapDigger/README.md#Find-Passwords-in-Swap-File)
 
 # References
 [statistically-likely-usernames](https://github.com/insidetrust/statistically-likely-usernames)
@@ -57,4 +51,3 @@ sudo ./swap_digger.sh -vx
 
 [MimiPenguin](https://github.com/huntergregal/mimipenguin)
 
-[Swap Digger](https://github.com/sevagas/swap_digger)
