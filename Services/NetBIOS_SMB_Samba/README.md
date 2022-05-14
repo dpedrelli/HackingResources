@@ -12,10 +12,7 @@
 
 # Interact / Mount
 
-##### With smbclient
-```bash
-smbclient \\\\<IP Address>\\<Share Name>
-```
+##### [Mount with smbclient](../../Tools/NetBIOS_SMB_Samba/smbclient/README.md#Connect-To-Share)
 
 ##### [Mount with cifs](../../Tools/NetBIOS_SMB_Samba/cifs/README.md#Mount-SMB-Share)
 
