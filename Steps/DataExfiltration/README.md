@@ -20,4 +20,4 @@ tar xf datafolder.tar
 [I/O Redirection](http://www.tldp.org/LDP/abs/html/io-redirection.html)
 
 # Exfiltrate over SSH
-[SSH](../../Services/SSH/README.md#DataExfiltration)
+[SSH](../../Services/SSH/README.md#Data-Exfiltration)
