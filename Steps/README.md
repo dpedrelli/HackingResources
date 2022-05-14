@@ -11,7 +11,7 @@
     * ##### Local Box
       * ##### [Linux](Enumeration/Linux/README.md)
       * ##### [Windows](Enumeration/Windows/README.md)
-    * ##### Network
+    * ##### [Network](../Tools/ActiveRecon/README.md)
   * ### Privilege Escalation
       * ##### [Linux](PrivEsc/Linux/README.md)
       * ##### [Windows](PrivEsc/Windows/README.md)
@@ -19,5 +19,4 @@
   * ### [Data Exfiltration](DataExfiltration/README.md)
   * ### [Maintain Access](MaintainAccess/README.md)
   * ### Third-Party Guides
-      * ##### Linux
       * ##### [Linux](PostExploitation/Linux/README.md)
