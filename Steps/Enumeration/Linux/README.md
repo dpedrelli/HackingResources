@@ -298,10 +298,9 @@ perl Linux_Exploit_Suggester.pl -k <Kernel Version>
 
 ##### [linux-smart-enumeration](https://github.com/diego-treitos/linux-smart-enumeration)
 
-### Cheatsheets
+### System Information References
 [Local Linux Enumeration & Privilege Escalation Cheatsheet](https://web.archive.org/web/20200218150604/https:/www.rebootuser.com/?p=1623)
 
-### System Information References
 [LinEnum](https://github.com/rebootuser/LinEnum)
 
 [LinuxPrivChecker](https://github.com/sleventyeleven/linuxprivchecker)

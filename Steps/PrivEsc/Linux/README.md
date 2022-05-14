@@ -172,8 +172,7 @@ cat /docker/output.txt
 
 [Docker Tips: about /var/run/docker.sock](https://betterprogramming.pub/about-var-run-docker-sock-3bfd276e12fd)
 
-# Cheatsheets
+# References
 [0xsp Cheatsheet](https://0xsp.com/offensive/privilege-escalation-cheatsheet/)
 
-# References
 [Basic Linux Privilege Escalation](https://blog.g0tmi1k.com/2011/08/basic-linux-privilege-escalation/)
