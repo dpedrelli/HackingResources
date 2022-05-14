@@ -19,6 +19,22 @@ sysctl -w net.ipv4.icmp_echo_ignore_all=1
 
 [Security Online](https://securityonline.info/icmpsh-simple-reverse-icmp-shell/)
 
+# [Upgrade a linux reverse shell to a fully usable TTY shell](https://zweilosec.github.io/posts/upgrade-linux-shell/)
+##### Note: The methods above will not work in every situation. For example, I have regularly run into a problem on my Kali machine where attempting to use stty raw -echo while using zsh as my shell will cause the entire terminal to become unusable. I have gotten around this issue by switching to bash before I start any netcat listener that I will be using to catch a shell.
+```bash
+bash
+rlwrap nc -lvnp $port
+which python python2 python3
+/usr/bin/python3 -c "import pty; pty.spawn('/bin/bash')"; #spawn a python psuedo-shell
+CTRL+Z # to background shell
+stty raw -echo # Send control characters to the shell.
+stty size # Get terminal window size 48 / 102
+fg # foreground shell
+export SHELL=bash
+stty rows $x columns $y #Set remote shell to x number of rows & y columns
+export TERM=xterm-256color #allows you to clear console, and have color output
+```
+
 # References
 [HighOn.Coffee](https://highon.coffee/blog/reverse-shell-cheat-sheet/)
 
@@ -27,3 +43,5 @@ sysctl -w net.ipv4.icmp_echo_ignore_all=1
 [Pentestmonkey](https://pentestmonkey.net/cheat-sheet/shells/reverse-shell-cheat-sheet)
 
 [Staged vs Stageless Handlers](https://buffered.io/posts/staged-vs-stageless-handlers/)
+
+[Upgrade a linux reverse shell to a fully usable TTY shell](https://zweilosec.github.io/posts/upgrade-linux-shell/)
