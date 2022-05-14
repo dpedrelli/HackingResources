@@ -1,12 +1,22 @@
-# [Hping]()
+# Steps
+### Host Discovery
+[Get Local IP Address](../../Tools/Shells/Linux/README.md#Get-IP-address)
 
-# [Netdiscover]()
+[Scan Network with Nmap](Nmap/README.md#Scan-Network-For-Hosts-And-Save-To-File)
 
-# [Nmap](Nmap/README.md)
+### Scan Ports
+[Scan All Ports for TCP & UDP](Nmap/README.md#Scan-All-Ports-with-Hosts-File)
 
-# [Ping]()
+# Tools
+### [Hping]()
 
-# [RustScan](RustScan/README.md)
+### [Netdiscover]()
 
-# CMS
+### [Nmap](Nmap/README.md)
+
+### [Ping]()
+
+### [RustScan](RustScan/README.md)
+
+### CMS
 ### [WPScan](CMS/WPScan/README.md)

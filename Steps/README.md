@@ -1,8 +1,8 @@
 # Information Gathering
   * ### [Passive](../Tools/PassiveRecon/README.md)
   * ### [Active](../Tools/ActiveRecon/README.md)
-    * ##### Scan Host Addresses
-    * ##### Scan Ports
+    * ##### [Host Discovery](../Tools/ActiveRecon/README.md#Host-Discovery)
+    * ##### [Scan Ports](../Tools/ActiveRecon/README.md#Scan-Ports)
 
 # Exploitation
 

@@ -1,5 +1,5 @@
 # Network Commands
-##### Get IP address.
+##### Get IP address
 ```bash
 ip a
 
@@ -7,6 +7,8 @@ ip a
 ip a show eth0
 
 ifconfig
+
+ip addr
 ```
 
 ##### Check Routing Table.

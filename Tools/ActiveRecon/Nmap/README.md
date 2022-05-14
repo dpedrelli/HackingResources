@@ -115,6 +115,21 @@ nmap -sI 10.10.5.5
 | -oA                     | save output in normal, XML and Grepable formats |
 
 
+##### Scan Network For Hosts
+```bash
+nmap -sn <IP Address>/<Network ID>
+```
+
+##### Scan Network For Hosts And Save To File
+```bash
+nmap -sn <IP Address>/<Network ID> | grep "Nmap scan report for" | cut -d ' ' -f5 > hosts
+```
+
+##### Scan All Ports with Hosts File
+```bash
+sudo nmap -sS -sU -p- -iL <Filename>
+```
+
 ##### Bruteforce DNS
 ```bash
 nmap -p 53 dns-brute domain.com
