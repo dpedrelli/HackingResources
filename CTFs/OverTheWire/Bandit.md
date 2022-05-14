@@ -1,0 +1,13 @@
+### Bandit - bandit.labs.overthewire.org port 2220
+##### Level 1 password - boJ9jbbUNNfktd78OOpsqOltutMc3MY1
+##### Level 2 password - CV1DtqXWVFXTvM2F0k09SHz0YwRINYA9
+##### Level 3 password - UmHadQclWmgdLOKQ3YNgjWxGoRMb5luK
+##### Level 4 password - pIwrPrtPN36QITSp3EQaw936yaFoFgAB
+##### Level 5 password - koReBOKuIDDepwhWk7jZC0RTdopnAYKh
+##### Level 6 password - DXjZPULLxYr17uwoI01bNLQbtFemEgo7
+##### Level 7 password - HKBPTKQnIay4Fw76bEy8PVxKEDQRKTzs
+##### Level 8 password - cvX2JJa4CFALtqS87jk27qwqGhBM9plV
+##### Level 9 password - UsvVyFSfZZWbi6wgC7dAFyFuR6jQQUhR
+##### Level 10 password - truKLdjsbJ5g7yyJ2X2R0o3a5HQJFuLk
+##### Level 11 password - IFukwKGsFW8MOq3IRFqrxE1hxTNEbUPR
+##### Level 12 password - 5Te8Y4drgCRfCx8ugdwuEX8KFC6k2EUu
