@@ -1,10 +1,6 @@
 # Linux Passwd / Shadow
-### Password Hashes
-```bash
-$6$ = SHA-512
-$5$ = SHA-256
-$1$ = MD5
-```
+### [Password Hashes](../../References/LinuxHashes.md#Shadow-File-Password-Hashes)
+
 ### John The Ripper
 ##### [Unshadow Linux Hashes Cracking](../../Tools/Credentials/JohnTheRipper/README.md#Unshadow-for-Linux-Hashes-Cracking)
 
