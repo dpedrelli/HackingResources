@@ -18,3 +18,7 @@ powershell Get-Service
 ```powershell
 tasklist /NH | sort
 ```
+
+```bash
+whoami /priv
+```

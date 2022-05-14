@@ -18,5 +18,5 @@ enum4linux -S <IP Address>
 enum4linux -U <IP Address>
 ```
 
-# References
+# Cheat Sheets
 [HighOn.Coffee Cheat Sheet](https://highon.coffee/blog/enum4linux-cheat-sheet/)

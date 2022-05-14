@@ -42,3 +42,7 @@ netstart
 ```bash
 tasklist /NH | sort
 ```
+
+```bash
+whoami /priv
+```

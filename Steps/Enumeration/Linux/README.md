@@ -298,6 +298,9 @@ perl Linux_Exploit_Suggester.pl -k <Kernel Version>
 
 ##### [linux-smart-enumeration](https://github.com/diego-treitos/linux-smart-enumeration)
 
+### Cheatsheets
+[Local Linux Enumeration & Privilege Escalation Cheatsheet](https://web.archive.org/web/20200218150604/https:/www.rebootuser.com/?p=1623)
+
 ### System Information References
 [LinEnum](https://github.com/rebootuser/LinEnum)
 
@@ -306,8 +309,6 @@ perl Linux_Exploit_Suggester.pl -k <Kernel Version>
 [Unix-privesc-check](https://pentestmonkey.net/tools/audit/unix-privesc-check)
 
 [mimipenguin](https://github.com/huntergregal/mimipenguin)
-
-[Local Linux Enumeration & Privilege Escalation Cheatsheet](https://web.archive.org/web/20200218150604/https:/www.rebootuser.com/?p=1623)
 
 [Basic Linux Privilege Escalation](https://blog.g0tmi1k.com/2011/08/basic-linux-privilege-escalation/)
 

@@ -35,13 +35,14 @@ stty rows $x columns $y #Set remote shell to x number of rows & y columns
 export TERM=xterm-256color #allows you to clear console, and have color output
 ```
 
-# References
+# Cheatsheets
 [HighOn.Coffee](https://highon.coffee/blog/reverse-shell-cheat-sheet/)
 
 [PayloadsAllTheThings](https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Reverse%20Shell%20Cheatsheet.md)
 
 [Pentestmonkey](https://pentestmonkey.net/cheat-sheet/shells/reverse-shell-cheat-sheet)
 
+# References
 [Staged vs Stageless Handlers](https://buffered.io/posts/staged-vs-stageless-handlers/)
 
 [Upgrade a linux reverse shell to a fully usable TTY shell](https://zweilosec.github.io/posts/upgrade-linux-shell/)
