@@ -298,7 +298,7 @@ perl Linux_Exploit_Suggester.pl -k <Kernel Version>
 
 ##### [linux-smart-enumeration](https://github.com/diego-treitos/linux-smart-enumeration)
 
-### References
+### System Information References
 [LinEnum](https://github.com/rebootuser/LinEnum)
 
 [LinuxPrivChecker](https://github.com/sleventyeleven/linuxprivchecker)
@@ -330,6 +330,8 @@ perl Linux_Exploit_Suggester.pl -k <Kernel Version>
 [dockerevil](https://github.com/pyperanger/dockerevil)
 
 [chroot (Restricted Shell)](https://en.wikipedia.org/wiki/Chroot)
+
+[linux-smart-enumeration](https://github.com/diego-treitos/linux-smart-enumeration)
 
 # Network Information
 ##### List all interfaces
@@ -386,14 +388,3 @@ cat /etc/NetworkManager/system-connections/* | grep -E "^id|^psk"
 
 [Command execution with a MySQL UDF](https://bernardodamele.blogspot.com/2009/01/command-execution-with-mysql-udf.html)
 
-[LinEnum](https://github.com/rebootuser/LinEnum)
-
-[LinuxPrivChecker](https://github.com/sleventyeleven/linuxprivchecker)
-
-[Unix-Privesc-Check](https://pentestmonkey.net/tools/unix-privesc-check)
-
-[Linux Exploit Suggester](https://github.com/InteliSecureLabs/Linux_Exploit_Suggester)
-
-[Basic Linux Privilege Escalation](https://blog.g0tmi1k.com/2011/08/basic-linux-privilege-escalation/)
-
-[linux-smart-enumeration](https://github.com/diego-treitos/linux-smart-enumeration)

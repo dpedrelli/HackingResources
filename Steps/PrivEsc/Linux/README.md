@@ -1,4 +1,4 @@
-# [See Linux Enumeration](../../Enumeration/Linux/README.md)
+# [See Linux Enumeration](../../Enumeration/Linux/README.md#System-Information)
 
 # SUID Binaries
 ##### Known SUID Binaries
@@ -173,14 +173,5 @@ cat /docker/output.txt
 [Docker Tips: about /var/run/docker.sock](https://betterprogramming.pub/about-var-run-docker-sock-3bfd276e12fd)
 
 # References
-[LinEnum](https://github.com/rebootuser/LinEnum)
-
-[LinuxPrivChecker](https://github.com/sleventyeleven/linuxprivchecker)
-
-[Unix-Privesc-Check](https://pentestmonkey.net/tools/unix-privesc-check)
-
-[Linux Exploit Suggester](https://github.com/InteliSecureLabs/Linux_Exploit_Suggester)
 
 [Basic Linux Privilege Escalation](https://blog.g0tmi1k.com/2011/08/basic-linux-privilege-escalation/)
-
-[linux-smart-enumeration](https://github.com/diego-treitos/linux-smart-enumeration)
