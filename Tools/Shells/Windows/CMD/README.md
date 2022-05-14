@@ -27,3 +27,18 @@ sc stop <service name>
 sc query <service name>
 wmic service where name="" get state
 ```
+
+##### Display file contents
+```bash
+type <file.ext>
+```
+
+##### Get List of Running Services
+```bash
+netstart
+```
+
+##### Get list of processes running, sorted by name.
+```bash
+tasklist /NH | sort
+```
