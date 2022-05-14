@@ -38,6 +38,12 @@ nmap -sA
 nmap -sO
 ```
 
+##### Fingerprint OS
+```bash
+# Utilizing nmap's aggressive, OS detection.
+nmap -O --osscan-guess <IP Address>
+```
+
 ### Avoid Detection
 ##### Never Do DNS Resolution
 ```bash
