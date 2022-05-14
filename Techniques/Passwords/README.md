@@ -47,7 +47,3 @@ strings /dev/sda5 | grep "&password="
 
 [Reverse brute-force attack](https://en.wikipedia.org/wiki/Brute-force_attack#Reverse_brute-force_attack)
 
-[John The Ripper](https://www.openwall.com/john/)
-
-[MimiPenguin](https://github.com/huntergregal/mimipenguin)
-

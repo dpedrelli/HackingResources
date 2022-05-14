@@ -7,3 +7,6 @@ unshadow passwd shadow > shadow.john
 ```bash
 john shadow.john --wordlist=<Wordlist>
 ```
+
+# References
+[John The Ripper](https://www.openwall.com/john/)
