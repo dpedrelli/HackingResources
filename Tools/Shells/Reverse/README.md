@@ -1,3 +1,5 @@
+******************* Look at notes THM room Game Zone README.md for various techniques.
+
 # OpenSSL Reverse Shell
 [Generate OpenSSL Certificate](../../SSL/OpenSSL/README.md#Generate-SSL-Certificate)
 [Start OpenSSL Listener](../../SSL/OpenSSL/README.md#Start-OpenSSL-Listener)

