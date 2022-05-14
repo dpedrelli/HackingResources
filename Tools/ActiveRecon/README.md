@@ -7,3 +7,6 @@
 # [Ping]()
 
 # [RustScan](RustScan/README.md)
+
+# CMS
+### [WPScan](CMS/WPScan/README.md)
