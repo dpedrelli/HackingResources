@@ -11,15 +11,9 @@ $1$ = MD5
 ##### [Crack Linux Hashes](../../Tools/Credentials/JohnTheRipper/README.md#Crack-Linux-Hashes)
 
 ### MimiPenguin
-#### May be worth running both scripts.
-##### Run as Shell Script
-```bash
-./mimipenguin.sh
-```
-##### Run as Python Script
-```bash
-python mimipenguin.py
-```
+##### [Run as Shell Script](../../Tools/Credentials/MimiPenguin/README.md#Run-as-Shell-Script)
+
+##### [Run as Python Script](../../Tools/Credentials/MimiPenguin/README.md#Run-as-Python-Script)
 
 ### From Swap Memory
 ##### Find Swap File
