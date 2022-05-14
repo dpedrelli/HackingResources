@@ -7,7 +7,7 @@
 # Exploitation
 
 # Post Exploitation
-  * ### [Enumeration](Enumeration/README.md)
+  * ### Enumeration
     * ##### Local Box
       * ##### [Linux](Enumeration/Linux/README.md)
       * ##### [Windows](Enumeration/Windows/README.md)
