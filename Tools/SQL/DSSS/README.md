@@ -1,0 +1,1 @@
+# [Damn Small SQLi Scanner](https://github.com/stamparm/DSSS)
