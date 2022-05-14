@@ -159,3 +159,13 @@ nmap --script auth <Target IP>
 ```
 
 ##### [Reference Guide](https://nmap.org/book/man.html)
+
+### NetBIOS, SMB, Samba
+##### Determine versions of NetBIOS ports
+```bash
+nmap -sT -sU -sV <IP Address> -p135,137,138,139,445 --open
+```
+##### Enumerate SMB Shares
+```bash
+nmap --script smb-enum-shares <IP Address>
+```

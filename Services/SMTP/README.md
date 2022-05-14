@@ -32,8 +32,7 @@ nc <IP Address> 25
 help
 ```
 
-##### With smtp-user-enum (users)
-[Examples](https://pentestmonkey.net/tools/user-enumeration/smtp-user-enum)
+##### [With smtp-user-enum (users)](../../Tools/SMTP/smtp-user-enum/README.md)
 
 # References
 [VRFY and EXPN verbs](https://cr.yp.to/smtp/vrfy.html)

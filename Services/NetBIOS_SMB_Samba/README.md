@@ -1,36 +1,14 @@
 # Enumerate
-##### With nmap (shares)
-```bash
-# Determine versions of NetBIOS ports.
-nmap -sT -sU -sV <IP Address> -p135,137,138,139,445 --open
+##### [Determine versions of NetBIOS ports with nmap](../../Tools/ActiveRecon/Nmap/README.md#Determine-versions-of-NetBIOS-ports)
+##### [Enumerate with nmap](../../Tools/ActiveRecon/Nmap/README.md#Enumerate-SMB-Shares)
 
-# Enumerate available shares.
-nmap --script smb-enum-shares <IP Address>
-```
+##### [Enumerate Shares with smbclient](../../Tools/NetBIOS_SMB_Samba/smbclient/README.md#Enumerate-Shares)
 
-##### With smbclient (shares)
-```bash
-smbclient -L <IP Address>
-```
+##### [Enumerate Shares with smbmap](../../Tools/NetBIOS_SMB_Samba/smbmap/README.md#Enumerate-Shares)
 
-##### With smbmap (shares)
-```bash
-smbmap -H <IP Address>
-```
+##### [Enumerate Users With rpcclient](../../Tools/NetBIOS_SMB_Samba/rpcclient/README.md#Enumerate-Users)
 
-##### With rpcclient (users)
-```bash
-# Bash for loop
-for u in $(cat users.txt);
-	do rpcclient -U "" <IP Address> -N \
-	--command="lookupnames $u";
-done | grep "User: 1"
-```
-
-##### With enum4linux
-```bash
-enum4linux <IP Address>
-```
+##### [Enumerate with enum4linux](../../Tools/NetBIOS_SMB_Samba/enum4linux/README.md)
 
 # Interact / Mount
 
@@ -39,11 +17,7 @@ enum4linux <IP Address>
 smbclient \\\\<IP Address>\\<Share Name>
 ```
 
-##### With cifs
-```bash
-mkdir -p /mnt/<Share Name>
-mount -t cifs \\\\<IP Address>\\<Share Name> /mnt/<Share Name>
-```
+##### [Mount with cifs](../../Tools/NetBIOS_SMB_Samba/cifs/README.md#Mount-SMB-Share)
 
 # Linux with Windows Active Directory Trust
 ##### Pass-The-Hash

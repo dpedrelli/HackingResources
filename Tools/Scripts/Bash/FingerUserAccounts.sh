@@ -1,0 +1,1 @@
+for name in $(cat /usr/share/wordlists/metasploit/unix_users.txt); do finger $name@192.168.13.72; done > valid_users.txt
