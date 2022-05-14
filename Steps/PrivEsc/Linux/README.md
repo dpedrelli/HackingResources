@@ -1,4 +1,4 @@
-# [See Linux Enumeration](../../Enumeration/FromTarget/Linux/README.md)
+# [See Linux Enumeration](../../Enumeration/Linux/README.md)
 
 # SUID Binaries
 ##### Known SUID Binaries
