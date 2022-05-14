@@ -29,8 +29,6 @@ strings /dev/sda5 | grep "&password="
 # References
 [statistically-likely-usernames](https://github.com/insidetrust/statistically-likely-usernames)
 
-[theHarvester](https://github.com/laramies/theHarvester)
-
 [smtp-user-enum](https://pentestmonkey.net/tools/user-enumeration/smtp-user-enum)
 
 [smtp_enum](https://www.rapid7.com/db/modules/auxiliary/scanner/smtp/smtp_enum/)
