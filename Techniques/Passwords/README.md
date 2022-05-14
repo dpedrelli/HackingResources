@@ -33,8 +33,6 @@ strings /dev/sda5 | grep "&password="
 
 [smtp_enum](https://www.rapid7.com/db/modules/auxiliary/scanner/smtp/smtp_enum/)
 
-[thc-hydra](https://github.com/vanhauser-thc/thc-hydra)
-
 [smb_login](https://www.rapid7.com/db/modules/auxiliary/scanner/smb/smb_login/)
 
 [owa_login](https://www.rapid7.com/db/modules/auxiliary/scanner/http/owa_login/)
