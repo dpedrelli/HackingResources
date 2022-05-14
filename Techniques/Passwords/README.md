@@ -6,14 +6,9 @@ $5$ = SHA-256
 $1$ = MD5
 ```
 ### John The Ripper
-##### Unshadow for John The Ripper Cracking
-```bash
-unshadow passwd shadow > shadow.john
-```
-##### Crack Linux Hashes
-```bash
-john shadow.john --wordlist=<Wordlist>
-```
+##### [Unshadow Linux Hashes Cracking](../../Tools/Credentials/JohnTheRipper/README.md#Unshadow-for-Linux-Hashes-Cracking)
+
+##### [Crack Linux Hashes](../../Tools/Credentials/JohnTheRipper/README.md#Crack-Linux-Hashes)
 
 ### MimiPenguin
 #### May be worth running both scripts.
