@@ -18,5 +18,4 @@
   * ### [Lateral Movement](LateralMovement/README.md)
   * ### [Data Exfiltration](DataExfiltration/README.md)
   * ### [Maintain Access](MaintainAccess/README.md)
-  * ### Third-Party Guides
-      * ##### [Linux](PostExploitation/Linux/README.md)
+  * ### [Third-Party Guides](PostExploitation/ThirdParty.md)
