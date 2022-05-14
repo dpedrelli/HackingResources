@@ -1,1 +1,0 @@
-# [PowerSploit](https://github.com/PowerShellMafia/PowerSploit)
