@@ -312,3 +312,5 @@ cd ~
 [Basic Linux Privilege Escalation](https://blog.g0tmi1k.com/2011/08/basic-linux-privilege-escalation/)
 
 [GTFOBins](https://gtfobins.github.io/)
+
+[mzfr - Linux Privilege escalation](https://blog.mzfr.me/posts/2020-02-1-linux-priv-esc/)
