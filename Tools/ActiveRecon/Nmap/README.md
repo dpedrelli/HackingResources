@@ -318,3 +318,14 @@ nmap --script smtp-enum-users <SMTP Host> -p 25
 
 ## SMTP References
 [smtp-enum-users](https://nmap.org/nsedoc/scripts/smtp-enum-users.html)
+
+# Finger
+##### Enumerate Users with Finger
+```bash
+nmap --script finger <Target Host> -p 79
+```
+
+# Scan for Vulneratbilities
+```bash
+nmap -sV --script vuln -p <Port #> <Target Host>
+```

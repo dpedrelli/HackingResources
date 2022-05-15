@@ -6,6 +6,20 @@ msfconsole
 db_nmap
 ```
 
+# Finger
+##### Enumerate Users with Finger
+```bash
+msfconsole -q
+search finger
+use auxiliary/scanner/finger/finger_users
+use 1
+show options
+
+set RHOSTS <SMTP Host>
+set USERS_FILE <Wordlist>
+run
+```
+
 # SMTP
 ### Enumerate SMTP Users
 ```bash
