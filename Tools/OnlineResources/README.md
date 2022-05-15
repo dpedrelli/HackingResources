@@ -28,3 +28,6 @@
 ### [ngrok](https://ngrok.com)
 Ngrok exposes local, server ports to the Internet.
 ##### [Abusing Ngrok: Hackers at the End of the Tunnel](https://www.huntress.com/blog/abusing-ngrok-hackers-at-the-end-of-the-tunnel)
+
+# Windows
+##### [Event Logs Defined](https://www.myeventlog.com/)
