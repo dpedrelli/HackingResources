@@ -21,6 +21,9 @@
 ##### [dCode](https://www.dcode.fr/en)
 ###### [dCode - T9 (Text Message)](https://www.dcode.fr/t9-cipher)
 
+# Malware
+##### [VirusTotal](https://www.virustotal.com/gui/home/upload)
+
 # Publically Accessible Resources
 ### [ngrok](https://ngrok.com)
 Ngrok exposes local, server ports to the Internet.
