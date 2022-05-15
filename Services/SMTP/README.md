@@ -1,38 +1,10 @@
-# Enumerate
-##### With nmap
-```bash
-# Enumerate verbs.
-nmap --script smtp-commands <IP Address> -p 25
-```
+# [Verify Verbs with Telnet](../../Tools/Telnet/README.md#Verify-SMTP-Verbs-and-User)
 
-##### With telnet (verbs & users)
-```bash
-telnet <IP Address> 25
+# [Enumerate Verbs with nmap](../../Tools/ActiveRecon/Nmap/README.md#Enumerate-SMTP-Verbs)
 
-# Enumerate verbs.
-help
+# [Enumerate Users with SMTP-User-Enum](../../Tools/SMTP/smtp-user-enum/README.md#Enumerate-Users)
 
-# Enumerate users with RCPT TO.
-HELO <Domain>
-<E-Mail address>
-# Looking for "Status Code 250," "Recipient ok"
-
-# Enumerate users with EXPN.
-EXPN <Username> # Username, not E-Mail address.
-# Looking for "Status Code 250 2.1.5"
-
-# Enumerate users with VRFY.
-VRFY <Username> # Username, not E-Mail address.
-# Looking for "Status Code 250 2.1.5"
-```
-
-##### With netcat (verbs)
-```bash
-nc <IP Address> 25
-help
-```
-
-##### [With smtp-user-enum (users)](../../Tools/SMTP/smtp-user-enum/README.md)
+# [Enumerate Users with nmap](../../Tools/ActiveRecon/Nmap/README.md#Enumerate-SMTP-Users)
 
 # References
 [VRFY and EXPN verbs](https://cr.yp.to/smtp/vrfy.html)

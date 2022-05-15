@@ -299,3 +299,17 @@ nmap -sT -sU -sV <IP Address> -p135,137,138,139,445 --open
 ```bash
 nmap --script smb-enum-shares <IP Address>
 ```
+
+# SMTP
+### Enumerate SMTP Verbs
+```bash
+nmap --script smtp-commands <SMTP Host> -p 25
+```
+
+### Enumerate SMTP Users
+```bash
+nmap --script smtp-enum-users <SMTP Host> -p 25
+```
+
+## SMTP References
+[smtp-enum-users](https://nmap.org/nsedoc/scripts/smtp-enum-users.html)
