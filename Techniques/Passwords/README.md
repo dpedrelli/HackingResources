@@ -1,15 +1,15 @@
 # Linux Passwd / Shadow
-### [Password Hashes](../../References/LinuxHashes.md#Shadow-File-Password-Hashes)
+### [Password Hashes](../../Services/Cryptography/Hashes/README.md#Shadow-File-Password-Hashes)
 
 ### John The Ripper
-##### [Unshadow Linux Hashes Cracking](../../Tools/Credentials/JohnTheRipper/README.md#Unshadow-for-Linux-Hashes-Cracking)
+##### [Unshadow Linux Hashes Cracking](../../Tools/Credentials_Cryptography/JohnTheRipper/README.md#Unshadow-for-Linux-Hashes-Cracking)
 
-##### [Crack Linux Hashes](../../Tools/Credentials/JohnTheRipper/README.md#Crack-Linux-Hashes)
+##### [Crack Linux Hashes](../../Tools/Credentials_Cryptography/JohnTheRipper/README.md#Crack-Linux-Hashes)
 
 ### MimiPenguin
-##### [Run as Shell Script](../../Tools/Credentials/MimiPenguin/README.md#Run-as-Shell-Script)
+##### [Run as Shell Script](../../Tools/Credentials_Cryptography/MimiPenguin/README.md#Run-as-Shell-Script)
 
-##### [Run as Python Script](../../Tools/Credentials/MimiPenguin/README.md#Run-as-Python-Script)
+##### [Run as Python Script](../../Tools/Credentials_Cryptography/MimiPenguin/README.md#Run-as-Python-Script)
 
 ### From Swap Memory
 ##### Find Swap File
@@ -39,3 +39,6 @@ strings /dev/sda5 | grep "&password="
 
 [Reverse brute-force attack](https://en.wikipedia.org/wiki/Brute-force_attack#Reverse_brute-force_attack)
 
+[NT PW Recovery "booting the kernel"](https://community.infosecinstitute.com/discussion/97802/nt-pw-recovery-booting-the-kernel)
+
+[Reset Windows 10 Local Password with Kali Linux Live USB](https://www.top-password.com/knowledge/reset-windows-10-password-with-kali-linux.html)
