@@ -329,6 +329,8 @@ perl Linux_Exploit_Suggester.pl -k <Kernel Version>
 
 [PEASS (LinPEAS / WinPEAS)](https://github.com/carlospolop/PEASS-ng)
 
+[LinPEAS](https://www.aldeid.com/wiki/LinPEAS)
+
 [Linux Exploit Suggester](https://github.com/InteliSecureLabs/Linux_Exploit_Suggester)
 
 [SUID](https://en.wikipedia.org/wiki/Setuid)
