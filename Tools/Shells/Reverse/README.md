@@ -96,6 +96,8 @@ stty rows $x columns $y #Set remote shell to x number of rows & y columns
 export TERM=xterm-256color #allows you to clear console, and have color output
 ```
 
+# [WordPress Reverse Shell](https://www.hackingarticles.in/wordpress-reverse-shell/)
+
 # Cheatsheets
 [HighOn.Coffee](https://highon.coffee/blog/reverse-shell-cheat-sheet/)
 
@@ -107,3 +109,5 @@ export TERM=xterm-256color #allows you to clear console, and have color output
 [Staged vs Stageless Handlers](https://buffered.io/posts/staged-vs-stageless-handlers/)
 
 [Upgrade a linux reverse shell to a fully usable TTY shell](https://zweilosec.github.io/posts/upgrade-linux-shell/)
+
+[WordPress: Reverse Shell](https://www.hackingarticles.in/wordpress-reverse-shell/)
