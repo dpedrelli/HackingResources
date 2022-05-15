@@ -35,3 +35,9 @@ set RHOSTS <SMTP Host>
 set USER_FILE <Wordlist>
 run
 ```
+
+# Cheatsheets
+[MSFVenom Reverse Shell Payload Cheatsheet (with & without Meterpreter)](https://infinitelogins.com/2020/01/25/msfvenom-reverse-shell-payload-cheatsheet/)
+
+# References
+[Deep Dive Into Stageless Meterpreter Payloads](https://www.rapid7.com/blog/post/2015/03/25/stageless-meterpreter-payloads/)

@@ -1,3 +1,1 @@
-# Cheatsheets
-
 [Tib3rius - Pentest-Cheatsheets](https://github.com/Tib3rius/Pentest-Cheatsheets)
