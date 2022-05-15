@@ -6,3 +6,6 @@
 ### War References
 [Laudanum](https://sourceforge.net/projects/laudanum/)
 ##### Found in /usr/share/laudanum on Kali
+
+# References
+[How To Exploit Tomcat Manager](https://ethicalhackingguru.com/how-to-exploit-tomcat-manager/)
