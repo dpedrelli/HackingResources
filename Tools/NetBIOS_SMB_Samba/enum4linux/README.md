@@ -18,6 +18,11 @@ enum4linux -S <IP Address>
 enum4linux -U <IP Address>
 ```
 
+# Enumerate Users with RID Cycling
+```bash
+enum4linux -r <IP Address> | grep "Local User"
+```
+
 # Cheat Sheets
 [HighOn.Coffee Cheat Sheet](https://highon.coffee/blog/enum4linux-cheat-sheet/)
 

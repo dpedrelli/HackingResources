@@ -297,10 +297,15 @@ nmap -sT -sU -sV <IP Address> -p135,137,138,139,445 --open
 ```
 ##### Enumerate SMB Shares
 ```bash
-nmap --script smb-enum-shares <IP Address>
+nmap --script smb-enum-shares -p 445 <Target Host>
 ```
 
 # SMTP
+### Get SMTP Version
+```bash
+nmap -sV -p 25 <SMTP Host>
+```
+
 ### Enumerate SMTP Verbs
 ```bash
 nmap --script smtp-commands <SMTP Host> -p 25

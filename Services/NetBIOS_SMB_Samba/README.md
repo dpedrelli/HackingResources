@@ -6,15 +6,27 @@
 
 ##### [Enumerate Shares with smbmap](../../Tools/NetBIOS_SMB_Samba/smbmap/README.md#Enumerate-Shares)
 
+##### [Enumerate Users With rpcclient in Bash Script](../../Tools/NetBIOS_SMB_Samba/rpcclient/README.md#Enumerate-Users-with-Bash-Script)
+
+##### [Enumerate Domains With rpcclient](../../Tools/NetBIOS_SMB_Samba/rpcclient/README.md#Enumerate-Domains)
+
 ##### [Enumerate Users With rpcclient](../../Tools/NetBIOS_SMB_Samba/rpcclient/README.md#Enumerate-Users)
+
+##### [Enumerate Groups With rpcclient](../../Tools/NetBIOS_SMB_Samba/rpcclient/README.md#Enumerate-Groups)
 
 ##### [Enumerate with enum4linux](../../Tools/NetBIOS_SMB_Samba/enum4linux/README.md)
 
-# Interact / Mount
+# Connect
 
-##### [Mount with smbclient](../../Tools/NetBIOS_SMB_Samba/smbclient/README.md#Connect-To-Share)
+##### [Connect with smbclient](../../Tools/NetBIOS_SMB_Samba/smbclient/README.md#Connect-To-Share)
+
+##### [Connect with rpcclient](../../Tools/NetBIOS_SMB_Samba/rpcclient/README.md#Connect-To-Host)
 
 ##### [Mount with cifs](../../Tools/NetBIOS_SMB_Samba/cifs/README.md#Mount-SMB-Share)
+
+# Query
+
+##### [Query User with rpcclient](../../Tools/NetBIOS_SMB_Samba/rpcclient/README.md#Query-User)
 
 # Linux with Windows Active Directory Trust
 ##### Pass-The-Hash
