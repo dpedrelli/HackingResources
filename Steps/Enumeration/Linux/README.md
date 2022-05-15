@@ -331,6 +331,8 @@ perl Linux_Exploit_Suggester.pl -k <Kernel Version>
 
 [LinPEAS](https://www.aldeid.com/wiki/LinPEAS)
 
+[LinPEAS](https://www.hackingarticles.in/linux-privilege-escalation-automated-script/)
+
 [Linux Exploit Suggester](https://github.com/InteliSecureLabs/Linux_Exploit_Suggester)
 
 [SUID](https://en.wikipedia.org/wiki/Setuid)
