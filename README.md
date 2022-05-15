@@ -14,6 +14,8 @@
 
 ##### [Pentestmonkey](https://pentestmonkey.net/)
 
+##### [Sneakymonkey](https://sneakymonkey.net/)
+
 # Linux Resources
 ##### [Linux Journey](https://linuxjourney.com/)
 Learn the ways of Linux-fu, for free.
