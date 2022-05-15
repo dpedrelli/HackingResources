@@ -1,5 +1,3 @@
-### [ngrok](https://ngrok.com)
-
 ### [PostBin](https://postb.in/)
 
 ### [suIP.biz](https://suip.biz/)
@@ -22,3 +20,8 @@
 
 ##### [dCode](https://www.dcode.fr/en)
 ###### [dCode - T9 (Text Message)](https://www.dcode.fr/t9-cipher)
+
+# Publically Accessible Resources
+### [ngrok](https://ngrok.com)
+Ngrok exposes local, server ports to the Internet.
+##### [Abusing Ngrok: Hackers at the End of the Tunnel](https://www.huntress.com/blog/abusing-ngrok-hackers-at-the-end-of-the-tunnel)
