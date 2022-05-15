@@ -2,3 +2,6 @@
 
 # [smbclient](smbclient/README.md)
 smbclient is a Python library and part of SecureAuth Corporation's [impacket](https://github.com/SecureAuthCorp/impacket) suite of network protocal libraries.
+
+# References
+[SMB and Samba Security Audit Tools](https://miloserdov.org/?p=4066)

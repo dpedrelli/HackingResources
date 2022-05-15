@@ -40,6 +40,8 @@ tdbdump /var/lib/samba/private/secrets.tdb
 ```
 
 # References
+[SMB and Samba Security Audit Tools](https://miloserdov.org/?p=4066)
+
 [pth-toolkit](https://github.com/byt3bl33d3r/pth-toolkit)
 
 [passing-the-hash](https://code.google.com/archive/p/passing-the-hash/)
