@@ -22,12 +22,16 @@
 # E-Mail
 ##### [10 Minute Mail](https://10minutemail.com/)
 
-# Encoding / Decoding
+# Encoding / Decoding / Data Conversion / Beautifier / Formatter
+##### [ASCII to Hex](https://www.asciitohex.com/)
+
 ##### [CyberChef](https://cyberchef.org/)
 ##### [CyberChef](https://gchq.github.io/CyberChef/)
 
 ##### [dCode](https://www.dcode.fr/en)
 ###### [dCode - T9 (Text Message)](https://www.dcode.fr/t9-cipher)
+
+##### [JSToolset](https://www.jstoolset.com/)
 
 # Malware
 ##### [VirusTotal](https://www.virustotal.com/gui/home/upload)
