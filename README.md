@@ -8,6 +8,8 @@
 
 ##### [HighOn.Coffee Penetration Testing && Security Research Blog](https://highon.coffee/)
 
+##### [NetSec.ws](https://netsec.ws/)
+
 ##### [PayloadsAllTheThings](https://github.com/swisskyrepo/PayloadsAllTheThings/)
 
 ##### [Pentestmonkey](https://pentestmonkey.net/)
