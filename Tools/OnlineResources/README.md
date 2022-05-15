@@ -20,12 +20,17 @@
 
 # Encoding / Decoding
 ##### [CyberChef](https://cyberchef.org/)
+##### [CyberChef](https://gchq.github.io/CyberChef/)
 
 ##### [dCode](https://www.dcode.fr/en)
 ###### [dCode - T9 (Text Message)](https://www.dcode.fr/t9-cipher)
 
 # Malware
 ##### [VirusTotal](https://www.virustotal.com/gui/home/upload)
+
+# Numbers
+##### [FactorDB](http://factordb.com/index.php)
+Factor numbers.
 
 # Publically Accessible Resources
 ### [ngrok](https://ngrok.com)
