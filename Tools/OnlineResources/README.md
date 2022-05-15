@@ -2,6 +2,10 @@
 
 ### [suIP.biz](https://suip.biz/)
 
+# Calculators
+##### [Online IP CIDR / VLSM Supernet Calculator](https://www.subnet-calculator.com/cidr.php)
+##### [Online IP Subnet Calculator](https://www.subnet-calculator.com/)
+
 # Cryptography & Passwords
 ##### [CrackStation's Password Cracking Dictionary](https://crackstation.net/crackstation-wordlist-password-cracking-dictionary.htm)
 
