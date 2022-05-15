@@ -329,3 +329,6 @@ nmap --script finger <Target Host> -p 79
 ```bash
 nmap -sV --script vuln -p <Port #> <Target Host>
 ```
+
+# References
+[NSEDoc Reference Portal](https://nmap.org/nsedoc/)
