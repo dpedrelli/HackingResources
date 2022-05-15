@@ -5,6 +5,8 @@
 
 [Let's Encrypt](https://letsencrypt.org/)
 
+[RSA Algorithm](https://www.di-mgt.com.au/rsa_alg.html)
+
 [RSA cracking: The same message is sent to two different people problem](https://crypto.stackexchange.com/questions/1614/rsa-cracking-the-same-message-is-sent-to-two-different-people-problem)
 
 [RSA ENCRYPTION](https://muirlandoracle.co.uk/2020/01/29/rsa-encryption/)
