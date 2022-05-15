@@ -310,3 +310,5 @@ cd ~
 [0xsp Cheatsheet](https://0xsp.com/offensive/privilege-escalation-cheatsheet/)
 
 [Basic Linux Privilege Escalation](https://blog.g0tmi1k.com/2011/08/basic-linux-privilege-escalation/)
+
+[GTFOBins](https://gtfobins.github.io/)

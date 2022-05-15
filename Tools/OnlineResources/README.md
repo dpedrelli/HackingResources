@@ -15,6 +15,9 @@
 ### MySQL
 ##### [MySQL Live](https://www.mysqltutorial.org/tryit/)
 
+# E-Mail
+##### [10 Minute Mail](https://10minutemail.com/)
+
 # Encoding / Decoding
 ##### [CyberChef](https://cyberchef.org/)
 
