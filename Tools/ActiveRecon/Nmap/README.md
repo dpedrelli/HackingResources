@@ -331,4 +331,6 @@ nmap -sV --script vuln -p <Port #> <Target Host>
 ```
 
 # References
+[Nmap Ping Sweep](https://linuxhint.com/nmap_ping_sweep/)
+
 [NSEDoc Reference Portal](https://nmap.org/nsedoc/)
