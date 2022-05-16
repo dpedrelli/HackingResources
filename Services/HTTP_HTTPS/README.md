@@ -1,3 +1,12 @@
+# Python HTTP Server
+```bash
+python3 -m http.server <Port #>
+```
+##### Older Kali systems
+```bash
+python -m SimpleHTTPServer <Port #>
+```
+
 # Data Exfiltration
 ### Exfiltrate Base64 encoded data via POST request over HTTPS to PHP server, with SSL certificate.
 ##### On attack machine, create a PHP file that will receive POST request and write data to a file.
