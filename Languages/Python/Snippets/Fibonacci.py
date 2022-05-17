@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 def fibonacci(number, display = False, returnAll = False):
     a = 0
     b = 1

@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 import subprocess
 
 # subprocess documentation https://docs.python.org/3.2/library/subprocess.html

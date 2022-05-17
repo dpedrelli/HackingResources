@@ -1,4 +1,6 @@
-﻿from random import shuffle
+﻿#!/usr/bin/env python3
+
+from random import shuffle
 
 class Deck:
     def __init__(self):
