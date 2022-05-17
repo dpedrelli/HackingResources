@@ -48,6 +48,3 @@ for i in range(0, len(input_str)):
 		result_str = result_str + input_str[i]
 
 print(result_str);
-
-	#if (val > 42):
-    	#print(i)
