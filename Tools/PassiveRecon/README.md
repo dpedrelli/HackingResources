@@ -64,17 +64,15 @@ It supports Google Dorks and Shodan.
 theHarvester -d targetdomain.com -b google
 ```
 
-# Whois
-```bash
-whois targetdomain.com > whois.txt
-```
-##### Whois Online
-[who.is](https://who.is/)
-[Domain Tools](https://whois.domaintools.com/)
-[Hurricane Electric](https://bgp.he.net/)
-[Rings of Saturn](https://networking.ringofsaturn.com/Tools/whois.php)
-[Network Solutions](https://www.networksolutions.com/whois)
-[Better Whois](https://www.betterwhois.com/)
+# [Whois](whois/README.md)
+### Whois Online Tools
+##### [ICANN](https://whois.icann.org/)
+##### [who.is](https://who.is/)
+##### [Domain Tools](https://whois.domaintools.com/)
+##### [Hurricane Electric](https://bgp.he.net/)
+##### [Rings of Saturn](https://networking.ringofsaturn.com/Tools/whois.php)
+##### [Network Solutions](https://www.networksolutions.com/whois)
+##### [Better Whois](https://www.betterwhois.com/)
 
 # Website Footprinting
 ##### [HTTrack](https://www.httrack.com/)
