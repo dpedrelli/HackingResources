@@ -112,11 +112,6 @@ nmap -p 53 dns-brute domain.com
 ##### [Netcraft](https://www.netcraft.com/)
 ##### [OSRFramework](https://github.com/i3visio/osrframework)
 
-# Mind Mapping
-[FreeMind](http://freemind.sourceforge.net/wiki/index.php/Main_Page)
-
-[Xmind](https://www.xmind.net/)
-
 # Miscellaneous
 [Dradis](https://dradisframework.com/ce/)
 
