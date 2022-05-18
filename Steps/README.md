@@ -1,8 +1,6 @@
 # Information Gathering
   * ### [Passive](../Tools/PassiveRecon/README.md)
-    * ##### Query Domain Registration with WHOIS or RDAP
-      * Perform [WHOIS](../Tools/PassiveRecon/Domain/whois/README.md#Query) lookup.
-      * Perform another query, specifying the registrar's [WHOIS](../Tools/PassiveRecon/Domain/whois/README.md#Specify-Server-to-Query) server.
+    * ##### [Query Domain Registration with WHOIS or RDAP](../Techniques/InformationGathering/DomainRegistration.md)
     * ##### [DNS Enumeration](../Techniques/InformationGathering/DnsEnumeration.md)
   * ### [Active](../Tools/ActiveRecon/README.md)
     * ##### [Host Discovery](../Tools/ActiveRecon/README.md#Host-Discovery)
