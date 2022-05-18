@@ -64,13 +64,14 @@ It supports Google Dorks and Shodan.
 theHarvester -d targetdomain.com -b google
 ```
 
-# [Registration Data Access Protocol (RDAP)](https://www.icann.org/rdap)
+# Domain Registration
+### [Registration Data Access Protocol (RDAP)](https://www.icann.org/rdap)
 RDAP is a secure replacement for whois that returns domain registration information.
-### RDAP Online Tools
+#### RDAP Online Tools
 ##### [ICANN](https://lookup.icann.org/)
 
-# [Whois](whois/README.md)
-### Whois Online Tools
+### [Whois](whois/README.md)
+#### Whois Online Tools
 ##### [who.is](https://who.is/)
 ##### [Domain Tools](https://whois.domaintools.com/)
 ##### [Hurricane Electric](https://bgp.he.net/)
