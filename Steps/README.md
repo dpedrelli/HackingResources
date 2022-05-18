@@ -16,6 +16,13 @@
 | Alive Machines    | Financial Information   |
 | Systems           | Job Postings            |
 
+##### Web Presence
+* Business
+* Location
+* Projects
+* External Links
+* Subdomains
+
 # Exploitation
 
 # Post Exploitation

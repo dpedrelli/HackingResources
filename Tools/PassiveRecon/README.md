@@ -51,7 +51,10 @@ filetype:pdf
 cache:www.website.com
 ```
 
-# Social Networks
+# Social Networks and People
+##### [Pipl](https://pipl.com/)
+##### [Spokeo](https://www.spokeo.com/)
+##### [PeopleFinders](https://www.peoplefinders.com/)
 ##### [Facebook](https://www.facebook.com)
 ##### [theHarvester](https://pypi.org/project/theHarvester/)
 theHarvester is used to gather open source intelligence (OSINT) on a company or domain.
@@ -65,6 +68,13 @@ theHarvester -d targetdomain.com -b google
 ```bash
 whois targetdomain.com > whois.txt
 ```
+##### Whois Online
+[who.is](https://who.is/)
+[Domain Tools](https://whois.domaintools.com/)
+[Hurricane Electric](https://bgp.he.net/)
+[Rings of Saturn](https://networking.ringofsaturn.com/Tools/whois.php)
+[Network Solutions](https://www.networksolutions.com/whois)
+[Better Whois](https://www.betterwhois.com/)
 
 # Website Footprinting
 ##### [HTTrack](https://www.httrack.com/)
@@ -73,6 +83,17 @@ whois targetdomain.com > whois.txt
 # Web Technology Footprinting
 ##### [WhatWeb](https://github.com/urbanadventurer/WhatWeb)
 ##### [BuiltWith](https://builtwith.com/)
+
+# DNS Enumeration Online
+##### [Network Tools](https://network-tools.com/nslookup/)
+##### [DNS Queries](https://www.dnsqueries.com/en/)
+##### [MX Toolbox](https://mxtoolbox.com/)
+
+# Domains/Subdomains Online
+##### [Domain Tools](https://reverseip.domaintools.com/)
+##### [DNSlytics](https://dnslytics.com/reverse-ip)
+##### [Networkappers](https://networkappers.com/tools/reverse-ip-checker)
+##### [Robtex](https://www.robtex.com/)
 
 # Domain Recon
 ##### [Sublist3r](https://github.com/aboul3la/Sublist3r)
