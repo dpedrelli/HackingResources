@@ -198,8 +198,6 @@ sudo nmap -sS -sU -p- -iL <Filename>
 | -oX                     | save output in XML format                       |
 | -oA                     | save output in normal, XML and Grepable formats |
 
-FIREWALL/IDS EVASION AND SPOOFING:
-
 # Avoid Detection
 
 ##### Never Do DNS Resolution
