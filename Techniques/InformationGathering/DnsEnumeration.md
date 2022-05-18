@@ -7,3 +7,10 @@
 ##### DNS Scan, Zone Transfer, Brute Force with [dnsenum](../../Tools/Domain/dnsenum/README.md).
 ##### Brute Force with [dnsmap](../../Tools/Domain/dnsmap/README.md).
 ##### All-in-One with [dnsrecon](../../Tools/Domain/dnsrecon/README.md).
+
+##### Enumerate Subdomains with [Sublist3r](../../Tools/Domain/Sublist3r/README.md).
+
+##### Brute Force with [Nmap](../../Tools/NetworkDiscovery/Nmap/README.md#Brute-Force-DNS)
+
+# Zone Transfer References
+##### [ZoneTransfer.me](https://digi.ninja/projects/zonetransferme.php)

@@ -1,14 +1,16 @@
 ##### Basic Query
 ```bash
-fierce -dns <DomainToQuery.com>
+fierce -dns <TargetDomain.com>
 ```
 
 ##### Specify DNS Server
 ```bash
-fierce -dns <DomainToQuery.com> -dnsserver <NameServerToQuery>
+fierce -dns <TargetDomain.com> -dnsserver <NameServerToQuery>
 ```
 
 ##### Brute Force
 ```bash
-fierce -dns <DomainToQuery.com> -f <Hosts.txt>
+fierce -dns <TargetDomain.com> -f <Hosts.txt>
+
+fierce -dns <TargetDomain.com> -f /usr/share/wordlists/SecLists/Discovery/DNS/fierce-hostlist.txt
 ```

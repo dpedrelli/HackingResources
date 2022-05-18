@@ -64,13 +64,6 @@ It supports Google Dorks and Shodan.
 theHarvester -d targetdomain.com -b google
 ```
 
-# Domain Registration
-### [Registration Data Access Protocol (RDAP)](https://www.icann.org/rdap)
-RDAP is a secure replacement for whois that returns domain registration information.
-#### RDAP Online Tools
-##### [ICANN](https://lookup.icann.org/)
-
-### [Whois](Domain/whois/README.md)
 
 # Website Footprinting
 ##### [HTTrack](https://www.httrack.com/)
@@ -91,32 +84,6 @@ RDAP is a secure replacement for whois that returns domain registration informat
 ##### [DNSlytics](https://dnslytics.com/reverse-ip)
 ##### [Networkappers](https://networkappers.com/tools/reverse-ip-checker)
 ##### [Robtex](https://www.robtex.com/)
-
-# Domain Recon
-##### [Sublist3r](https://github.com/aboul3la/Sublist3r)
-Enumerate subdomains.
-##### dig
-##### dnsenum
-##### dnsmap
-```bash
-# Bruteforce DNS
-dnsmap domain.com -w /usr/share/wordlists/SecLists/Discovery/DNS/dns-Jhaddix.txt
-```
-##### fierce
-```bash
-# Bruteforce DNS
-fierce -dns domain.com -wordlist /usr/share/wordlists/SecLists/Discovery/DNS/fierce-hostlist.txt
-```
-##### host
-```bash
-host domain.com
-```
-##### [Nmap](../ActiveRecon/Nmap/README.md)
-```bash
-# Bruteforce DNS
-nmap -p 53 dns-brute domain.com
-```
-##### [ZoneTransfer.me](https://digi.ninja/projects/zonetransferme.php)
 
 # Cloud Recon
 

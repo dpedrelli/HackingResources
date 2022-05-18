@@ -1,10 +1,6 @@
 # Information Gathering
-  * ### [Passive](../Tools/PassiveRecon/README.md)
-    * ##### [Query Domain Registration with WHOIS or RDAP](../Techniques/InformationGathering/DomainRegistration.md)
-    * ##### [DNS Enumeration](../Techniques/InformationGathering/DnsEnumeration.md)
-  * ### [Active](../Tools/ActiveRecon/README.md)
-    * ##### [Host Discovery](../Tools/ActiveRecon/README.md#Host-Discovery)
-    * ##### [Scan Ports](../Tools/ActiveRecon/README.md#Scan-Ports)
+  * ### [Passive](../Techniques/InformationGathering/README.md#Passive)
+  * ### [Active](../Techniques/InformationGathering/README.md#Active)
 
 | Infrastructure    | Business                |
 |-------------------|-------------------------|

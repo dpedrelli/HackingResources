@@ -6,7 +6,11 @@
 
 # [Masscan](Masscan/README.md)
 
-# [nmap](nmap/README.md)
+# [Netdiscover](Netdiscover/README.md)
+
+# [Nmap](Nmap/README.md)
+
+# [ping](ping/README.md)
 
 # [RustScan](RustScan/README.md)
 

@@ -7,8 +7,11 @@
 # Invidiual Host
 nmap -sn <Host>
 # IP Range
-nmap -sn 192.168.1.0/24
+nmap -sn <IP Address>/<Network ID>
 # If target is on same network as attack machine, nmap uses and ARP ping, rather than ICMP.
+
+# Save To File
+nmap -sn <IP Address>/<Network ID> | grep "Nmap scan report for" | cut -d ' ' -f5 > hosts
 
 # Force Ping
 sudo nmap -sn <Host> --disable-arp-ping
@@ -46,6 +49,11 @@ sudo nmap -sn -PM <Host> --disable-arp-ping
 
 # Include Probe Option - ICMP Timestamp
 sudo nmap -sn -PP <Host> --disable-arp-ping
+```
+
+##### No Ping
+```bash
+nmap -n -sn -PS22,80,135,443,445 <IP Address>/<Network ID>
 ```
 
 | Scan Type              | Example Command                           |
@@ -98,6 +106,8 @@ nmap -e NET_INTERFACE -Pn -S SPOOFED_IP 10.10.67.92 --spoof-mac SPOOFED_MAC
 nmap -D 10.10.0.1,10.10.0.2,RND,RND,ME 10.10.67.92
 nmap -sI 10.10.5.5
 ```
+
+# Port Scan
 
 | Port Scan Type                 | Example Command                                     |
 |--------------------------------|-----------------------------------------------------|
@@ -163,15 +173,6 @@ nmap -sI 10.10.5.5
 | -oA                     | save output in normal, XML and Grepable formats |
 
 
-##### Scan Network For Hosts
-```bash
-nmap -sn <IP Address>/<Network ID>
-```
-
-##### Scan Network For Hosts And Save To File
-```bash
-nmap -sn <IP Address>/<Network ID> | grep "Nmap scan report for" | cut -d ' ' -f5 > hosts
-```
 
 ##### Scan All Ports with Hosts File
 ```bash
@@ -351,6 +352,13 @@ nmap -sT -sU -sV <IP Address> -p135,137,138,139,445 --open
 ##### Enumerate SMB Shares
 ```bash
 nmap --script smb-enum-shares -p 445 <Target Host>
+```
+
+# DNS
+##### Brute Force DNS
+```bash
+# Bruteforce DNS
+nmap -p 53 dns-brute <TargetDomain.com>
 ```
 
 # SMTP
