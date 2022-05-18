@@ -4,6 +4,18 @@
     * ##### [Host Discovery](../Tools/ActiveRecon/README.md#Host-Discovery)
     * ##### [Scan Ports](../Tools/ActiveRecon/README.md#Scan-Ports)
 
+| Infrastructure    | Business                |
+|-------------------|-------------------------|
+| Network Maps      | Web Presence (domains)  |
+| Network Blocks    | Physical Locations      |
+| IP Addresses      | Employees / Departments |
+| Ports             | E-Mail Addresses        |
+| Services          | Partners & 3rd Parties  |
+| DNS               | Press / News Releases   |
+| Operating Systems | Documents               |
+| Alive Machines    | Financial Information   |
+| Systems           | Job Postings            |
+
 # Exploitation
 
 # Post Exploitation
