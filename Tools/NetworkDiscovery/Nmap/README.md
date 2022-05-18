@@ -7,11 +7,11 @@
 # Invidiual Host
 nmap -sn <Host>
 # IP Range
-nmap -sn <IP Address>/<Network ID>
+nmap -sn <Target Host>/<Network ID>
 # If target is on same network as attack machine, nmap uses and ARP ping, rather than ICMP.
 
 # Save To File
-nmap -sn <IP Address>/<Network ID> | grep "Nmap scan report for" | cut -d ' ' -f5 > hosts
+nmap -sn <Target Host>/<Network ID> | grep "Nmap scan report for" | cut -d ' ' -f5 > hosts
 
 # Force Ping
 sudo nmap -sn <Host> --disable-arp-ping
@@ -53,7 +53,7 @@ sudo nmap -sn -PP <Host> --disable-arp-ping
 
 ##### No Ping
 ```bash
-nmap -n -sn -PS22,80,135,443,445 <IP Address>/<Network ID>
+nmap -n -sn -PS22,80,135,443,445 <Target Host>/<Network ID>
 ```
 
 ### Host Discovery Options
@@ -87,12 +87,38 @@ nmap -n -sn -PS22,80,135,443,445 <IP Address>/<Network ID>
 | -sn    | host discovery only              |
 
 # Port Scan
+##### TCP / Three-Way Handshake Scan (Default)
+```bash
+nmap -sT
+```
+
+##### SYN Scan
+```bash
+# Faster than TCP and offers some stealth.
+sudo nmap -sS
+```
+
+##### UDP Scan
+```bash
+nmap -sU
+```
+
+##### Scan All Ports with Hosts File
+```bash
+sudo nmap -sS -sU -p- -iL <Filename>
+```
 
 
-# end
-
-
-
+| Parameter                      | Description                               |
+|--------------------------------|-------------------------------------------|
+| -sS/sT/sA/sW/sM:               | TCP SYN/Connect()/ACK/Window/Maimon scans |
+| -sU:                           | UDP Scan                                  |
+| -sN/sF/sX:                     | TCP Null, FIN, and Xmas scans             |
+| --scanflags [flags]:           | Customize TCP scan flags                  |
+| -sI <zombie host[:probeport]>: | Idle scan                                 |
+| -sY/sZ:                        | SCTP INIT/COOKIE-ECHO scans               |
+| -sO:                           | IP protocol scan                          |
+| -b [FTP relay host]:           | FTP bounce scan                           |
 
 
 | Port Scan Type   | Example Command             |
@@ -101,13 +127,14 @@ nmap -n -sn -PS22,80,135,443,445 <IP Address>/<Network ID>
 | TCP SYN Scan     | sudo nmap -sS MACHINE_IP    |
 | UDP Scan         | sudo nmap -sU MACHINE_IP    |
 
+
 | Option                | Purpose                                  |
 |-----------------------|------------------------------------------|
 | -p-                   | all ports                                |
 | -p1-1023              | scan ports 1 to 1023                     |
 | -F                    | 100 most common ports                    |
 | -r                    | scan ports in consecutive order          |
-| -T<0-5>         | -T0 being the slowest and T5 the fastest       |
+| -T<0-5>               | -T0 being the slowest and T5 the fastest |
 | --max-rate 50         | rate <= 50 packets/sec                   |
 | --min-rate 15         | rate >= 15 packets/sec                   |
 | --min-parallelism 100 | at least 100 probes in parallel          |
@@ -123,12 +150,6 @@ nmap -n -sn -PS22,80,135,443,445 <IP Address>/<Network ID>
 | Window Scan    | ACK           | -sW         | RST = Open/Closed  |          |
 | Custom Scan    |               | --scanflags |                    |          |
 
-Spoofed, Decoy, and Idle (Zombie) Scanning
-```bash
-nmap -e NET_INTERFACE -Pn -S SPOOFED_IP 10.10.67.92 --spoof-mac SPOOFED_MAC
-nmap -D 10.10.0.1,10.10.0.2,RND,RND,ME 10.10.67.92
-nmap -sI 10.10.5.5
-```
 
 | Port Scan Type                 | Example Command                                     |
 |--------------------------------|-----------------------------------------------------|
@@ -146,10 +167,12 @@ nmap -sI 10.10.5.5
 | Fragment IP data into 8 bytes  | -f                                                  |
 | Fragment IP data into 16 bytes | -ff                                                 |
 
+
 | Option                 | Purpose                                  |
 |------------------------|------------------------------------------|
 | --source-port PORT_NUM | specify source port number               |
 | --data-length NUM      | append random data to reach given length |
+
 
 | Option   | Purpose                               |
 |----------|---------------------------------------|
@@ -158,24 +181,6 @@ nmap -sI 10.10.5.5
 | -vv      | very verbose                          |
 | -d       | debugging                             |
 | -dd      | more details for debugging            |
-
-
-| Script Category | Description                                                            |
-|-----------------|------------------------------------------------------------------------|
-| auth            | Authentication related scripts                                         |
-| broadcast       | Discover hosts by sending broadcast messages                           |
-| brute           | Performs brute-force password auditing against logins                  |
-| default         | Default scripts, same as -sC                                           |
-| discovery       | Retrieve accessible information, such as database tables and DNS names |
-| dos             | Detects servers vulnerable to Denial of Service (DoS)                  |
-| exploit         | Attempts to exploit various vulnerable services                        |
-| external        | Checks using a third-party service, such as Geoplugin and Virustotal   |
-| fuzzer          | Launch fuzzing attacks                                                 |
-| intrusive       | Intrusive scripts such as brute-force attacks and exploitation         |
-| malware         | Scans for backdoors                                                    |
-| safe            | Safe scripts that won’t crash the target                               |
-| version         | Retrieve service versions                                              |
-| vuln            | Checks for vulnerabilities or exploit vulnerable services              |
 
 
 | Option                  | Meaning                                         |
@@ -193,58 +198,10 @@ nmap -sI 10.10.5.5
 | -oX                     | save output in XML format                       |
 | -oA                     | save output in normal, XML and Grepable formats |
 
+FIREWALL/IDS EVASION AND SPOOFING:
 
+# Avoid Detection
 
-##### Scan All Ports with Hosts File
-```bash
-sudo nmap -sS -sU -p- -iL <Filename>
-```
-
-##### Bruteforce DNS
-```bash
-nmap -p 53 dns-brute domain.com
-```
-
-##### Do Not Perform Port Scan
-```bash
-nmap -sn
-```
-
-##### TCP / Three-Way Handshake Scan (Default)
-```bash
-nmap -sT
-```
-
-##### SYN Scan
-```bash
-# Faster than TCP and offers some stealth.
-sudo nmap -sS
-```
-
-##### UDP Scan
-```bash
-nmap -sU
-```
-
-##### Check Firewalls / ACK Scan
-```bash
-# Not for determining open ports, but filtered/unfiltered ports.
-nmap -sA
-```
-
-##### IP Protocols
-```bash
-# Not a port scanner
-nmap -sO
-```
-
-##### Fingerprint OS
-```bash
-# Utilizing nmap's aggressive, OS detection.
-nmap -O --osscan-guess <IP Address>
-```
-
-### Avoid Detection
 ##### Never Do DNS Resolution
 ```bash
 # Faster and more stealthy, when hostnames are not required.
@@ -256,24 +213,26 @@ nmap -n
 nmap -b
 ```
 
-##### Decoy / Spoof IP (Avoid Detection)
+##### Fragment Packets
+```bash
+# -f defaults to 4 bytes. --send-eth makes it 8 bytes.
+nmap -sS -f --send-eth
+```
+
+##### MTU 
+```bash
+# Like -f, but can specify packet size.
+# Without --send-eth, packet size will be 4 bytes, as with -f.
+nmap -sS --mtu <Size in bytes 8, 16, 24, 32...> --send-eth
+```
+
+##### Decoy / Spoof IP
 ```bash
 # Random IPs
 nmap -sS -D RND:<# of IPs> nmap.scanme.org
 
 # Specified IP
 nmap -sS -D <Spoofed IP Address 1,Spoofed IP Address 1> nmap.scanme.org
-```
-##### Fragment Packets (Avoid Detection)
-```bash
-# -f defaults to 4 bytes. --send-eth makes it 8 bytes.
-nmap -sS -f --send-eth
-```
-##### MTU (Avoid Detection)
-```bash
-# Like -f, but can specify packet size.
-# Without --send-eth, packet size will be 4 bytes, as with -f.
-nmap -sS --mtu <Size in bytes 8, 16, 24, 32...> --send-eth
 ```
 ##### Idle / Zombie Scan
 ```bash
@@ -315,12 +274,7 @@ nmap -D <IP 1>,<IP 2>,ME,<IP 3>...
 nmap -D RND:10
 ```
 
-##### Identify DNS Servers on a LAN
-```bash
-nmap -sV -p 53 192.214.31.0/24 --open
-```
-
-##### Specify Size of Datagram (Help to Avoid Port Scan Detection)
+##### Specify Size of Datagram
 ```bash
 nmap --data-length <size>
 
@@ -346,7 +300,49 @@ nmap --spoof-mac <MAC Address>
 nmap -iL hosts.txt --randomize-hosts
 ```
 
-### NSE
+##### Check Firewalls / ACK Scan
+```bash
+# Not for determining open ports, but filtered/unfiltered ports.
+nmap -sA
+```
+
+##### Spoofed, Decoy, and Idle (Zombie) Scanning
+```bash
+nmap -e NET_INTERFACE -Pn -S SPOOFED_IP 10.10.67.92 --spoof-mac SPOOFED_MAC
+nmap -D 10.10.0.1,10.10.0.2,RND,RND,ME 10.10.67.92
+nmap -sI 10.10.5.5
+```
+
+|                                               |          |
+|-----------------------------------------------|----------|
+| -f; --mtu [val]:                              | fragment packets (optionally w/given MTU) |
+| -D <decoy1,decoy2[,ME],...>:                  | Cloak a scan with decoys |
+| -S <IP_Address>:                              | Spoof source address |
+| -e [iface>:                                   | Use specified interface |
+| -g/--source-port [portnum]:                   | Use given port number |
+| --proxies <url1,[url2],...>:                  | Relay connections through HTTP/SOCKS4 proxies |
+| --data [hex string]:                          | Append a custom payload to sent packets |
+| --data-string [string]:                       | Append a custom ASCII string to sent packets |
+| --data-length [num]:                          | Append random data to sent packets |
+| --ip-options [options]:                       | Send packets with specified ip options |
+| --ttl [val]:                                  | Set IP time-to-live field |
+| --spoof-mac <mac address/prefix/vendor name>: | Spoof your MAC address |
+| --badsum:                                     | Send packets with a bogus TCP/UDP/SCTP checksum |
+
+# Fingerprinting
+##### IP Protocols
+```bash
+# Not a port scanner
+nmap -sO
+```
+
+##### Fingerprint OS
+```bash
+# Utilizing nmap's aggressive, OS detection.
+nmap -O --osscan-guess <Target Host>
+```
+
+# Scripts
 ##### Find Scripts
 ```bash
 # Find all scripts that start with SMB and are in the category discovery.
@@ -363,45 +359,66 @@ nmap --script-updatedb
 nmap --script auth <Target IP>
 ```
 
-##### [Reference Guide](https://nmap.org/book/man.html)
+| Script Category | Description                                                            |
+|-----------------|------------------------------------------------------------------------|
+| auth            | Authentication related scripts                                         |
+| broadcast       | Discover hosts by sending broadcast messages                           |
+| brute           | Performs brute-force password auditing against logins                  |
+| default         | Default scripts, same as -sC                                           |
+| discovery       | Retrieve accessible information, such as database tables and DNS names |
+| dos             | Detects servers vulnerable to Denial of Service (DoS)                  |
+| exploit         | Attempts to exploit various vulnerable services                        |
+| external        | Checks using a third-party service, such as Geoplugin and Virustotal   |
+| fuzzer          | Launch fuzzing attacks                                                 |
+| intrusive       | Intrusive scripts such as brute-force attacks and exploitation         |
+| malware         | Scans for backdoors                                                    |
+| safe            | Safe scripts that won’t crash the target                               |
+| version         | Retrieve service versions                                              |
+| vuln            | Checks for vulnerabilities or exploit vulnerable services              |
 
+# Services
 ### NetBIOS, SMB, Samba
 ##### Determine versions of NetBIOS ports
 ```bash
-nmap -sT -sU -sV <IP Address> -p135,137,138,139,445 --open
+nmap -sT -sU -sV <Target Host> -p135,137,138,139,445 --open
 ```
 ##### Enumerate SMB Shares
 ```bash
 nmap --script smb-enum-shares -p 445 <Target Host>
 ```
 
-# DNS
+### DNS
 ##### Brute Force DNS
 ```bash
 # Bruteforce DNS
 nmap -p 53 dns-brute <TargetDomain.com>
 ```
 
-# SMTP
-### Get SMTP Version
+##### Identify DNS Servers on a LAN
+```bash
+nmap -sV -p 53 <Target Host>/<Subnet> --open
+```
+
+### SMTP
+##### Get SMTP Version
 ```bash
 nmap -sV -p 25 <SMTP Host>
 ```
 
-### Enumerate SMTP Verbs
+##### Enumerate SMTP Verbs
 ```bash
 nmap --script smtp-commands <SMTP Host> -p 25
 ```
 
-### Enumerate SMTP Users
+##### Enumerate SMTP Users
 ```bash
 nmap --script smtp-enum-users <SMTP Host> -p 25
 ```
 
-## SMTP References
+#### SMTP References
 [smtp-enum-users](https://nmap.org/nsedoc/scripts/smtp-enum-users.html)
 
-# Finger
+### Finger
 ##### Enumerate Users with Finger
 ```bash
 nmap --script finger <Target Host> -p 79
@@ -416,3 +433,5 @@ nmap -sV --script vuln -p <Port #> <Target Host>
 [Nmap Ping Sweep](https://linuxhint.com/nmap_ping_sweep/)
 
 [NSEDoc Reference Portal](https://nmap.org/nsedoc/)
+
+[Reference Guide](https://nmap.org/book/man.html)
