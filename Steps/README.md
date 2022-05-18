@@ -3,7 +3,7 @@
     * ##### Query Domain Registration with WHOIS or RDAP
       * Perform [WHOIS](../Tools/PassiveRecon/Domain/whois/README.md#Query) lookup.
       * Perform another query, specifying the registrar's [WHOIS](../Tools/PassiveRecon/Domain/whois/README.md#Specify-Server-to-Query) server.
-    * ##### [DNS Enumeration](../Techniques/InformationGathering/DomainEnumeration.md)
+    * ##### [DNS Enumeration](../Techniques/InformationGathering/DnsEnumeration.md)
   * ### [Active](../Tools/ActiveRecon/README.md)
     * ##### [Host Discovery](../Tools/ActiveRecon/README.md#Host-Discovery)
     * ##### [Scan Ports](../Tools/ActiveRecon/README.md#Scan-Ports)
