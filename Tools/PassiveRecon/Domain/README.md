@@ -1,15 +1,15 @@
-# dig
+# [dig](dig/README.md)
 
-# dnsenum
+# [dnsenum](dnsenum/README.md)
 
-# dnsmap
+# [dnsmap](dnsmap/README.md)
 
-# dnsrecon
+# [dnsrecon](dnsrecon/README.md)
 
-# fierce
+# [fierce](fierce/README.md)
 
-# host
+# [host](host/README.md)
 
-# nslookup
+# [nslookup](nslookup/README.md)
 
-# whois
+# [whois](whois/README.md)
