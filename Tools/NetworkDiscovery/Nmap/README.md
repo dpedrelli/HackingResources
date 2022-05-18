@@ -1,5 +1,53 @@
 # [Nmap](https://nmap.org/)
 
+# Host Discovery
+
+##### Ping Sweep
+```bash
+# Invidiual Host
+nmap -sn <Host>
+# IP Range
+nmap -sn 192.168.1.0/24
+# If target is on same network as attack machine, nmap uses and ARP ping, rather than ICMP.
+
+# Force Ping
+sudo nmap -sn <Host> --disable-arp-ping
+# 1) Sends ICMP Echo to target.
+# 2) Sends TCP SYN packet on port 443.
+# 3) Sends TCP ACK packet on port 80.
+# 4) Sends ICMP Timestamp.
+
+# Include Probe Option - SYN Flag
+sudo nmap -sn -PS <Host> --disable-arp-ping
+# 1) Sends SYN Flag
+# 2) If target is live and port is open, target will respond with SYN/ACK, for three-way handshake.
+# 3) Attack machine sends RST.
+
+# Include Probe Option - SYN Flag and Specify Port #
+sudo nmap -sn -PS53 <Host> --disable-arp-ping
+
+# Include Probe Option - ACK Flag
+sudo nmap -sn -PA <Host> --disable-arp-ping
+# Default port 80.
+
+# Include Probe Option - UDP
+sudo nmap -sn -PU <Host> --disable-arp-ping
+# Default port 40125.
+
+# Include Probe Option - SCTP INIT
+sudo nmap -sn -PY <Host> --disable-arp-ping
+# Default port 80.
+
+# Include Probe Option - ICMP Echo
+sudo nmap -sn -PE <Host> --disable-arp-ping
+
+# Include Probe Option - ICMP Netmask
+sudo nmap -sn -PM <Host> --disable-arp-ping
+
+# Include Probe Option - ICMP Timestamp
+sudo nmap -sn -PP <Host> --disable-arp-ping
+```
+
 | Scan Type              | Example Command                           |
 |------------------------|-------------------------------------------|
 | ARP Scan               | sudo nmap -PR -sn MACHINE_IP/24           |
