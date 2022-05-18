@@ -245,6 +245,11 @@ nmap -D <IP 1>,<IP 2>,ME,<IP 3>...
 nmap -D RND:10
 ```
 
+##### Identify DNS Servers on a LAN
+```bash
+nmap -sV -p 53 192.214.31.0/24 --open
+```
+
 ##### Specify Size of Datagram (Help to Avoid Port Scan Detection)
 ```bash
 nmap --data-length <size>

@@ -70,14 +70,7 @@ RDAP is a secure replacement for whois that returns domain registration informat
 #### RDAP Online Tools
 ##### [ICANN](https://lookup.icann.org/)
 
-### [Whois](whois/README.md)
-#### Whois Online Tools
-##### [who.is](https://who.is/)
-##### [Domain Tools](https://whois.domaintools.com/)
-##### [Hurricane Electric](https://bgp.he.net/)
-##### [Rings of Saturn](https://networking.ringofsaturn.com/Tools/whois.php)
-##### [Network Solutions](https://www.networksolutions.com/whois)
-##### [Better Whois](https://www.betterwhois.com/)
+### [Whois](Domain/whois/README.md)
 
 # Website Footprinting
 ##### [HTTrack](https://www.httrack.com/)
@@ -88,6 +81,7 @@ RDAP is a secure replacement for whois that returns domain registration informat
 ##### [BuiltWith](https://builtwith.com/)
 
 # DNS Enumeration Online
+##### [DomainHelp (EasyDNS)](https://domainhelp.com/)
 ##### [Network Tools](https://network-tools.com/nslookup/)
 ##### [DNS Queries](https://www.dnsqueries.com/en/)
 ##### [MX Toolbox](https://mxtoolbox.com/)
