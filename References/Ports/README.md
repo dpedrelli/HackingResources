@@ -5,6 +5,7 @@
 |     [22](https://www.speedguide.net/port.php?port=22) | [SSH](../../Services/SSH/README.md) |
 |     [23](https://www.speedguide.net/port.php?port=23) | [Telnet](../../Services/Telnet/README.md) |
 |     [25](https://www.speedguide.net/port.php?port=25) | [SMTP](../../Services/SMTP/README.md) |
+|     [43](https://www.speedguide.net/port.php?port=43) | [WhoIs](../../Services/WhoIs/README.md) |
 |     [53](https://www.speedguide.net/port.php?port=53) | [DNS](../../Services/DNS/README.md) |
 |     [79](https://www.speedguide.net/port.php?port=79) | [Finger](../../Services/Finger/README.md) |
 |     [80](https://www.speedguide.net/port.php?port=80) | [HTTP](../../Services/HTTP_HTTPS/README.md) |
