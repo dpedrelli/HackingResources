@@ -6,6 +6,8 @@
 
 # [With Nmap](../../Tools/NetworkDiscovery/Nmap/README.md#Port-Scan)
 
+# [With RustScan](../../Tools/NetworkDiscovery/RustScan/README.md#Scan)
+
 # Zombie Scan using both hping and Nmap
 ```bash
 # Hping tracks IP ID increment.

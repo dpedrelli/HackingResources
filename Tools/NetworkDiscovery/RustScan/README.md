@@ -7,6 +7,7 @@ When scanning all ports, I received a false negative, multiple times, in TryHack
 Twice, it missed 1433.  
 Once, it missed 3389.
 
+# Install / Run
 ##### Install with Docker
 ```bash
 sudo docker pull rustscan/rustscan:<version>
@@ -23,6 +24,7 @@ alias rustscan='sudo docker run -it --rm --name rustscan rustscan/rustscan:<vers
 alias rustscan='sudo docker run -it --rm --name rustscan rustscan/rustscan:2.0.1'
 ```
 
+# Scan
 ##### Scan All Ports
 ```bash
 rustscan -a <IP Address> --range 1-65535 --scan-order "Random" -b 200 -t 2000
