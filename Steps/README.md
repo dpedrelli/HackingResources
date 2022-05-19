@@ -4,10 +4,10 @@
     This phase deals with collecting information regarding the type of business, assets, employees, stakeholders, products, services, and non-technical information.
   * ### [Infrastructure](../Techniques/InformationGathering/README.md#Infrastructure)
     The infrastructure phase focuses on gathering information about the computer systems, networks, IP addresses, domains, and technical information.
-  * ### [Passive](../Techniques/InformationGathering/README.md#Passive)
-  * ### [Active](../Techniques/InformationGathering/README.md#Active)
 
 # [Scanning](../Techniques/Scanning/README.md)
+
+# [Enumeration](../Techniques/Enumeration/README.md)
 
 
 # Exploitation
