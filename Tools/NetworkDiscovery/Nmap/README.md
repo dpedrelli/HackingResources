@@ -1,6 +1,6 @@
 # [Nmap / Zenmap](https://nmap.org/)
 
-# Host Discovery
+# [Host Discovery](https://nmap.org/book/man-host-discovery.html)
 
 ##### Ping Sweep
 ```bash
@@ -15,6 +15,7 @@ nmap -sn <Target Host>/<Network ID> | grep "Nmap scan report for" | cut -d ' ' -
 
 # Force Ping
 sudo nmap -sn <Host> --disable-arp-ping
+sudo nmap -sn <Host> --send-ip
 # 1) Sends ICMP Echo to target.
 # 2) Sends TCP SYN packet on port 443.
 # 3) Sends TCP ACK packet on port 80.

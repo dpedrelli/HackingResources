@@ -7,3 +7,6 @@ dnsenum <DomainToQuery.com>
 ```bash
 dnsenum <DomainToQuery.com> --dnsserver <NameServerToQuery>
 ```
+
+# References
+[dnsenum](https://github.com/fwaeytens/dnsenum)

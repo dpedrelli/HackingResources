@@ -3,7 +3,7 @@
 host <TargetDomain.com>
 ```
 
-# Host Transfer
+# Zone Transfer
 ```bash
 host -t axfr <TargetDomain.com> <DnsServerToQuery>
 ```

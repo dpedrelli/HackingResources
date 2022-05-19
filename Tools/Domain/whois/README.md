@@ -47,16 +47,3 @@ whois -h whois.godaddy.com <targetdomain.com>
 ```bash
 whois <targetdomain.com> > whois.txt
 ```
-
-
-# Online Tools
-##### [Better Whois](https://www.betterwhois.com/)
-##### [Domain Tools](https://whois.domaintools.com/)
-##### [DomainHelp (EasyDNS)](https://domainhelp.com/)
-##### [GoDaddy](https://www.godaddy.com/whois)
-##### [Hurricane Electric](https://bgp.he.net/)
-##### [Namecheap.com](https://www.namecheap.com/domains/whois)
-##### [Network Solutions](https://www.networksolutions.com/whois)
-##### [Rings of Saturn](https://networking.ringofsaturn.com/Tools/whois.php)
-##### [who.is](https://who.is/)
-##### [Whois.com](https://www.whois.com/whois/)

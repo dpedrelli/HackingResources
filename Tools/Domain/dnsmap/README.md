@@ -9,3 +9,6 @@ dnsmap <TargetDomain.com> -w <Wordlist>
 
 dnsmap <TargetDomain.com> -w /usr/share/wordlists/SecLists/Discovery/DNS/dns-Jhaddix.txt
 ```
+
+# References
+[dnsmap](https://github.com/makefu/dnsmap)

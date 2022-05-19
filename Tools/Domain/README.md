@@ -10,6 +10,8 @@
 
 # [host](host/README.md)
 
+# [hostmap](hostmap/README.md)
+
 # [nslookup](nslookup/README.md)
 
 # [Sublist3r](Sublist3r/README.md)
