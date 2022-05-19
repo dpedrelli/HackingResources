@@ -1,4 +1,4 @@
-# [Nmap](https://nmap.org/)
+# [Nmap / Zenmap](https://nmap.org/)
 
 # Host Discovery
 
@@ -56,7 +56,7 @@ sudo nmap -sn -PP <Host> --disable-arp-ping
 nmap -n -sn -PS22,80,135,443,445 <Target Host>/<Network ID>
 ```
 
-### Host Discovery Options
+##### Host Discovery Options
 | Parameter                          | Description                                                 |
 |------------------------------------|-------------------------------------------------------------|
 | -sL:                               | List Scan - simply list targets to scan                     |
@@ -108,7 +108,7 @@ nmap -sU
 sudo nmap -sS -sU -p- -iL <Filename>
 ```
 
-
+##### Scan Techniques
 | Parameter                      | Description                               |
 |--------------------------------|-------------------------------------------|
 | -sS/sT/sA/sW/sM:               | TCP SYN/Connect()/ACK/Window/Maimon scans |
@@ -202,6 +202,7 @@ sudo nmap -sS -sU -p- -iL <Filename>
 
 ##### Never Do DNS Resolution
 ```bash
+# Use whenever possible.
 # Faster and more stealthy, when hostnames are not required.
 nmap -n
 ```
@@ -241,6 +242,13 @@ nmap --script ipidseq <Zombie IP> -p 135
 
 nmap -Pn -v -sI <Zombie IP>:<Port> <Target IP> -p<ports>
 ```
+##### Spoofed, Decoy, and Idle (Zombie) Scanning
+```bash
+nmap -e NET_INTERFACE -Pn -S SPOOFED_IP 10.10.67.92 --spoof-mac SPOOFED_MAC
+nmap -D 10.10.0.1,10.10.0.2,RND,RND,ME 10.10.67.92
+nmap -sI 10.10.5.5
+```
+##### [TCP Idle Scan (-sI)](https://nmap.org/book/idlescan.html)
 
 ##### Specify Source Port
 ```bash
@@ -302,13 +310,6 @@ nmap -iL hosts.txt --randomize-hosts
 ```bash
 # Not for determining open ports, but filtered/unfiltered ports.
 nmap -sA
-```
-
-##### Spoofed, Decoy, and Idle (Zombie) Scanning
-```bash
-nmap -e NET_INTERFACE -Pn -S SPOOFED_IP 10.10.67.92 --spoof-mac SPOOFED_MAC
-nmap -D 10.10.0.1,10.10.0.2,RND,RND,ME 10.10.67.92
-nmap -sI 10.10.5.5
 ```
 
 |                                               |          |
