@@ -90,6 +90,17 @@ sudo hping3 -F -P -U --scan 1-1000 <TargetHost> -V
 sudo hping3 --scan 1-1000 <TargetHost>
 ```
 
+# Idle / Zombie
+### Verify Idle / Zombie Candidate
+```bash
+sudo hping3 -S -r -p <Port #> <TargetHost>
+```
+
+### Idle / Zombie Scan
+```bash
+sudo hping3 -a <ZombieHost> -S -p <Port #> <TargetHost>
+```
+
 # General Options
 
 ### Specify Ping count
