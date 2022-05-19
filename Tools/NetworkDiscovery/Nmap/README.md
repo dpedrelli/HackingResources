@@ -236,9 +236,9 @@ nmap -sS -D <Spoofed IP Address 1,Spoofed IP Address 1> nmap.scanme.org
 ##### Idle / Zombie Scan
 ```bash
 # Check zombie prospect for incremental IP ID
-nmap -O -v -n <Zombie IP>
+nmap -O -v -n <Zombie IP> -p <Open Port>
 # Use NSE to check for candidate
-nmap --script ipidseq <Zombie IP> -p 135
+nmap --script ipidseq <Zombie IP> -p <Open Port>
 
 nmap -Pn -v -sI <Zombie IP>:<Port> <Target IP> -p<ports>
 ```
