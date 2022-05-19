@@ -26,5 +26,5 @@
       * ##### [Windows](PrivEsc/Windows/README.md)
   * ### [Lateral Movement](LateralMovement/README.md)
   * ### [Data Exfiltration](../Techniques/DataExfiltration/README.md)
-  * ### [Persistence](Persistence/README.md)
+  * ### [Persistence](../Techniques/Persistence/README.md)
   * ### [Third-Party Guides](PostExploitation/ThirdParty.md)
