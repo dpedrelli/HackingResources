@@ -505,6 +505,15 @@ nmap --script finger <Target Host> -p 79
 nmap -sV --script vuln -p <Port #> <Target Host>
 ```
 
+| Port Status     |    |
+|-----------------|----|
+| open            | An application is actively accepting TCP connections, UDP datagrams, or SCTP associations on this port. |
+| closed          | A closed port is accessible (it receives and responds to Nmap probe packets), but there is no application listening on it. |
+| filtered        | Nmap cannot determine whether the port is open because packet filtering prevents its probes from reaching the port. |
+| unfiltered      | The unfiltered state means that a port is accessible, but Nmap is unable to determine whether it is open or closed. Only the ACK scan, which is used to map firewall rulesets, classifies ports into this state. Scanning unfiltered ports with other scan types such as Window scan, SYN scan, or FIN scan, may help resolve whether the port is open. |
+| open/filtered   | Nmap places ports in this state when it is unable to determine whether a port is open or filtered. The UDP, IP protocol, FIN, NULL, and Xmas scans classify ports this way. |
+| closed/filtered | This state is used when Nmap is unable to determine whether a port is closed or filtered. It is only used for the IP ID idle scan. |
+
 # Cheatsheets
 [Tutorials Point](https://www.tutorialspoint.com/nmap-cheat-sheet)
 
