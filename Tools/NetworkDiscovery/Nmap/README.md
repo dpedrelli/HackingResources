@@ -216,20 +216,28 @@ nmap -n
 nmap -b
 ```
 
-##### Fragment Packets
-```bash
-# Default packet is 24 bytes
+##### Fragmented Packets and Data Length
+By default, nmap adds zero data to the IP header, for fragmented packets.  Combining fragments with ```--data-length``` with add random data to the header and increase the number of fragments, because nmap splits the header into 8 byte fragments.  The default packet size is 24 bytes.  16 of those bytes make-up the IP header and the remaining 8 bytes make-up the TCP SYN packet.  Add 24 to the number of bytes specified with ```--data-length``` and divide by the fragmentation size and divide by the fragment size, to get the number of packets sent.
 
-# 8 bytes
+| Flag  | Packet Size |
+|-------|-------------|
+| none  | 24 bytes    |
+| -f    | 8 bytes     |
+| -f -f | 16 bytes    |
+
+```bash
+# Fragment packet into 8 bytes
 nmap -f
 
-# 16 bytes
+# Fragment packet into 16 bytes
 nmap -f -f
 
-# -f defaults to 4 bytes. --send-eth makes it 8 bytes.
-nmap -sS -f --send-eth
+# Specify Size of Datagram / Add Random Data
+nmap --data-length <size>
 
-nmap -n -Pn --disable-arp-ping -f <Target Host>
+# Combine Fragments with Data Length
+nmap -f --data-length 48 -sS <Target Host> -p <Port #>
+# Default packet size of 24 bytes + 56 bytes (--data-length) = 80 bytes / 8 bytes (-f) = 10 packets
 ```
 
 ##### MTU 
@@ -243,6 +251,7 @@ nmap -sS --mtu <Size in bytes 8, 16, 24, 32...> --send-eth
 ```bash
 # Random IPs
 nmap -sS -D RND:<# of IPs> nmap.scanme.org
+# nmap includes the Attacker's address, among the random addresses.
 
 # Specified IP
 nmap -sS -D <Spoofed IP Address 1,Spoofed IP Address 2> nmap.scanme.org
@@ -285,16 +294,6 @@ nmap -D <IP 1>,<IP 2>,ME,<IP 3>...
 
 # Random Decoys
 nmap -D RND:10
-```
-
-##### Specify Size of Datagram / Add Random Data
-```bash
-nmap --data-length <size>
-
-# nmap appends random data
-
-# Add an extra 10 bytes
-nmap --data-length 10
 ```
 
 ##### Spoof MAC
@@ -505,6 +504,9 @@ nmap --script finger <Target Host> -p 79
 ```bash
 nmap -sV --script vuln -p <Port #> <Target Host>
 ```
+
+# Cheatsheets
+[Tutorials Point](https://www.tutorialspoint.com/nmap-cheat-sheet)
 
 # References
 [NSEDoc Reference Portal](https://nmap.org/nsedoc/)
