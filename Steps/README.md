@@ -9,8 +9,11 @@
 
 # [Enumeration](../Techniques/Enumeration/README.md)
 
+# [Sniffing & MitM Attacks](../Techniques/Sniffing_MitM_Attacks/README.md)
 
-# Exploitation
+# [Exploitation](../Techniques/Exploitation/README.md)
+
+# [Post Exploitation](../Techniques/PostExploitation/README.md)
 
 # Post Exploitation
   * ### Enumeration
