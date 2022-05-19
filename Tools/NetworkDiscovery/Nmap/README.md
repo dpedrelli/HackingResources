@@ -454,16 +454,6 @@ nmap --script whois-domain <Target IP> -sn
 | vuln            | Checks for vulnerabilities or exploit vulnerable services              |
 
 # Services
-### NetBIOS, SMB, Samba
-##### Determine versions of NetBIOS ports
-```bash
-nmap -sT -sU -sV <Target Host> -p135,137,138,139,445 --open
-```
-##### Enumerate SMB Shares
-```bash
-nmap --script smb-enum-shares -p 445 <Target Host>
-```
-
 ### DNS
 ##### Brute Force DNS
 ```bash
@@ -474,6 +464,22 @@ nmap -p 53 dns-brute <TargetDomain.com>
 ##### Identify DNS Servers on a LAN
 ```bash
 nmap -sV -p 53 <Target Host>/<Subnet> --open
+```
+
+### Finger
+##### Enumerate Users with Finger
+```bash
+nmap --script finger <Target Host> -p 79
+```
+
+### NetBIOS, SMB, Samba
+##### Determine versions of NetBIOS ports
+```bash
+nmap -sT -sU -sV <Target Host> -p135,137,138,139,445 --open
+```
+##### Enumerate SMB Shares
+```bash
+nmap --script smb-enum-shares -p 445 <Target Host>
 ```
 
 ### SMTP
@@ -495,10 +501,20 @@ nmap --script smtp-enum-users <SMTP Host> -p 25
 #### SMTP References
 [smtp-enum-users](https://nmap.org/nsedoc/scripts/smtp-enum-users.html)
 
-### Finger
-##### Enumerate Users with Finger
+### SNMP
+#### Enumerate SNMP
+##### Enumerate SNMP on Windows
 ```bash
-nmap --script finger <Target Host> -p 79
+nmap -sU -p 161 --script snmp-win32-services <Target Host>
+```
+##### Brute Force
+```bash
+nmap -sU -p 161 --script snmp-brute <Target Host>
+# By default, nmap uses wordlist /usr/share/nmap/nselib/data/snmpcommunities.lst
+
+# Specify wordlist
+nmap -sU -p 161 --script snmp-brute --script-args snmp-brute.communitiesdb=<wordlist> <Target Host>
+# From seclists /usr/share/seclists/Misc/wordlist-common-snmp-community-strings.txt
 ```
 
 # Scan for Vulneratbilities

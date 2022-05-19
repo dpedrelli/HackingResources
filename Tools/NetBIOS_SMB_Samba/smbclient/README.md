@@ -10,6 +10,8 @@ smbclient -L <IP Address>
 # Connect To Share
 ```bash
 smbclient //<IP Address>/<Sharename>
+
+smbclient \\\\<IP Address>\\<Sharename>
 ```
 
 # Download File
