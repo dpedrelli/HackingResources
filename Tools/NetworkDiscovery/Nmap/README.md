@@ -339,6 +339,8 @@ nmap -sO
 ```bash
 # Utilizing nmap's aggressive, OS detection.
 nmap -O --osscan-guess <Target Host>
+
+nmap --script smb-os-discovery -p445 <Target Host>
 ```
 
 # Scripts
@@ -346,6 +348,9 @@ nmap -O --osscan-guess <Target Host>
 ```bash
 # Find all scripts that start with SMB and are in the category discovery.
 nmap --script-help "smb*" and discovery
+
+# By just name.
+nmap --script-help "whois-domain"
 ```
 
 ##### Update NSE Scripts
@@ -353,9 +358,20 @@ nmap --script-help "smb*" and discovery
 nmap --script-updatedb
 ```
 
+##### Default Category
+```bash
+# Info related to target OS, workgroup, and NetBIOS
+nmap --script default <Target IP>
+```
+
 ##### Execute All Scripts In Category
 ```bash
 nmap --script auth <Target IP>
+```
+
+##### Query WHOIS
+```bash
+nmap --script whois-domain <Target IP> -sn
 ```
 
 | Script Category | Description                                                            |

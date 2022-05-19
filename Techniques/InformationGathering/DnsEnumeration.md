@@ -1,3 +1,4 @@
+##### Query WHOIS with [Nmap](../../Tools/NetworkDiscovery/Nmap/README.md#Query-WHOIS).
 ##### Query name servers with [WHOIS](../../Tools/Domain/whois/README.md#Query) or [dig](../../Tools/Domain/dig/README.md#Query-Record-Type) or [nslookup](../../Tools/Domain/nslookup/README.md#Query-Name-Servers).
 ##### Query mail servers with [dig](../../Tools/Domain/dig/README.md#Query-Record-Type) or  [nslookup](../../Tools/Domain/nslookup/README.md#Query-Mail-Servers).
 ##### Get server IP Addresses with [nslookup](../../Tools/Domain/nslookup/README.md#Get-IP-Address-of-Server).
