@@ -90,15 +90,52 @@ sudo hping3 -F -P -U --scan 1-1000 <TargetHost> -V
 sudo hping3 --scan 1-1000 <TargetHost>
 ```
 
-# Idle / Zombie
-### Verify Idle / Zombie Candidate
+# Evasion
+### Idle / Zombie
+##### Verify Idle / Zombie Candidate
 ```bash
 sudo hping3 -S -r -p <Port #> <TargetHost>
 ```
 
-### Idle / Zombie Scan
+##### Idle / Zombie Scan
 ```bash
 sudo hping3 -a <ZombieHost> -S -p <Port #> <TargetHost>
+```
+
+### Fragment Packets
+```bash
+sudo hping3 -S -f -p <Port #> <TargetHost>
+```
+
+### Decoys & Spoofing
+```bash
+# Random source address
+sudo hping3 --rand-source -S -p <Port #> <TargetHost>
+
+# Specified source address
+sudo hping3 -a <Spoofed Host> -S -p <Port #> <TargetHost>
+```
+
+### Specify Source Port
+```bash
+sudo hping3 -S -s 53 -p <Port #> <TargetHost>
+```
+
+### Specify Size of Datagram / Add Data
+```bash
+# hping appends fixed data of "X"
+sudo hping3 -S --data <size> -p <Port #> <TargetHost>
+```
+
+### Randomize Hosts
+```bash
+sudo hping3 -1 --rand-dest 192.168.2.x -I <Interface Name>
+```
+
+### Specify Time Delay
+```bash
+# u is timing in microseconds
+sudo hping3 -S --scan <Ports> <TargetHost> -i u10
 ```
 
 # General Options

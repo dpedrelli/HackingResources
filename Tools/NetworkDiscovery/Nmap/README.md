@@ -245,7 +245,8 @@ nmap -sS --mtu <Size in bytes 8, 16, 24, 32...> --send-eth
 nmap -sS -D RND:<# of IPs> nmap.scanme.org
 
 # Specified IP
-nmap -sS -D <Spoofed IP Address 1,Spoofed IP Address 1> nmap.scanme.org
+nmap -sS -D <Spoofed IP Address 1,Spoofed IP Address 2> nmap.scanme.org
+sudo nmap -D 192.168.1.5,ME,192.168.1.25 <Target Host>
 
 # Decoys do not work with -sT or -sV, because they require full connections.
 ```
@@ -268,6 +269,7 @@ nmap -sI 10.10.5.5
 
 ##### Specify Source Port
 ```bash
+# May evade detection by performing port scan, while specifying port 53 (DNS) as the source port.
 nmap --source-port 53
 nmap -g 53
 ```
@@ -285,9 +287,11 @@ nmap -D <IP 1>,<IP 2>,ME,<IP 3>...
 nmap -D RND:10
 ```
 
-##### Specify Size of Datagram
+##### Specify Size of Datagram / Add Random Data
 ```bash
 nmap --data-length <size>
+
+# nmap appends random data
 
 # Add an extra 10 bytes
 nmap --data-length 10
@@ -307,7 +311,7 @@ nmap --spoof-mac <MAC Address>
 
 ##### Randomize Host
 ```bash
-# hosts.txt contains list of IP addresses.
+# hosts.txt contains list of IP addresses of hosts that are alive and some that are not.
 nmap -iL hosts.txt --randomize-hosts
 ```
 
