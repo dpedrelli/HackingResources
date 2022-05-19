@@ -7,4 +7,6 @@
 
 # Active
 * ##### [Host Discovery](HostDiscovery.md)
+* ##### Grab Banners
 * ##### [Scan Ports](PortScan.md)
+* ##### [OS Fingerprinting](OSFingerprinting.md)

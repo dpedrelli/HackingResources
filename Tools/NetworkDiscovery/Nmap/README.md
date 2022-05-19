@@ -86,6 +86,10 @@ nmap -n -sn -PS22,80,135,443,445 <Target Host>/<Network ID>
 | -R     | reverse-DNS lookup for all hosts |
 | -sn    | host discovery only              |
 
+### Host Discovery References
+[Nmap Ping Sweep](https://linuxhint.com/nmap_ping_sweep/)
+
+
 # Port Scan
 ##### TCP / Three-Way Handshake Scan (Default)
 ```bash
@@ -198,7 +202,7 @@ sudo nmap -sS -sU -p- -iL <Filename>
 | -oX                     | save output in XML format                       |
 | -oA                     | save output in normal, XML and Grepable formats |
 
-# Avoid Detection
+# Evasion
 
 ##### Never Do DNS Resolution
 ```bash
@@ -214,8 +218,18 @@ nmap -b
 
 ##### Fragment Packets
 ```bash
+# Default packet is 24 bytes
+
+# 8 bytes
+nmap -f
+
+# 16 bytes
+nmap -f -f
+
 # -f defaults to 4 bytes. --send-eth makes it 8 bytes.
 nmap -sS -f --send-eth
+
+nmap -n -Pn --disable-arp-ping -f <Target Host>
 ```
 
 ##### MTU 
@@ -232,6 +246,8 @@ nmap -sS -D RND:<# of IPs> nmap.scanme.org
 
 # Specified IP
 nmap -sS -D <Spoofed IP Address 1,Spoofed IP Address 1> nmap.scanme.org
+
+# Decoys do not work with -sT or -sV, because they require full connections.
 ```
 ##### Idle / Zombie Scan
 ```bash
@@ -242,13 +258,13 @@ nmap --script ipidseq <Zombie IP> -p <Open Port>
 
 nmap -Pn -v -sI <Zombie IP>:<Port> <Target IP> -p<ports>
 ```
+
 ##### Spoofed, Decoy, and Idle (Zombie) Scanning
 ```bash
 nmap -e NET_INTERFACE -Pn -S SPOOFED_IP 10.10.67.92 --spoof-mac SPOOFED_MAC
 nmap -D 10.10.0.1,10.10.0.2,RND,RND,ME 10.10.67.92
 nmap -sI 10.10.5.5
 ```
-##### [TCP Idle Scan (-sI)](https://nmap.org/book/idlescan.html)
 
 ##### Specify Source Port
 ```bash
@@ -259,17 +275,6 @@ nmap -g 53
 ##### Disable ARP Ping
 ```bash
 nmap --disable-arp-ping
-```
-
-##### Fragment Packet
-```bash
-# Default packet is 24 bytes
-
-# 8 bytes
-nmap -f
-
-# 16 bytes
-nmap -f -f
 ```
 
 ##### Use Decoys
@@ -312,8 +317,8 @@ nmap -iL hosts.txt --randomize-hosts
 nmap -sA
 ```
 
-|                                               |          |
-|-----------------------------------------------|----------|
+| Flag                                          | Evasion & Spoofing         |
+|-----------------------------------------------|----------------------------|
 | -f; --mtu [val]:                              | fragment packets (optionally w/given MTU) |
 | -D <decoy1,decoy2[,ME],...>:                  | Cloak a scan with decoys |
 | -S <IP_Address>:                              | Spoof source address |
@@ -328,7 +333,41 @@ nmap -sA
 | --spoof-mac <mac address/prefix/vendor name>: | Spoof your MAC address |
 | --badsum:                                     | Send packets with a bogus TCP/UDP/SCTP checksum |
 
-# Fingerprinting
+
+| Flag     | Timing                                 |
+|----------|----------------------------------------| 
+| -T<0-5>: | Set timing template (higher is faster) |
+| --min-hostgroup/max-hostgroup [size]: | Parallel host scan group sizes |
+| --min-parallelism/max-parallelism [numprobes]: | Probe parallelization |
+| --min-rtt-timeout/max-rtt-timeout/initial-rtt-timeout [time]: | Specifies probe round trip time. |
+| --max-retries [tries]: | Caps number of port scan probe retransmissions. |
+| --host-timeout [time]: | Give up on target after this long |
+| --scan-delay/--max-scan-delay [time]: | Adjust delay between probes |
+| --min-rate [number]: | Send packets no slower than [number] per second |
+| --max-rate [number]: | Send packets no faster than [number] per second |
+| |  Options which take [time] are in seconds, or append 'ms' (milliseconds), 's' (seconds), 'm' (minutes), or 'h' (hours) to the value (e.g. 30m).|
+
+| Flag | Template   | Time        |
+|------|------------|-------------|
+| -T0  | Paranoid   | 5 min       |
+| -T1  | Sneaky     | 15 sec      |
+| -T2  | Polite     | 0.4 sec     |
+| -T3  | Normal     | default     |
+| -T4  | Aggressive | 10 millisec |
+| -T5  | Insane     | 5 millisec  |
+
+### Evasion References
+##### [Firewall/IDS Evasion and Spoofing](https://nmap.org/book/man-bypass-firewalls-ids.html)
+##### [TCP Idle Scan (-sI)](https://nmap.org/book/idlescan.html)
+
+
+# Version Detection / Fingerprinting
+##### Get Service Versions
+```bash
+nmap -sV
+nmap -sV --version-all
+```
+
 ##### IP Protocols
 ```bash
 # Not a port scanner
@@ -338,10 +377,29 @@ nmap -sO
 ##### Fingerprint OS
 ```bash
 # Utilizing nmap's aggressive, OS detection.
-nmap -O --osscan-guess <Target Host>
+nmap -n -O --osscan-guess <Target Host>
 
-nmap --script smb-os-discovery -p445 <Target Host>
+# Very noisy. OS detection, version detection, script scanning, and traceroute
+nmap -n -A <Target Host>
+
+nmap -n --script smb-os-discovery -p445 <Target Host>
 ```
+
+| Flag | OS Detection |
+|------|--------------|
+| -O:  | Enable OS detection |
+| --osscan-limit: | Limit OS detection to promising targets |
+| --osscan-guess: | Guess OS more aggressively |
+| -A: | Enable OS detection, version detection, script scanning, and traceroute |
+
+| Flag | Service / Version Detection |
+|------|-----------------------------|
+| -sV: | Probe open ports to determine service/version info |
+| --version-intensity [level]: | Set from 0 (light) to 9 (try all probes) |
+| --version-light: | Limit to most likely probes (intensity 2) |
+| --version-all: | Try every single probe (intensity 9) |
+| --version-trace: | Show detailed version scan activity (for debugging) |
+
 
 # Scripts
 ##### Find Scripts
@@ -445,8 +503,6 @@ nmap -sV --script vuln -p <Port #> <Target Host>
 ```
 
 # References
-[Nmap Ping Sweep](https://linuxhint.com/nmap_ping_sweep/)
-
 [NSEDoc Reference Portal](https://nmap.org/nsedoc/)
 
 [Reference Guide](https://nmap.org/book/man.html)
