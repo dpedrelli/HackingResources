@@ -7,12 +7,8 @@
   * ### [Passive](../Techniques/InformationGathering/README.md#Passive)
   * ### [Active](../Techniques/InformationGathering/README.md#Active)
 
-##### Web Presence
-* Business
-* Location
-* Projects
-* External Links
-* Subdomains
+# [Scanning](../Techniques/Scanning/README.md)
+
 
 # Exploitation
 

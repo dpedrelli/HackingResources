@@ -12,6 +12,8 @@
 
 # [Nmap](Nmap/README.md)
 
+# [Nping](Nping/README.md)
+
 # [p0f](p0f/README.md)
 
 # [ping](ping/README.md)

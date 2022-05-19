@@ -22,10 +22,3 @@ The infrastructure phase focuses on gathering information about the computer sys
 ### [Tracking & Reporting](../../Tools/Tracking_Reporting/README.md)
 
 
-# Active
-### Scanning
-* ##### [Host Discovery](HostDiscovery.md)
-* ##### Grab Banners
-* ##### [Scan Ports](PortScan.md)
-* ##### [OS Fingerprinting](OSFingerprinting.md)
-### Enumeration
