@@ -1,6 +1,13 @@
 # [Nmap / Zenmap](https://nmap.org/)
 
 # [Host Discovery](https://nmap.org/book/man-host-discovery.html)
+##### ARP Ping Scan
+```bash
+nmap -PR -sn <Target Host>/<Network ID>
+
+nmap -PR -sn 172.16.5.0/24
+nmap -PR -sn 172.16.5.*
+```
 
 ##### Ping Sweep
 ```bash
@@ -458,7 +465,7 @@ nmap --script whois-domain <Target IP> -sn
 ##### Brute Force DNS
 ```bash
 # Bruteforce DNS
-nmap -p 53 dns-brute <TargetDomain.com>
+nmap -p 53 --script dns-brute <TargetDomain.com>
 ```
 
 ##### Identify DNS Servers on a LAN

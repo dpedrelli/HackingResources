@@ -20,6 +20,11 @@ dig <HostToQuery.com> A
 dig <DomainToQuery.com> NS +noall +answer +nocmd
 ```
 
+# Reverse Lookup
+```bash
+dig @<DnsServerToQuery> -x <IP Address To Resolve> +nocookie
+```
+
 # Zone Transfer
 ```bash
 # For zone transfer to work, must specify misconfigured DNS server.
