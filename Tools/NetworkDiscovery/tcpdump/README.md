@@ -1,4 +1,6 @@
-﻿# Dump Traffic
+﻿##### tcpdump must be run as sudo, when capturing traffic, but not for other operations.
+
+# Dump Traffic
 ```bash
 sudo tcpdump -i <Interface Name> 
 ```
@@ -8,6 +10,56 @@ sudo tcpdump -i <Interface Name>
 sudo tcpdump -i <Interface Name> -xxAXXSs 0
 
 sudo tcpdump -i <Interface Name> -vvvASs 0
+```
+
+# List Available Interfaces
+```bash
+tcpdump -D
+```
+
+# Prevent Reverse DNS of IP Address to Names
+```bash
+sudo tcpdump -i <Interface Name> -n
+```
+
+# Quiet
+```bash
+sudo tcpdump -i <Interface Name> -q
+```
+
+# Limit Traffic to Host
+```bash
+sudo tcpdump -i <Interface Name> host <HostName>
+```
+
+# Limit Traffic by Source and Destination
+```bash
+sudo tcpdump -i <Interface Name> src <Source IP> and dst <Destination IP>
+```
+
+# Limit Number of Packets Captured
+```bash
+sudo tcpdump -i <Interface Name> -c <Number of Packets>
+```
+
+# Import Filters from File
+```bash
+# Create file filters.txt with filter, such as:
+# Port 80
+sudo tcpdump -i <Interface Name> -F filters.txt
+```
+
+# Output to File
+```bash
+sudo tcpdump -i <Interface Name> -w output.txt
+
+# To read the captured file
+sudo tcpdump -i <Interface Name> -r output.txt
+```
+
+# Filter Output with Grep
+```bash
+sudo tcpdump -i <Interface Name> | grep 192.168.1.1
 ```
 
 | Flag | Description |

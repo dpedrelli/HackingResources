@@ -11,7 +11,7 @@ ifconfig
 ip addr
 ```
 
-##### Check Routing Table.
+##### Check Routing Table
 ```bash
 ip route
 
@@ -20,12 +20,29 @@ netstat -rn
 route -n
 ```
 
-##### Create a Route.
+##### Create a Route
 ```bash
 ip route add <network_ip>/<cidr> via <gateway_ip>
 
 # Over specific interface.
 ip route add <network_ip>/<cidr> via <gateway_ip> dev <network_card_name>
+```
+
+##### Interactive Sudo Shell
+```bash
+sudo -i
+```
+
+##### Enable IP Forwarding
+```bash
+sudo -i
+echo 1 > /proc/sys/net/ipv4/ip_forward
+```
+
+##### Setup Port Redirection Using Tables
+```bash
+iptables -t nat -A PREROUTING -p tcp --destination-port 80 -j REDIRECT --to-ports 8080
+
 ```
 
 # References
