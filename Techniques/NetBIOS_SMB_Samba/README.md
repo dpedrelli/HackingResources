@@ -1,20 +1,30 @@
 # Enumerate
+### Nmap
+##### [Discover OS](../../Tools/NetworkDiscovery/Nmap/README.md#SMB-OS-Discovery)
+##### [List supported protocols and dialects](../../Tools/NetworkDiscovery/Nmap/README.md#SMB-Protocols)
+##### [Get SMB security level](../../Tools/NetworkDiscovery/Nmap/README.md#SMB-Security-Mode)
+##### [Enumerate Shares](../../Tools/NetworkDiscovery/Nmap/README.md#Enumerate-SMB-Shares)
+##### [Enumerate Users](../../Tools/NetworkDiscovery/Nmap/README.md#Enumerate-SMB-Users)
+
 ##### [Determine versions of NetBIOS ports with nmap](../../Tools/NetworkDiscovery/Nmap/README.md#Determine-versions-of-NetBIOS-ports)
-##### [Enumerate with nmap](../../Tools/NetworkDiscovery/Nmap/README.md#Enumerate-SMB-Shares)
 
-##### [Enumerate Shares with smbclient](../../Tools/NetBIOS_SMB_Samba/smbclient/README.md#Enumerate-Shares)
+### smbclient
+##### [Enumerate Shares](../../Tools/NetBIOS_SMB_Samba/smbclient/README.md#Enumerate-Shares)
 
-##### [Enumerate Shares with smbmap](../../Tools/NetBIOS_SMB_Samba/smbmap/README.md#Enumerate-Shares)
+### smbmap
+##### [Enumerate Shares](../../Tools/NetBIOS_SMB_Samba/smbmap/README.md#Enumerate-Shares)
 
-##### [Enumerate Users With rpcclient in Bash Script](../../Tools/NetBIOS_SMB_Samba/rpcclient/README.md#Enumerate-Users-with-Bash-Script)
+### rpcclient
+##### [Enumerate Users in Bash Script](../../Tools/NetBIOS_SMB_Samba/rpcclient/README.md#Enumerate-Users-with-Bash-Script)
 
-##### [Enumerate Domains With rpcclient](../../Tools/NetBIOS_SMB_Samba/rpcclient/README.md#Enumerate-Domains)
+##### [Enumerate Domains](../../Tools/NetBIOS_SMB_Samba/rpcclient/README.md#Enumerate-Domains)
 
-##### [Enumerate Users With rpcclient](../../Tools/NetBIOS_SMB_Samba/rpcclient/README.md#Enumerate-Users)
+##### [Enumerate Users](../../Tools/NetBIOS_SMB_Samba/rpcclient/README.md#Enumerate-Users)
 
-##### [Enumerate Groups With rpcclient](../../Tools/NetBIOS_SMB_Samba/rpcclient/README.md#Enumerate-Groups)
+##### [Enumerate Groups](../../Tools/NetBIOS_SMB_Samba/rpcclient/README.md#Enumerate-Groups)
 
-##### [Enumerate with enum4linux](../../Tools/NetBIOS_SMB_Samba/enum4linux/README.md)
+### enum4linux
+##### [Enumerate](../../Tools/NetBIOS_SMB_Samba/enum4linux/README.md)
 
 # Connect
 
@@ -41,6 +51,8 @@ tdbdump /var/lib/samba/private/secrets.tdb
 
 # Attacks
 ##### [Attempt NULL Session with Net](../../Tools/NetBIOS_SMB_Samba/Net/README.md#NULL-Session)
+##### [Brute Force User Accounts with Hydra](../../Tools/Credentials_Cryptography/Hydra/README.md#SMB)
+##### [Establish Reverse Shell with Metasploit](../../Tools/Metasploit/README.md#Establish-Reverse-Shell-with-SMB)
 
 # References
 [SMB and Samba Security Audit Tools](https://miloserdov.org/?p=4066)

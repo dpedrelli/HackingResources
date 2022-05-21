@@ -488,6 +488,23 @@ nmap -sT -sU -sV <Target Host> -p135,137,138,139,445 --open
 ```bash
 nmap --script smb-enum-shares -p 445 <Target Host>
 ```
+##### Enumerate SMB Shares
+```bash
+nmap --script smb-enum-users -p 445 <Target Host>
+```
+##### SMB OS Discovery
+```bash
+nmap -n --script smb-os-discovery -p445 <Target Host>
+nmap -n -O --osscan-guess --script smb-os-discovery -p445 <Target Host>
+```
+##### SMB Protocols
+```bash
+nmap -n --script smb-protocols -p445 <Target Host>
+```
+##### SMB Security Mode
+```bash
+nmap -n --script smb-security-mode -p445 <Target Host>
+```
 
 ### SMTP
 ##### Get SMTP Version
