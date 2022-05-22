@@ -11,6 +11,11 @@ ifconfig
 ip addr
 ```
 
+##### Identify Reachable Networks
+```bash
+ip route show dev <Interface Name>
+```
+
 ##### Check Routing Table
 ```bash
 ip route
@@ -28,6 +33,13 @@ ip route add <network_ip>/<cidr> via <gateway_ip>
 ip route add <network_ip>/<cidr> via <gateway_ip> dev <network_card_name>
 ```
 
+##### Masquerade IP
+```bash
+echo 1 > /proc/sys/net/ipv4/ip_forward
+iptables -t nat -A POSTROUTING -s <Network>/<Subnet> -o <Interface Name> -j MASQUERADE
+iptables -t nat -A POSTROUTING -s 10.100.13.0/255.255.255.0 -o eth1 -j MASQUERADE
+```
+
 ##### Interactive Sudo Shell
 ```bash
 sudo -i
@@ -43,6 +55,11 @@ echo 1 > /proc/sys/net/ipv4/ip_forward
 ```bash
 iptables -t nat -A PREROUTING -p tcp --destination-port 80 -j REDIRECT --to-ports 8080
 
+```
+
+##### Find
+```bash
+find / -name <Name To Find> 2>/dev/null
 ```
 
 # References
