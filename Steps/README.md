@@ -14,17 +14,3 @@
 # [Exploitation](../Techniques/Exploitation/README.md)
 
 # [Post Exploitation](../Techniques/PostExploitation/README.md)
-
-# Post Exploitation
-  * ### Enumeration
-    * ##### Local Box
-      * ##### [Linux](Enumeration/Linux/README.md)
-      * ##### [Windows](Enumeration/Windows/README.md)
-    * ##### [Network](../Tools/ActiveRecon/README.md)
-  * ### Privilege Escalation
-      * ##### [Linux](PrivEsc/Linux/README.md)
-      * ##### [Windows](PrivEsc/Windows/README.md)
-  * ### [Lateral Movement](LateralMovement/README.md)
-  * ### [Data Exfiltration](../Techniques/DataExfiltration/README.md)
-  * ### [Persistence](../Techniques/Persistence/README.md)
-  * ### [Third-Party Guides](PostExploitation/ThirdParty.md)

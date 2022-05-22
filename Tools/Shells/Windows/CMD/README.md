@@ -1,3 +1,14 @@
+# Look for Unquoted Service Paths
+##### With wmic
+```bash
+wmic service get name, displayname, pathname, startmode | findstr /i "auto" | findstr /i /v "C:\Windows\\" | findstr /i /v """
+```
+##### Service Controls
+```bash
+sc qc <Service Name>
+```
+
+#
 ##### Get Windows Version
 ```bash
 systeminfo | findstr /b /c:"OS Name" /c:"OS Version"
