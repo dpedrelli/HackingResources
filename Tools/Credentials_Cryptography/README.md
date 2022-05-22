@@ -18,6 +18,7 @@ When the password is seven characters or less, the last 8 bytes of the NTLM resp
 john --format=netlm hashpwd_netntlm_
 ```
 
+### Crack NTLM In Two Steps
 ##### Crack rcracki_mt and rainbow tables
 ```bash
 sudo rcracki_mt -h <First 8 Bytes (16 characters) of LM Hash> -t 4 *.rti
