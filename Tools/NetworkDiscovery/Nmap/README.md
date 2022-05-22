@@ -3,6 +3,9 @@
 # [Host Discovery](https://nmap.org/book/man-host-discovery.html)
 ##### ARP Ping Scan
 ```bash
+ifconfig
+# Get Subnet
+
 nmap -PR -sn <Target Host>/<Network ID>
 
 nmap -PR -sn 172.16.5.0/24
@@ -488,7 +491,7 @@ nmap -sT -sU -sV <Target Host> -p135,137,138,139,445 --open
 ```bash
 nmap --script smb-enum-shares -p 445 <Target Host>
 ```
-##### Enumerate SMB Shares
+##### Enumerate SMB Users
 ```bash
 nmap --script smb-enum-users -p 445 <Target Host>
 ```
@@ -527,6 +530,10 @@ nmap --script smtp-enum-users <SMTP Host> -p 25
 
 ### SNMP
 #### Enumerate SNMP
+##### Enumerate Windows User Names
+```bash
+nmap -sU -p 161 --script snmp-win32-users <Target Host>
+```
 ##### Enumerate SNMP on Windows
 ```bash
 nmap -sU -p 161 --script snmp-win32-services <Target Host>
@@ -538,7 +545,12 @@ nmap -sU -p 161 --script snmp-brute <Target Host>
 
 # Specify wordlist
 nmap -sU -p 161 --script snmp-brute --script-args snmp-brute.communitiesdb=<wordlist> <Target Host>
-# From seclists /usr/share/seclists/Misc/wordlist-common-snmp-community-strings.txt
+# From seclists /usr/share/seclists/Discovery/SNMP/common-snmp-community-strings.txt
+```
+
+##### Run All Scripts
+```bash
+nmap -sU -p 161 --script snmp-* <Target Host> > snmp_output
 ```
 
 # Scan for Vulneratbilities
