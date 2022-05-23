@@ -1,3 +1,8 @@
+##### Print Hosts to File
+```bash
+printf 'host1.com\nhost2.com\nhost3.com\nhost4.com\n' > hosts
+```
+
 # System Information
 
 ##### Metasploit's enum_configs

@@ -118,9 +118,12 @@ sudo nmap -sS
 nmap -sU
 ```
 
-##### Scan All Ports with Hosts File
+##### Scan Multiple Hosts
 ```bash
-sudo nmap -sS -sU -p- -iL <Filename>
+sudo nmap <Host 1> <Host 2> <Host 3>
+
+# With File
+sudo nmap -iL <Filename>
 ```
 
 ##### Scan Techniques

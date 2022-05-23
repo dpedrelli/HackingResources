@@ -17,6 +17,29 @@ use <Module Name>
 info
 ```
 
+##### Use with Nessus
+```bash
+# Make sure that Postgres is running
+service postgresql status
+service postgresql start
+
+load nessus
+nessus_connect <Username>:<Password>@<Host>
+nessus_help
+
+# List current, Nessus scan.
+nessus_scan_list
+
+# List vulnerabilities found in a scan.
+nessus_report_vulns <Scan ID>
+
+# Import Nessus scan
+nessus_db_import <Scan ID>
+
+# List vulnerabilities from imported scan.
+vulns
+```
+
 # Meterpreter
 ### Migrate to Another Process Automatically
 ```bash
@@ -75,6 +98,12 @@ creds_all
 ```bash
 # Only works with Windows
 getsystem
+
+# 0: All techniques available
+# 1: Named Pipe Impersonation (In Memory/Admin)
+# 2: Named Pipe Impersonation (Dropper/Admin)
+# 3: Token Duplication (In Memory/Admin)
+# 4: Named Pipe Impersonation (RPCSS variant)
 ```
 ##### Windows Gather Privileges Enumeration
 ```bash

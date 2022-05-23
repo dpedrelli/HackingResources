@@ -14,3 +14,5 @@
 # [Exploitation](../Techniques/Exploitation/README.md)
 
 # [Post Exploitation](../Techniques/PostExploitation/README.md)
+
+<https://community.ine.com/t/great-ptp-ecpptv2-external-resources/618/9>
