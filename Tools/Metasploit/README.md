@@ -91,10 +91,11 @@ cat /etc/proxychains4.conf
 
 use auxiliary/server/socks_proxy
 show options
-SRVPORT = 1080
-VERSION = 5
-set SRVPORT 9050 # Change port to match /etc/proxychains4.conf
-set VERSION 4a # Does not work with version 5.  Must be 4a.
+# SRVPORT = 1080
+# VERSION = 5
+# SRVPORT and VERSION must match settings in /etc/proxychains4.conf
+set SRVPORT 9050 
+set VERSION 4a # socks4 = 4a, socks5 = 5.
 run
 jobs
 
