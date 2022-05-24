@@ -49,6 +49,12 @@ tdbdump /var/lib/samba/private/secrets.tdb
 # Use pth-smbclient, from pth-toolkit, to pass-the-hash.
 ```
 
+# SMB Relay
+1) ##### [SMB Relay with Metasploit](../../Tools/Metasploit/README.md#SMB-Relay)
+2) ##### [Spoof DNS with dnsspoof](../../Tools/Domain/dnsspoof/README.md#Spoof-DNS-Server)
+3) ##### [Enable IP Forwarding](../../Tools/Shells/Linux/README.md#Enable-IP-Forwarding)
+4) ##### [Spoof ARP of DNS Server and SMB Client with arpspoof](../../Tools/NetworkDiscovery/arpspoof/README.md#Spoof-ARP)
+
 # Attacks
 ##### [Attempt NULL Session with Net](../../Tools/NetBIOS_SMB_Samba/Net/README.md#NULL-Session)
 ##### [Brute Force User Accounts with Hydra](../../Tools/Credentials_Cryptography/Hydra/README.md#SMB)
