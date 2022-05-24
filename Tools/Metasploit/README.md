@@ -35,6 +35,7 @@ run
 route
 Subnet       Netmask        Gateway
 ```
+
 ### SOCKS
 ##### Start SOCKS Proxy for Proxy Chains
 ```bash
@@ -48,7 +49,8 @@ set VERSION <Version> # socks4 = 4a, socks5 = 5.
 run
 jobs
 ```
-###
+
+### Use with Other Applications
 
 ##### Use with Nessus
 ```bash

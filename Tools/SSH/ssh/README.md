@@ -4,9 +4,14 @@
 ssh -L 8080:172.17.0.2:8080 aubreanna@10.10.164.248
 ```
 
+# Over ProxyChains
+```bash
+ssh -f -N -D 9050 <User>@<Host> -4
+```
+
 # Connect with RSA Key
 ```bash
-ssh user@host -i id_rsa
+ssh <User>@<Host> -i id_rsa
 ```
 
 # Exfiltrate Data

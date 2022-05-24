@@ -216,12 +216,15 @@ sudo nmap -iL <Filename>
 | -oX                     | save output in XML format                       |
 | -oA                     | save output in normal, XML and Grepable formats |
 
-##### Trough ProxyChains
+# Routing
+##### Routing Trough ProxyChains
 ```bash
+# ProxyChains provide anonymity, but can also work with routes to access hosts on other subnets.
 # Run nmap scan to find open ports that can be used with port forwarding
 # <Target Host> is not reachable by <Attack>
 proxychains nmap -sT -Pn -p 21-25,80,139,445,8080 <Target Host>
 ```
+
 
 # Evasion
 
