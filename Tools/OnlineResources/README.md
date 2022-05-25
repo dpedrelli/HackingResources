@@ -151,6 +151,11 @@ Factor numbers.
 Ngrok exposes local, server ports to the Internet.
 ##### [Abusing Ngrok: Hackers at the End of the Tunnel](https://www.huntress.com/blog/abusing-ngrok-hackers-at-the-end-of-the-tunnel)
 
+# Reverse Image Searches
+##### [PimEyes](https://pimeyes.com/en)
+* [PimEyes - TCM](https://www.youtube.com/watch?v=uBynB50liTw)
+##### [Yandex](https://yandex.com/images/)
+
 # Shells
 ##### [Reverse Shell Generator](https://www.revshells.com/)
 ##### [Shellcodes database for study cases](http://shell-storm.org/shellcode/)
