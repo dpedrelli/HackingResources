@@ -9,6 +9,10 @@ msfvenom --list payloads
 msfvenom -p <Payload> --payload-options
 ```
 
+# [Payload Box](https://github.com/payloadbox)
+
+# [Payloads All The Things cyberheartmi9](https://github.com/cyberheartmi9/PayloadsAllTheThings)
+
 # [PHPGGC](PHPGGC/README.md)
 
 # [Shellter](https://www.shellterproject.com/)

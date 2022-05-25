@@ -6,3 +6,5 @@ The enumeration phase makes use of network protocols to gather information such 
   * The name service operates like DNS and provides [NetBIOS name resolution](https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2003/cc738412(v=ws.10)?redirectedfrom=MSDN).
 * ### [SNMP](../../Techniques/SNMP/README.md#Enumerate)
   
+# References
+##### [What is enumeration? [updated 2021]](https://resources.infosecinstitute.com/topic/what-is-enumeration/)
