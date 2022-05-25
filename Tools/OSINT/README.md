@@ -4,6 +4,9 @@ FOCA (Fingerprinting Organisations with Collected Archives) is a tool used mainl
 ##### [Maltego](Maltego/README.md)
 Maltego is aggregator of interfaces to various OSINT databases.
 
+##### [Sherlock](https://github.com/sherlock-project/sherlock)
+Finds social media accounts, by username.
+
 ##### [theHarvester](theHarvester/README.md)
 theHarvester is used to gather open source intelligence (OSINT) on a company or domain.
 It supports Google Dorks and Shodan.
