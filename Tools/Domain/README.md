@@ -1,3 +1,5 @@
+# [Bluto](Bluto/README.md)
+
 # [dig](dig/README.md)
 
 # [dnsenum](dnsenum/README.md)
@@ -5,6 +7,8 @@
 # [dnsmap](dnsmap/README.md)
 
 # [dnsrecon](dnsrecon/README.md)
+
+# [dnsspoof](dnsspoof/README.md)
 
 # [fierce](fierce/README.md)
 
