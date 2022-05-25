@@ -1,5 +1,11 @@
 ******************* Look at notes THM room Game Zone README.md for various techniques.
 
+# Powershell
+##### [Powershell HTTP/S Reverse Shell](https://github.com/3v4Si0N/HTTP-revshell)
+
+# PHP
+##### [Pentestmonkey](https://github.com/pentestmonkey/php-reverse-shell)
+
 # OpenSSL Reverse Shell
 [Generate OpenSSL Certificate](../../SSL/OpenSSL/README.md#Generate-SSL-Certificate)
 [Start OpenSSL Listener](../../SSL/OpenSSL/README.md#Start-OpenSSL-Listener)
