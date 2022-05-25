@@ -22,6 +22,11 @@
 ### MySQL
 ##### [MySQL Live](https://www.mysqltutorial.org/tryit/)
 
+# DNS Hosting (Free DNS hosting services)
+##### [FreeDNS](https://freedns.afraid.org/)
+##### [Xname](http://xname.org/)
+##### [ZoneEdit](https://www.zoneedit.com/dynamic-dns/)
+
 # E-Mail
 ##### [10 Minute Mail](https://10minutemail.com/)
 ##### [Have I Been Pwned](https://haveibeenpwned.com/)
