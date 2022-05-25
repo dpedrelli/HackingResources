@@ -26,3 +26,6 @@ cat /tmp/datafolder.base64 | base64 -d > datafolder.tar && tar xf datafolder.tar
 
 ### Data Exfiltration References
 [POST HTTP](https://en.wikipedia.org/wiki/POST_(HTTP))
+
+# References
+[HTTPS encryption on the web](https://transparencyreport.google.com/https/overview)

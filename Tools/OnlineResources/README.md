@@ -66,6 +66,10 @@ filetype:pdf
 ##### [DUNS & CAGE Codes](https://sam.gov/content/home)
 ##### [SEC](https://www.sec.gov/edgar.shtml)
 
+# HTTPS / SSL
+### SSL Certificate Fingerprinting
+##### [crt.sh](https://crt.sh/)
+
 # Internet Search Engines
 ##### [Bing](https://www.bing.com)
 ##### [Board Reader](https://boardreader.com/)
@@ -138,7 +142,7 @@ Ngrok exposes local, server ports to the Internet.
 ##### [Facebook](https://www.facebook.com)
 ##### [Twitter](https://www.twitter.com)
 
-# Web Site Footprinting
+# Web Site Fingerprinting
 ##### [Built With](https://builtwith.com//)
 
 # Windows
