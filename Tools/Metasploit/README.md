@@ -92,16 +92,16 @@ set SESSION <Session ID>
 ```
 
 # Meterpreter
-##### Get Sysinfo of Exploited Target
+### Get System Information of Exploited Target
+##### Sysinfo
 ```bash
 meterpreter > sysinfo
 ```
-
-### Network Interfaces
+##### Network Interfaces
 ```bash
 meterpreter > ifconfig
 ```
-### Host Discovery
+##### Host Discovery
 ```bash
 arp -a
 
@@ -109,6 +109,7 @@ use auxiliary/scanner/discovery/arp_sweep
 
 use post/windows/gather/arp_scanner
 ```
+
 ### Migrate to Another Process Automatically
 ```bash
 # As script
@@ -160,9 +161,9 @@ run
 
 ### Escalate Privileges
 #### Linux PrivEsc
-##### [Get System Information](#Get-Sysinfo-of-Exploited-Target)
+##### [Get System Information](#Get-System-Information-of-Exploited-Target)
 #### Windows PrivEsc
-##### [Get System Information](#Get-Sysinfo-of-Exploited-Target)
+##### [Get System Information](#Get-System-Information-of-Exploited-Target)
 ##### Escalate Privileges with GetSystem
 ```bash
 # Only works with Windows
