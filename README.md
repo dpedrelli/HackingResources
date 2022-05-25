@@ -9,6 +9,7 @@
 ##### [HackTricks](https://book.hacktricks.xyz/)
 
 ##### [harmj0y](https://blog.harmj0y.net/)
+##### [HarmJ0y - GitHub](https://github.com/HarmJ0y)
 
 ##### [HighOn.Coffee Penetration Testing && Security Research Blog](https://highon.coffee/)
 
