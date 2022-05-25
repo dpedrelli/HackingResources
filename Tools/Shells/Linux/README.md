@@ -8,6 +8,13 @@ printf 'host1.com\nhost2.com\nhost3.com\nhost4.com\n' > hosts
 lsb_release
 ```
 
+# Text Conversions
+
+##### Hex to ASCII
+```bash
+echo 4961676963 | xxd -r -p
+```
+
 # System Information
 
 ##### Metasploit's enum_configs

@@ -1,5 +1,7 @@
 # Hacking Resources
 
+##### [CTF-Katana](https://github.com/JohnHammond/ctf-katana)
+
 ##### [Fuzzy Security](https://fuzzysecurity.com/)
 
 ##### [Hacking Articles](https://www.hackingarticles.in/)
