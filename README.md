@@ -22,6 +22,8 @@
 
 ##### [Sneakymonkey](https://sneakymonkey.net/)
 
+##### [unicornsasfuel](https://github.com/unicornsasfuel)
+
 # Linux Resources
 ##### [Introduction to Named Pipes](https://www.linuxjournal.com/article/2156)
 
