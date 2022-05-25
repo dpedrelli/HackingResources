@@ -39,6 +39,9 @@ sudo perl netntlm.pl --file <File Captured in Metasploit> --seed <Full Password 
 ### LM & NTLM Passwords References
 [Windows authentication attacks – part 1](https://blog.redforce.io/windows-authentication-and-attacks-part-1-ntlm/)
 
+# Password Lists
+[tensorflow-1.4-billion-password-analysis](https://github.com/philipperemy/tensorflow-1.4-billion-password-analysis)
+
 # References
 ##### [Abusing Token Privileges For LPE](https://www.exploit-db.com/papers/42556)
 ##### [Kerberos cheatsheet](https://gist.github.com/TarlogicSecurity/2f221924fef8c14a1d8e29f3cb5c5c4a)
