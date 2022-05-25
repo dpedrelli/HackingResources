@@ -83,7 +83,7 @@ touch /home/user/--checkpoint-action=exec=privesc.sh
 ### CronJobs - Wildcard References
 [Exploiting Wildcard for Privilege Escalation](https://www.hackingarticles.in/exploiting-wildcard-for-privilege-escalation/)
 
-# [Upgrade a linux reverse shell to a fully usable TTY shell](https://zweilosec.github.io/posts/upgrade-linux-shell/)
+# [Upgrade a Linux reverse shell to a fully usable TTY shell](https://zweilosec.github.io/posts/upgrade-linux-shell/)
 ##### Note: The methods above will not work in every situation. For example, I have regularly run into a problem on my Kali machine where attempting to use stty raw -echo while using zsh as my shell will cause the entire terminal to become unusable. I have gotten around this issue by switching to bash before I start any netcat listener that I will be using to catch a shell.
 ```bash
 bash

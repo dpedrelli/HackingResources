@@ -3,6 +3,11 @@
 printf 'host1.com\nhost2.com\nhost3.com\nhost4.com\n' > hosts
 ```
 
+##### Release LSB Modules
+```bash
+lsb_release
+```
+
 # System Information
 
 ##### Metasploit's enum_configs
@@ -16,6 +21,11 @@ hostname
 ##### Kernel Version
 ```bash
 uname -a
+```
+
+##### CPU Architecture
+```bash
+lscpu
 ```
 
 ##### Current User

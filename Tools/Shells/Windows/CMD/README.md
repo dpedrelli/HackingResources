@@ -8,7 +8,11 @@ wmic service get name, displayname, pathname, startmode | findstr /i "auto" | fi
 sc qc <Service Name>
 ```
 
-#
+# System Information
+##### OS Configuration Information
+```bash
+systeminfo
+```
 ##### Get Windows Version
 ```bash
 systeminfo | findstr /b /c:"OS Name" /c:"OS Version"

@@ -93,6 +93,8 @@ set SESSION <Session ID>
 
 # Meterpreter
 ### Get System Information of Exploited Target
+##### [Linux Commands](../Shells/Linux/README.md#System-Information)
+##### [Windows Commands](../Shells/Windows/CMD/README.md#System-Information)
 ##### Sysinfo
 ```bash
 meterpreter > sysinfo
@@ -112,7 +114,8 @@ use auxiliary/scanner/discovery/arp_sweep
 use post/windows/gather/arp_scanner
 ```
 
-### Migrate to Another Process Automatically
+### Migrate to Another Process 
+##### Migrate to Another Process Automatically (Windows)
 ```bash
 # As script
 run post/windows/manage/migrate
@@ -122,7 +125,12 @@ use post/windows/manage/migrate
 set SESSION <Session #>
 run
 ```
-### Migrate to Another Process By Name
+##### Migrate to Another Process ID
+```bash
+migrate <Process ID>
+migrate -P <Process ID>
+```
+##### Migrate to Another Process By Name
 ```bash
 migrate -N <Process Name>.<Extension>
 ```
