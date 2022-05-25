@@ -97,3 +97,6 @@ net localgroup <Group Name in quotes>
 ```bash
 net localgroup <Group Name in quotes> <Username> /add
 ```
+
+# References
+[Windows Command Line cheatsheet (part 2): WMIC](https://andreafortuna.org/2017/08/09/windows-command-line-cheatsheet-part-2-wmic/)
