@@ -40,4 +40,6 @@ sudo perl netntlm.pl --file <File Captured in Metasploit> --seed <Full Password 
 [Windows authentication attacks – part 1](https://blog.redforce.io/windows-authentication-and-attacks-part-1-ntlm/)
 
 # References
+##### [Abusing Token Privileges For LPE](https://www.exploit-db.com/papers/42556)
 ##### [Kerberos cheatsheet](https://gist.github.com/TarlogicSecurity/2f221924fef8c14a1d8e29f3cb5c5c4a)
+##### [Windows Access Tokens](https://docs.microsoft.com/en-us/windows/win32/secauthz/access-tokens)
