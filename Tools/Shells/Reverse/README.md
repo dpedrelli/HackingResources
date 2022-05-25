@@ -91,6 +91,7 @@ rlwrap nc -lvnp $port
 which python python2 python3
 /usr/bin/python3 -c "import pty; pty.spawn('/bin/bash')"; #spawn a python psuedo-shell
 CTRL+Z # to background shell
+echo $TERM
 stty raw -echo # Send control characters to the shell.
 stty size # Get terminal window size 48 / 102
 fg # foreground shell
@@ -98,6 +99,8 @@ export SHELL=bash
 stty rows $x columns $y #Set remote shell to x number of rows & y columns
 export TERM=xterm-256color #allows you to clear console, and have color output
 ```
+[Upgrade a Dumb Shell to a Fully Interactive Shell for More Flexibility ](https://null-byte.wonderhowto.com/how-to/upgrade-dumb-shell-fully-interactive-shell-for-more-flexibility-0197224/)
+[Upgrading Simple Shells to Fully Interactive TTYs](https://blog.ropnop.com/upgrading-simple-shells-to-fully-interactive-ttys/)
 
 # [WordPress Reverse Shell](https://www.hackingarticles.in/wordpress-reverse-shell/)
 
