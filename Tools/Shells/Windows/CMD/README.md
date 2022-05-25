@@ -48,11 +48,6 @@ wmic service where name="" get state
 type <file.ext>
 ```
 
-##### Get List of Running Services
-```bash
-netstart
-```
-
 ##### Get list of processes running, sorted by name.
 ```bash
 tasklist /NH | sort
@@ -60,4 +55,45 @@ tasklist /NH | sort
 
 ```bash
 whoami /priv
+```
+
+
+### Get List of Running Services
+##### With net
+```bash
+net start
+```
+##### With wmic
+```bash
+wmic service where 'started=true' get caption
+```
+##### With wmic by name
+```bash
+wmic service where 'Caption like "Remote%" and started=true' get caption
+```
+
+### Start Service
+```bash
+sc start <service name>
+```
+
+# Security
+### Users
+##### Add User
+```bash
+net user <Username> <Password> /add
+```
+
+### Groups
+##### List Local Groups
+```bash
+net localgroup
+```
+##### List Members of a Local Group
+```bash
+net localgroup <Group Name in quotes>
+```
+##### Add User to a Local Group
+```bash
+net localgroup <Group Name in quotes> <Username> /add
 ```
