@@ -4,3 +4,5 @@
 [JWT.one](https://jwt.one/)
 
 [JWT Vulnerabilities (Json Web Tokens) book.hacktricks.xyz](https://book.hacktricks.xyz/pentesting-web/hacking-jwt-json-web-tokens)
+
+[JWCrypto’s documentation](https://jwcrypto.readthedocs.io/en/latest/)
