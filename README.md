@@ -12,6 +12,8 @@
 
 ##### [HighOn.Coffee Penetration Testing && Security Research Blog](https://highon.coffee/)
 
+##### [I Don't Play Darts](https://web.archive.org/web/*/www.idontplaydarts.com)
+
 ##### [NetSec.ws](https://netsec.ws/)
 
 ##### [Offensive Security](https://github.com/offensive-security)
