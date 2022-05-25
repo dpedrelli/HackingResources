@@ -153,6 +153,7 @@ Ngrok exposes local, server ports to the Internet.
 
 # Shells
 ##### [Reverse Shell Generator](https://www.revshells.com/)
+##### [Shellcodes database for study cases](http://shell-storm.org/shellcode/)
 
 # Social Networks
 ##### [Facebook](https://www.facebook.com)
@@ -164,3 +165,6 @@ Ngrok exposes local, server ports to the Internet.
 
 # Windows
 ##### [Event Logs Defined](https://www.myeventlog.com/)
+
+# Misc
+##### [OWASP favicon database](https://wiki.owasp.org/index.php/OWASP_favicon_database)

@@ -14,6 +14,8 @@
 
 ##### [NetSec.ws](https://netsec.ws/)
 
+##### [Offensive Security](https://github.com/offensive-security)
+
 ##### [PayloadsAllTheThings](https://github.com/swisskyrepo/PayloadsAllTheThings/)
 
 ##### [Pentestmonkey](https://pentestmonkey.net/)
