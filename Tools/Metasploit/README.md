@@ -92,6 +92,11 @@ set SESSION <Session ID>
 ```
 
 # Meterpreter
+##### Get Sysinfo of Exploited Target
+```bash
+meterpreter > sysinfo
+```
+
 ### Network Interfaces
 ```bash
 meterpreter > ifconfig
@@ -154,6 +159,7 @@ run
 ```
 
 ### Escalate Privileges
+##### [Get System Information](#Get-Sysinfo-of-Exploited-Target)
 #### Linux PrivEsc
 #### Windows PrivEsc
 ##### Escalate Privileges with GetSystem
