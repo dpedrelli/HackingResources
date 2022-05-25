@@ -9,6 +9,10 @@
 ##### [Online IP CIDR / VLSM Supernet Calculator](https://www.subnet-calculator.com/cidr.php)
 ##### [Online IP Subnet Calculator](https://www.subnet-calculator.com/)
 
+# Content Security Policy (CSP)
+##### [Content Security Policy (CSP) Bypass](https://book.hacktricks.xyz/pentesting-web/content-security-policy-csp-bypass)
+##### [CSP Evaluator](https://csp-evaluator.withgoogle.com/)
+
 # Cryptography & Passwords
 ##### [CrackStation's Password Cracking Dictionary](https://crackstation.net/crackstation-wordlist-password-cracking-dictionary.htm)
 
