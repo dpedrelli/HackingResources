@@ -6,6 +6,8 @@
 
 ##### [HackTricks](https://book.hacktricks.xyz/)
 
+##### [harmj0y](https://blog.harmj0y.net/)
+
 ##### [HighOn.Coffee Penetration Testing && Security Research Blog](https://highon.coffee/)
 
 ##### [NetSec.ws](https://netsec.ws/)
