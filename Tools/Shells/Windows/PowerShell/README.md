@@ -22,3 +22,6 @@ tasklist /NH | sort
 ```bash
 whoami /priv
 ```
+
+# References
+[Generates obfuscated PowerShell snippets](https://amsi.fail/)
