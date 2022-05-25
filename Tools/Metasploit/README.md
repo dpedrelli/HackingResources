@@ -159,9 +159,10 @@ run
 ```
 
 ### Escalate Privileges
-##### [Get System Information](#Get-Sysinfo-of-Exploited-Target)
 #### Linux PrivEsc
+##### [Get System Information](#Get-Sysinfo-of-Exploited-Target)
 #### Windows PrivEsc
+##### [Get System Information](#Get-Sysinfo-of-Exploited-Target)
 ##### Escalate Privileges with GetSystem
 ```bash
 # Only works with Windows
