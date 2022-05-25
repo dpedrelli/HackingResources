@@ -144,6 +144,7 @@ Ngrok exposes local, server ports to the Internet.
 
 # Web Site Fingerprinting
 ##### [Built With](https://builtwith.com//)
+##### [Wappalyzer](https://www.wappalyzer.com/)
 
 # Windows
 ##### [Event Logs Defined](https://www.myeventlog.com/)
