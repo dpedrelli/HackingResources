@@ -24,6 +24,10 @@
 
 # E-Mail
 ##### [10 Minute Mail](https://10minutemail.com/)
+##### [Have I Been Pwned](https://haveibeenpwned.com/)
+      Check if your email or phone is in a data breach
+##### [Hunter](https://hunter.io/)
+      Finds E-Mail addresses
 
 # Encoding / Decoding / Data Conversion / Beautifier / Formatter
 ##### [ASCII to Hex](https://www.asciitohex.com/)
@@ -115,7 +119,6 @@ DNSdumpster discovers hosts, DNS records, and more.  It creates a map of the hos
 ##### [who.is](https://who.is/)
 ##### [Whois.com](https://www.whois.com/whois/)
 
-
 # Numbers
 ##### [BigPrimes](https://www.bigprimes.net/)
 ##### [FactorDB](http://factordb.com/index.php)
@@ -134,6 +137,9 @@ Ngrok exposes local, server ports to the Internet.
 # Social Networks
 ##### [Facebook](https://www.facebook.com)
 ##### [Twitter](https://www.twitter.com)
+
+# Web Site Footprinting
+##### [Built With](https://builtwith.com//)
 
 # Windows
 ##### [Event Logs Defined](https://www.myeventlog.com/)
