@@ -1,0 +1,1 @@
+# [John Hammond - OSCP - Taking Notes & Resources](https://www.youtube.com/watch?v=MQGozZzHUwQ)

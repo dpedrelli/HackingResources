@@ -27,6 +27,13 @@
 
 ##### [unicornsasfuel](https://github.com/unicornsasfuel)
 
+# Markdown References
+##### [Getting started with Markdown](https://riptutorial.com/markdown)
+##### [Convert HTML Table to Markdown Table](https://tableconvert.com/html-to-markdown)
+### Images
+##### [How To Add Images in Markdown](https://www.digitalocean.com/community/tutorials/markdown-markdown-images)
+##### [Displaying an image from AWS S3 with GitHub Flavored Markdown](https://stackoverflow.com/questions/23222914/displaying-an-image-from-aws-s3-with-github-flavored-markdown)
+
 # Linux Resources
 ##### [Introduction to Named Pipes](https://www.linuxjournal.com/article/2156)
 
