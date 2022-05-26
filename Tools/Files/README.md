@@ -1,5 +1,7 @@
 # [binwalk](binwalk/README.md)
 
+# [foremost](foremost/README.md)
+
 # [xxd](xxd/README.md)
 
 # References
