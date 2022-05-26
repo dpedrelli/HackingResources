@@ -1,4 +1,4 @@
-# Hacking Resources
+# General Hacking References
 
 ##### [CTF-Katana](https://github.com/JohnHammond/ctf-katana)
 
@@ -34,7 +34,7 @@
 ##### [How To Add Images in Markdown](https://www.digitalocean.com/community/tutorials/markdown-markdown-images)
 ##### [Displaying an image from AWS S3 with GitHub Flavored Markdown](https://stackoverflow.com/questions/23222914/displaying-an-image-from-aws-s3-with-github-flavored-markdown)
 
-# Linux Resources
+### Linux References
 ##### [Introduction to Named Pipes](https://www.linuxjournal.com/article/2156)
 
 ##### [Linux Journey](https://linuxjourney.com/)
