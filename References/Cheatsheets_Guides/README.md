@@ -3,3 +3,5 @@
 [Pentestmonkey - Cheat Sheets](https://pentestmonkey.net/category/cheat-sheet)
 
 [Tib3rius - Pentest-Cheatsheets](https://github.com/Tib3rius/Pentest-Cheatsheets)
+
+[Rico's cheatsheets](https://devhints.io/)
