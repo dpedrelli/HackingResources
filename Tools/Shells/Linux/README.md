@@ -497,6 +497,11 @@ iptables -t nat -A PREROUTING -p tcp --destination-port 80 -j REDIRECT --to-port
 find / -name <Name To Find> 2>/dev/null
 ```
 
+##### Watch file permissions with time
+```bash
+watch -n 0 ls -l /bin/bash
+```
+
 # References
 [bash(1) — Linux manual page](https://www.man7.org/linux/man-pages/man1/bash.1.html)
 
