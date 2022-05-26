@@ -67,7 +67,10 @@
 * [CyberChef](https://gchq.github.io/CyberChef/)
 
 ##### [dCode](https://www.dcode.fr/en)
+* [dCode - Caesar Cipher](https://www.dcode.fr/caesar-cipher)
+* [dCode - ROT-13 Cipher](https://www.dcode.fr/rot-13-cipher)
 * [dCode - T9 (Text Message)](https://www.dcode.fr/t9-cipher)
+* [dCode - Vigenere Cipher](https://www.dcode.fr/vigenere-cipher)
 
 ##### [JSToolset](https://www.jstoolset.com/)
 
