@@ -16,11 +16,12 @@
 
 ##### Methodology
 * Start with [OSINT tools](../../Tools/OSINT/README.md) that can make OSINT gathering easier or even automate the process.
-* Perform an [Internet search](../../Tools/OnlineResources/README.md#Internet-Search-Engines) of the organization's name.
-* Perform advanced searches with [Google Dorks](../../Tools/OnlineResources/README.md#Google-Dorks).
-* Search [job related sites](../../Tools/OnlineResources/README.md#Job-Related-Web-Sites), like LinkedIn and GlassDoor, information about the organization, job postings, and employer reviews.
-* Business that work with the US government may appear in [government listings](../../Tools/OnlineResources/README.md#Government).
-* Search [financial related sites](../../Tools/OnlineResources/README.md#Financial-Related-Web-Sites), for organizational, financial, and stakeholder information.
-* Search [social media sites](../../Tools/OnlineResources/README.md#Social-Networks) and [people search sites](../../Tools/OnlineResources/README.md#People-Searches) for information about the organization and employees.  This may provide useful contact information or even information beneficial for social engineering.
-* Use tools like [FOCA](../../Tools/OSINT/FOCA/README.md) and [Google Dorks](../../Tools/OnlineResources/README.md#Google-Dorks) to find and harvest files and metadata.
-* Search [cache](../../Tools/OnlineResources/README.md#Display-Cache) and [archive sites](../../Tools/OnlineResources/README.md#Archival-Sites).
+* Perform an [Internet search](/README.md#Internet-Search-Engines) of the organization's name.
+* Perform advanced searches with [Google Dorks](/README.md#Google-Dorks).
+* Search [job related sites](/README.md#Job-Related-Web-Sites), like LinkedIn and GlassDoor, information about the organization, job postings, and employer reviews.
+* Business that work with the US government may appear in [government listings](/README.md#Government).
+* Search [financial related sites](/README.md#Financial-Related-Web-Sites), for organizational, financial, and stakeholder information.
+* Search [social media sites](/README.md#Social-Networks) and [people search sites](/README.md#People-Searches) for information about the organization and employees.  This may provide useful contact information or even information beneficial for social engineering.
+* Use tools like [FOCA](../../Tools/OSINT/FOCA/README.md) and [Google Dorks](/README.md#Google-Dorks) to find and harvest files and metadata.
+* Search [cache](/README.md#Display-Cache) and [archive sites](/README.md#Archival-Sites).
+* Search for Git repositories with [GitTools](https://github.com/internetwache/GitTools).
