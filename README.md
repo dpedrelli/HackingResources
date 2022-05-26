@@ -27,6 +27,9 @@
 
 ##### [Hash Type Identifier](https://hashes.com/en/tools/hash_identifier)
 
+##### [QuipQuip](https://www.quipqiup.com/)
+    quipqiup is a fast and automated cryptogram solver by Edwin Olson. It can solve simple substitution ciphers often found in newspapers, including puzzles like cryptoquips (in which word boundaries are preserved) and patristocrats (inwhi chwor dboun darie saren t).
+
 ### CVE Sites
 ##### [CVE Details](https://www.cvedetails.com/)
 
