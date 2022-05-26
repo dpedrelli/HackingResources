@@ -23,3 +23,6 @@ msfvenom -p <Payload> --payload-options
 
 # [Veil-Framework](https://github.com/Veil-Framework/)
 ##### [Kali](https://www.kali.org/tools/veil/#veil-evasion)
+
+# XSS
+##### [pgaijin66 - XSS Payload List](https://github.com/pgaijin66/XSS-Payloads)
