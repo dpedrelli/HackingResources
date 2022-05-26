@@ -209,6 +209,7 @@ Factor numbers.
 
 ### Phone Numbers
 ##### [DialABC](http://www.dialabc.com/)
+* [Detect DTMF Tones](http://www.dialabc.com/sound/detect/index.html)
 
 ### Publically Accessible Resources
 ### [ngrok](https://ngrok.com)
