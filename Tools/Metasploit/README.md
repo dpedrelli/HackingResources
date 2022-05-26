@@ -107,6 +107,12 @@ resource <Path to Resource Script> [param 1] [param 2] [param 3]
 ```
 
 # Meterpreter
+##### Execute Shell Commands on Target
+```bash
+meterpreter > execute -f /bin/bash -i -c
+# -i makes the process interactive
+# -c channelizes the I/O
+```
 ### Get System Information of Exploited Target
 ##### [Linux Commands](../Shells/Linux/README.md#System-Information)
 ##### [Windows Commands](../Shells/Windows/CMD/README.md#System-Information)
@@ -600,6 +606,77 @@ set PAYLOAD windows/meterpreter/reverse_tcp
 # Escalate Privileges
 ### Linux PrivEsc
 ##### [Get System Information](#Get-System-Information-of-Exploited-Target)
+##### [Linux Modules]
+|  # | Name | Description |
+|----|------|-------------|
+|  0 | exploit/linux/local/abrt_raceabrt_priv_esc | ABRT raceabrt Privilege Escalation
+|  1 | exploit/linux/local/abrt_sosreport_priv_esc | ABRT sosreport Privilege Escalation
+|  2 | exploit/linux/local/af_packet_chocobo_root_priv_esc | AF_PACKET chocobo_root Privilege Escalation
+|  3 | exploit/linux/local/af_packet_packet_set_ring_priv_esc | AF_PACKET packet_set_ring Privilege Escalation
+|  4 | exploit/linux/local/apt_package_manager_persistence | APT Package Manager Persistence
+|  5 | exploit/linux/local/asan_suid_executable_priv_esc | AddressSanitizer (ASan) SUID Executable Privilege Escalation
+|  6 | exploit/linux/local/apport_abrt_chroot_priv_esc | Apport / ABRT chroot Privilege Escalation
+|  7 | exploit/linux/local/autostart_persistence | Autostart Desktop Item Persistence
+|  8 | exploit/linux/local/bash_profile_persistence | Bash Profile Persistence
+|  9 | exploit/linux/local/cpi_runrshell_priv_esc | Cisco Prime Infrastructure Runrshell Privilege Escalation
+| 10 | exploit/linux/local/cron_persistence | Cron Persistence
+| 11 | exploit/linux/local/ntfs3g_priv_esc | Debian/Ubuntu ntfs-3g Local Privilege Escalation
+| 12 | exploit/linux/local/desktop_privilege_escalation | Desktop Linux Password Stealer and Privilege Escalation
+| 13 | exploit/linux/local/diamorphine_rootkit_signal_priv_esc | Diamorphine Rootkit Signal Privilege Escalation
+| 14 | exploit/linux/local/docker_runc_escape | Docker Container Escape Via runC Overwrite
+| 15 | exploit/linux/local/docker_daemon_privilege_escalation | Docker Daemon Privilege Escalation
+| 16 | exploit/linux/local/docker_privileged_container_escape | Docker Privileged Container Escape
+| 17 | exploit/linux/local/exim4_deliver_message_priv_esc | Exim 4.87 - 4.91 Local Privilege Escalation
+| 18 | exploit/linux/local/hp_xglance_priv_esc | HP Performance Monitoring xglance Priv Esc
+| 19 | exploit/linux/local/hp_smhstart | HP System Management Homepage Local Privilege Escalation
+| 20 | exploit/linux/local/juju_run_agent_priv_esc | Juju-run Agent Privilege Escalation
+| 21 | exploit/linux/local/kloxo_lxsuexec | Kloxo Local Privilege Escalation
+| 22 | exploit/linux/local/libuser_roothelper_priv_esc | Libuser roothelper Privilege Escalation
+| 23 | exploit/linux/local/bpf_sign_extension_priv_esc | Linux BPF Sign Extension Local Privilege Escalation
+| 24 | exploit/linux/local/bpf_priv_esc | Linux BPF doubleput UAF Privilege Escalation
+| 25 | exploit/linux/local/netfilter_priv_esc_ipv4 | Linux Kernel 4.6.3 Netfilter Privilege Escalation
+| 26 | exploit/linux/local/sock_sendpage | Linux Kernel Sendpage Local Privilege Escalation
+| 27 | exploit/linux/local/ufo_privilege_escalation | Linux Kernel UDP Fragmentation Offset (UFO) Privilege Escalation
+| 28 | exploit/linux/local/recvmmsg_priv_esc | Linux Kernel recvmmsg Privilege Escalation
+| 29 | exploit/linux/local/nested_namespace_idmap_limit_priv_esc | Linux Nested User Namespace idmap Limit Local Privilege Escalation
+| 30 | exploit/linux/local/pkexec | Linux PolicyKit Race Condition Privilege Escalation
+| 31 | exploit/linux/local/ptrace_traceme_pkexec_helper | Linux Polkit pkexec helper PTRACE_TRACEME local root exploit
+| 32 | exploit/linux/local/cve_2021_3490_ebpf_alu32_bounds_check_lpe | Linux eBPF ALU32 32-bit Invalid Bounds Tracking LPE
+| 33 | exploit/linux/local/udev_netlink | Linux udev Netlink Local Privilege Escalation
+| 34 | exploit/linux/local/su_login | Login to Another User with Su on Linux / Unix Systems
+| 35 | exploit/linux/local/omniresolve_suid_priv_esc | Micro Focus (HPE) Data Protector SUID Privilege Escalation
+| 36 | exploit/linux/local/cve_2021_38648_omigod | Microsoft OMI Management Interface Authentication Bypass
+| 37 | exploit/linux/local/netfilter_xtables_heap_oob_write_priv_esc | Netfilter x_tables Heap OOB Write Privilege Escalation
+| 38 | exploit/linux/local/network_manager_vpnc_username_priv_esc | Network Manager VPNC Username Privilege Escalation
+| 39 | exploit/linux/local/overlayfs_priv_esc | Overlayfs Privilege Escalation
+| 40 | exploit/linux/local/pihole_remove_commands_lpe | Pi-Hole Remove Commands Linux Priv Esc
+| 41 | exploit/linux/local/polkit_dbus_auth_bypass | Polkit D-Bus Authentication Bypass
+| 42 | exploit/linux/local/rds_atomic_free_op_null_pointer_deref_priv_esc | Reliable Datagram Sockets (RDS) rds_atomic_free_op NULL pointer dereference Privilege Escalation
+| 43 | exploit/linux/local/rds_rds_page_copy_user_priv_esc | Reliable Datagram Sockets (RDS) rds_page_copy_user Privilege Escalation
+| 44 | exploit/linux/local/reptile_rootkit_reptile_cmd_priv_esc | Reptile Rootkit reptile_cmd Privilege Escalation
+| 45 | exploit/linux/local/servu_ftp_server_prepareinstallation_priv_esc | Serv-U FTP Server prepareinstallation Privilege Escalation
+| 46 | exploit/linux/local/service_persistence | Service Persistence
+| 47 | exploit/linux/local/sophos_wpa_clear_keys | Sophos Web Protection Appliance clear_keys.pl Local Privilege Escalation
+| 48 | exploit/linux/local/sudo_baron_samedit | Sudo Heap-Based Buffer Overflow
+| 49 | exploit/linux/local/systemtap_modprobe_options_priv_esc | SystemTap MODPROBE_OPTIONS Privilege Escalation
+| 50 | exploit/linux/local/ueb_bpserverd_privesc | Unitrends Enterprise Backup bpserverd Privilege Escalation
+| 51 | exploit/linux/local/vmware_mount | VMWare Setuid vmware-mount Unsafe popen(3)
+| 52 | exploit/linux/local/vmware_alsa_config | VMware Workstation ALSA Config File Local Privilege Escalation
+| 53 | exploit/linux/local/yum_package_manager_persistence | Yum Package Manager Persistence
+| 54 | exploit/linux/local/zpanel_zsudo | ZPanel zsudo Local Privilege Escalation Exploit
+| 55 | exploit/linux/local/blueman_set_dhcp_handler_dbus_priv_esc | blueman set_dhcp_handler D-Bus Privilege Escalation
+| 56 | exploit/linux/local/glibc_origin_expansion_priv_esc | glibc '$ORIGIN' Expansion Privilege Escalation
+| 57 | exploit/linux/local/glibc_realpath_priv_esc | glibc 'realpath()' Privilege Escalation
+| 58 | exploit/linux/local/glibc_ld_audit_dso_load_priv_esc | glibc LD_AUDIT Arbitrary DSO Load Privilege Escalation
+| 59 | exploit/linux/local/ktsuss_suid_priv_esc | ktsuss suid Privilege Escalation
+| 60 | exploit/linux/local/lastore_daemon_dbus_priv_esc | lastore-daemon D-Bus Privilege Escalation
+| 61 | exploit/linux/local/ptrace_sudo_token_priv_esc | ptrace Sudo Token Privilege Escalation
+| 62 | exploit/linux/local/rc_local_persistence | rc.local Persistence
+
+```bash
+use exploit/linux/local
+```
+
 ### Windows PrivEsc
 ##### [Get System Information](#Get-System-Information-of-Exploited-Target)
 ##### Escalate Privileges with GetSystem (Windows)

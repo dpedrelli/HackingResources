@@ -589,6 +589,22 @@ watch -n 0 ls -l /bin/bash
 ln
 ```
 
+# C
+##### Check for Linux C Compiler
+```bash
+gcc --version
+```
+##### Compile for Linux
+```bash
+gcc <Input>.c -o <Output>
+
+# Specify architecture (32-bit)
+gcc -m32 <Input>.c -o <Output>
+
+gcc -fPIC -shared -o shell.so shell.c -nostartfiles
+```
+
+
 # References
 [bash(1) — Linux manual page](https://www.man7.org/linux/man-pages/man1/bash.1.html)
 
