@@ -91,6 +91,21 @@ set SESSION <Session ID>
 # LHOST will be IP of machine establishing the shell and may not be the Attack box, in the event of pivoting.
 ```
 
+### [Resource Scripts](https://docs.rapid7.com/metasploit/resource-scripts/)
+##### Create a Resource Script
+```bash
+# Save the commands executed since startup to the specified file.
+makerc <Output Rc File>
+```
+##### Import a Resource Script
+```bash
+# From command prompt
+msfconsole -r <Path to Resource Script>
+
+# From inside of msfconsole
+resource <Path to Resource Script> [param 1] [param 2] [param 3]
+```
+
 # Meterpreter
 ### Get System Information of Exploited Target
 ##### [Linux Commands](../Shells/Linux/README.md#System-Information)
