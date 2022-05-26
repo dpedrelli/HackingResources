@@ -1,11 +1,14 @@
-# Look for Unquoted Service Paths
-##### With wmic
+# [Check Access Control on File or Directory](https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/icacls)
+|    | Basic Permissions |
+|----|-------------------|
+| F  | Full access
+| M  | Modify access
+| RX | Read and execute access
+| R  | Read-only access
+| W  | Write-only access
+
 ```bash
-wmic service get name, displayname, pathname, startmode | findstr /i "auto" | findstr /i /v "C:\Windows\\" | findstr /i /v """
-```
-##### Service Controls
-```bash
-sc qc <Service Name>
+icacls "<File or Directory Name>"
 ```
 
 # System Information
@@ -18,6 +21,21 @@ systeminfo
 systeminfo | findstr /b /c:"OS Name" /c:"OS Version"
 ```
 
+##### Display file contents
+```bash
+type <file.ext>
+```
+
+##### Get list of processes running, sorted by name.
+```bash
+tasklist /NH | sort
+```
+
+```bash
+whoami /priv
+```
+
+# Services
 ##### Get Installed Services
 ```bash
 wmic service list
@@ -43,20 +61,24 @@ sc query <service name>
 wmic service where name="" get state
 ```
 
-##### Display file contents
+##### Look for Unquoted Service Paths
 ```bash
-type <file.ext>
+wmic service get name, displayname, pathname, startmode | findstr /i "auto" | findstr /i /v "C:\Windows\\" | findstr /i /v """
+```
+##### Query Service
+```bash
+sc qc <Service Name>
 ```
 
-##### Get list of processes running, sorted by name.
+##### Start Service
 ```bash
-tasklist /NH | sort
+sc start <service name>
 ```
 
+##### Stop Service
 ```bash
-whoami /priv
+sc stop <service name>
 ```
-
 
 ### Get List of Running Services
 ##### With net
@@ -70,11 +92,6 @@ wmic service where 'started=true' get caption
 ##### With wmic by name
 ```bash
 wmic service where 'Caption like "Remote%" and started=true' get caption
-```
-
-### Start Service
-```bash
-sc start <service name>
 ```
 
 # Security

