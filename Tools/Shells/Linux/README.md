@@ -219,17 +219,31 @@ find /etc/cron* -type f -perm -o+w -exec ls -l {} \;
 ```
 
 ### Processes
-##### Processes
+##### Shows Process For All Users
 ```bash
-# All running
-ps auxw
-
-# Running as root
+ps a
+```
+##### Shows Process Owner
+```bash
+ps u
+```
+##### Shows Processes With Terminal Information
+```bash
+ps x
+```
+##### Shows User, All Processes and Terminal Information
+```bash
+ps aux
+```
+##### Show Processes Running as Root
+```bash
 ps -u root
-
-# Running as current user
+```
+##### Show Processes Running as Current User
+```bash
 ps -u $USER
 ```
+
 ##### List process binaries/paths & permissions
 ```bash
 ps aux | awk '{print $11}' | xargs -r ls -la 2>/dev/null | awk '!x[$0]++'
