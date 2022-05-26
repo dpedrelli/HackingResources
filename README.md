@@ -99,6 +99,8 @@
 
 ##### [Offensive Security](https://github.com/offensive-security)
 
+##### [OSCP](https://gitbook.brainyou.stream/)
+
 ##### [PayloadsAllTheThings](https://github.com/swisskyrepo/PayloadsAllTheThings/)
 
 ##### [Pentestmonkey](https://pentestmonkey.net/)

