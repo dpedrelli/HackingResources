@@ -317,3 +317,40 @@ Ngrok exposes local, server ports to the Internet.
 
 ### Reporting Templates
 ##### [Report Templates](https://help.offensive-security.com/hc/en-us/articles/360046787731-PEN-200-Reporting-Requirements)
+
+# Training
+### Basic Hacking
+##### [TCM Security](https://academy.tcm-sec.com/)
+* [Practical Ethical Hacking](https://academy.tcm-sec.com/p/practical-ethical-hacking-the-complete-course)
+##### [TCM - Beginner Network Penetration Testing](https://www.youtube.com/watch?v=WnN6dbos5u8)
+##### [TCM - Zero to Hero Pentesting](https://www.youtube.com/watch?v=qlK174d_uu8)
+##### [Windows Red Team Lab](https://www.pentesteracademy.com/course?id=44)
+
+### Active Directory Hacking
+##### [Attacking and Defending Active Directory](https://www.pentesteracademy.com/course?id=47)
+##### [Throwback Network Labs](https://tryhackme.com/network/throwback)
+
+### Web App Hacking
+##### [Web Security Academy](https://portswigger.net/web-security)
+##### [Hacker 101](https://www.hacker101.com/)
+##### [Bugcrowd University](https://www.bugcrowd.com/hackers/bugcrowd-university/)
+##### [Hacktivity](https://hackerone.com/hacktivity)
+
+### Wireless Hacking
+##### [Tutorial: How to Crack WPA/WPA2](https://aircrack-ng.org/doku.php?id=cracking_wpa)
+
+### Coding
+##### [Codecademy](https://www.codecademy.com/)
+##### [Free Code Camp](https://www.freecodecamp.org/)
+##### [Python for Cyber Security](https://www.cybrary.it/course/python/)
+##### [Treehouse](https://teamtreehouse.com/)
+
+### Networking
+##### [Cisco](https://www.netacad.com/)
+##### [Professor Messer](https://www.professormesser.com/)
+
+### MIT Courses
+##### [Computer Science Courses](https://ocw.mit.edu/search/?d=Electrical%20Engineering%20and%20Computer%20Science&s=department_course_numbers.sort_coursenum)
+* [Introduction to Computer Science and Programming](https://ocw.mit.edu/courses/6-00-introduction-to-computer-science-and-programming-fall-2008/)
+* [Introduction to Computer Science and Programming in Python](https://ocw.mit.edu/courses/6-0001-introduction-to-computer-science-and-programming-in-python-fall-2016/)
+* [Computer Systems Security](https://ocw.mit.edu/courses/6-858-computer-systems-security-fall-2014/)
