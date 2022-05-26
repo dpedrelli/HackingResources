@@ -97,3 +97,12 @@
     Red Team / Pen Test
 
 ##### [VulnHub](https://www.vulnhub.com/)
+
+# CVE Sites
+##### [CVE Details](https://www.cvedetails.com/)
+
+##### [CVE MITRE](https://cve.mitre.org/)
+
+##### [Exploit Database](https://www.exploit-db.com/)
+
+##### [National Vulnerability Database](https://nvd.nist.gov/vuln/search)
