@@ -55,11 +55,13 @@
 ### Encoding / Decoding / Data Conversion / Beautifier / Formatter
 ##### [ASCII to Hex](https://www.asciitohex.com/)
 
+##### [beautifier.io](https://beautifier.io/)
+
 ##### [CyberChef](https://cyberchef.org/)
-##### [CyberChef](https://gchq.github.io/CyberChef/)
+* [CyberChef](https://gchq.github.io/CyberChef/)
 
 ##### [dCode](https://www.dcode.fr/en)
-###### [dCode - T9 (Text Message)](https://www.dcode.fr/t9-cipher)
+* [dCode - T9 (Text Message)](https://www.dcode.fr/t9-cipher)
 
 ##### [JSToolset](https://www.jstoolset.com/)
 

@@ -1,6 +1,3 @@
-# Beautifiers
-##### [beautifier.io](https://beautifier.io/)
-
 # [Python](Python/README.md)
 
 # References
