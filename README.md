@@ -305,3 +305,15 @@ Ngrok exposes local, server ports to the Internet.
 ##### [OWASP favicon database](https://wiki.owasp.org/index.php/OWASP_favicon_database)
 ##### [PostBin](https://postb.in/)
 ##### [suIP.biz](https://suip.biz/)
+
+# Certifications
+### OSCP
+##### [Understanding the tools/scripts you use in a Pentest](https://www.offensive-security.com/offsec/understanding-pentest-tools-scripts/)
+##### [OSCP Certification: All you need to know](https://thehackerish.com/oscp-certification-all-you-need-to-know/)
+##### [OSCP Exam Guide](https://help.offensive-security.com/hc/en-us/articles/360040165632-OSCP-Exam-Guide)
+##### [OSCP Exam Change](https://www.offensive-security.com/offsec/oscp-exam-structure/)
+##### [Proctoring Tool Student Manual](https://help.offensive-security.com/hc/en-us/articles/360050299352)
+##### [How do I connect to the proctor to start my exam?](https://help.offensive-security.com/hc/en-us/articles/360040160892-How-do-I-connect-to-the-proctor-to-start-my-exam-)
+
+### Reporting Templates
+##### [Report Templates](https://help.offensive-security.com/hc/en-us/articles/360046787731-PEN-200-Reporting-Requirements)
