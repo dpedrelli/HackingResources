@@ -322,7 +322,8 @@ Ngrok exposes local, server ports to the Internet.
 ### Basic Hacking
 ##### [TCM Security](https://academy.tcm-sec.com/)
 * [Practical Ethical Hacking](https://academy.tcm-sec.com/p/practical-ethical-hacking-the-complete-course)
-##### [TCM - Beginner Network Penetration Testing](https://www.youtube.com/watch?v=WnN6dbos5u8)
+##### [TCM - Beginner Network Pentesting](https://github.com/hmaverickadams/Beginner-Network-Pentesting)
+* [TCM - Beginner Network Penetration Testing](https://www.youtube.com/watch?v=WnN6dbos5u8)
 ##### [TCM - Zero to Hero Pentesting](https://www.youtube.com/watch?v=qlK174d_uu8)
 ##### [Windows Red Team Lab](https://www.pentesteracademy.com/course?id=44)
 
