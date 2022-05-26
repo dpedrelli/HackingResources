@@ -57,6 +57,9 @@
 
 ##### [beautifier.io](https://beautifier.io/)
 
+##### [curl command to ...](https://curlconverter.com/)
+    Convert curl commands to Python, JavaScript, PHP, R, Go, Rust, Elixir, Java, MATLAB, Dart, CFML, Ansible URI, Strest or JSON
+
 ##### [CyberChef](https://cyberchef.org/)
 * [CyberChef](https://gchq.github.io/CyberChef/)
 
