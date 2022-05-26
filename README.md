@@ -13,8 +13,6 @@
 ##### [Internet Archive](https://archive.org/)
 
 ### Calculators
-##### [Online IP CIDR / VLSM Supernet Calculator](https://www.subnet-calculator.com/cidr.php)
-##### [Online IP Subnet Calculator](https://www.subnet-calculator.com/)
 
 ### Content Security Policy (CSP)
 ##### [Content Security Policy (CSP) Bypass](https://book.hacktricks.xyz/pentesting-web/content-security-policy-csp-bypass)
@@ -134,6 +132,13 @@ filetype:pdf
 ##### [Internet Archive](https://archive.org/search.php)
 ##### [Shodan.io](https://www.shodan.io/)
 ##### [Yandex](https://yandex.com/)
+
+### IP References and Calculators
+##### [IP Calculator / IP Subnetting](http://jodies.de/ipcalc)
+##### [IP Lookup Tool](https://www.lookip.net/)
+##### [Online IP CIDR / VLSM Supernet Calculator](https://www.subnet-calculator.com/cidr.php)
+##### [Online IP Subnet Calculator](https://www.subnet-calculator.com/)
+##### [Private subnets](https://sourcedaddy.com/networking/private-subnets.html)
 
 ### Job Related Web Sites
 ##### [CareerBuilder](https://www.careerbuilder.com/)
