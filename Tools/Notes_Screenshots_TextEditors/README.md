@@ -19,6 +19,14 @@
 ### [LINQPad]()
 
 ### Sublime Text
+##### Execute Code
+```bash
+<Ctrl> + B
+```
+##### Two Columns for Build View
+```bash
+<Sift> <Alt> + 2
+```
 ##### [Install Sublime Text on Kali Linux](https://kickstart.best/install-sublime-text-on-kali-linux/)
 ##### [Buildview](https://github.com/rctay/sublime-text-buildview)
 
