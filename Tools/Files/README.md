@@ -2,6 +2,8 @@
 
 # [foremost](foremost/README.md)
 
+# [pax](pax/README.md)
+
 # [xxd](xxd/README.md)
 
 # References
