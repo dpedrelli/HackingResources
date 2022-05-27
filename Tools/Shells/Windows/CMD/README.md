@@ -35,6 +35,12 @@ tasklist /NH | sort
 whoami /priv
 ```
 
+# Network Information
+##### List All Interfaces
+```bash
+ipconfig
+```
+
 # Services
 ##### Get Installed Services
 ```bash

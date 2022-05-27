@@ -105,6 +105,8 @@
 
 ##### [Pentestmonkey](https://pentestmonkey.net/)
 
+##### [The Penetration Testing Execution Standard](http://www.pentest-standard.org/index.php/Main_Page)
+
 ##### [Sneakymonkey](https://sneakymonkey.net/)
 
 ##### [unicornsasfuel](https://github.com/unicornsasfuel)

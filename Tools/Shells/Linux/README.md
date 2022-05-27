@@ -442,12 +442,12 @@ perl Linux_Exploit_Suggester.pl -k <Kernel Version>
 [linux-smart-enumeration](https://github.com/diego-treitos/linux-smart-enumeration)
 
 # Network Information
-##### List all interfaces
+##### List All Interfaces
 ```bash
 ifconfig -a
 ```
 
-##### List network routes
+##### List Network Routes
 ```bash
 route -n
 ```
