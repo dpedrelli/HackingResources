@@ -115,6 +115,10 @@ meterpreter > ps
 # Process ID of current session
 meterpreter > getpid
 ```
+##### Get Services
+```bash
+meterpreter > service status-all
+```
 ##### Upload File
 ```bash
 upload <Source> <Destination>

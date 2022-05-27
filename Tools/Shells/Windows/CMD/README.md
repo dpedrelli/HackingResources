@@ -41,6 +41,13 @@ whoami /priv
 ipconfig
 ```
 
+#### Get Domain Information
+```bash
+net view /domain
+
+net group "Domain Controllers" /domain
+```
+
 # Services
 ##### Get Installed Services
 ```bash
