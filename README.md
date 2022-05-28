@@ -197,6 +197,9 @@ DNSdumpster discovers hosts, DNS records, and more.  It creates a map of the hos
 ##### [Networkappers - Network Tools](https://networkappers.com/tools/?c=network-tools)
 ##### [Networkappers - Reverse DNS](https://networkappers.com/tools/reverse-ip-checker)
 ##### [Robtex](https://www.robtex.com/)
+##### [Search Web by Domain](https://searchdns.netcraft.com/?host)
+##### [Team Cymru IP to ASN Lookup v1.0](https://asn.cymru.com/)
+##### [Find IP prefixes which route to a specific ASN](https://www.robtex.com/as/)
 
 #### WHOIS and RDAP
 ##### [ARIN](https://whois.arin.net/)

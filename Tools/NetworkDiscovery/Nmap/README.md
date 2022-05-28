@@ -1,6 +1,7 @@
 # [Nmap / Zenmap](https://nmap.org/)
 
-# [Host Discovery](https://nmap.org/book/man-host-discovery.html)
+# [Host Discovery](https://nmap.org/book/host-discovery.html)
+* [Host Discovery](https://nmap.org/book/man-host-discovery.html)
 ##### ARP Ping Scan
 ```bash
 ifconfig
@@ -577,6 +578,162 @@ nmap -sV --script vuln -p <Port #> <Target Host>
 | unfiltered      | The unfiltered state means that a port is accessible, but Nmap is unable to determine whether it is open or closed. Only the ACK scan, which is used to map firewall rulesets, classifies ports into this state. Scanning unfiltered ports with other scan types such as Window scan, SYN scan, or FIN scan, may help resolve whether the port is open. |
 | open/filtered   | Nmap places ports in this state when it is unable to determine whether a port is open or filtered. The UDP, IP protocol, FIN, NULL, and Xmas scans classify ports this way. |
 | closed/filtered | This state is used when Nmap is unable to determine whether a port is closed or filtered. It is only used for the IP ID idle scan. |
+
+# Testing
+### Host Discovery
+* [From the documentation](https://nmap.org/book/host-discovery-controls.html)
+The -sn option sends an ICMP echo request, a TCP SYN packet to port 443, a TCP ACK packet to port 80, and an ICMP timestamp request by default. Since unprivileged Unix users (or Windows users without Npcap installed) cannot send these raw packets, only SYN packets are sent instead in those cases. The SYN packet is sent using a TCP connect system call to ports 80 and 443 of the target host. When a privileged user tries to scan targets on a local ethernet network, ARP requests (-PR) are used unless the --send-ip option is specified.
+##### nmap -sn 10.0.2.0/24
+```bash
+nmap -sn 10.0.2.0/24
+nmap --disable-arp-ping -sn 10.0.2.0/24
+
+# Both of these commands produce the same 785 packets in Wireshark and the same results:
+# They attempted TCP connections to 10.0.2.2, 10.0.2.3, and 10.0.2.4 on both ports 80 and 443.
+# With addresses 10.0.2.2, 10.0.2.3, and 10.0.2.4 returning [RST, ACK]
+
+Starting Nmap 7.92 ( https://nmap.org ) at 2022-05-28 15:18 EDT
+Nmap scan report for 10.0.2.15
+Host is up (0.00012s latency).
+Nmap done: 256 IP addresses (1 host up) scanned in 3.47 seconds
+```
+
+##### nmap -sn 10.0.2.1-254
+```bash
+nmap -sn 10.0.2.1-254
+
+# This command generated 782 packets in Wireshark and was no faster than including the full CIDR with subnet and broadcast addresses.
+Starting Nmap 7.92 ( https://nmap.org ) at 2022-05-28 15:32 EDT
+Nmap scan report for 10.0.2.15
+Host is up (0.00015s latency).
+Nmap done: 254 IP addresses (1 host up) scanned in 4.22 seconds
+```
+
+##### sudo nmap -sn 10.0.2.0/24
+```bash
+sudo nmap -sn 10.0.2.0/24
+
+# This command generates 528 packets in Wireshark.
+# 520 packets are ARP requests.  The remaining 8 requests are DNS.
+# It did not produce any TCP packets.
+
+Starting Nmap 7.92 ( https://nmap.org ) at 2022-05-28 15:22 EDT
+Nmap scan report for 10.0.2.2
+Host is up (0.000090s latency).
+MAC Address: 52:54:00:12:35:02 (QEMU virtual NIC)
+Nmap scan report for 10.0.2.3
+Host is up (0.000085s latency).
+MAC Address: 52:54:00:12:35:03 (QEMU virtual NIC)
+Nmap scan report for 10.0.2.4
+Host is up (0.000096s latency).
+MAC Address: 52:54:00:12:35:04 (QEMU virtual NIC)
+Nmap scan report for 10.0.2.15
+Host is up.
+Nmap done: 256 IP addresses (4 hosts up) scanned in 2.08 seconds
+```
+
+##### nmap -sn -PE 10.0.2.0/24 ICMP Echo Only
+```bash
+nmap -sn -PE 10.0.2.0/24
+
+# Generated 773 packets in Wireshark.
+# It produced the TCP packets for ports 80 and 443, but no ICMP.
+# It attempted TCP connections to 10.0.2.2, 10.0.2.3, and 10.0.2.4 on both ports 80 and 443.
+# It addresses 10.0.2.2, 10.0.2.3, and 10.0.2.4 returning [RST, ACK]
+
+Warning:  You are not root -- using TCP pingscan rather than ICMP
+Starting Nmap 7.92 ( https://nmap.org ) at 2022-05-28 16:35 EDT
+Nmap scan report for 10.0.2.15
+Host is up (0.00025s latency).
+Nmap done: 256 IP addresses (1 host up) scanned in 3.49 seconds
+```
+##### sudo nmap -sn -PE 10.0.2.0/24 ICMP Echo Only
+```bash
+sudo nmap -sn -PE 10.0.2.0/24
+
+# Produced 528 packets in Wireshark.
+# Like the previous sudo command, it produced 520 packets of ARP and 8 packets of DNS traffic, not ICMP.
+
+Starting Nmap 7.92 ( https://nmap.org ) at 2022-05-28 16:37 EDT
+Nmap scan report for 10.0.2.2
+Host is up (0.000068s latency).
+MAC Address: 52:54:00:12:35:02 (QEMU virtual NIC)
+Nmap scan report for 10.0.2.3
+Host is up (0.000063s latency).
+MAC Address: 52:54:00:12:35:03 (QEMU virtual NIC)
+Nmap scan report for 10.0.2.4
+Host is up (0.00049s latency).
+MAC Address: 52:54:00:12:35:04 (QEMU virtual NIC)
+Nmap scan report for 10.0.2.15
+Host is up.
+Nmap done: 256 IP addresses (4 hosts up) scanned in 2.10 seconds
+```
+
+##### sudo nmap -sn -PU 10.0.2.0/24 UDP (MUST RUN AS SUDO)
+```bash
+sudo nmap -sn -PU 10.0.2.0/24
+
+# Produced 528 packets in Wireshark.
+# Like the previous sudo command, it produced 520 packets of ARP and 8 packets of DNS traffic, not ICMP.
+
+Starting Nmap 7.92 ( https://nmap.org ) at 2022-05-28 16:41 EDT
+Nmap scan report for 10.0.2.2
+Host is up (0.000077s latency).
+MAC Address: 52:54:00:12:35:02 (QEMU virtual NIC)
+Nmap scan report for 10.0.2.3
+Host is up (0.000073s latency).
+MAC Address: 52:54:00:12:35:03 (QEMU virtual NIC)
+Nmap scan report for 10.0.2.4
+Host is up (0.000095s latency).
+MAC Address: 52:54:00:12:35:04 (QEMU virtual NIC)
+Nmap scan report for 10.0.2.15
+Host is up.
+Nmap done: 256 IP addresses (4 hosts up) scanned in 2.07 seconds
+```
+##### sudo nmap -n -sn --send-ip 10.0.2.0/24 (Must call as sudo or uses TCP)
+```bash
+sudo nmap -n -sn --send-ip 10.0.2.0/24
+
+# Generated 3149 packets in Wireshark.
+# Most packets were ARP broadcast, with some ICMP echo packets to/from 10.0.2.2, 10.0.2.3, and 10.0.2.4.
+
+Starting Nmap 7.92 ( https://nmap.org ) at 2022-05-28 16:52 EDT
+Nmap scan report for 10.0.2.2
+Host is up (0.00033s latency).
+MAC Address: 52:54:00:12:35:02 (QEMU virtual NIC)
+Nmap scan report for 10.0.2.3
+Host is up (0.00032s latency).
+MAC Address: 52:54:00:12:35:02 (QEMU virtual NIC)
+Nmap scan report for 10.0.2.4
+Host is up (0.00031s latency).
+MAC Address: 52:54:00:12:35:02 (QEMU virtual NIC)
+Nmap scan report for 10.0.2.255
+Host is up (2.0s latency).
+MAC Address: 52:54:00:12:35:02 (QEMU virtual NIC)
+Nmap scan report for 10.0.2.15
+Host is up.
+Nmap done: 256 IP addresses (5 hosts up) scanned in 20.42 seconds
+```
+##### nmap -n -sn -PR --packet-trace --send-eth 10.0.2.0/24 (Must call as sudo or uses TCP)
+```bash
+sudo nmap -n -sn -PR --packet-trace --send-eth 10.0.2.0/24
+
+# Generated 520 packets in Wireshark.
+# Traffic was exclusively ARP broadcasts.
+
+Nmap scan report for 10.0.2.2
+Host is up (0.000055s latency).
+MAC Address: 52:54:00:12:35:02 (QEMU virtual NIC)
+Nmap scan report for 10.0.2.3
+Host is up (0.000043s latency).
+MAC Address: 52:54:00:12:35:03 (QEMU virtual NIC)
+Nmap scan report for 10.0.2.4
+Host is up (0.000083s latency).
+MAC Address: 52:54:00:12:35:04 (QEMU virtual NIC)
+Nmap scan report for 10.0.2.15
+Host is up.
+Nmap done: 256 IP addresses (4 hosts up) scanned in 2.02 seconds
+```
 
 # Cheatsheets
 [Tutorials Point](https://www.tutorialspoint.com/nmap-cheat-sheet)
