@@ -19,12 +19,12 @@ https://tryhackme.com/api/room/details?codes=[roomname]
 """
 
 parser = argparse.ArgumentParser()
-parser.add_argument("-t", dest="title", action="store_true", required=False, help="Include room/challenge title.")
-parser.add_argument("-d", dest="desc", action="store_true", required=False, help="Include task descriptions.")
-parser.add_argument("-s", dest="summary", action="store_true", required=False, help="Include Summary section.")
-parser.add_argument("-ss", dest="ssummary", action="store_true", required=False, help="Include Summary section with opening and closing.")
-parser.add_argument("-r", dest="res", action="store_true", required=False, help="Include Additional Resources section.")
-parser.add_argument("-a", dest="ans", action="store_true", required=False, help="Include answers to questions.")
+parser.add_argument("-t", type=str, dest="title", required=False, help="Include room/challenge title.")
+parser.add_argument("-d", type=str, dest="desc", required=False, help="Include task descriptions.")
+parser.add_argument("-s", type=str, dest="summary", required=False, help="Include Summary section.")
+parser.add_argument("-ss", type=str, dest="ssummary", required=False, help="Include Summary section with opening and closing.")
+parser.add_argument("-r", type=str, dest="res", required=False, help="Include Additional Resources section.")
+parser.add_argument("-a", type=str, dest="ans", required=False, help="Include answers to questions.")
 parser.add_argument("-n", type=str, dest="name", required=False, help="Optional name to include.")
 parser.add_argument("-m", type=str, dest="mode", required=True, help="Mode:  json, html, url.")
 #parser.add_argument("-r", dest="run", action="store_true", required=False, help="Test.")
