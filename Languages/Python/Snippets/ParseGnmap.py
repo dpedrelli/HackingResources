@@ -4,7 +4,10 @@ import argparse;
 
 parser = argparse.ArgumentParser()
 parser.add_argument("-f", type=str, dest="file", required=True, help="Name of gnmap file to parse.")
+parser.add_argument("-o", type=str, dest="options", required=False, help="Options for Nmap port scan.")
+# parser.add_argument("-s", type=bool, action="store_true", dest="sudo", required=False, help="Run as sudo.")
 args = parser.parse_args()
+print(args)
 
 def parse_input():
 	with open(args.file, "r") as f:
@@ -21,7 +24,7 @@ def parse_input():
 						ports = ports + ","
 					port = elements[i].split("/")
 					ports = ports + port[0]
-				print(host + " -p" + ports)
+				print("sudo nmap " + args.options + " " + host + " -p" + ports)
 
 
 if __name__ == "__main__":
