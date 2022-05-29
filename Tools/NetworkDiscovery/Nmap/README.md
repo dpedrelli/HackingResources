@@ -735,6 +735,20 @@ Host is up.
 Nmap done: 256 IP addresses (4 hosts up) scanned in 2.02 seconds
 ```
 
+# Grep
+##### Grep Result for Hosts
+```bash
+grep "Nmap scan report for" | cut -d ' ' -f5 > hosts
+```
+##### Grep gnamp for Hosts
+```bash
+cat TcpOpenPorts.gnmap | grep Ports: | cut -f1 | cut -d ' ' -f2
+```
+##### Grep gnmap for Ports
+```bash
+cat TcpOpenPorts.gnmap | grep Ports: | cut -f2 | cut -f1 | cut -c 8-
+```
+
 # Cheatsheets
 [Tutorials Point](https://www.tutorialspoint.com/nmap-cheat-sheet)
 

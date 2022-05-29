@@ -76,9 +76,12 @@ vulns
 ```
 
 ##### Nmap Scan with Metasploit
-
 This will perform a nmap scan and feed the results into Metasploit.
 ```bash
+# Make sure that Postgres is running
+service postgresql status
+service postgresql start
+
 msfconsole
 db_nmap
 ```
