@@ -172,6 +172,7 @@ filetype:pdf
 ##### [What is a TTY on Linux? (and How to Use the tty Command)](https://www.howtogeek.com/428174/what-is-a-tty-on-linux-and-how-to-use-the-tty-command/)
 
 ### Malware
+##### [Any.Run](https://any.run/)
 ##### [ESET’s Free Online Scanner](https://www.eset.com/us/home/online-scanner/)
 ##### [VirusTotal](https://www.virustotal.com/gui/home/upload)
 
