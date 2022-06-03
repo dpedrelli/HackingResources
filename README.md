@@ -100,6 +100,7 @@
 ##### [Offensive Security](https://github.com/offensive-security)
 
 ##### [OSCP](https://gitbook.brainyou.stream/)
+* [tcm-win-privesc](https://gitbook.brainyou.stream/basic-windows/tcm-win-privesc)
 
 ##### [PayloadsAllTheThings](https://github.com/swisskyrepo/PayloadsAllTheThings/)
 
