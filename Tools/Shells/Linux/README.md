@@ -447,9 +447,9 @@ perl Linux_Exploit_Suggester.pl -k <Kernel Version>
 ifconfig -a
 ```
 
-##### List Network Routes
+##### List Network Routes with route
 ```bash
-route -n
+route -v -n
 ```
 
 ##### Number of hops

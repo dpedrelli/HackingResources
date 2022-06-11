@@ -38,14 +38,24 @@ whoami /priv
 # Network Information
 ##### List All Interfaces
 ```bash
-ipconfig
+ipconfig /all
 ```
 
-#### Get Domain Information
+##### List Network Routes with route
+```bash
+route print
+```
+
+##### Get Domain Information
 ```bash
 net view /domain
 
 net group "Domain Controllers" /domain
+```
+
+##### Get Network Connections and Protocols
+```bash
+netstat
 ```
 
 # Services

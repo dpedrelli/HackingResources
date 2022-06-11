@@ -756,3 +756,6 @@ cat TcpOpenPorts.gnmap | grep Ports: | cut -f2 | cut -f1 | cut -c 8-
 [NSEDoc Reference Portal](https://nmap.org/nsedoc/)
 
 [Reference Guide](https://nmap.org/book/man.html)
+
+# Zenmap
+[How to Install Zenmap in Kali Linux 2022.1 without any Error](https://techdhee.in/install-zenmap-in-kali-linux/)

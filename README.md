@@ -148,6 +148,7 @@ filetype:pdf
 ##### [Yandex](https://yandex.com/)
 
 ### IP References and Calculators
+##### [IPInfo.io](https://ipinfo.io/)
 ##### [IP Calculator / IP Subnetting](http://jodies.de/ipcalc)
 ##### [IP Lookup Tool](https://www.lookip.net/)
 ##### [Online IP CIDR / VLSM Supernet Calculator](https://www.subnet-calculator.com/cidr.php)
