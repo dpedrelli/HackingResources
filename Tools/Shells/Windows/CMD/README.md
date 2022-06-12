@@ -41,6 +41,11 @@ whoami /priv
 ipconfig /all
 ```
 
+##### Display DNS Cache
+```bash
+ipconfig /displaydns
+```
+
 ##### List Network Routes with route
 ```bash
 route print
