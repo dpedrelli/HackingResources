@@ -231,6 +231,7 @@ Factor numbers.
 * [Detect DTMF Tones](http://www.dialabc.com/sound/detect/index.html)
 
 ### Publically Accessible Resources
+### [DigitalOcean](https://www.digitalocean.com)
 ### [ngrok](https://ngrok.com)
 Ngrok exposes local, server ports to the Internet.
 ##### [Abusing Ngrok: Hackers at the End of the Tunnel](https://www.huntress.com/blog/abusing-ngrok-hackers-at-the-end-of-the-tunnel)
