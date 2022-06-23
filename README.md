@@ -82,6 +82,8 @@
 
 ##### [CTF-Katana](https://github.com/JohnHammond/ctf-katana)
 
+##### [eLearnSecurity Resources](https://www.jaacostan.com/2021/10/elearnsecurity-resources-syllabusreport.html)
+
 ##### [Fuzzy Security](https://fuzzysecurity.com/)
 
 ##### [Hacking Articles](https://www.hackingarticles.in/)
