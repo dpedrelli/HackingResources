@@ -309,7 +309,7 @@ meterpreter > keylogrecorder -c 0
 | -R       | Indicates a reverse port forward.
 
 ```bash
-portfwd add -l <Remote Port #> -p <Local Port #> -r <Remote Host>
+portfwd add -l [Local Port #] -p [Remote Port #] -r [Remote Host]
 portfwd list
 ```
 ##### post/windows/manage/portproxy

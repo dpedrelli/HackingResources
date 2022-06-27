@@ -23,6 +23,7 @@
 |   [2049](https://www.speedguide.net/port.php?port=2049) | [NFS](../../Services/NFS/README.md) |
 |   [3306](https://www.speedguide.net/port.php?port=3306) | [MySQL](../../Services/MySQL/README.md) |
 |   [3389](https://www.speedguide.net/port.php?port=3389) | [RDP](../../Services/RDP/README.md) |
+|   [5985](https://www.speedguide.net/port.php?port=5985) | WinRM |
 |   [8180](https://www.speedguide.net/port.php?port=8180) | [Apache Tomcat](../../Services/Java/Apache_Tomcat/README.md) |
 |   [8787](https://www.speedguide.net/port.php?port=8787) | [Ruby DRb RMI](../../Services/Ruby_DRb_RMI/README.md) |
 |  [32771](https://www.speedguide.net/port.php?port=32771) | [rpcbind / Portmapper](../../Services/rpcbind_PortMapper/README.md) |
