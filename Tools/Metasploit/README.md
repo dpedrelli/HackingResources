@@ -763,6 +763,12 @@ set USER_FILE <Wordlist>
 run
 ```
 
+### SSH
+##### Login SSH
+```bash
+use auxiliary/scanner/ssh/ssh_login
+```
+
 ### VNC
 ##### Reverse Shell with VNC
 ```bash
