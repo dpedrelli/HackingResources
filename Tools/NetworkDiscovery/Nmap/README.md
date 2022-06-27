@@ -7,7 +7,7 @@
 ifconfig
 # Get Subnet
 
-nmap -PR -sn <Target Host>/<Network ID>
+nmap -PR -sn [Target Host]/[Network ID]
 
 nmap -PR -sn 172.16.5.0/24
 nmap -PR -sn 172.16.5.*
@@ -16,56 +16,56 @@ nmap -PR -sn 172.16.5.*
 ##### Ping Sweep
 ```bash
 # Invidiual Host
-nmap -sn <Host>
+nmap -sn [Target Host]
 # IP Range
-nmap -sn <Target Host>/<Network ID>
+nmap -sn [Target Host]/[Network ID]
 # If target is on same network as attack machine, nmap uses and ARP ping, rather than ICMP.
 
 # Save To File
-nmap -sn <Target Host>/<Network ID> | grep "Nmap scan report for" | cut -d ' ' -f5 > hosts
+nmap -sn [Target Host]/[Network ID] | grep "Nmap scan report for" | cut -d ' ' -f5 > hosts
 
 # Force Ping
-sudo nmap -sn <Host> --disable-arp-ping
-sudo nmap -sn <Host> --send-ip
+sudo nmap -sn [Target Host] --disable-arp-ping
+sudo nmap -sn [Target Host] --send-ip
 # 1) Sends ICMP Echo to target.
 # 2) Sends TCP SYN packet on port 443.
 # 3) Sends TCP ACK packet on port 80.
 # 4) Sends ICMP Timestamp.
 
 # Include Probe Option - SYN Flag
-sudo nmap -sn -PS <Host> --disable-arp-ping
+sudo nmap -sn -PS [Target Host] --disable-arp-ping
 # 1) Sends SYN Flag
 # 2) If target is live and port is open, target will respond with SYN/ACK, for three-way handshake.
 # 3) Attack machine sends RST.
 
 # Include Probe Option - SYN Flag and Specify Port #
-sudo nmap -sn -PS53 <Host> --disable-arp-ping
+sudo nmap -sn -PS53 [Target Host] --disable-arp-ping
 
 # Include Probe Option - ACK Flag
-sudo nmap -sn -PA <Host> --disable-arp-ping
+sudo nmap -sn -PA [Target Host] --disable-arp-ping
 # Default port 80.
 
 # Include Probe Option - UDP
-sudo nmap -sn -PU <Host> --disable-arp-ping
+sudo nmap -sn -PU [Target Host] --disable-arp-ping
 # Default port 40125.
 
 # Include Probe Option - SCTP INIT
-sudo nmap -sn -PY <Host> --disable-arp-ping
+sudo nmap -sn -PY [Target Host] --disable-arp-ping
 # Default port 80.
 
 # Include Probe Option - ICMP Echo
-sudo nmap -sn -PE <Host> --disable-arp-ping
+sudo nmap -sn -PE [Target Host] --disable-arp-ping
 
 # Include Probe Option - ICMP Netmask
-sudo nmap -sn -PM <Host> --disable-arp-ping
+sudo nmap -sn -PM [Target Host] --disable-arp-ping
 
 # Include Probe Option - ICMP Timestamp
-sudo nmap -sn -PP <Host> --disable-arp-ping
+sudo nmap -sn -PP [Target Host] --disable-arp-ping
 ```
 
 ##### No Ping
 ```bash
-nmap -n -sn -PS22,80,135,443,445 <Target Host>/<Network ID>
+nmap -n -sn -PS22,80,135,443,445 [Target Host]/[Network ID]
 ```
 
 ##### Host Discovery Options
@@ -121,10 +121,10 @@ nmap -sU
 
 ##### Scan Multiple Hosts
 ```bash
-sudo nmap <Host 1> <Host 2> <Host 3>
+sudo nmap [Target Host 1] [Target Host 2] [Target Host 3]
 
 # With File
-sudo nmap -iL <Filename>
+sudo nmap -iL [Filename]
 ```
 
 ##### Scan Techniques
@@ -222,8 +222,8 @@ sudo nmap -iL <Filename>
 ```bash
 # ProxyChains provide anonymity, but can also work with routes to access hosts on other subnets.
 # Run nmap scan to find open ports that can be used with port forwarding
-# <Target Host> is not reachable by <Attack>
-proxychains nmap -sT -Pn -p 21-25,80,139,445,8080 <Target Host>
+# [Target Host] is not reachable by [Attack Host]
+proxychains nmap -sT -Pn -p 21-25,80,139,445,8080 [Target Host]
 ```
 
 
@@ -261,7 +261,7 @@ nmap -f -f
 nmap --data-length <size>
 
 # Combine Fragments with Data Length
-nmap -f --data-length 48 -sS <Target Host> -p <Port #>
+nmap -f --data-length 48 -sS [Target Host] -p <Port #>
 # Default packet size of 24 bytes + 56 bytes (--data-length) = 80 bytes / 8 bytes (-f) = 10 packets
 ```
 
@@ -280,7 +280,7 @@ nmap -sS -D RND:<# of IPs> nmap.scanme.org
 
 # Specified IP
 nmap -sS -D <Spoofed IP Address 1,Spoofed IP Address 2> nmap.scanme.org
-sudo nmap -D 192.168.1.5,ME,192.168.1.25 <Target Host>
+sudo nmap -D 192.168.1.5,ME,192.168.1.25 [Target Host]
 
 # Decoys do not work with -sT or -sV, because they require full connections.
 ```
@@ -404,12 +404,12 @@ nmap -sO
 ##### Fingerprint OS
 ```bash
 # Utilizing nmap's aggressive, OS detection.
-nmap -n -O --osscan-guess <Target Host>
+nmap -n -O --osscan-guess [Target Host]
 
 # Very noisy. OS detection, version detection, script scanning, and traceroute
-nmap -n -A <Target Host>
+nmap -n -A [Target Host]
 
-nmap -n --script smb-os-discovery -p445 <Target Host>
+nmap -n --script smb-os-discovery -p445 [Target Host]
 ```
 
 | Flag | OS Detection |
@@ -485,40 +485,40 @@ nmap -p 53 --script dns-brute <TargetDomain.com>
 
 ##### Identify DNS Servers on a LAN
 ```bash
-nmap -sV -p 53 <Target Host>/<Subnet> --open
+nmap -sV -p 53 [Target Host]/<Subnet> --open
 ```
 
 ### Finger
 ##### Enumerate Users with Finger
 ```bash
-nmap --script finger <Target Host> -p 79
+nmap --script finger [Target Host] -p 79
 ```
 
 ### NetBIOS, SMB, Samba
 ##### Determine versions of NetBIOS ports
 ```bash
-nmap -sT -sU -sV <Target Host> -p135,137,138,139,445 --open
+nmap -sT -sU -sV [Target Host] -p135,137,138,139,445 --open
 ```
 ##### Enumerate SMB Shares
 ```bash
-nmap --script smb-enum-shares -p 445 <Target Host>
+nmap --script smb-enum-shares -p 445 [Target Host]
 ```
 ##### Enumerate SMB Users
 ```bash
-nmap --script smb-enum-users -p 445 <Target Host>
+nmap --script smb-enum-users -p 445 [Target Host]
 ```
 ##### SMB OS Discovery
 ```bash
-nmap -n --script smb-os-discovery -p445 <Target Host>
-nmap -n -O --osscan-guess --script smb-os-discovery -p445 <Target Host>
+nmap -n --script smb-os-discovery -p445 [Target Host]
+nmap -n -O --osscan-guess --script smb-os-discovery -p445 [Target Host]
 ```
 ##### SMB Protocols
 ```bash
-nmap -n --script smb-protocols -p445 <Target Host>
+nmap -n --script smb-protocols -p445 [Target Host]
 ```
 ##### SMB Security Mode
 ```bash
-nmap -n --script smb-security-mode -p445 <Target Host>
+nmap -n --script smb-security-mode -p445 [Target Host]
 ```
 
 ### SMTP
@@ -544,30 +544,30 @@ nmap --script smtp-enum-users <SMTP Host> -p 25
 #### Enumerate SNMP
 ##### Enumerate Windows User Names
 ```bash
-nmap -sU -p 161 --script snmp-win32-users <Target Host>
+nmap -sU -p 161 --script snmp-win32-users [Target Host]
 ```
 ##### Enumerate SNMP on Windows
 ```bash
-nmap -sU -p 161 --script snmp-win32-services <Target Host>
+nmap -sU -p 161 --script snmp-win32-services [Target Host]
 ```
 ##### Brute Force
 ```bash
-nmap -sU -p 161 --script snmp-brute <Target Host>
+nmap -sU -p 161 --script snmp-brute [Target Host]
 # By default, nmap uses wordlist /usr/share/nmap/nselib/data/snmpcommunities.lst
 
 # Specify wordlist
-nmap -sU -p 161 --script snmp-brute --script-args snmp-brute.communitiesdb=<wordlist> <Target Host>
+nmap -sU -p 161 --script snmp-brute --script-args snmp-brute.communitiesdb=<wordlist> [Target Host]
 # From seclists /usr/share/seclists/Discovery/SNMP/common-snmp-community-strings.txt
 ```
 
 ##### Run All Scripts
 ```bash
-nmap -sU -p 161 --script snmp-* <Target Host> > snmp_output
+nmap -sU -p 161 --script snmp-* [Target Host] > snmp_output
 ```
 
 # Scan for Vulneratbilities
 ```bash
-nmap -sV --script vuln -p <Port #> <Target Host>
+nmap -sV --script vuln -p <Port #> [Target Host]
 ```
 
 | Port Status     |    |
