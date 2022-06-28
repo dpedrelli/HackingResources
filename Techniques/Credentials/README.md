@@ -1,3 +1,16 @@
+# HTTP Credentials
+##### Metasploit http_login
+```bash
+msfconsole -q
+use auxiliary/scanner/http/http_login
+set RHOSTS [Target Host]
+set AUTH_URI [Directory]
+set USER_FILE [Username List]
+set PASS_FILE [Password List]
+set VERBOSE false
+run
+```
+
 # Linux Passwd / Shadow
 ### [Password Hashes](../../Services/Cryptography/Hashes/README.md#Shadow-File-Password-Hashes)
 
