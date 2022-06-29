@@ -1,8 +1,4 @@
-##### Execute PowerUp.ps1
-```powershell
-# Run and do AllChecks in one line.
-PowerShell.exe Invoke-Command -ScriptBlock { "Import-Module .\PowerUp.ps1; Invoke-AllChecks"} 
-```
+##### [Execute PowerUp.ps1](../../../../Tools/Shells/Windows/PowerShell/PowerSploit/PowerUp.md)
 
 ##### Download A File To Disk
 ```bash
