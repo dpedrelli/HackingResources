@@ -59,7 +59,7 @@ cat /etc/proxychains4.conf
 use auxiliary/server/socks_proxy
 show options
 # SRVPORT and VERSION must match settings in /etc/proxychains4.conf
-set SRVPORT [Port # from /etc/proxychains4.conf]
+set SRVPORT [Port from /etc/proxychains4.conf]
 set VERSION [Version] # socks4 = 4a, socks5 = 5.
 run
 jobs
@@ -323,7 +323,7 @@ meterpreter > keylogrecorder -c 0
 | -R       | Indicates a reverse port forward.
 
 ```bash
-portfwd add -l [Local Port #] -p [Remote Port #] -r [Remote Host]
+portfwd add -l [Local Port] -p [Remote Port] -r [Remote Host]
 portfwd list
 ```
 ##### post/windows/manage/portproxy
