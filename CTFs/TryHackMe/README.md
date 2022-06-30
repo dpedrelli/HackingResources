@@ -2,8 +2,8 @@
 |------|------|----------|------------|
 | [Active Directory Basics](Learn/ActiveDirectoryBasics/README.md) | https://tryhackme.com/room/activedirectorybasics	|		|	Easy	|
 | [Active Reconnaissance](Learn/ActiveReconnaissance/README.md) | https://tryhackme.com/room/activerecon	|		|	Easy	|
-| [Advent of Cyber 2 [2020]](Learn/AdventofCyber/AoC2_2020/README.md) | https://tryhackme.com/room/adventofcyber2	|		|	Easy	|
-| [Advent of Cyber 3 [2021]](Learn/AdventofCyber/AoC3_2021/README.md) | https://tryhackme.com/room/adventofcyber3	|		|	Easy	|
+| [Advent of Cyber 2 [2020]](Learn/AdventOfCyber/AoC2_2020/README.md) | https://tryhackme.com/room/adventofcyber2	|		|	Easy	|
+| [Advent of Cyber 3 [2021]](Learn/AdventOfCyber/AoC3_2021/README.md) | https://tryhackme.com/room/adventofcyber3	|		|	Easy	|
 | [Alfred](Learn/Alfred/README.md) | https://tryhackme.com/room/alfred	|		|	Easy	|
 | [Attacking Kerberos](Learn/AttackingKerberos/README.md) | https://tryhackme.com/room/attackingkerberos	|		|	Easy	|
 | [Attacktive Directory](Learn/AttacktiveDirectory/README.md) | https://tryhackme.com/room/attacktivedirectory	|		|	Medium	|
