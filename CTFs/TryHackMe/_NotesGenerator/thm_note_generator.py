@@ -24,7 +24,7 @@ parser.add_argument("-d", type=str, dest="desc", required=False, help="Include t
 parser.add_argument("-s", type=str, dest="summary", required=False, help="Include Summary section.")
 parser.add_argument("-ss", type=str, dest="ssummary", required=False, help="Include Summary section with opening and closing.")
 parser.add_argument("-r", type=str, dest="res", required=False, help="Include Additional Resources section.")
-parser.add_argument("-a", type=str, dest="ans", required=False, help="Include answers to questions.")
+parser.add_argument("-a", type=bool, dest="ans", required=False, help="Include answers to questions.")
 parser.add_argument("-n", type=str, dest="name", required=False, help="Optional name to include.")
 parser.add_argument("-m", type=str, dest="mode", required=True, help="Mode:  json, html, url.")
 #parser.add_argument("-r", dest="run", action="store_true", required=False, help="Test.")
