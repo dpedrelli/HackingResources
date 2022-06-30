@@ -89,8 +89,8 @@
 | [Pickle Rick](Learn/PickleRick/README.md) | https://tryhackme.com/room/picklerick	|		|	Easy	|
 | [Post-Exploitation Basics](Learn/Post-ExploitationBasics/README.md) | https://tryhackme.com/room/postexploit	|		|	Easy	|
 | [Principles Of Security](Learn/PrinciplesOfSecurity/README.md) | https://tryhackme.com/room/principlesofsecurity	|		|	Info	|
-| [Protocols and Servers](Learn/ProtocolsAndServers/ProtocolsandServers/README.md) | https://tryhackme.com/room/protocolsandservers	|		|	Easy	|
-| [Protocols and Servers 2](Learn/ProtocolsAndServers/ProtocolsandServers2/README.md) | https://tryhackme.com/room/protocolsandservers2	|		|	Medium	|
+| [Protocols and Servers](Learn/ProtocolsAndServers/ProtocolsAndServers/README.md) | https://tryhackme.com/room/protocolsandservers	|		|	Easy	|
+| [Protocols and Servers 2](Learn/ProtocolsAndServers/ProtocolsAndServers2/README.md) | https://tryhackme.com/room/protocolsandservers2	|		|	Medium	|
 | [Putting it all together](Learn/Puttingitalltogether/README.md) | https://tryhackme.com/room/puttingitalltogether	|		|	Easy	|
 | [Python Basics](Learn/PythonBasics/README.md) | https://tryhackme.com/room/pythonbasics	|		|	Info	|
 | [Regular expressions](Learn/Regularexpressions/README.md) | https://tryhackme.com/room/catregex	|		|	Medium	|
