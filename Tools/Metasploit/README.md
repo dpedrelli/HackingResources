@@ -150,6 +150,7 @@ meterpreter > migrate [Process ID]
 meterpreter > migrate -N [Process Name]
 ```
 
+### Services
 ##### Get Services
 ```bash
 meterpreter > service status-all
