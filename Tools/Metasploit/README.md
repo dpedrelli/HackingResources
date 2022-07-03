@@ -128,6 +128,9 @@ msfconsole -r [Path to Resource Script]
 resource [Path to Resource Script] [param 1] [param 2] [param 3]
 ```
 
+# Modules
+* exploit/multi/script/web_delivery
+
 # Meterpreter
 ### Processes
 ##### Get Processes
