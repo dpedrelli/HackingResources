@@ -232,8 +232,7 @@ Factor numbers.
 ##### [DialABC](http://www.dialabc.com/)
 * [Detect DTMF Tones](http://www.dialabc.com/sound/detect/index.html)
 
-### PowerShell
-##### [SessionGopher](https://github.com/Arvanaghi/SessionGopher)
+### [PowerShell Scripts](Tools/Shells/Windows/PowerShell/README.md#Tools)
 
 ### Publically Accessible Resources
 ### [DigitalOcean](https://www.digitalocean.com)
