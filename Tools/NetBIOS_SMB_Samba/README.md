@@ -11,6 +11,8 @@
 # [smbclient](smbclient/README.md)
 smbclient is a Python library and part of SecureAuth Corporation's [impacket](https://github.com/SecureAuthCorp/impacket) suite of network protocal libraries.
 
+# [smbexec.py](smbexec/README.md)
+smbexec is a Python library and part of SecureAuth Corporation's [impacket](https://github.com/SecureAuthCorp/impacket) suite of network protocal libraries.
 
 # [DumpSec](https://sectools.org/tool/dumpsec/)
 # [ldapsearch]() # included in ldapscripts package
