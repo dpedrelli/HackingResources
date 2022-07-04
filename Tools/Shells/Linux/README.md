@@ -447,6 +447,15 @@ perl Linux_Exploit_Suggester.pl -k <Kernel Version>
 ifconfig -a
 ```
 
+##### IP Address Only
+```bash
+ip -4 -o addr show [Interface] | awk '{print $4}' | cut -d "/" -f 1 
+```
+##### IP Address Only with Subnet
+```bash
+ip -4 -o addr show [Interface] | awk '{print $4}'
+```
+
 ##### List Network Routes with route
 ```bash
 route -v -n
