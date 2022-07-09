@@ -150,6 +150,7 @@ filetype:pdf
 ##### [Yandex](https://yandex.com/)
 
 ### IP References and Calculators
+##### [CIDR Conversion Table](https://kb.wisc.edu/ns/page.php?id=3493)
 ##### [IPInfo.io](https://ipinfo.io/)
 ##### [IP Calculator / IP Subnetting](http://jodies.de/ipcalc)
 ##### [IP Lookup Tool](https://www.lookip.net/)
