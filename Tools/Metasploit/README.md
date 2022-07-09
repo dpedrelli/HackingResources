@@ -67,6 +67,12 @@ jobs
 # Example command
 proxychains nmap -sT -Pn -n [Target Host on another subnet]
 proxychains ssh [Target Host on another subnet]
+
+# Web Browser
+# Mozilla Proxy Settings:
+SOCKS Host:  [Attack Host]
+SOCKS Proxy:  [Port from /etc/proxychains4.conf]
+http://targethost.com
 ```
 
 ### Use with Other Applications
@@ -347,8 +353,8 @@ meterpreter > keylogrecorder -c 0
 | -R       | Indicates a reverse port forward.
 
 ```bash
-portfwd add -l [Local Port] -p [Remote Port] -r [Remote Host]
-portfwd list
+meterpreter > portfwd add -l [Remote Port] -p [Local Port] -r [Remote Host]
+meterpreter > portfwd list
 ```
 ##### post/windows/manage/portproxy
 ```bash
