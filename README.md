@@ -80,6 +80,8 @@
 
 ### General Hacking References
 
+##### [Certcube](https://blog.certcube.com/)
+
 ##### [CTF-Katana](https://github.com/JohnHammond/ctf-katana)
 
 ##### [eLearnSecurity Resources](https://www.jaacostan.com/2021/10/elearnsecurity-resources-syllabusreport.html)
