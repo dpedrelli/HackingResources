@@ -353,7 +353,7 @@ meterpreter > keylogrecorder -c 0
 | -R       | Indicates a reverse port forward.
 
 ```bash
-meterpreter > portfwd add -l [Remote Port] -p [Local Port] -r [Remote Host]
+meterpreter > portfwd add -l [Listening Port] -p [Remote Port] -r [Remote Host]
 meterpreter > portfwd list
 ```
 ##### post/windows/manage/portproxy
