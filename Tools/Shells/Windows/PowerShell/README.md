@@ -151,7 +151,7 @@ PS C:\> $ports=(80, 443); $ip="10.0.0.1"; foreach ($port in $ports) {try {$socke
 ##### [Get-HttpStatus](https://powersploit.readthedocs.io/en/latest/Recon/Get-HttpStatus/)
 ##### [Posh-SecMod](https://powersploit.readthedocs.io/en/latest/Recon/Get-HttpStatus/)
 
-# [From Meterpreter](../../../Metasploit/README.MD#PowerShell)
+# [From Meterpreter](../../../Metasploit/README.md#PowerShell)
 
 # WMI
 ##### List Commands

