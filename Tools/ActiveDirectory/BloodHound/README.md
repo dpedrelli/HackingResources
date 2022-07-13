@@ -20,5 +20,13 @@ cd /usr/bin
 ./neo4j console
 ```
 
+# Collectors
+### [AzureHound](https://bloodhound.readthedocs.io/en/latest/data-collection/azurehound.html)
+### [BloodHound.py](https://github.com/fox-it/BloodHound.py)
+```bash
+bloodhound-python -u [Username] -p [Password] -dc [DC Host FQDN] --disable-autogc -d [Domain FQDN] -c all
+```
+### [SharpHound](https://bloodhound.readthedocs.io/en/latest/data-collection/sharphound.html)
+
 # Referecnes
 ##### [Github](https://github.com/BloodHoundAD/BloodHound)
