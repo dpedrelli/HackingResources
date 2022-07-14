@@ -1,12 +1,3 @@
-# Certifications
-### OSCP
-##### [Understanding the tools/scripts you use in a Pentest](https://www.offensive-security.com/offsec/understanding-pentest-tools-scripts/)
-##### [OSCP Certification: All you need to know](https://thehackerish.com/oscp-certification-all-you-need-to-know/)
-##### [OSCP Exam Guide](https://help.offensive-security.com/hc/en-us/articles/360040165632-OSCP-Exam-Guide)
-##### [OSCP Exam Change](https://www.offensive-security.com/offsec/oscp-exam-structure/)
-##### [Proctoring Tool Student Manual](https://help.offensive-security.com/hc/en-us/articles/360050299352)
-##### [How do I connect to the proctor to start my exam?](https://help.offensive-security.com/hc/en-us/articles/360040160892-How-do-I-connect-to-the-proctor-to-start-my-exam-)
-
 # [Capture The Flags](CTFs/README.md)
 
 # [Languages](Languages/README.md)
@@ -351,7 +342,7 @@ Ngrok exposes local, server ports to the Internet.
 
 # [Tools](Tools/README.md)
 
-# Training
+# Training & Certifications
 ### Basic Hacking
 ##### [INE](https://ine.com/)
 ##### [Level Effect](https://www.leveleffect.com/)
@@ -390,6 +381,14 @@ Ngrok exposes local, server ports to the Internet.
 * [Introduction to Computer Science and Programming](https://ocw.mit.edu/courses/6-00-introduction-to-computer-science-and-programming-fall-2008/)
 * [Introduction to Computer Science and Programming in Python](https://ocw.mit.edu/courses/6-0001-introduction-to-computer-science-and-programming-in-python-fall-2016/)
 * [Computer Systems Security](https://ocw.mit.edu/courses/6-858-computer-systems-security-fall-2014/)
+
+### OSCP
+##### [Understanding the tools/scripts you use in a Pentest](https://www.offensive-security.com/offsec/understanding-pentest-tools-scripts/)
+##### [OSCP Certification: All you need to know](https://thehackerish.com/oscp-certification-all-you-need-to-know/)
+##### [OSCP Exam Guide](https://help.offensive-security.com/hc/en-us/articles/360040165632-OSCP-Exam-Guide)
+##### [OSCP Exam Change](https://www.offensive-security.com/offsec/oscp-exam-structure/)
+##### [Proctoring Tool Student Manual](https://help.offensive-security.com/hc/en-us/articles/360050299352)
+##### [How do I connect to the proctor to start my exam?](https://help.offensive-security.com/hc/en-us/articles/360040160892-How-do-I-connect-to-the-proctor-to-start-my-exam-)
 
 # [Useful Gits](UsefulGits/README.md)
 
