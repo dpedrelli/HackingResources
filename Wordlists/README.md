@@ -1,3 +1,5 @@
+# [Generators](../Tools/Wordlists/README.md)
+
 # [SecLists](https://github.com/danielmiessler/SecLists)
 
 # Usernames
