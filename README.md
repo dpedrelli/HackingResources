@@ -339,13 +339,27 @@ Ngrok exposes local, server ports to the Internet.
 
 # [Capture The Flags](CTFs/README.md)
 
+# [Languages](Languages/README.md)
+
 # Pentest Reporting
 ##### [Report Templates](https://help.offensive-security.com/hc/en-us/articles/360046787731-PEN-200-Reporting-Requirements)
 ##### [TCM Security Sample Pentest Report](https://github.com/hmaverickadams/TCM-Security-Sample-Pentest-Report)
 * [Writing a Pentest Report](https://www.youtube.com/watch?v=EOoBAq6z4Zk)
 
+# [Pentesting Steps](PentestingSteps/README.md)
+
+# [References](References/README.md)
+
+# [Services](Services/README.md)
+
+# [Techniques](Techniques/README.md)
+
+# [Tools](Tools/README.md)
+
 # Training
 ### Basic Hacking
+##### [INE](https://ine.com/)
+##### [Level Effect](https://www.leveleffect.com/)
 ##### [TCM Security](https://academy.tcm-sec.com/)
 * [Practical Ethical Hacking](https://academy.tcm-sec.com/p/practical-ethical-hacking-the-complete-course)
 ##### [TCM - Beginner Network Pentesting](https://github.com/hmaverickadams/Beginner-Network-Pentesting)
@@ -381,3 +395,9 @@ Ngrok exposes local, server ports to the Internet.
 * [Introduction to Computer Science and Programming](https://ocw.mit.edu/courses/6-00-introduction-to-computer-science-and-programming-fall-2008/)
 * [Introduction to Computer Science and Programming in Python](https://ocw.mit.edu/courses/6-0001-introduction-to-computer-science-and-programming-in-python-fall-2016/)
 * [Computer Systems Security](https://ocw.mit.edu/courses/6-858-computer-systems-security-fall-2014/)
+
+# [Useful Gits](UsefulGits/README.md)
+
+# [Vulnerabilities](Vulnerabilities/README.md)
+
+# [Wordlists](Wordlists/README.md)
