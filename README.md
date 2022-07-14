@@ -337,6 +337,8 @@ Ngrok exposes local, server ports to the Internet.
 ##### [Proctoring Tool Student Manual](https://help.offensive-security.com/hc/en-us/articles/360050299352)
 ##### [How do I connect to the proctor to start my exam?](https://help.offensive-security.com/hc/en-us/articles/360040160892-How-do-I-connect-to-the-proctor-to-start-my-exam-)
 
+# [Capture The Flags](CTFs/README.md)
+
 # Pentest Reporting
 ##### [Report Templates](https://help.offensive-security.com/hc/en-us/articles/360046787731-PEN-200-Reporting-Requirements)
 ##### [TCM Security Sample Pentest Report](https://github.com/hmaverickadams/TCM-Security-Sample-Pentest-Report)
