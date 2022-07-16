@@ -221,7 +221,7 @@ sudo -l | grep vi
 cat /etc/sudoers
 ```
 
-### SUID / GUID
+### SUID GUID
 ##### Check if Binary is SUID/GUID
 ```bash
 ls -als <Binary Name>
