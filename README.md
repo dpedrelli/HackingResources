@@ -153,6 +153,8 @@ filetype:pdf
 ### IP References and Calculators
 ##### [IP Address Guide](https://www.ipaddressguide.com/)
 * [CIDR to IPv4 Conversion](https://www.ipaddressguide.com/cidr)
+##### [Professor Messer - Seven Second Subnetting](https://www.youtube.com/watch?v=ZxAwQB8TZsM)
+* [Seven-Second Subnetting - N10-008 CompTIA Network+ : 1.4](https://www.youtube.com/watch?v=SWy0MRfkXpQ)
 ##### [CIDR Conversion Table](https://kb.wisc.edu/ns/page.php?id=3493)
 ##### [IPInfo.io](https://ipinfo.io/)
 ##### [IP Calculator / IP Subnetting](http://jodies.de/ipcalc)
