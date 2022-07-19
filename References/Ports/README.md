@@ -7,6 +7,8 @@
 |     [25](https://www.speedguide.net/port.php?port=25) | [SMTP](../../Services/SMTP/README.md) |
 |     [43](https://www.speedguide.net/port.php?port=43) | [WhoIs](../../Services/WhoIs/README.md) |
 |     [53](https://www.speedguide.net/port.php?port=53) | [DNS](../../Services/DNS/README.md) |
+|     [67](https://www.speedguide.net/port.php?port=67) | [DHCP](../../Services/DHCP/README.md) |
+|     [68](https://www.speedguide.net/port.php?port=68) | [DHCP](../../Services/DHCP/README.md) |
 |     [79](https://www.speedguide.net/port.php?port=79) | [Finger](../../Services/Finger/README.md) |
 |     [80](https://www.speedguide.net/port.php?port=80) | [HTTP](../../Services/HTTP_HTTPS/README.md) |
 |    [110](https://www.speedguide.net/port.php?port=110) | POP3 |
