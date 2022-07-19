@@ -18,6 +18,7 @@
 |    [138](https://www.speedguide.net/port.php?port=138) | [NetBIOS / SMB (Samba)](../../Services/NetBIOS_SMB_Samba/README.md) |
 |    [139](https://www.speedguide.net/port.php?port=139) | [NetBIOS / SMB (Samba)](../../Services/NetBIOS_SMB_Samba/README.md) |
 |    [143](https://www.speedguide.net/port.php?port=143) | IMAP |
+|    [161](https://www.speedguide.net/port.php?port=161) | [SNMP](../../Services/SNMP/README.md) |
 |    [443](https://www.speedguide.net/port.php?port=443) | [HTTPS](../../Services/HTTP_HTTPS/README.md) |
 |    [445](https://www.speedguide.net/port.php?port=445) | [NetBIOS / SMB (Samba)](../../Services/NetBIOS_SMB_Samba/README.md) |
 |   [1099](https://www.speedguide.net/port.php?port=1099) | [JAVA RMI Registry](../../Services/Java/README.md) |
