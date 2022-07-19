@@ -42,6 +42,9 @@ sudo perl netntlm.pl --file <File Captured in Metasploit> --seed <Full Password 
 # Password Lists
 [tensorflow-1.4-billion-password-analysis](https://github.com/philipperemy/tensorflow-1.4-billion-password-analysis)
 
+# [3snake](https://github.com/blendin/3snake)
+##### [Archive](https://github.com/blendin/3snake/archive/master.zip)
+
 # References
 ##### [Abusing Token Privileges For LPE](https://www.exploit-db.com/papers/42556)
 ##### [Kerberos cheatsheet](https://gist.github.com/TarlogicSecurity/2f221924fef8c14a1d8e29f3cb5c5c4a)
