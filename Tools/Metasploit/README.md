@@ -696,7 +696,6 @@ exploit
 msfconsole -q
 search finger
 use auxiliary/scanner/finger/finger_users
-use 1
 show options
 
 set RHOSTS [SMTP Host]
