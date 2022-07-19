@@ -151,6 +151,8 @@ filetype:pdf
 ##### [Yandex](https://yandex.com/)
 
 ### IP References and Calculators
+##### [IP Address Guide](https://www.ipaddressguide.com/)
+* [CIDR to IPv4 Conversion](https://www.ipaddressguide.com/cidr)
 ##### [CIDR Conversion Table](https://kb.wisc.edu/ns/page.php?id=3493)
 ##### [IPInfo.io](https://ipinfo.io/)
 ##### [IP Calculator / IP Subnetting](http://jodies.de/ipcalc)
