@@ -4,7 +4,6 @@
 | **[Investigating Windows 2.0](Learn/InvestigatingWindows2.0/README.md)** | https://tryhackme.com/room/investigatingwindows2	|		|		| **No** |
 | **[Investigating Windows 3.x](Learn/InvestigatingWindows3.x/README.md)** | https://tryhackme.com/jr/investigatingwindows3	|		|		| **No** |
 | **[PowerShell for Pentesters](Learn/PowerShellforPentesters/README.md)** | https://tryhackme.com/jr/powershellforpentesters	|		|		| **No** |
-| **[Regular expressions](Learn/Regularexpressions/README.md)** | https://tryhackme.com/room/catregex	|		|	Medium	| **No** |
 | **[Windows PrivEsc](Learn/WindowsPrivEsc/windows10privesc/README.md)** | https://tryhackme.com/room/windows10privesc	|	Windows	|	Medium	| **No** |
 | **[Wireshark](Learn/Wireshark/README.md)** | https://tryhackme.com/room/wireshark	|		|	Easy	| **No** |
 | [Active Directory Basics](Learn/ActiveDirectoryBasics/README.md) | https://tryhackme.com/room/activedirectorybasics	|		|	Easy	| Yes |
@@ -100,6 +99,7 @@
 | [Protocols and Servers 2](Learn/ProtocolsAndServers/ProtocolsAndServers2/README.md) | https://tryhackme.com/room/protocolsandservers2	|		|	Medium	| Yes |
 | [Putting it all together](Learn/Puttingitalltogether/README.md) | https://tryhackme.com/room/puttingitalltogether	|		|	Easy	| Yes |
 | [Python Basics](Learn/PythonBasics/README.md) | https://tryhackme.com/room/pythonbasics	|		|	Info	| Yes |
+| [Regular expressions](Learn/Regularexpressions/README.md) | https://tryhackme.com/room/catregex	|		|	Medium	| Yes |
 | [Relevant](Learn/Relevant/README.md) | https://tryhackme.com/room/relevant	|		|	Medium	| Yes |
 | [Retro](Learn/Retro/README.md) | https://tryhackme.com/room/retro	|		|	Hard	| Yes |
 | [Rust Scan](Learn/RustScan/README.md) | https://tryhackme.com/room/rustscan	|		|	Easy	| Yes |
