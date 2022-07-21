@@ -1,6 +1,5 @@
 | Room | Link | Platform | Difficulty | Completed |
 |------|------|----------|------------|-----------|
-| **[Core Windows Processes](Learn/CoreWindowsProcesses/README.md)** | https://tryhackme.com/room/btwindowsinternals	|	Windows	|	Easy	| **No** |
 | **[Investigating Windows 2.0](Learn/InvestigatingWindows2.0/README.md)** | https://tryhackme.com/room/investigatingwindows2	|		|		| **No** |
 | **[Investigating Windows 3.x](Learn/InvestigatingWindows3.x/README.md)** | https://tryhackme.com/jr/investigatingwindows3	|		|		| **No** |
 | **[PowerShell for Pentesters](Learn/PowerShellforPentesters/README.md)** | https://tryhackme.com/jr/powershellforpentesters	|		|		| **No** |
@@ -33,6 +32,7 @@
 | [Command Injection](Learn/CommandInjection/README.md) | https://tryhackme.com/room/oscommandinjection	|		|	Easy	| Yes |
 | [Common Linux Privesc](Learn/LinuxPrivEsc/CommonLinuxPrivesc/README.md) | https://tryhackme.com/room/commonlinuxprivesc	|		|	Easy	| Yes |
 | [Content Discovery](Learn/ContentDiscovery/README.md) | https://tryhackme.com/room/contentdiscovery	|		|	Easy	| Yes |
+| [Core Windows Processes](Learn/CoreWindowsProcesses/README.md) | https://tryhackme.com/room/btwindowsinternals	|	Windows	|	Easy	| Yes |
 | [Corp](Learn/Corp/README.md) | https://tryhackme.com/room/corp	|		|	Easy	| Yes |
 | [Cross-site Scripting](Learn/XSS/xss/README.md) | https://tryhackme.com/room/xss	|		|	Easy	| Yes |
 | [Cross-site Scripting](Learn/XSS/xssgi/README.md) | https://tryhackme.com/room/xssgi	|		|	Easy	| Yes |
@@ -125,7 +125,7 @@
 | [Windows Fundamentals 2](Learn/WindowsFundamentals2/README.md) | https://tryhackme.com/room/windowsfundamentals2x0x	|	Windows	|	Info	| Yes |
 | [Windows Fundamentals 3](Learn/WindowsFundamentals3/README.md) | https://tryhackme.com/room/windowsfundamentals3xzx	|	Windows	|	Info	| Yes |
 | [Windows PrivEsc](Learn/WindowsPrivEsc/winprivesc/README.md) | https://tryhackme.com/room/winprivesc	|	Windows	|	Medium	| Yes |
-| [Wireshark](Learn/Wireshark/README.md) | https://tryhackme.com/room/wireshark	|		|	Easy	| No |
+| [Wireshark](Learn/Wireshark/README.md) | https://tryhackme.com/room/wireshark	|		|	Easy	| Yes |
 | [XXE](Learn/XXE/README.md) | https://tryhackme.com/room/xxe	|		|	Easy	| Yes |
 | [ZTH: Obscure Web Vulns](Learn/ZTH:ObscureWebVulns/README.md) | https://tryhackme.com/room/zthobscurewebvulns	|		|	Easy	| Yes |
 | [ZTH: Web 2](Learn/ZTH:Web2/README.md) | https://tryhackme.com/room/zthweb2	|		|	Easy	| Yes |
