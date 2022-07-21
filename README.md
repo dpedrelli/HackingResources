@@ -249,6 +249,9 @@ Ngrok exposes local, server ports to the Internet.
 ### Python
 ##### [Scapy](https://scapy.net/)
 
+### Regex
+##### [Regexr](https://regexr.com/)
+
 ### Reverse Image Searches
 ##### [PimEyes](https://pimeyes.com/en)
 * [PimEyes - TCM](https://www.youtube.com/watch?v=uBynB50liTw)

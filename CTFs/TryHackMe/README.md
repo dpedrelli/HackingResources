@@ -24,7 +24,7 @@
 | [Brainstorm](Learn/BufferOverflows/Brainstorm/README.md) | https://tryhackme.com/room/brainstorm	|	Windows	|	Medium	| Yes |
 | [Buffer Overflow Prep](Learn/BufferOverflows/BufferOverflowPrep/README.md) | https://tryhackme.com/room/bufferoverflowprep	|		|	Easy	| Yes |
 | [Buffer Overflows](Learn/BufferOverflows/BufferOverflows/README.md) | https://tryhackme.com/room/bof1	|		|	Easy	| Yes |
-| [Burp Suite](Learn/BurpSuite/README.md) | https://tryhackme.com/room/rpburpsuite	|		|	Easy	| Yes |
+| [Burp Suite](Learn/BurpSuite/BurpSuiteTheBasics/README.md) | https://tryhackme.com/room/rpburpsuite	|		|	Easy	| Burp Suite: The Basics |
 | [Burp Suite: Extender](Learn/BurpSuite/BurpSuiteExtender/README.md) | https://tryhackme.com/room/burpsuiteextender	|		|	Info	| Yes |
 | [Burp Suite: Intruder](Learn/BurpSuite/BurpSuiteIntruder/README.md) | https://tryhackme.com/room/burpsuiteintruder	|		|	Info	| Yes |
 | [Burp Suite: Other Modules](Learn/BurpSuite/BurpSuiteOtherModules/README.md) | https://tryhackme.com/room/burpsuiteom	|		|	Info	| Yes |
@@ -72,7 +72,7 @@
 | [Linux Fundamentals Part 3](Learn/LinuxFundamentals/LinuxFundamentalsPart3/README.md) | https://tryhackme.com/room/linuxfundamentalspart3	|	Linux	|	Info	| Yes |
 | [Linux PrivEsc](Learn/LinuxPrivEsc/linprivesc/README.md) | https://tryhackme.com/room/linprivesc	|	Linux	|	Medium	| Yes |
 | [Linux PrivEsc](Learn/LinuxPrivEsc/linuxprivesc/README.md) | https://tryhackme.com/room/linuxprivesc	|	Linux	|	Medium	| Yes |
-| [Metasploit](Learn/Metasploit/rpmetasploit/README.md) | https://tryhackme.com/room/rpmetasploit	|		|	Easy	| Yes |
+| [Metasploit](Learn/Metasploit/MetasploitIntroduction/README.md) | https://tryhackme.com/room/rpmetasploit	|		|	Easy	| Metasploit: Introductio |
 | [Metasploit: Exploitation](Learn/Metasploit/MetasploitExploitation/README.md) | https://tryhackme.com/room/metasploitexploitation	|		|	Easy	| Yes |
 | [Metasploit: Introduction](Learn/Metasploit/MetasploitIntroduction/README.md) | https://tryhackme.com/room/metasploitintro	|		|	Easy	| Yes |
 | [Metasploit: Meterpreter](Learn/Metasploit/MetasploitMeterpreter/README.md) | https://tryhackme.com/room/meterpreter	|		|	Easy	| Yes |
