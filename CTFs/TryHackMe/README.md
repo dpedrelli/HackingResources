@@ -70,7 +70,7 @@
 | [Linux Fundamentals Part 3](Learn/LinuxFundamentals/LinuxFundamentalsPart3/README.md) | https://tryhackme.com/room/linuxfundamentalspart3	|	Linux	|	Info	| Yes |
 | [Linux PrivEsc](Learn/LinuxPrivEsc/linprivesc/README.md) | https://tryhackme.com/room/linprivesc	|	Linux	|	Medium	| Yes |
 | [Linux PrivEsc](Learn/LinuxPrivEsc/linuxprivesc/README.md) | https://tryhackme.com/room/linuxprivesc	|	Linux	|	Medium	| Yes |
-| [Metasploit](Learn/Metasploit/MetasploitIntroduction/README.md) | https://tryhackme.com/room/rpmetasploit	|		|	Easy	| Metasploit: Introductio |
+| [Metasploit](Learn/Metasploit/MetasploitIntroduction/README.md) | https://tryhackme.com/room/rpmetasploit	|		|	Easy	| Metasploit: Introduction |
 | [Metasploit: Exploitation](Learn/Metasploit/MetasploitExploitation/README.md) | https://tryhackme.com/room/metasploitexploitation	|		|	Easy	| Yes |
 | [Metasploit: Introduction](Learn/Metasploit/MetasploitIntroduction/README.md) | https://tryhackme.com/room/metasploitintro	|		|	Easy	| Yes |
 | [Metasploit: Meterpreter](Learn/Metasploit/MetasploitMeterpreter/README.md) | https://tryhackme.com/room/meterpreter	|		|	Easy	| Yes |
