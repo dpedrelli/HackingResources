@@ -1,5 +1,12 @@
 | Room | Link | Platform | Difficulty | Completed |
 |------|------|----------|------------|-----------|
+| **[Core Windows Processes](Learn/CoreWindowsProcesses/README.md)** | https://tryhackme.com/room/btwindowsinternals	|	Windows	|	Easy	| **No** |
+| **[Investigating Windows 2.0](Learn/InvestigatingWindows2.0/README.md)** | https://tryhackme.com/room/investigatingwindows2	|		|		| **No** |
+| **[Investigating Windows 3.x](Learn/InvestigatingWindows3.x/README.md)** | https://tryhackme.com/jr/investigatingwindows3	|		|		| **No** |
+| **[PowerShell for Pentesters](Learn/PowerShellforPentesters/README.md)** | https://tryhackme.com/jr/powershellforpentesters	|		|		| **No** |
+| **[Regular expressions](Learn/Regularexpressions/README.md)** | https://tryhackme.com/room/catregex	|		|	Medium	| **No** |
+| **[Windows PrivEsc](Learn/WindowsPrivEsc/windows10privesc/README.md)** | https://tryhackme.com/room/windows10privesc	|	Windows	|	Medium	| **No** |
+| **[Wireshark](Learn/Wireshark/README.md)** | https://tryhackme.com/room/wireshark	|		|	Easy	| **No** |
 | [Active Directory Basics](Learn/ActiveDirectoryBasics/README.md) | https://tryhackme.com/room/activedirectorybasics	|		|	Easy	| Yes |
 | [Active Reconnaissance](Learn/ActiveReconnaissance/README.md) | https://tryhackme.com/room/activerecon	|		|	Easy	| Yes |
 | [Advent of Cyber 2 [2020]](Learn/AdventOfCyber/AoC2_2020/README.md) | https://tryhackme.com/room/adventofcyber2	|		|	Easy	| Yes |
@@ -28,7 +35,6 @@
 | [Command Injection](Learn/CommandInjection/README.md) | https://tryhackme.com/room/oscommandinjection	|		|	Easy	| Yes |
 | [Common Linux Privesc](Learn/LinuxPrivEsc/CommonLinuxPrivesc/README.md) | https://tryhackme.com/room/commonlinuxprivesc	|		|	Easy	| Yes |
 | [Content Discovery](Learn/ContentDiscovery/README.md) | https://tryhackme.com/room/contentdiscovery	|		|	Easy	| Yes |
-| **[Core Windows Processes](Learn/CoreWindowsProcesses/README.md)** | https://tryhackme.com/room/btwindowsinternals	|	Windows	|	Easy	| **No** |
 | [Corp](Learn/Corp/README.md) | https://tryhackme.com/room/corp	|		|	Easy	| Yes |
 | [Cross-site Scripting](Learn/XSS/xss/README.md) | https://tryhackme.com/room/xss	|		|	Easy	| Yes |
 | [Cross-site Scripting](Learn/XSS/xssgi/README.md) | https://tryhackme.com/room/xssgi	|		|	Easy	| Yes |
@@ -56,8 +62,6 @@
 | [Introduction to OWASP ZAP](Learn/IntroductiontoOWASPZAP/README.md) | https://tryhackme.com/room/learnowaspzap	|		|	Easy	| Yes |
 | [Introductory Networking](Learn/IntroductoryNetworking/README.md) | https://tryhackme.com/room/introtonetworking	|		|	Easy	| Yes |
 | [Introductory Researching](Learn/IntroductoryResearching/README.md) | https://tryhackme.com/room/introtoresearch	|		|	Easy	| Yes |
-| **[Investigating Windows 2.0](Learn/InvestigatingWindows2.0/README.md)** | https://tryhackme.com/room/investigatingwindows2	|		|		| **No** |
-| **[Investigating Windows 3.x](Learn/InvestigatingWindows3.x/README.md)** | https://tryhackme.com/jr/investigatingwindows3	|		|		| **No** |
 | [John The Ripper](Learn/JohnTheRipper/README.md) | https://tryhackme.com/room/johntheripper0	|		|	Easy	| Yes |
 | [Kali Machine](Learn/KaliMachine/README.md) | https://tryhackme.com/room/kali	|	Linux	|	Easy	| Yes |
 | [Kenobi](Learn/Kenobi/README.md) | https://tryhackme.com/room/kenobi	|		|	Easy	| Yes |
@@ -91,13 +95,11 @@
 | [Pentesting Fundamentals](Learn/PentestingFundamentals/README.md) | https://tryhackme.com/room/pentestingfundamentals	|		|	Info	| Yes |
 | [Pickle Rick](Learn/PickleRick/README.md) | https://tryhackme.com/room/picklerick	|		|	Easy	| Yes |
 | [Post-Exploitation Basics](Learn/Post-ExploitationBasics/README.md) | https://tryhackme.com/room/postexploit	|		|	Easy	| Yes |
-| **[PowerShell for Pentesters](Learn/PowerShellforPentesters/README.md)** | https://tryhackme.com/jr/powershellforpentesters	|		|		| **No** |
 | [Principles Of Security](Learn/PrinciplesOfSecurity/README.md) | https://tryhackme.com/room/principlesofsecurity	|		|	Info	| Yes |
 | [Protocols and Servers](Learn/ProtocolsAndServers/ProtocolsAndServers/README.md) | https://tryhackme.com/room/protocolsandservers	|		|	Easy	| Yes |
 | [Protocols and Servers 2](Learn/ProtocolsAndServers/ProtocolsAndServers2/README.md) | https://tryhackme.com/room/protocolsandservers2	|		|	Medium	| Yes |
 | [Putting it all together](Learn/Puttingitalltogether/README.md) | https://tryhackme.com/room/puttingitalltogether	|		|	Easy	| Yes |
 | [Python Basics](Learn/PythonBasics/README.md) | https://tryhackme.com/room/pythonbasics	|		|	Info	| Yes |
-| **[Regular expressions](Learn/Regularexpressions/README.md)** | https://tryhackme.com/room/catregex	|		|	Medium	| **No** |
 | [Relevant](Learn/Relevant/README.md) | https://tryhackme.com/room/relevant	|		|	Medium	| Yes |
 | [Retro](Learn/Retro/README.md) | https://tryhackme.com/room/retro	|		|	Hard	| Yes |
 | [Rust Scan](Learn/RustScan/README.md) | https://tryhackme.com/room/rustscan	|		|	Easy	| Yes |
@@ -123,9 +125,7 @@
 | [Windows Fundamentals 1](Learn/WindowsFundamentals1/README.md) | https://tryhackme.com/room/windowsfundamentals1xbx	|	Windows	|	Info	| Yes |
 | [Windows Fundamentals 2](Learn/WindowsFundamentals2/README.md) | https://tryhackme.com/room/windowsfundamentals2x0x	|	Windows	|	Info	| Yes |
 | [Windows Fundamentals 3](Learn/WindowsFundamentals3/README.md) | https://tryhackme.com/room/windowsfundamentals3xzx	|	Windows	|	Info	| Yes |
-| **[Windows PrivEsc](Learn/WindowsPrivEsc/windows10privesc/README.md)** | https://tryhackme.com/room/windows10privesc	|	Windows	|	Medium	| **No** |
 | [Windows PrivEsc](Learn/WindowsPrivEsc/winprivesc/README.md) | https://tryhackme.com/room/winprivesc	|	Windows	|	Medium	| Yes |
-| **[Wireshark](Learn/Wireshark/README.md)** | https://tryhackme.com/room/wireshark	|		|	Easy	| **No** |
 | [XXE](Learn/XXE/README.md) | https://tryhackme.com/room/xxe	|		|	Easy	| Yes |
 | [ZTH: Obscure Web Vulns](Learn/ZTH:ObscureWebVulns/README.md) | https://tryhackme.com/room/zthobscurewebvulns	|		|	Easy	| Yes |
 | [ZTH: Web 2](Learn/ZTH:Web2/README.md) | https://tryhackme.com/room/zthweb2	|		|	Easy	| Yes |
