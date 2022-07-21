@@ -5,7 +5,6 @@
 | **[Investigating Windows 3.x](Learn/InvestigatingWindows3.x/README.md)** | https://tryhackme.com/jr/investigatingwindows3	|		|		| **No** |
 | **[PowerShell for Pentesters](Learn/PowerShellforPentesters/README.md)** | https://tryhackme.com/jr/powershellforpentesters	|		|		| **No** |
 | **[Windows PrivEsc](Learn/WindowsPrivEsc/windows10privesc/README.md)** | https://tryhackme.com/room/windows10privesc	|	Windows	|	Medium	| **No** |
-| **[Wireshark](Learn/Wireshark/README.md)** | https://tryhackme.com/room/wireshark	|		|	Easy	| **No** |
 | [Active Directory Basics](Learn/ActiveDirectoryBasics/README.md) | https://tryhackme.com/room/activedirectorybasics	|		|	Easy	| Yes |
 | [Active Reconnaissance](Learn/ActiveReconnaissance/README.md) | https://tryhackme.com/room/activerecon	|		|	Easy	| Yes |
 | [Advent of Cyber 2 [2020]](Learn/AdventOfCyber/AoC2_2020/README.md) | https://tryhackme.com/room/adventofcyber2	|		|	Easy	| Yes |
@@ -126,6 +125,7 @@
 | [Windows Fundamentals 2](Learn/WindowsFundamentals2/README.md) | https://tryhackme.com/room/windowsfundamentals2x0x	|	Windows	|	Info	| Yes |
 | [Windows Fundamentals 3](Learn/WindowsFundamentals3/README.md) | https://tryhackme.com/room/windowsfundamentals3xzx	|	Windows	|	Info	| Yes |
 | [Windows PrivEsc](Learn/WindowsPrivEsc/winprivesc/README.md) | https://tryhackme.com/room/winprivesc	|	Windows	|	Medium	| Yes |
+| [Wireshark](Learn/Wireshark/README.md) | https://tryhackme.com/room/wireshark	|		|	Easy	| No |
 | [XXE](Learn/XXE/README.md) | https://tryhackme.com/room/xxe	|		|	Easy	| Yes |
 | [ZTH: Obscure Web Vulns](Learn/ZTH:ObscureWebVulns/README.md) | https://tryhackme.com/room/zthobscurewebvulns	|		|	Easy	| Yes |
 | [ZTH: Web 2](Learn/ZTH:Web2/README.md) | https://tryhackme.com/room/zthweb2	|		|	Easy	| Yes |
