@@ -93,7 +93,7 @@
 | [Protocols and Servers 2](Learn/ProtocolsAndServers/ProtocolsAndServers2/README.md) | https://tryhackme.com/room/protocolsandservers2	|		|	Medium	|
 | [Putting it all together](Learn/Puttingitalltogether/README.md) | https://tryhackme.com/room/puttingitalltogether	|		|	Easy	|
 | [Python Basics](Learn/PythonBasics/README.md) | https://tryhackme.com/room/pythonbasics	|		|	Info	|
-| [Regular expressions](Learn/Regularexpressions/README.md) | https://tryhackme.com/room/catregex	|		|	Medium	|
+| **[Regular expressions](Learn/Regularexpressions/README.md)** | https://tryhackme.com/room/catregex	|		|	Medium	|
 | [Relevant](Learn/Relevant/README.md) | https://tryhackme.com/room/relevant	|		|	Medium	|
 | [Retro](Learn/Retro/README.md) | https://tryhackme.com/room/retro	|		|	Hard	|
 | [Rust Scan](Learn/RustScan/README.md) | https://tryhackme.com/room/rustscan	|		|	Easy	|
