@@ -1,7 +1,7 @@
 | Room | Link | Platform | Difficulty | Completed |
 |------|------|----------|------------|-----------|
-| **[Investigating Windows 2.0](Learn/InvestigatingWindows2.0/README.md)** | https://tryhackme.com/room/investigatingwindows2	|		|		| **No** |
-| **[Investigating Windows 3.x](Learn/InvestigatingWindows3.x/README.md)** | https://tryhackme.com/jr/investigatingwindows3	|		|		| **No** |
+| **[Investigating Windows 2.0](Learn/InvestigatingWindows2.0/README.md)** | https://tryhackme.com/room/investigatingwindows2	|	Windows	|	Medium	| **No** |
+| **[Investigating Windows 3.x](Learn/InvestigatingWindows3.x/README.md)** | https://tryhackme.com/jr/investigatingwindows3	|	Windows	|	Medium	| **No** |
 | **[PowerShell for Pentesters](Learn/PowerShellforPentesters/README.md)** | https://tryhackme.com/jr/powershellforpentesters	|		|		| **No** |
 | **[Windows PrivEsc](Learn/WindowsPrivEsc/windows10privesc/README.md)** | https://tryhackme.com/room/windows10privesc	|	Windows	|	Medium	| **No** |
 | [Active Directory Basics](Learn/ActiveDirectoryBasics/README.md) | https://tryhackme.com/room/activedirectorybasics	|		|	Easy	| Yes |
@@ -111,6 +111,7 @@
 | [Starting Out In Cyber Sec](Learn/StartingOutInCyberSec/README.md) | https://tryhackme.com/room/startingoutincybersec	|		|	Easy	| Yes |
 | [Steel Mountain](Learn/SteelMountain/README.md) | https://tryhackme.com/room/steelmountain	|		|	Easy	| Yes |
 | [Subdomain Enumeration](Learn/SubdomainEnumeration/README.md) | https://tryhackme.com/room/subdomainenumeration	|		|	Easy	| Yes |
+| [Sysinternals]() | https://tryhackme.com/room/btsysinternalssg | | | **No** |
 | [ToolsrUs](Learn/ToolsrUs/README.md) | https://tryhackme.com/room/toolsrus	|		|	Easy	| Yes |
 | [Tutorial](Learn/Tutorial/README.md) | https://tryhackme.com/room/tutorial	|		|	Easy	| Yes |
 | [Upload Vulnerabilities](Learn/UploadVulnerabilities/README.md) | https://tryhackme.com/room/uploadvulns	|		|	Easy	| Yes |
@@ -127,5 +128,6 @@
 | [Windows PrivEsc](Learn/WindowsPrivEsc/winprivesc/README.md) | https://tryhackme.com/room/winprivesc	|	Windows	|	Medium	| Yes |
 | [Wireshark](Learn/Wireshark/README.md) | https://tryhackme.com/room/wireshark	|		|	Easy	| Yes |
 | [XXE](Learn/XXE/README.md) | https://tryhackme.com/room/xxe	|		|	Easy	| Yes |
+| [Yara]() | https://tryhackme.com/room/yara | | | **No** |
 | [ZTH: Obscure Web Vulns](Learn/ZTH:ObscureWebVulns/README.md) | https://tryhackme.com/room/zthobscurewebvulns	|		|	Easy	| Yes |
 | [ZTH: Web 2](Learn/ZTH:Web2/README.md) | https://tryhackme.com/room/zthweb2	|		|	Easy	| Yes |
