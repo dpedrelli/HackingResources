@@ -25,3 +25,66 @@
 * Use tools like [FOCA](../../Tools/OSINT/FOCA/README.md) and [Google Dorks](/README.md#Google-Dorks) to find and harvest files and metadata.
 * Search [cache](/README.md#Display-Cache) and [archive sites](/README.md#Archival-Sites).
 * Search for Git repositories with [GitTools](https://github.com/internetwache/GitTools).
+
+1) Physical / Social
+   1) Location Information
+        1) Satellite Images
+        2) Drone Recon
+        3) Building Layout
+           1) Badge Readers
+           2) Break Areas
+           3) Security
+           4) Fencing
+    2) Job Information
+        1) Employees
+           1) Name
+           2) Title
+           3) Phone #
+           4) Manager
+           5) LinkedIn -> Company -> People
+        2) Pictures
+           1) Badge Photos
+           2) Desk Photos
+           3) Computer Photos (installed software)
+           4) LinkedIn -> Company -> Images
+2) Web / Host
+   1) Target Validation
+        1) whois
+        2) nslookup
+        3) dnsrecon
+   2) Find Subdomains
+        1) Google
+        2) dig
+        3) nmap
+        4) [sublist3r](https://github.com/aboul3la/Sublist3r)
+        5) bluto
+        6) [crt.sh](https://crt.sh/)
+        7) [OWASP Amass](https://github.com/OWASP/Amass)
+        8) [Httprobe](https://github.com/tomnomnom/httprobe)
+   3) Fingerprinting
+        1) nmap
+        2) Wappalyzer
+        3) [WhatWeb](https://github.com/urbanadventurer/WhatWeb)
+        4) [BuiltWith](https://builtwith.com/)
+        5) netcat
+   4) Data Breaches
+        1) [HaveIBeenPwned](https://haveibeenpwned.com/)
+        2) [Breach-Parse](https://github.com/hmaverickadams/breach-parse)
+        3) [WeLeakInfo](https://weleakinfo.to/)
+3) Discover E-Mail Addresses
+   1) [hunter.io](https://hunter.io/)
+   2) [Phonebook.cz](https://phonebook.cz/)
+   3) [VoilaNorbert.com](https://www.voilanorbert.com/)
+   4) Clearbit Connect (Chrome Plugin)
+   5) [E-Mail Hippo](https://tools.emailhippo.com/)
+   6) [Email-Checker.net](https://email-checker.net/)
+   7) [HaveIBeenPwned](https://haveibeenpwned.com/)
+   8) Google E-Mail -> Forgot Password -> Try Another Way
+4) Breached Credentials
+   1) [Breach-Parse](https://github.com/hmaverickadams/breach-parse)
+   2) [DeHashed](https://dehashed.com/)
+   3) [hashes.org](http://hashes.org) **Down**
+5) Google
+   1) [Overview of Google search operators](https://developers.google.com/search/docs/advanced/debug/search-operators/overview)
+   2) [Google Search Operators](https://ahrefs.com/blog/google-advanced-search-operators/)
+   3) Find files:  **site:domain.com filetype:docx**
