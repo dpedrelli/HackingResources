@@ -20,6 +20,19 @@ lsb_release
 getcap -r / 2>/dev/null
 ```
 
+##### Locate File
+```bash
+locate [Filename]
+
+# Update file locate db.
+sudo updatedb
+```
+
+##### Update & Upgrade Linux
+```bash
+sudo apt update && apt upgrade
+```
+
 ##### Translate Characters
 Usage: tr [OPTION]... SET1 [SET2]
 Translate, squeeze, and/or delete characters from standard input,
