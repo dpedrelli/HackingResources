@@ -57,7 +57,7 @@
         2) dig
         3) nmap
         4) [sublist3r](https://github.com/aboul3la/Sublist3r)
-        5) bluto
+        5) [Bluto](https://github.com/darryllane/Bluto)
         6) [crt.sh](https://crt.sh/)
         7) [OWASP Amass](https://github.com/OWASP/Amass)
         8) [Httprobe](https://github.com/tomnomnom/httprobe)
