@@ -233,6 +233,7 @@ Factor numbers.
 ##### [Pipl](https://pipl.com/)
 ##### [Spokeo](https://www.spokeo.com/)
 ##### [PeopleFinders](https://www.peoplefinders.com/)
+##### [Truthfinder](https://www.truthfinder.com)
 
 ### Phone Numbers
 ##### [DialABC](http://www.dialabc.com/)
