@@ -5,6 +5,7 @@
 # [Credentials](Credentials/README.md)
 # [Cross-Site Request Forgery (CSRF)](CSRF/README.md)
 # [DLL Preloading (Hijacking)](DLL_Preloading/README.md)
+# [E-Mail Analysis](EMail/README.md)
 # [Enumeration](Enumeration/README.md)
 # [Evasion / Stealth](Evasion_Stealth/README.md)
 # [Exploitation](Exploitation/README.md)
