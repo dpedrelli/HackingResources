@@ -12,6 +12,7 @@
 # [Forensics](Forensics/README.md)
 # [HTTP & HTTPS](HTTP_HTTPS/README.md)
 # [Impacket](Impacket/README.md)
+# [Malware Analysis](Malware_Analysis/README.md)
 # [Metasploit](Metasploit/README.md)
 # [Mind Mapping](MindMapping/README.md)
 # [Miscellaneous](Miscellaneous/README.md)
