@@ -1,3 +1,7 @@
+# Checks
+##### Linux env variable
+##### cat /var/www/.env
+
 # Linux Passwd / Shadow
 ### [Password Hashes](../../Services/Cryptography/Hashes/README.md#Shadow-File-Password-Hashes)
 

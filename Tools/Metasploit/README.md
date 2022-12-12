@@ -1,4 +1,10 @@
 # Metasploit
+##### Check for Vulnerability
+```bash
+use [Module Name]
+check
+```
+
 ##### Kill Job, but not Existing Meterpreter Shell
 ```bash
 jobs -k [Job ID]
@@ -16,6 +22,14 @@ grep smb search type:exploit
 use [Module Name]
 info
 ```
+
+##### Upgrade Shell to Meterpreter Shell
+```bash
+background
+sessions -u [Session ID]
+sessions [Meterpreter Session ID]
+```
+
 ### Routes
 ##### Add Route
 ```bash
@@ -138,6 +152,11 @@ resource [Path to Resource Script] [param 1] [param 2] [param 3]
 * exploit/multi/script/web_delivery
 
 # Meterpreter
+##### Resolve Host IP
+```bash
+meterpreter > resolve [Host Name]
+```
+
 ### Listener
 ##### Start Handler with AutoRunScript to Migrate Process
 ```bash
