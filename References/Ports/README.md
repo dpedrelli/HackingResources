@@ -24,6 +24,7 @@
 |   [1099](https://www.speedguide.net/port.php?port=1099) | [JAVA RMI Registry](../../Services/Java/README.md) |
 |   [1433](https://www.speedguide.net/port.php?port=1433) | [MS SQL Server](../../Services/MSSQL/README.md) |
 |   [1723](https://www.speedguide.net/port.php?port=1723) | PPTP |
+|   [1883](https://www.speedguide.net/port.php?port=1883) | Message Queuing Telemetry Transport Protocol (MQTT) |
 |   [2049](https://www.speedguide.net/port.php?port=2049) | [NFS](../../Services/NFS/README.md) |
 |   [3306](https://www.speedguide.net/port.php?port=3306) | [MySQL](../../Services/MySQL/README.md) |
 |   [3389](https://www.speedguide.net/port.php?port=3389) | [RDP](../../Services/RDP/README.md) |
