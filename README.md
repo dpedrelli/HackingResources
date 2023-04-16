@@ -49,6 +49,7 @@
 
 ### E-Mail
 ##### [10 Minute Mail](https://10minutemail.com/)
+##### [anonymousemail.me](https://anonymousemail.me/)
 ##### [Have I Been Pwned](https://haveibeenpwned.com/)
       Check if your email or phone is in a data breach
 ##### [Hunter](https://hunter.io/)
