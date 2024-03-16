@@ -60,6 +60,9 @@
 
 ##### [beautifier.io](https://beautifier.io/)
 
+##### [Chepy](https://github.com/securisec/chepy)
+* [Chepy](https://pypi.org/project/chepy/)
+
 ##### [curl command to ...](https://curlconverter.com/)
     Convert curl commands to Python, JavaScript, PHP, R, Go, Rust, Elixir, Java, MATLAB, Dart, CFML, Ansible URI, Strest or JSON
 
